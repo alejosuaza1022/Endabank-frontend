@@ -1,16 +1,14 @@
 import { useState } from "react";
-import {Form, MainImage} from "./components/index"
+import RegisterForm from "@/pages/RegisterForm";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(20);
-  const [state, setState] = useState("a");
 
   return (
-  <div>
-    <MainImage></MainImage>
-    <Form></Form>
-  </div>);
+    <div>
+      <RegisterForm></RegisterForm>
+    </div>
+  );
 }
 
 export default App;
