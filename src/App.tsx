@@ -1,12 +1,13 @@
 import { useState } from "react";
-import RegisterForm from "@/pages/RegisterForm";
+import ActivateAccount from "@/pages/ActivateAccount";
+import Form from "./pages/RegisterForm";
 import "./App.css";
 
 function App() {
 
   return (
     <div>
-      <RegisterForm></RegisterForm>
+      <Form></Form>
     </div>
   );
 }
