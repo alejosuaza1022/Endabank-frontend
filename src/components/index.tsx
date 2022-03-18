@@ -1,4 +1,6 @@
 export {default as Form} from "./Form/Form"
 export {default as MainImage} from "./MainImage/MainImage"
-export {default as Input} from "./Input/Input"
+export {default as Input} from "./InputForm/Input"
 export {default as SelectForm} from "./SelectForm/SelectForm"
+export {default as FormResetPassword} from "./FormResetPassword/FormResetPassword"
+export {default as InputReset} from "./InputResetPassword/Input"
