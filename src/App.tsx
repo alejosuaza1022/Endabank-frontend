@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RegisterForm from "./pages/RegisterForm";
 import "./App.css";
 import ResetPassword from "./pages/ResetPassword";
 

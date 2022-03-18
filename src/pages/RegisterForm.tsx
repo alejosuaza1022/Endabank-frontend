@@ -1,4 +1,4 @@
-import { MainImage, Form} from "components";
+import { MainImage, Form} from "../components/index";
 import React from "react";
 
 const RegisterForm = () => {
