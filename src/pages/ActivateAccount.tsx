@@ -1,9 +1,9 @@
-import {ActivateAccountForm, Form} from "components";
+import {ActivateAccountForm} from "../components/index";
 
 const ActivateAccount = () => {
   return (
     <div>
-      <Form></Form>
+      <ActivateAccountForm></ActivateAccountForm>
     </div>
   );
 };

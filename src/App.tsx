@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <RegisterForm></RegisterForm>
+      <ActivateAccount></ActivateAccount>
     </div>
   );
 }
