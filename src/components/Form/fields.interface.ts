@@ -1,6 +1,6 @@
 interface FieldObject {
-  id: string;
-  number: number;
+  id?: string;
+  phoneNumber: number;
   email: string;
   firstName: string;
   lastName: string;

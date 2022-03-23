@@ -1,11 +1,15 @@
-import FieldObject from "components/Form/fields.interface";
+import FieldObject from "@components/Form/fields.interface";
+import { FieldError, UseFormRegister, ValidationRule} from "react-hook-form";
+
 
 interface InputProps{
     type:string,
-    id:string,
+    id: keyof FieldObject,
     label:string,
-    pattern?:string,
-    setCampos:Function
+    error?:FieldError,
+    register:UseFormRegister<FieldObject>,
+    optionsValidations?:object
+
 
 }
 export default InputProps;

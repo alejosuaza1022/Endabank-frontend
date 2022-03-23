@@ -1,7 +1,11 @@
+import FieldObject from "@components/Form/fields.interface";
+import { FieldError, UseFormRegister } from "react-hook-form";
 interface SelectFormProps{
-    id:string,
+    id:keyof FieldObject,
     value:string,
     options:Array<string>,
-    setCampos:Function
+    error?:FieldError,
+    register:UseFormRegister<FieldObject>
+    
 }
 export default SelectFormProps;
