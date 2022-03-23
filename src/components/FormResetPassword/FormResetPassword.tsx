@@ -1,8 +1,15 @@
 import "./index.css";
+import { Input, SelectForm } from "../index";
 import { useState } from "react";
 import FieldObject from "./fields.interface";
-import Input from "../InputResetPassword/Input";
+
 const FormResetPassword = () => {
+
+  const [campos, setCampos] = useState<FieldObject>({
+    oldPassword: "",
+    newPassword: "",
+    rePassword: "",
+  });
 
   return (
     <div className="flex w-1/2 justify-center m-auto">
@@ -10,20 +17,30 @@ const FormResetPassword = () => {
         <form onSubmit={() => alert("hola")}>
           <div className="grid xl:grid-cols-1 xl:gap-6">
             <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
+
             <Input
               type="password"
               id="oldPassword"
               label="Old Password"
+              setCampos={(value: string) =>
+                setCampos({ ...campos, oldPassword: value })
+              }
             ></Input>
             <Input
               type="password"
               id="newPassword"
               label="New Password"
+              setCampos={(value: string) =>
+                setCampos({ ...campos, newPassword: value })
+              }
             ></Input>
             <Input
               type="password"
               id="rePassword"
               label="Confirm password"
+              setCampos={(value: string) =>
+                setCampos({ ...campos, rePassword: value })
+              }
             ></Input>
           </div>
           <button
