@@ -23,16 +23,16 @@ const ActivateAccountForm = () => {
               </tr>
             </thead>
             <tbody>
-            <ApproveUser
+            <ApproveUserTable
               user="shoes and shoes"
               email="shoes-shoes@yopmail.com"
               id="shoes-shoes@yopmail.com"
-            ></ApproveUser>  
-            <ApproveUser
+            ></ApproveUserTable>  
+            <ApproveUserTable
               user="Juan valdes"
               email="julian.valdes@cofee.com"
               id="julian.valdes@cofee.com"
-            ></ApproveUser>                      
+            ></ApproveUserTable>                      
             </tbody>
           </table>
         </div>
