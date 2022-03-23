@@ -17,7 +17,7 @@ const ActivateAccountForm = () => {
                 <th scope="col" className="px-6 py-3 text-left">
                   Email
                 </th>
-                <th scope="col" className="px-6 py-3 text-right">
+                <th scope="col" className="px-6 py-3">
                   Approved
                 </th>
               </tr>
@@ -26,11 +26,13 @@ const ActivateAccountForm = () => {
             <ApproveUser
               user="shoes and shoes"
               email="shoes-shoes@yopmail.com"
-            ></ApproveUser>
+              id="shoes-shoes@yopmail.com"
+            ></ApproveUser>  
             <ApproveUser
               user="Juan valdes"
               email="julian.valdes@cofee.com"
-            ></ApproveUser>
+              id="julian.valdes@cofee.com"
+            ></ApproveUser>                      
             </tbody>
           </table>
         </div>
