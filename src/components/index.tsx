@@ -1,6 +1,6 @@
-export {default as Form} from "./Form/Form"
+
 export {default as MainImage} from "./MainImage/MainImage"
 export {default as Input} from "./InputForm/InputForm"
-export {default as SelectForm} from "./SelectForm/SelectForm"
-export {default as ActivateAccountForm} from "./ActivateAccountForm/ActivateAccountForm"
-export {default as ApproveUser} from "./ApproveUser/ApproveUser"
+export {default as ActivateAccountForm} from "../pages/ActivateAccountForm/ActivateAccountForm"
+export {default as ApproveUserTable} from "./ApproveUserTable/ApproveUserTable"
+export { default as SelectForm } from "./SelectForm/SelectForm";

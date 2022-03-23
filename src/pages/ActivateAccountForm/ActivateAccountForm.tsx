@@ -1,4 +1,4 @@
-import { ApproveUser } from "../index";
+import { ApproveUserTable } from "../../components/index";
 const ActivateAccountForm = () => {
   return (
     <div>

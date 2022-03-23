@@ -1,13 +1,11 @@
 import { useState } from "react";
-import ActivateAccount from "./pages/ActivateAccount";
-import RegisterForm from "./pages/RegisterForm";
+import {ActivateAccountForm, RegisterForm } from "./pages/index";
 import "./App.css";
 
 function App() {
-
   return (
     <div>
-      <ActivateAccount></ActivateAccount>
+      <ActivateAccountForm></ActivateAccountForm>
     </div>
   );
 }

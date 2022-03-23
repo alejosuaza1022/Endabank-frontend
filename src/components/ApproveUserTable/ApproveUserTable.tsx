@@ -1,4 +1,4 @@
-import SelectFormProps from "./approveUser.interface";
+import SelectFormProps from "./approveUserTable.interface";
 import React, { useState } from "react";
 
 const SelectForm: React.FC<SelectFormProps> = ({
