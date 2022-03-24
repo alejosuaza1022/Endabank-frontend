@@ -1,13 +1,6 @@
 import InputProps from "./input.interface";
 import "./index.css";
-const Input: React.FC<InputProps> = ({
-  type,
-  id,
-  label,
-  error,
-  register,
-  optionsValidations,
-}) => {
+const Input: React.FC<InputProps> = ({ type, id, label, error }) => {
   return (
     <div className="relative z-0 mb-6 w-full group">
       <input
@@ -19,13 +12,6 @@ const Input: React.FC<InputProps> = ({
             : "focus:border-black border-gray-300 "
         } appearance-none  focus:outline-none focus:ring-0  peer`}
         placeholder=" "
-        {...register(id, {
-          required: {
-            value: true,
-            message: "Este campo no puede estar vacio",
-          },
-          ...optionsValidations,
-        })}
       />
       <label
         htmlFor={id}
@@ -42,7 +28,9 @@ const Input: React.FC<InputProps> = ({
           Las contraseñas no coinciden
         </p>
       ) : error ? (
-        <p className="text-sm text-red-600 ml-1 mt-2 text-bold">{error.message}</p>
+        <p className="text-sm text-red-600 ml-1 mt-2 text-bold">
+          {error.message}
+        </p>
       ) : null}
     </div>
   );
