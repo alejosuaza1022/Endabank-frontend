@@ -1,9 +1,8 @@
 import { useState } from "react";
-import RegisterForm from "./pages/RegisterForm";
+import { RegisterForm } from "./pages/index";
 import "./App.css";
 
 function App() {
-
   return (
     <div>
       <RegisterForm></RegisterForm>

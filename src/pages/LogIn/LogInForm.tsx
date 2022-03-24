@@ -1,11 +1,11 @@
-import {Input} from "../index"
+import {Input} from "../../components/index"
 
 const LogInForm = ()=>{
     return(
         <div className="flex justify-center w-1/2 mt-10">
             <div className="p-4 container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
                 <form>
-                    <Input type="text" id="email_login" label="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    <Input type="text" id="emailLogin" label="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                     <Input type="password" id="password_login" label="Password"/>
                     <button
                         type="submit"

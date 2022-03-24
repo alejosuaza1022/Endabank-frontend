@@ -1,4 +1,5 @@
-import {MainImage,LogInForm} from "../components/index";
+import {MainImage} from "../../components/index";
+import LogInForm from "./LogInForm";
 
 const LogIn =()=>{
     return (
