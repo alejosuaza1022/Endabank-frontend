@@ -1,6 +1,6 @@
-interface FieldObject {
-  id: string;
-  number: number;
+interface UserObject {
+  id?: string;
+  phoneNumber: number;
   email: string;
   firstName: string;
   lastName: string;
@@ -8,4 +8,4 @@ interface FieldObject {
   rePassword: string;
   documentType: string;
 }
-export default FieldObject;
+export default UserObject;

@@ -1,16 +1,14 @@
 import { useState } from "react";
-import RegisterForm from "./pages/RegisterForm";
+import { RegisterForm, EmailRePassword } from "./pages/index";
 import "./App.css";
-import ResetPassword from "./pages/ResetPassword";
+import MainImage from "./components/MainImage/MainImage";
 
 function App() {
-
   return (
     <div>
-      <ResetPassword></ResetPassword>
-      
+      <MainImage></MainImage>
+      <EmailRePassword></EmailRePassword>
     </div>
   );
 }
-
 export default App;

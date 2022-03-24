@@ -1,4 +1,4 @@
-import FieldObject from "@pages/RegisterForm/userObject.interface";
+import FieldObject from "@pages/FormResetPassword/rePasswordObject.interface";
 import { FieldError, UseFormRegister, ValidationRule } from "react-hook-form";
 
 interface InputProps {
