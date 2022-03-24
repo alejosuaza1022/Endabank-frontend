@@ -25,9 +25,32 @@ const LogInForm = ()=>{
             <div className="p-4 container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
                 <form>
                     <Input type="text" id="email" label="Email"
-                           register={register}
-                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
-                    <Input type="password" id="password" label="Password"/>
+                           {...register("email", {
+                               required: {
+                                   value: true,
+                                   message: "Este campo no puede estar vacio",
+                               },
+                               pattern: {
+                                   value:
+                                       /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/,
+                                   message: "Email no valido",
+                               },
+                           })}
+
+                    />
+                    <Input type="password" id="password" label="Password"
+                           {...register("password", {
+                               required: {
+                                   value: true,
+                                   message: "Este campo no puede estar vacio",
+                               },
+                               pattern: {
+                                   value: /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
+                                   message:
+                                       "1 Mayuscula, 1 Caracter Especial, 1 Número, 8 a 20 digitos",
+                               },
+                           })}
+                    />
                     <button
                         type="submit"
                         className="text-white color-endabank focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
