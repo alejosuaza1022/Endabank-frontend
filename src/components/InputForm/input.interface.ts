@@ -3,10 +3,8 @@ import { FieldError, UseFormRegister, ValidationRule } from "react-hook-form";
 
 interface InputProps {
   type: string;
-  id: keyof FieldObject;
+  id: string;
   label: string;
   error?: FieldError;
-  register: UseFormRegister<FieldObject>;
-  optionsValidations?: object;
 }
 export default InputProps;

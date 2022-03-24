@@ -27,22 +27,30 @@ const Form = () => {
                 id="documentType"
                 value="Document type"
                 options={["CC", "CE"]}
-                register={register}
                 error={errors.documentType}
+                {...register("documentType", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
+                })}
               ></SelectForm>
               <Input
                 type="text"
                 id="id"
                 label="Identifier"
-                register={register}
-                error={errors.id}
-                optionsValidations={{
+                {...register("id", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
                   pattern: {
                     value: /^[0-9]{10,20}/,
                     message:
                       "El campo acepta solo números y deben ser de 10 a 20 caracteres",
                   },
-                }}
+                })}
+                error={errors.id}
               ></Input>
             </div>{" "}
             <div className="grid xl:grid-cols-2 xl:gap-6">
@@ -50,70 +58,92 @@ const Form = () => {
                 type="text"
                 id="firstName"
                 label="First name"
-                register={register}
                 error={errors.firstName}
+                {...register("firstName", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
+                })}
               ></Input>
               <Input
                 type="text"
                 id="lastName"
                 label="Last name"
-                register={register}
                 error={errors.lastName}
+                {...register("lastName", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
+                })}
               ></Input>
             </div>{" "}
             <Input
               type="tel"
               id="phoneNumber"
               label="Phone Number"
-              register={register}
               error={errors.phoneNumber}
-              optionsValidations={{
+              {...register("phoneNumber", {
+                required: {
+                  value: true,
+                  message: "Este campo no puede estar vacio",
+                },
                 pattern: {
                   value: /^[0-9]{10}/,
                   message:
                     "El campo acepta solo números y deben ser de 10 caracteres",
                 },
-              }}
+              })}
             ></Input>
             <Input
               type="text"
               id="email"
               label="Email"
-              register={register}
               error={errors.email}
-              optionsValidations={{
+              {...register("phoneNumber", {
+                required: {
+                  value: true,
+                  message: "Este campo no puede estar vacio",
+                },
                 pattern: {
                   value:
                     /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/,
                   message: "Email no valido",
                 },
-              }}
+              })}
             ></Input>
             <div className="grid xl:grid-cols-2 xl:gap-6">
               <Input
                 type="password"
                 id="password"
                 label="Password"
-                register={register}
                 error={errors.password}
-                optionsValidations={{
+                {...register("phoneNumber", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
                   pattern: {
                     value: /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
                     message:
                       "1 Mayuscula, 1 Caracter Especial, 1 Número, 8 a 20 digitos",
                   },
-                }}
+                })}
               ></Input>
               <Input
                 type="password"
                 id="rePassword"
                 label="Confirm password"
-                register={register}
                 error={errors.rePassword}
-                optionsValidations={{
+                {...register("phoneNumber", {
+                  required: {
+                    value: true,
+                    message: "Este campo no puede estar vacio",
+                  },
                   validate: () =>
                     getValues("password") === getValues("rePassword"),
-                }}
+                })}
               ></Input>
             </div>
             <button
