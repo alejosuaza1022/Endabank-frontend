@@ -1,7 +1,7 @@
 import "./index.css";
-import { useForm, SubmitHandler } from "react-hook-form";
-import Input from "./InputFormRePassword";
+import { Input, MainImage, SelectForm } from "../../components/index";
 import FieldObject from "./rePasswordObject.interface";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 const FormResetPassword = () => {
 
@@ -29,18 +29,24 @@ const FormResetPassword = () => {
               type="password"
               id="oldPassword"
               label="Old Password"
-              register={register}
               error={errors.oldPassword}
-              optionsValidations={{
-              }}
+              {...register("oldPassword", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
+              })}
             ></Input>
             <Input
               type="password"
               id="newPassword"
               label="New Password"
-              register={register}
               error={errors.newPassword}
-              optionsValidations={{
+              {...register("newPassword", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
                 pattern: {
                   value: /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
                   message:
@@ -48,15 +54,18 @@ const FormResetPassword = () => {
                 },
                 validate: () =>
                     getValues("oldPassword") != getValues("newPassword"),
-              }}
+              })}              
             ></Input>
             <Input
               type="password"
               id="rePassword"
               label="Confirm password"
-              register={register}
               error={errors.rePassword}
-              optionsValidations={{
+              {...register("rePassword", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
                 pattern: {
                   value: /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
                   message:
@@ -64,7 +73,7 @@ const FormResetPassword = () => {
                 },
                 validate: () =>
                     getValues("newPassword") === getValues("rePassword"),
-              }}
+              })}              
             ></Input>
           </div>
           <button

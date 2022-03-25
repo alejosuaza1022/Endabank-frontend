@@ -1,27 +1,28 @@
-import "./index.css";
+import PopUpPropos from "./popup.interface";
 import { useForm, SubmitHandler } from "react-hook-form";
-import Input from "./InputFormRePassword";
-import FieldObject from "./rePasswordObject.interface";
+import { Input } from "../../components/index";
 
-const FormResetPassword = () => {
+interface FieldObject {
+  email: string;
+}
 
-  type Inputs = {
-    email: string,
-  };
+const PopUp: React.FC<PopUpPropos> = () => {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>({ mode: "onTouched" });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm<FieldObject>({ mode: "onTouched" });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<FieldObject> = (data) => {
     console.log(data);
+    reset();
   };
 
   return (
     <div className="flex w-1/2 justify-center m-auto">
-      
-      <button className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="popup-modal">
-        Forget Password
-      </button>
-
       <div id="popup-modal" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
           <div className="relative p-4 w-full max-w-md h-full md:h-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -31,45 +32,32 @@ const FormResetPassword = () => {
                       </button>
                   </div>
                   <div className="p-6 pt-0 text-center">
+                  <form onSubmit={handleSubmit(onSubmit)}>
                       <svg className="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-                      <input onSubmit={handleSubmit(onSubmit)}
+                      <h3 className="mb-5 text-sm font-normal text-gray-500 dark:text-gray-400">Please, type your email</h3>
+                      <Input
                         type="text"
-                        id="email"           
-                        className = {`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 ${
-                          errors
-                            ? "border-red-500 focus:border-red-500"
-                            : "focus:border-black border-gray-300 "
-                        } appearance-none  focus:outline-none focus:ring-0  peer`}
-                        placeholder=" "
+                        id="email"
+                        label="Email"
+                        error={errors.email}
                         {...register("email", {
                           required: {
                             value: true,
-                            message: "Este campo no puede estar vacio",
+                            message: "This field is required",
                           },
                           pattern: {
                             value:
                               /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/,
-                            message: "Email no valido",
+                            message: "Invalid email",
                           },
                         })}
-                        
-                      ></input>
-                      <label
-                        htmlFor= "email"
-                        className={`absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 ${
-                          errors
-                            ? "peer-focus:text-red-500 text-red-500"
-                            : "peer-focus:text-black text-gray-500"
-                        }  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6`}
-                      >
-                        Email
-                      </label>
+                      ></Input>
                       <button
                         type="submit"
                         className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center ">
                         Submit
                       </button>
+                    </form>
                   </div>
               </div>
           </div>
@@ -84,4 +72,4 @@ const FormResetPassword = () => {
   );
 };
 
-export default FormResetPassword;
+export default PopUp;
