@@ -1,6 +1,13 @@
 import InputProps from "./input.interface";
 import "./index.css";
-const Input: React.FC<InputProps> = ({ type, id, label, error }) => {
+const Input: React.FC<InputProps> = ({
+  type,
+  id,
+  label,
+  error,
+  register,
+  optionsValidations,
+}) => {
   return (
     <div className="relative z-0 mb-6 w-full group">
       <input
@@ -12,6 +19,13 @@ const Input: React.FC<InputProps> = ({ type, id, label, error }) => {
             : "focus:border-black border-gray-300 "
         } appearance-none  focus:outline-none focus:ring-0  peer`}
         placeholder=" "
+        {...register(id, {
+          required: {
+            value: true,
+            message: "Este campo no puede estar vacio",
+          },
+          ...optionsValidations,
+        })}
       />
       <label
         htmlFor={id}
