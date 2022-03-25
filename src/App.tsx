@@ -1,11 +1,19 @@
 import { useState } from "react";
-import { RegisterForm } from "./pages/index";
+import {LogIn, RegisterForm} from "./pages/index";
 import "./App.css";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <RegisterForm></RegisterForm>
+
+      <BrowserRouter>
+          <Routes>
+              <Route path="/signup" element={<RegisterForm/>}/>
+              <Route path="/login" element={<LogIn/>}/>
+          </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
