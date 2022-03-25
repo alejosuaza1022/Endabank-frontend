@@ -1,6 +1,6 @@
 import "./index.css";
 import { Input, MainImage, SelectForm } from "../../components/index";
-import FieldObject from "./rePasswordObject.interface";
+import FieldObject from "./resetPasswordObject.interface";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 const FormResetPassword = () => {
@@ -19,8 +19,6 @@ const FormResetPassword = () => {
   };
 
   return (
-    <div className="flex w-1/2 justify-center m-auto">
-      <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
       <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid xl:grid-cols-1 xl:gap-6">
             <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
@@ -29,20 +27,22 @@ const FormResetPassword = () => {
               type="password"
               id="oldPassword"
               label="Old Password"
+              register={register}
               error={errors.oldPassword}
-              {...register("oldPassword", {
+              optionsValidations={{
                 required: {
                   value: true,
                   message: "This field is required",
                 },
-              })}
+              }}
             ></Input>
             <Input
               type="password"
               id="newPassword"
               label="New Password"
+              register={register}
               error={errors.newPassword}
-              {...register("newPassword", {
+              optionsValidations={{
                 required: {
                   value: true,
                   message: "This field is required",
@@ -54,14 +54,15 @@ const FormResetPassword = () => {
                 },
                 validate: () =>
                     getValues("oldPassword") != getValues("newPassword"),
-              })}              
+              }}
             ></Input>
             <Input
               type="password"
               id="rePassword"
               label="Confirm password"
               error={errors.rePassword}
-              {...register("rePassword", {
+              register={register}
+              optionsValidations={{
                 required: {
                   value: true,
                   message: "This field is required",
@@ -72,8 +73,8 @@ const FormResetPassword = () => {
                     "1 Uppercase, 1 Special Character, 1 Number, 8 to 20 Digits",
                 },
                 validate: () =>
-                    getValues("newPassword") === getValues("rePassword"),
-              })}              
+                getValues("newPassword") === getValues("rePassword"),                     
+              }}              
             ></Input>
           </div>
           <button
@@ -83,8 +84,6 @@ const FormResetPassword = () => {
             Submit
           </button>
         </form>
-      </div>
-    </div>
   );
 };
 

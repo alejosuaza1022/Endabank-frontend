@@ -6,13 +6,12 @@ interface FieldObject {
   email: string;
 }
 
-const PopUp: React.FC<PopUpPropos> = () => {
+const PopUp: React.FC = () => {
 
   const {
     register,
     handleSubmit,
     reset,
-    getValues,
     formState: { errors },
   } = useForm<FieldObject>({ mode: "onTouched" });
 
@@ -23,7 +22,7 @@ const PopUp: React.FC<PopUpPropos> = () => {
 
   return (
     <div className="flex w-1/2 justify-center m-auto">
-      <div id="popup-modal" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+      <div id="authentication-modal" aria-hidden="true" className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
           <div className="relative p-4 w-full max-w-md h-full md:h-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                   <div className="flex justify-end p-2">
@@ -40,7 +39,8 @@ const PopUp: React.FC<PopUpPropos> = () => {
                         id="email"
                         label="Email"
                         error={errors.email}
-                        {...register("email", {
+                        register={register}
+                        optionsValidations={{
                           required: {
                             value: true,
                             message: "This field is required",
@@ -50,7 +50,7 @@ const PopUp: React.FC<PopUpPropos> = () => {
                               /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/,
                             message: "Invalid email",
                           },
-                        })}
+                        }}
                       ></Input>
                       <button
                         type="submit"

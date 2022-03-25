@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { RegisterForm, FormResetPassword } from "./pages/index";
+import { LogIn, RegisterForm, FormResetPassword } from "./pages/index";
 import "./App.css";
-import MainImage from "./components/MainImage/MainImage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeLayout from "./layouts/HomeLayout";
 
 function App() {
   return (
     <div>
-      <MainImage></MainImage>
-      <RegisterForm></RegisterForm>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeLayout />}>
+            <Route index element={<LogIn />} />
+            <Route path="sign-up" element={<RegisterForm />} />
+            <Route path="reset-password" element={<FormResetPassword />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
