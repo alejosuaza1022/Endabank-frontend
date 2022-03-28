@@ -4,8 +4,9 @@ const SelectForm: React.FC<SelectFormProps> = ({
   id,
   value,
   options,
-  register,
   error,
+  register,
+  optionsValidations,
 }) => {
   return (
     <div className="relative z-0 mb-6 w-full group">
@@ -18,6 +19,7 @@ const SelectForm: React.FC<SelectFormProps> = ({
             value: true,
             message: "Este campo no puede estar vacio",
           },
+          ...optionsValidations,
         })}
       >
         {" "}

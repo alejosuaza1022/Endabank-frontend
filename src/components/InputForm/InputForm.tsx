@@ -37,12 +37,16 @@ const Input: React.FC<InputProps> = ({
       >
         {label}
       </label>
-      {error && error.type === "validate" ? (
-        <p className="text-sm text-red-600 ml-1 mt-2 text-bold">
-          Las contraseñas no coinciden
+      {error && error.type === "validate" && id === "newPassword"  ? (
+        <p className="text-xs text-red-600 ml-1 mt-2 text-bold">
+          The old password and new password must be different
+        </p>
+       ) : error && error.type === "validate" && id === "rePassword" ? (
+        <p className="text-xs text-red-600 ml-1 mt-2 text-bold">
+          Passwords do not match
         </p>
       ) : error ? (
-        <p className="text-sm text-red-600 ml-1 mt-2 text-bold">{error.message}</p>
+        <p className="text-xs text-red-600 ml-1 mt-2 text-bold">{error.message}</p>
       ) : null}
     </div>
   );

@@ -5,6 +5,7 @@ interface SelectFormProps {
   value: string;
   options: Array<string>;
   error?: FieldError;
-  register: UseFormRegister<FieldObject>;
+  register: UseFormRegister<any>;
+  optionsValidations?: object;
 }
 export default SelectFormProps;
