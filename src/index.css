@@ -16,4 +16,10 @@ code {
     monospace;
 }
 
+.color-endabank {
+  background-color: #DE411B;
+}
 
+button.color-endabank:hover {
+  background-color: #C31900;
+}
