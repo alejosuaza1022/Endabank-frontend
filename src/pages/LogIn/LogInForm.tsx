@@ -1,4 +1,4 @@
-import { Input } from "../../components/index";
+import { Input, PopUp } from "../../components/index";
 import { useForm, SubmitHandler } from "react-hook-form";
 import LoginObject from "./loginObject.interface";
 import { Link } from "react-router-dom";
@@ -55,7 +55,7 @@ const LogInForm = () => {
           Log In
         </button>
         <div className="m-5 text-right text-sm">
-          <a className="decoration-0" href="www.nowhere.com">
+          <a className="decoration-0" href="www.nowhere.com" data-modal-toggle="authentication-modal">
             Forgot password?
           </a>
         </div>

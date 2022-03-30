@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LogIn, RegisterForm, Home } from "./pages/index";
+import { LogIn, RegisterForm, FormResetPassword, Home } from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
@@ -12,11 +12,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path="log-in" element={<LogIn />} />
             <Route path="sign-up" element={<RegisterForm />} />
+            <Route path="reset-password" element={<FormResetPassword />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;
