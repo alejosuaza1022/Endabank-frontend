@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LogIn, RegisterForm, FormResetPassword, Home } from "./pages/index";
+import { ActivateAccountForm, LogIn, RegisterForm, FormResetPassword, Home } from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
