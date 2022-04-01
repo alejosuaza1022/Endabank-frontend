@@ -2,7 +2,8 @@ import SelectFormProps from "./approveUserTable.interface";
 import React, { useState } from "react";
 
 const SelectForm: React.FC<SelectFormProps> = ({
-  user,
+  firstName,
+  lastName,
   email,
   approved = true,
   id,
@@ -10,13 +11,14 @@ const SelectForm: React.FC<SelectFormProps> = ({
   const [actualState, changeCheckState] = useState(false);
   const handleCheckbox = (e) => {
     changeCheckState(e.target.checked);
-    alert(user +" toggle "+e.target.checked)
+    alert(firstName + " toggle " + e.target.checked);
   };
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
       <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
-        {user}
+        {firstName}
       </th>
+      <td className="px-6 py-4">{lastName}</td>
       <td className="px-6 py-4">{email}</td>
       <td className="px-6 py-4 ">
         <label htmlFor={id} className="flex relative mb-4 cursor-pointer ">
