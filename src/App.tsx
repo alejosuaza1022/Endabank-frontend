@@ -13,6 +13,7 @@ function App() {
             <Route path="log-in" element={<LogIn />} />
             <Route path="sign-up" element={<RegisterForm />} />
             <Route path="reset-password" element={<FormResetPassword />} />
+            <Route path="activate-account" element={<ActivateAccountForm />} />
           </Route>
         </Routes>
       </BrowserRouter>

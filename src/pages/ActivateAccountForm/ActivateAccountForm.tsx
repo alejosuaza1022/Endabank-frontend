@@ -7,12 +7,14 @@ const ActivateAccountForm = () => {
       </header>
 
       <div className="flex w-full justify-center mt-10">
-        <div className="p-1/2  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
-                  User
+                  First Name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Last Name
                 </th>
                 <th scope="col" className="px-6 py-3 text-left">
                   Email
@@ -24,18 +26,19 @@ const ActivateAccountForm = () => {
             </thead>
             <tbody>
             <ApproveUserTable
-              user="shoes and shoes"
+              firstName="shoes and shoes"
+              lastName=""
               email="shoes-shoes@yopmail.com"
               id="shoes-shoes@yopmail.com"
             ></ApproveUserTable>  
             <ApproveUserTable
-              user="Juan valdes"
+              firstName="Juan valdes"
+              lastName=""
               email="julian.valdes@cofee.com"
               id="julian.valdes@cofee.com"
             ></ApproveUserTable>                      
             </tbody>
           </table>
-        </div>
       </div>
 
       <nav aria-label="Page navigation example">

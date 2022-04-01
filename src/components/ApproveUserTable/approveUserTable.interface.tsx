@@ -1,5 +1,6 @@
 interface ApproveUserProps{
-    user:string,
+    firstName:string,
+    lastName:string,
     email:string,
     approved?:boolean,
     id:string,
