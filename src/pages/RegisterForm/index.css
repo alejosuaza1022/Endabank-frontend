@@ -1,11 +1,3 @@
-.color-endabank {
-    background-color: #DE411B;
-}
-
-.color-endabank:hover {
-    background-color: #C31900;
-}
-
 .grid-cc {
     display: grid;
     grid-template-columns: 1fr 6fr;

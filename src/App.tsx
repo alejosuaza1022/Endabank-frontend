@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { LogIn, RegisterForm, FormResetPassword } from "./pages/index";
+import { ActivateAccountForm, LogIn, RegisterForm, FormResetPassword, Home } from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
-import PopUp from "./components/PopUp/PopUp"
 
 function App() {
   return (
@@ -11,10 +10,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeLayout />}>
-            <Route index element={<LogIn />} />
+            <Route index element={<Home />} />
+            <Route path="log-in" element={<LogIn />} />
             <Route path="sign-up" element={<RegisterForm />} />
             <Route path="reset-password" element={<FormResetPassword />} />
-          
+            <Route path="activate-account" element={<ActivateAccountForm />} />
           </Route>
         </Routes>
       </BrowserRouter>
