@@ -1,7 +1,8 @@
-import { Input, PopUp } from "../../components/index";
+import { Input, PopUp} from "../../components/index";
 import { useForm, SubmitHandler } from "react-hook-form";
 import LoginObject from "./loginObject.interface";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const LogInForm = () => {
   const {
@@ -12,13 +13,24 @@ const LogInForm = () => {
     formState: { errors },
   } = useForm<LoginObject>({ mode: "onTouched" });
 
+  const [showModal, setShowModal] = useState(false);
+
   const onSubmit: SubmitHandler<LoginObject> = (data) => {
     console.log(data);
     reset();
   };
 
+  const openModal = () =>{
+    setShowModal(true);
+  };
+
+  const setShowModalFuntion = (value: boolean) =>{
+    setShowModal(value);
+  };
+
   return (
     <div className="w-full">
+      {showModal && (<PopUp setShowModal={setShowModalFuntion}/>)}
       <form>
         <Input
           type="text"
@@ -55,7 +67,7 @@ const LogInForm = () => {
           Log In
         </button>
         <div className="m-5 text-right text-sm">
-          <a className="decoration-0" href="www.nowhere.com" data-modal-toggle="authentication-modal">
+          <a className="decoration-0" onClick={openModal}>
             Forgot password?
           </a>
         </div>

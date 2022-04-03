@@ -2,8 +2,12 @@ import "./index.css";
 import { Input, MainImage, SelectForm } from "../../components/index";
 import FieldObject from "./resetPasswordObject.interface";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
+
 
 const FormResetPassword = () => {
+
+  const [isActive, setActive] = useState(true);
 
   const {
     register,
@@ -22,8 +26,8 @@ const FormResetPassword = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid xl:grid-cols-1 xl:gap-6">
             <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
-
-            <Input
+            {isActive ? 
+            (<Input
               type="password"
               id="oldPassword"
               label="Old Password"
@@ -35,7 +39,7 @@ const FormResetPassword = () => {
                   message: "This field is required",
                 },
               }}
-            ></Input>
+            ></Input>): null}
             <Input
               type="password"
               id="newPassword"
