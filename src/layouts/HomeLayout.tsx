@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import MainImage from "../components/MainImage/MainImage";
 import "./index.css";
 const LayoutImage = () => {
+  useEffect(() => {});
   return (
     <div>
       <header className="w-full flex justify-between items-center color-endabank">

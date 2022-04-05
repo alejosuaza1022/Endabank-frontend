@@ -9,10 +9,11 @@ const SelectForm: React.FC<SelectFormProps> = ({
   id,
 }) => {
   const [actualState, changeCheckState] = useState(false);
-  const handleCheckbox = (e) => {
+  const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeCheckState(e.target.checked);
     alert(firstName + " toggle " + e.target.checked);
   };
+
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
       <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">

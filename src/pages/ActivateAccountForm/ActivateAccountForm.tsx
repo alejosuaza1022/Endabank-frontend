@@ -1,5 +1,20 @@
+import ApproveUserProps from "@components/ApproveUserTable/approveUserTable.interface";
+import apiUrls from "constants/apiUrls";
+import { useEffect } from "react";
+import { getAxios } from "../../utils/axios";
 import { ApproveUserTable } from "../../components/index";
 const ActivateAccountForm = () => {
+  const token =
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGVqYW5kcm9zdWF6YS4xMDIyQGdtYWlsLmNvbSIsImV4cCI6MTY0OTE3NjMwMSwiaWF0IjoxNjQ5MTc1MTAxLCJ1c2VySWQiOjR9.6LDGApMRIhT1ZLRE9ElCnTvQyhb6XvQyAsCkLC_u4HuqhX7VYikgKA5xFAShWR1z-g4jNxnQuWVv7YW6S1-eEQ";
+  useEffect(() => {
+    async function getData() {
+      const response: Array<ApproveUserProps> = await getAxios(
+        token,
+        apiUrls.GET_USERS_TO_APPROVE_URL
+      );
+    }
+    getData();
+  }, []);
   return (
     <div>
       <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
@@ -7,38 +22,38 @@ const ActivateAccountForm = () => {
       </header>
 
       <div className="flex w-full justify-center mt-10">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                <th scope="col" className="px-6 py-3">
-                  First Name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Last Name
-                </th>
-                <th scope="col" className="px-6 py-3 text-left">
-                  Email
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Approved
-                </th>
-              </tr>
-            </thead>
-            <tbody>
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                First Name
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Last Name
+              </th>
+              <th scope="col" className="px-6 py-3 text-left">
+                Email
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Approved
+              </th>
+            </tr>
+          </thead>
+          <tbody>
             <ApproveUserTable
               firstName="shoes and shoes"
               lastName=""
               email="shoes-shoes@yopmail.com"
               id="shoes-shoes@yopmail.com"
-            ></ApproveUserTable>  
+            ></ApproveUserTable>
             <ApproveUserTable
               firstName="Juan valdes"
               lastName=""
               email="julian.valdes@cofee.com"
               id="julian.valdes@cofee.com"
-            ></ApproveUserTable>                      
-            </tbody>
-          </table>
+            ></ApproveUserTable>
+          </tbody>
+        </table>
       </div>
 
       <nav aria-label="Page navigation example">
