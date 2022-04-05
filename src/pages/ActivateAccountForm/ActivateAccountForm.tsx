@@ -3,7 +3,9 @@ import apiUrls from "../../constants/apiUrls";
 import { useEffect } from "react";
 import { getAxios } from "../../utils/axios";
 import { ApproveUserTable } from "../../components/index";
+
 const ActivateAccountForm = () => {
+
   const token =
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGVqYW5kcm9zdWF6YS4xMDIyQGdtYWlsLmNvbSIsImV4cCI6MTY0OTE4MDcxMCwiaWF0IjoxNjQ5MTc5NTEwLCJ1c2VySWQiOjR9.qG6sNDRvU7wV6PnE_MOGW5uimaMs1SfEGkB1K1XXwqb8wpqXx3arwU7B8LouUfJuJsTi2l-v9j2-IYlkAVPM9Q";
   useEffect(() => {
@@ -15,6 +17,7 @@ const ActivateAccountForm = () => {
       console.log(response);
     }
     getData();
+
   }, []);
   return (
     <div>
