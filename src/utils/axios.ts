@@ -1,33 +1,44 @@
-import axios from "axios";
+import axios, { AxiosRequestHeaders } from "axios";
 
-async function getAxios(token: string, url: string) {
-  const response = await axios.get(url, {
-    headers: {
+function headers(token: string | undefined): AxiosRequestHeaders {
+  if (token) {
+    return {
       "Access-Control-Allow-Origin": "*",
       Authorization: `Bearer ${token}`,
-    },
-  });
-  const dataResponse = await response?.data;
-  return dataResponse;
+    };
+  }
+  return { "Access-Control-Allow-Origin": "*" };
 }
-async function putAxios(token: string, url: string, data: any) {
-  const response = await axios.put(url, data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
-  const dataResponse = await response?.data;
-  return dataResponse;
+
+async function getAxios(url: string, token: string | undefined) {
+  try {
+    const response = await axios.get(url, { headers: headers(token) });
+    const dataResponse = await response?.data;
+    return dataResponse;
+  } catch (error) {
+    console.log(error);
+  }
 }
-async function postAxios(token: string, url: string, data: any) {
-  const response = await axios.post(url, data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
-  const dataResponse = await response?.data;
-  return dataResponse;
+async function putAxios(url: string, data: any, token: string | undefined) {
+  try {
+    const response = await axios.put(url, data, {
+      headers: headers(token),
+    });
+    const dataResponse = await response?.data;
+    return dataResponse;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function postAxios(url: string, data: any, token: string | undefined) {
+  try {
+    const response = await axios.post(url, data, {
+      headers: headers(token),
+    });
+    const dataResponse = await response?.data;
+    return dataResponse;
+  } catch (error) {
+    console.log(error);
+  }
 }
 export { getAxios, putAxios, postAxios };
