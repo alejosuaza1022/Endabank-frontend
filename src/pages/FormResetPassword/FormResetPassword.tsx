@@ -1,13 +1,44 @@
 import "./index.css";
-import { Input, MainImage, SelectForm } from "../../components/index";
+import { Input} from "../../components/index";
 import FieldObject from "./resetPasswordObject.interface";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
+import { putAxios } from "../../utils/axios";
+import apiUrls from "../../constants/apiUrls";
 
 
 const FormResetPassword = () => {
 
-  const [isActive, setActive] = useState(true);
+  const [isActive] = useState(false);
+
+  const token =
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnYWJpLjk1MTJAZ21haWwuY29tIiwiZXhwIjoxNjQ5MjU1ODg0LCJpYXQiOjE2NDkyNTQ2ODQsInVzZXJJZCI6Nn0.WTAfvFVoOAg950yKDnB-7k5YcHccKHyPLAGyNLOnZpRoQ4a-uThQPzZormiLv57DEtU8ABxDP1rpmebQFxCLyA";
+  
+    
+  async function changePassword (data: FieldObject) {
+    const response: Array<FieldObject> = await putAxios(
+      apiUrls.GET_USERS_CHANGE_PASSWORD_URL,
+      data,
+      token
+    );
+    console.log(response);
+  }
+
+  async function resetPassword (data: FieldObject) {
+
+    const url = window.location.search;
+    const urlParams = new URLSearchParams(url);
+    const tokenUrl: string = urlParams.get("token") ?? "";
+
+    data.token = tokenUrl;
+
+    const response: Array<FieldObject> = await putAxios(
+      apiUrls.GET_USERS_RESET_PASSWORD_URL,
+      data,
+      ""
+    );
+    console.log(response);
+  }
 
   const {
     register,
@@ -19,8 +50,10 @@ const FormResetPassword = () => {
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
     console.log(data);
+    {isActive ? changePassword(data):resetPassword(data)};
     reset();
   };
+  
 
   return (
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -42,10 +75,10 @@ const FormResetPassword = () => {
             ></Input>): null}
             <Input
               type="password"
-              id="newPassword"
+              id="password"
               label="New Password"
               register={register}
-              error={errors.newPassword}
+              error={errors.password}
               optionsValidations={{
                 required: {
                   value: true,
@@ -57,7 +90,7 @@ const FormResetPassword = () => {
                     "1 Uppercase, 1 Special Character, 1 Number, 8 to 20 Digits",
                 },
                 validate: () =>
-                    getValues("oldPassword") != getValues("newPassword"),
+                    getValues("oldPassword") != getValues("password"),
               }}
             ></Input>
             <Input
@@ -77,7 +110,7 @@ const FormResetPassword = () => {
                     "1 Uppercase, 1 Special Character, 1 Number, 8 to 20 Digits",
                 },
                 validate: () =>
-                getValues("newPassword") === getValues("rePassword"),                     
+                getValues("password") === getValues("rePassword"),                     
               }}              
             ></Input>
           </div>

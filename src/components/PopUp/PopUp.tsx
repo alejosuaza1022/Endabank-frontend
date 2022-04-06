@@ -1,14 +1,22 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Input } from "../index";
-import React,  { SetStateAction, useRef } from "react"
-import ReactDOM from "react-dom";
-import PopUpProps from "./input.interface";
+import apiUrls from "../../constants/apiUrls";
+import { getAxios } from "../../utils/axios";
 
 interface FieldObject {
   email: string;
 }
 
 const PopUp = (props:{setShowModal:Function}) => {
+
+  async function sendEmail (data: FieldObject) {
+    console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL+ "/" + data.email);
+    const response: Array<FieldObject> = await getAxios(
+      apiUrls.GET_USERS_RESET_PASSWORD_URL+ "/" + data.email,
+      "" 
+    );
+    console.log(response);
+  }
 
   const {setShowModal} = props;
 
@@ -23,16 +31,18 @@ const PopUp = (props:{setShowModal:Function}) => {
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
     console.log(data);
+    sendEmail(data)
     reset();
   };
 
   return (
+    <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
           <div className="relative w-auto my-6 mx-auto max-w-3x2">
             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
               <div className="relative p-6 flex-auto">
               <h3 className="text-center mb-5 text-sm font-normal text-gray-500 dark:text-gray-400">Please, type your email:</h3>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                
                   <Input
                     type="text"
                     id="email"
@@ -51,7 +61,7 @@ const PopUp = (props:{setShowModal:Function}) => {
                       },
                     }}
                   ></Input>
-                </form>
+               
               </div>
               <div className="flex items-center justify-end p-4 border-t border-solid border-blueGray-100 rounded-b">
               <button
@@ -72,7 +82,7 @@ const PopUp = (props:{setShowModal:Function}) => {
             </div>
           </div>
         </div>
-    
+     </form>
     
   );
 };
