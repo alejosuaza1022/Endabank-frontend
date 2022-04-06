@@ -1,23 +1,31 @@
 import ApproveUserProps from "@components/ApproveUserTable/approveUserTable.interface";
 import apiUrls from "../../constants/apiUrls";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAxios } from "../../utils/axios";
 import { ApproveUserTable } from "../../components/index";
 
 const ActivateAccountForm = () => {
-
+  const [list, setList] = useState<Array<ApproveUserProps>>([]);
+  const [appr, setAppr] = useState(Boolean);
   const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGVqYW5kcm9zdWF6YS4xMDIyQGdtYWlsLmNvbSIsImV4cCI6MTY0OTE4MDcxMCwiaWF0IjoxNjQ5MTc5NTEwLCJ1c2VySWQiOjR9.qG6sNDRvU7wV6PnE_MOGW5uimaMs1SfEGkB1K1XXwqb8wpqXx3arwU7B8LouUfJuJsTi2l-v9j2-IYlkAVPM9Q";
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY0OTI2MDUyNSwiaWF0IjoxNjQ5MjU5MzI1LCJ1c2VySWQiOjV9.QDIrF4v8s_ffVhSkqktF3Cus2g0uSitpbqVQ_mGNlPQu6hH-8kLare39hhnUoOeLcXsn1E4ZrmgoEH_Ax0Uc7g";
   useEffect(() => {
     async function getData() {
-      const response: Array<ApproveUserProps> = await getAxios(
-        apiUrls.GET_USERS_TO_APPROVE_URL,
-        token
-      );
-      console.log(response);
+      setAppr(true);
+      try {
+        const response: Array<ApproveUserProps> = await getAxios(
+          apiUrls.GET_USERS_TO_APPROVE_URL,
+
+          token
+        );
+
+        setList(response);
+      } catch (error) {
+        alert("Invalid token to access information");
+        setAppr(false);
+      }
     }
     getData();
-
   }, []);
   return (
     <div>
@@ -44,18 +52,27 @@ const ActivateAccountForm = () => {
             </tr>
           </thead>
           <tbody>
-            <ApproveUserTable
-              firstName="shoes and shoes"
-              lastName=""
-              email="shoes-shoes@yopmail.com"
-              id="shoes-shoes@yopmail.com"
-            ></ApproveUserTable>
-            <ApproveUserTable
-              firstName="Juan valdes"
-              lastName=""
-              email="julian.valdes@cofee.com"
-              id="julian.valdes@cofee.com"
-            ></ApproveUserTable>
+            {appr ? (
+              list.map((value, key) => (
+                <ApproveUserTable
+                  firstName={value.firstName}
+                  lastName={value.lastName}
+                  email={value.email}
+                  id={value.id}
+                  approved={value.approved}
+                  key={value.id}
+                  token={token}
+                ></ApproveUserTable>
+              ))
+            ) : (
+              <ApproveUserTable
+                firstName="error"
+                lastName="error"
+                email="error"
+                id="error"
+                key="error"
+              ></ApproveUserTable>
+            )}
           </tbody>
         </table>
       </div>
