@@ -1,7 +1,10 @@
 
 interface IAuthProvider{
-    auth?: {};
-    setAuth?: (auth:{}) => void;
+    auth: {
+        currentUser: string;
+        token: string;
+    };
+    setAuth?: (auth:{currentUser:string, token:string}) => void;
 }
 
 export default IAuthProvider;
