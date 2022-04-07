@@ -2,6 +2,9 @@ import "./index.css";
 import { Input, MainImage, SelectForm } from "../../components/index";
 import UserObject from "./userObject.interface";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { postAxios } from "../../utils/axios";
+import apiUrls from "../../constants/apiUrls";
+import { AxiosError } from "axios";
 const Form = () => {
   const {
     register,
@@ -10,10 +13,19 @@ const Form = () => {
     getValues,
     formState: { errors },
   } = useForm<UserObject>({ mode: "onTouched" });
-
-  const onSubmit: SubmitHandler<UserObject> = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit: SubmitHandler<UserObject> = async (data) => {
+    try {
+      const response = await postAxios(
+        apiUrls.POST_CREATE_USERS,
+        data,
+        undefined
+      );
+      console.log(response);
+      reset();
+    } catch (err) {
+      const error = err as AxiosError;
+      console.log(error.response?.data?.message);
+    }
   };
 
   return (
@@ -21,18 +33,18 @@ const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid-cc">
           <SelectForm
-            id="documentType"
+            id="typeIdentifierId"
             value="Document type"
-            options={["CC", "CE"]}
-            error={errors.documentType}
+            options={{ "1": "CC", "2": "CE" }}
+            error={errors.typeIdentifierId}
             register={register}
           ></SelectForm>
           <Input
             type="text"
-            id="id"
+            id="identifier"
             label="Identifier"
             register={register}
-            error={errors.id}
+            error={errors.identifier}
             optionsValidations={{
               pattern: {
                 value: /^[0-9]{10,20}/,

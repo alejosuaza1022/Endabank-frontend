@@ -1,6 +1,6 @@
 import ApproveUserProps from "@components/ApproveUserTable/approveUserTable.interface";
 import apiUrls from "../../constants/apiUrls";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAxios } from "../../utils/axios";
 import { ApproveUserTable } from "../../components/index";
 const ActivateAccountForm = () => {
