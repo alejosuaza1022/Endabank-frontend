@@ -3,11 +3,12 @@ import apiUrls from "../../constants/apiUrls";
 import { useEffect, useState } from "react";
 import { getAxios } from "../../utils/axios";
 import { ApproveUserTable } from "../../components/index";
+
 const ActivateAccountForm = () => {
   const [list, setList] = useState<Array<ApproveUserProps>>([]);
   const [appr, setAppr] = useState(Boolean);
   const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY0OTg2Mzg4OSwiaWF0IjoxNjQ5ODYyNjg5LCJ1c2VySWQiOjV9.F-08ShjxIBT8Qh8IDGsU-OtNy9Q9RnfIg5EnFNEzhp-jbsPIUjD58HEQNQ0OifTUGDDEWCtCw-LK_kf3Kk9y5A";
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY0OTg4MDE2MiwiaWF0IjoxNjQ5ODc4OTYyLCJ1c2VySWQiOjV9.9NBIPZlB_lV1AYelFtPP4jiqtZCPGANMdb5DChkH90Ynizksn49ep4ozw0nFPUqtuk614G85mgyYwvHEB6udvg";
   useEffect(() => {
     async function getData() {
       setAppr(true);
@@ -77,4 +78,6 @@ const ActivateAccountForm = () => {
     </div>
   );
 };
+
+export default ActivateAccountForm;
 
