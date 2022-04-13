@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { ActivateAccountForm, LogIn, RegisterForm, FormResetPassword, Home } from "./pages/index";
+import {
+  ActivateAccountForm,
+  LogIn,
+  RegisterForm,
+  FormResetPassword,
+  Home,
+} from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
-import {AuthProvider} from "./contexts/AuthProvider";
+import { AuthProvider } from "./contexts/AuthProvider";
 
 function App() {
   return (
@@ -12,11 +18,14 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/" element={<HomeLayout />}>
-              <Route path="/" element={<Home />} />
+              <Route index element={<Home />} />
               <Route path="log-in" element={<LogIn />} />
               <Route path="sign-up" element={<RegisterForm />} />
               <Route path="reset-password" element={<FormResetPassword />} />
-              <Route path="activate-account" element={<ActivateAccountForm />} />
+              <Route
+                path="activate-account"
+                element={<ActivateAccountForm />}
+              />
             </Route>
           </Routes>
         </AuthProvider>
