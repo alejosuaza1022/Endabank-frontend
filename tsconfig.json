@@ -22,7 +22,7 @@
     },
     "types": ["cypress"]
   },
-  "include": ["src", "**/*.ts", "cypress/integration/google/google.spec.ts"],
+  "include": ["src", "**/*.ts"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

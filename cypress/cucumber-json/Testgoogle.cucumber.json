@@ -28,17 +28,17 @@
             "name": "I open Google page",
             "result": {
               "status": "passed",
-              "duration": 2872000000
+              "duration": 6304000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 8,
-            "name": "I see \"Youtube\" in the title",
+            "name": "I see \"Google\" in the title",
             "result": {
-              "status": "undefined",
-              "duration": 13000000
+              "status": "passed",
+              "duration": 15000000
             }
           }
         ]
