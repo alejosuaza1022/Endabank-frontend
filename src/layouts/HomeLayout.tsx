@@ -9,7 +9,7 @@ const LayoutHome = () => {
   } = useContext(AuthContext);
   useEffect(() => {}, [token]);
   return (
-    <div>
+    <div className="h-screen">
       <header className="w-full flex justify-between items-center color-endabank">
         <div className=" flex justify-start">
           <MainImage></MainImage>
@@ -25,11 +25,7 @@ const LayoutHome = () => {
           )}
         </div>
       </header>
-      <div className="flex w-full justify-center mt-20">
-        <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-          <Outlet></Outlet>
-        </div>
-      </div>
+      <Outlet></Outlet>
     </div>
   );
 };
