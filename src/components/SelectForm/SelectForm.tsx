@@ -17,7 +17,7 @@ const SelectForm: React.FC<SelectFormProps> = ({
         {...register(id, {
           required: {
             value: true,
-            message: "Este campo no puede estar vacio",
+            message: "This field is required",
           },
           ...optionsValidations,
         })}

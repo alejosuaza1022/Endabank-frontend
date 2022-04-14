@@ -135,7 +135,6 @@ const Form = () => {
                                 },
                             }}
                         />
-                        <div className="grid xl:grid-cols-2 xl:gap-6">
                             <Input
                                 type="password"
                                 id="password"
@@ -162,7 +161,6 @@ const Form = () => {
                                         getValues("password") === getValues("rePassword"),
                                 }}
                             />
-                        </div>
                         <button
                             type="submit"
                             className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
