@@ -2,11 +2,15 @@
 interface IAuthProvider{
     auth: {
         currentUser: string;
-        token: string;
-        isApproved: boolean;
-        rol: string;
+        isApproved?:boolean;
+        authorities?: string[];
+        token?: string;
     };
-    setAuth?: (auth:{currentUser:string, token:string,isApproved:boolean,rol:string}) => void;
+    setAuth?: (auth:{currentUser:string,isApproved:boolean,authorities:string[]}) => void;
+    readCookie?: () => void;
+    logOut?: () => void;
+    lostData?: number;
+    setLostData?: (lostData:number) => void;
 }
 
 export default IAuthProvider;
