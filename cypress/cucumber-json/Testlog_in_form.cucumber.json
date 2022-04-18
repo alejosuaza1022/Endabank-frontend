@@ -1,0 +1,66 @@
+[
+  {
+    "description": "\tAs an old merchant\n\tI want to have access a portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "Log in Form",
+    "line": 1,
+    "id": "log-in-form",
+    "tags": [],
+    "uri": "log_in_form.feature",
+    "elements": [
+      {
+        "id": "log-in-form;access-the-portal",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Access the portal",
+        "tags": [
+          {
+            "name": "@focus",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "failed",
+              "duration": 118000000,
+              "error_message": "CypressError: `cy.exec('npm run dev')` failed because the command exited with a non-zero code.\n\nPass `{failOnNonZeroExit: false}` to ignore exit code failures.\n\nInformation about the failure:\nCode: 127\n\nStderr:\n/c/Program: Files\\Git\\usr\\bin\\bash.exe: No such file or directory\n    at http://localhost:50259/__cypress/runner/cypress_runner.js:157452:85\nFrom previous event:\n    at Context.exec (http://localhost:50259/__cypress/runner/cypress_runner.js:157425:149)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:43:8)\n    at Context.resolveAndRunStepDefinition (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:10481:29)\n    at Context.eval (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:9802:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I need to write an email as \"davidandreshr@gmail.com\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I need to write a password as \"Davidandres23*\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I click on Log In",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

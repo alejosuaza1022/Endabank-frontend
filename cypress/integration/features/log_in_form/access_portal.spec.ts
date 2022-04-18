@@ -10,11 +10,11 @@ Then('I need to write a password as {string}', (password) => {
    	  .type(password)
 });
 
-Then('I click on Sign in', () => {
+Then('I click on Log In', () => {
 	cy.get('button[type=submit]').click()
 
-});
-
-Then('I see {string} displayed' , (url) => {
-	cy.url().should('eq', url)
 })
+
+//Then('I see {string} displayed' , (url) => {
+//	cy.url().should('eq', url)
+//})
