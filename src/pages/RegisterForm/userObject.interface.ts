@@ -1,11 +1,11 @@
 interface UserObject {
-  id?: string;
+  identifier: string;
   phoneNumber: number;
   email: string;
   firstName: string;
   lastName: string;
   password: string;
   rePassword: string;
-  documentType: string;
+  typeIdentifierId: string;
 }
 export default UserObject;

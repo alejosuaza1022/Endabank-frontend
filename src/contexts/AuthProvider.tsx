@@ -1,4 +1,4 @@
-import React, {createContext, FC, useEffect, useState} from 'react';
+import React, { createContext, useState, FC } from "react";
 import IAuthProvider from "./IAuthProvider";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -14,7 +14,7 @@ const defaultState = {
 
 const AuthContext = createContext<IAuthProvider>(defaultState);
 
-export const AuthProvider: FC =  ({children}) => {
+export const AuthProvider: FC = ({ children }) => {
 
     const [auth, setAuth] = useState(defaultState.auth);
     const [lostData, setLostData] = useState(-1);
@@ -72,6 +72,6 @@ export const AuthProvider: FC =  ({children}) => {
         {children}
     </AuthContext.Provider>
   );
-}
+};
 
 export default AuthContext;

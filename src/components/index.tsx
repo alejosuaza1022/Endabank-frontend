@@ -6,3 +6,6 @@ export { default as SelectForm } from "./SelectForm/SelectForm";
 export { default as PopUp } from "./PopUp/PopUp";
 export { default as RequireAuth} from "./RequireAuth/RequireAuth";
 export { default as SideBar} from "./SideBar/SideBar";
+export { default as Spinner } from "./Spinner/Spinner";
+export { default as PopUpMessage } from "./PopUpMessage/PopUpMessage";
+

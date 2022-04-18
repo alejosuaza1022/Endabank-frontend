@@ -1,4 +1,3 @@
-
 interface IAuthProvider{
     auth: {
         currentUser: string;
@@ -11,6 +10,7 @@ interface IAuthProvider{
     logOut?: () => void;
     lostData?: number;
     setLostData?: (lostData:number) => void;
+
 }
 
 export default IAuthProvider;

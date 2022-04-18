@@ -1,4 +1,4 @@
-import axios, { AxiosRequestHeaders } from "axios";
+import axios, {AxiosRequestHeaders} from "axios";
 
 function headers(token: string | undefined): AxiosRequestHeaders {
   if (token) {
@@ -11,30 +11,25 @@ function headers(token: string | undefined): AxiosRequestHeaders {
 }
 
 async function getAxios(url: string, token: string | undefined) {
+<<<<<<< HEAD
     const response = await axios.get(url, { headers: headers(token) });
     const dataResponse = await response?.data;
     return dataResponse;
+=======
+  const response = await axios.get(url, { headers: headers(token) });
+  return await response?.data;
+>>>>>>> feature/MEDDV002-1845
 }
 async function putAxios(url: string, data: any, token: string | undefined) {
-  try {
-    const response = await axios.put(url, data, {
-      headers: headers(token),
-    });
-    const dataResponse = await response?.data;
-    return dataResponse;
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await axios.put(url, data, {
+    headers: headers(token),
+  });
+  return await response?.data;
 }
 async function postAxios(url: string, data: any, token: string | undefined) {
-  try {
-    const response = await axios.post(url, data, {
-      headers: headers(token),
-    });
-    const dataResponse = await response?.data;
-    return dataResponse;
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await axios.post(url, data, {
+    headers: headers(token),
+  });
+  return await response?.data;
 }
 export { getAxios, putAxios, postAxios };
