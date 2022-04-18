@@ -3,23 +3,20 @@ import { ActivateAccountForm, LogIn, RegisterForm, FormResetPassword, Home } fro
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
-import {AuthProvider} from "./contexts/AuthProvider";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={<HomeLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="log-in" element={<LogIn />} />
-              <Route path="sign-up" element={<RegisterForm />} />
-              <Route path="reset-password" element={<FormResetPassword />} />
-              <Route path="activate-account" element={<ActivateAccountForm />} />
-            </Route>
-          </Routes>
-        </AuthProvider>
+        <Routes>
+          <Route path="/" element={<HomeLayout />}>
+            <Route index element={<Home />} />
+            <Route path="log-in" element={<LogIn />} />
+            <Route path="sign-up" element={<RegisterForm />} />
+            <Route path="reset-password" element={<FormResetPassword />} />
+            <Route path="activate-account" element={<ActivateAccountForm />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );

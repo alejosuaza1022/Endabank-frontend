@@ -3,6 +3,5 @@ class apiUrls {
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly GET_USERS_CHANGE_PASSWORD_URL = `${this.BASE_URL}/users/change-password`;
   static readonly GET_USERS_RESET_PASSWORD_URL = `${this.BASE_URL}/users/reset-password`;
-  static readonly LOG_IN_URL = `${this.BASE_URL}/login`
 }
 export default apiUrls;

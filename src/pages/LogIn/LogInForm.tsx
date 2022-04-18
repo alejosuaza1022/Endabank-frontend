@@ -1,10 +1,8 @@
 import { Input, PopUp} from "../../components/index";
 import { useForm, SubmitHandler } from "react-hook-form";
 import LoginObject from "./loginObject.interface";
-import {Link, useNavigate} from "react-router-dom";
-import {useContext, useState} from "react";
-import axios, {AxiosError} from "axios";
-import AuthContext from "../../contexts/AuthProvider";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const LogInForm = () => {
   const {
@@ -16,36 +14,11 @@ const LogInForm = () => {
   } = useForm<LoginObject>({ mode: "onTouched" });
 
   const [showModal, setShowModal] = useState(false);
-  const [error, setError] = useState('');
-  const {auth,setAuth} = useContext(AuthContext);
-  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
-    e?.preventDefault()
-    const email = data.email;
-    const password = data.password;
-    try{
-      const res = await axios.post('http://localhost:8080/api/v1/login',
-          JSON.stringify({email, password}),
-          {
-                    headers: {'Content-type': "application/json"}
-          }
-          );
-      const token = res.data.access_token;
-      const currentUser = email;
-      if (setAuth) {
-        setAuth({currentUser, token});
-      }
-      navigate('/');
-    }catch (err){
-      const error = err as AxiosError;
-
-      setError(error.response?.data.message)
-    }
-
+  const onSubmit: SubmitHandler<LoginObject> = (data) => {
+    console.log(data);
     reset();
   };
-
 
   const openModal = () =>{
     setShowModal(true);
@@ -58,20 +31,7 @@ const LogInForm = () => {
   return (
     <div className="w-full">
       {showModal && (<PopUp setShowModal={setShowModalFuntion}/>)}
-      {error &&
-          <div id="alert-border-2" className="flex p-4 mb-4 bg-red-100 border-t-4 border-red-500 dark:bg-red-200"
-               role="alert">
-            <svg className="flex-shrink-0 w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 20 20"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                    clipRule="evenodd"></path>
-            </svg>
-            <div className="ml-3 text-sm font-medium text-red-700">
-              {error}
-            </div>
-          </div>}
-      <form  onSubmit={handleSubmit(onSubmit)}>
+      <form>
         <Input
           type="text"
           id="email"
@@ -107,7 +67,7 @@ const LogInForm = () => {
           Log In
         </button>
         <div className="m-5 text-right text-sm">
-          <a className="decoration-0 cursor-pointer" onClick={openModal}>
+          <a className="decoration-0" onClick={openModal}>
             Forgot password?
           </a>
         </div>
