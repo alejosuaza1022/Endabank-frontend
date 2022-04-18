@@ -1,0 +1,73 @@
+[
+  {
+    "description": "\tAs an old merchant\n\tI want to have access a portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "Log in Form",
+    "line": 1,
+    "id": "log-in-form",
+    "tags": [],
+    "uri": "log_in_form.feature",
+    "elements": [
+      {
+        "id": "log-in-form;access-the-portal",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Access the portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I open Endabank login page and want to sign in",
+            "result": {
+              "status": "passed",
+              "duration": 871000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I need to write an email as \"XD\"",
+            "result": {
+              "status": "passed",
+              "duration": 325000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I need to write a password as \"XD\"",
+            "result": {
+              "status": "passed",
+              "duration": 240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on Login",
+            "result": {
+              "status": "passed",
+              "duration": 186000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I see \"http://localhost:3000/log-in/\" displayed",
+            "result": {
+              "status": "passed",
+              "duration": 57000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
