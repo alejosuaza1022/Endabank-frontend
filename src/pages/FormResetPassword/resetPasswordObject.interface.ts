@@ -1,6 +1,7 @@
 interface FieldObject {
-  oldPassword: string;
+  oldPassword?: string;
   newPassword: string;
   rePassword: string;
+  token?: string;
 }
 export default FieldObject;
