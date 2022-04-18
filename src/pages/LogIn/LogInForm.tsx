@@ -5,10 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
-import apiUrls from "../../constants/apiUrls";
-import {getAxios} from "../../utils/axios";
-import PopUpEmailInterface from "@components/PopUp/popUpEmail.interface";
-import strings from "../../constants/strings";
+import Strings from "../../constants/strings";
 
 const LogInForm = () => {
     const {
@@ -21,10 +18,10 @@ const LogInForm = () => {
     const [showModal, setShowModal] = useState(false);
     const {auth, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
-    const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(strings.COLOR_SUCCESS);
+    const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [linkPopUp, setLinkPopUp] = useState("");
-    const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
+    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
     const [linkPopUpMessage, setLinkPopUpMessage] = useState<string>("");
     const [isLoading, setIsLoading] = useState(false);
     const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
@@ -49,11 +46,10 @@ const LogInForm = () => {
             const error = err as AxiosError;
             if (error.response?.data?.statusCode == 403) {
                 setIsLoading(false);
-                setColorPopUpMessage(strings.COLOR_ERROR);
-                setMessagePopUp(error?.response?.data?.message || strings.ERROR_MESSAGE);
-                setColorPopUpMessage(strings.COLOR_ERROR);
+                setIsColorError(true);
+                setMessagePopUp(error?.response?.data?.message || Strings.ERROR_MESSAGE);
                 setLinkPopUp("/verify-email?email=" + data.email);
-                setLinkPopUpMessage(", Lets verify your email")
+                setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
                 setShowPopUpMessage(true);
 
             }
@@ -62,17 +58,6 @@ const LogInForm = () => {
         reset();
     };
 
-
-    async function sendEmail(data: PopUpEmailInterface) {
-        console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email);
-        const response: Array<PopUpEmailInterface> = await getAxios(
-            apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email,
-            ""
-        );
-
-        console.log(response);
-        setShowModal(false);
-    }
 
     const openModal = () => {
         setShowModal(true);
@@ -138,12 +123,12 @@ const LogInForm = () => {
     }
     return (
         <div className="w-full">
-            {showModal && (<PopUp setShowModal={setShowModalFuntion} callback={sendEmail}/>)}
+            {showModal && (<PopUp setShowModal={setShowModalFuntion}/>)}
             {renderFormOrLoading()}
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
                     <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
-                                  color={colorPopUpMessage} link={linkPopUp} linkMessage={linkPopUpMessage}/>
+                                  isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
 
