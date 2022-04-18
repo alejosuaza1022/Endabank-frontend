@@ -33,10 +33,8 @@ const LogInForm = () => {
           );
       const token = res.data.access_token;
       const currentUser = email;
-      const isApproved = res.data.isApproved
-      const rol = res.data.rol
       if (setAuth) {
-        setAuth({currentUser, token,isApproved,rol});
+        setAuth({currentUser, token});
       }
       navigate('/');
     }catch (err){
