@@ -3,7 +3,7 @@ import React from "react";
 interface PopUpMessageProps {
   message: string;
   link?: string;
-  color?: string;
+  isColorError: boolean;
   linkMessage?: string;
   setShowPopUpMessage:React.Dispatch<React.SetStateAction<boolean>>;
 }
