@@ -15,30 +15,18 @@ const LayoutHome = () => {
           <MainImage/>
         </div>
         <div className="flex justify-around sm:w-1/4 text-white text-bold">
-<<<<<<< HEAD
-          <Link to="/profile">Inicio</Link>
-          <Link to="/log-in/">Log-in</Link>
-          <Link to="/sign-up/">Sing-up</Link>
-        </div>
-      </header>
-      <div className="flex w-full justify-center mt-20">
-        <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-          <Outlet/>
-        </div>
-      </div>
-=======
-          {token.length === 0 && (
+
+          {/*{token?.length === 0 && (*/}
             <>
               {" "}
-              <Link to="/">Inicio</Link>
+              <Link to="/profile">Inicio</Link>
               <Link to="/log-in/">Log-in</Link>
               <Link to="/sign-up/">Sing-up</Link>{" "}
             </>
-          )}
+          {/*)}*/}
         </div>
       </header>
-      <Outlet></Outlet>
->>>>>>> feature/MEDDV002-1845
+      <Outlet/>
     </div>
   );
 };

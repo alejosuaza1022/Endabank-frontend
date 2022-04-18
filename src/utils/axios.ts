@@ -11,14 +11,8 @@ function headers(token: string | undefined): AxiosRequestHeaders {
 }
 
 async function getAxios(url: string, token: string | undefined) {
-<<<<<<< HEAD
-    const response = await axios.get(url, { headers: headers(token) });
-    const dataResponse = await response?.data;
-    return dataResponse;
-=======
   const response = await axios.get(url, { headers: headers(token) });
   return await response?.data;
->>>>>>> feature/MEDDV002-1845
 }
 async function putAxios(url: string, data: any, token: string | undefined) {
   const response = await axios.put(url, data, {

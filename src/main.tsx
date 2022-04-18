@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import "./index.css";
 import App from "./App";
 import "flowbite";
 import {BrowserRouter,Route,Routes} from "react-router-dom";
 import {AuthProvider} from "./contexts/AuthProvider";
 
-ReactDOM.render(
+
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find the root element');
+const root = createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
         <AuthProvider>
@@ -16,5 +21,7 @@ ReactDOM.render(
         </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
 );
+
+
+
