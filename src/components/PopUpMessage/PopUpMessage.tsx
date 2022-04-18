@@ -1,23 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import PopUpMessageProps from "./popUpMessage.interface";
 import "./popUpMessage.css";
-import strings from "../../constants/strings";
 import {Link} from "react-router-dom";
 
 const PopUpMessage: React.FC<PopUpMessageProps>
     = ({
-           message, setShowPopUpMessage, color = strings.COLOR_SUCCESS
+           message, setShowPopUpMessage, color
            , link = "#", linkMessage = ""
        }) => {
-    console.log(color)
+    const  [textColor, ]= useState(`text-${color}` ?? "text-red");
+    const [bgColor, ] = useState( `bg-${color}` ?? "bg-red");
     return (
         <div
             id="alert-2"
-            className={`alert-toast flex p-4 mb-4  rounded-lg dark:bg-${color}-200 bg-${color}-100`}
+            className={`alert-toast flex p-4 mb-4  rounded-lg dark:${bgColor}-200 ${bgColor}-100`}
             role="alert"
         >
             <svg
-                className={`flex-shrink-0 w-5 h-5 text-${color}-700 dark:text-${color}-800`}
+                className={`flex-shrink-0 w-5 h-5 ${textColor}-700 dark:${textColor}-800`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,12 +28,12 @@ const PopUpMessage: React.FC<PopUpMessageProps>
                     clipRule="evenodd"
                 />
             </svg>
-            <div className={`ml-3 text-sm font-medium text-${color}-700 dark:text-${color}-800`}>
+            <div className={`ml-3 text-sm font-medium ${textColor}-700 dark:${textColor}-800`}>
                 {message}{" "}
                 {linkMessage?.length>0 &&
                     <Link
                         to={link}
-                        className={`font-semi-bold underline hover:text-${color}-800 dark:hover:text-${color}-900`}
+                        className={`font-semi-bold underline hover:${textColor}-800 dark:hover:${textColor}-900`}
                     >
                         {linkMessage}
                     </Link>
@@ -41,7 +41,7 @@ const PopUpMessage: React.FC<PopUpMessageProps>
             </div>
             <button
                 type="button"
-                className={`ml-auto -mx-1.5 -my-1.5 bg-${color}-100 text-${color}-500 rounded-lg focus:ring-2 focus:ring-${color}-400 p-1.5 hover:bg-${color}-200 inline-flex h-8 w-8 dark:bg-${color}-200 dark:text-${color}-600 dark:hover:bg-${color}-300`}
+                className={`ml-auto -mx-1.5 -my-1.5 ${bgColor}-100 ${textColor}-500 rounded-lg focus:ring-2 focus:ring-${color}-400 p-1.5 hover:bg-${color}-200 inline-flex h-8 w-8 dark:bg-${color}-200 dark:${textColor}-600 dark:hover:bg-${color}-300`}
                 data-dismiss-target="#alert-2"
                 aria-label="Close"
                 onClick={() => {

@@ -36,10 +36,8 @@ const Form = () => {
                 data,
                 undefined
             );
-            setIsLoading(false);
             setColorPopUpMessage(strings.COLOR_SUCCESS);
             setMessagePopUp(response.message);
-            setShowPopUpMessage(true);
             setLinkPopUp("/verify-email?email=" + data.email);
             setLinkPopUpMessage("Lets verify your email")
             reset();
@@ -51,11 +49,13 @@ const Form = () => {
             if (error.response?.data?.statusCode != 500) {
                 message = error.response?.data?.message || strings.ERROR_MESSAGE;
             }
-            setShowPopUpMessage(true);
             setColorPopUpMessage(strings.COLOR_ERROR);
             setMessagePopUp(message);
-            setIsLoading(false);
+            setLinkPopUp("#");
+            setLinkPopUpMessage("");
         }
+        setIsLoading(false);
+        setShowPopUpMessage(true);
     };
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (<div className="flex w-full justify-center mt-20 ">
@@ -155,7 +155,7 @@ const Form = () => {
                                     value:
                                         /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
                                     message:
-                                        "1 Captial, 1 lowercase, 1 number, 1 special character, 8-20 characters",
+                                        "1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters",
                                 },
                             }}
                         />

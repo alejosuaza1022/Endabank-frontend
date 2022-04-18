@@ -38,7 +38,8 @@ const InputForm: React.FC<InputProps> = ({
                 })}
             />
             {type === "password" && (
-                <div className={`absolute bottom-${offsetRevealPassword} right-0`}
+                <div className={`absolute ${!error ? "bottom-2" : "bottom-7" } right-0`}
+
                      onMouseOver={() => {
                          const aux  = type === "password" ? "text" : "password"
                          setTypeInput(aux)
