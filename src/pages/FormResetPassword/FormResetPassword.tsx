@@ -34,7 +34,6 @@ const FormResetPassword = () => {
             data,
             ""
         );
-        console.log(response);
     }
 
     const {

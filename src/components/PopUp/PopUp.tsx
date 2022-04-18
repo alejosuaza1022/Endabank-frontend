@@ -1,14 +1,24 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Input} from "../index";
-import PopUpEmailInterface from "@components/PopUp/popUpEmail.interface";
+import apiUrls from "../../constants/apiUrls";
+import {getAxios} from "../../utils/axios";
 
+interface FieldObject {
+    email: string;
+}
 
+const PopUp = (props: { setShowModal: Function }) => {
 
-const PopUp = (props: { setShowModal: Function, callback: Function}) => {
-
+    async function sendEmail(data: FieldObject) {
+        console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email);
+        const response: Array<FieldObject> = await getAxios(
+            apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email,
+            ""
+        );
+        console.log(response);
+    }
 
     const {setShowModal} = props;
-    const {callback} = props;
 
     setShowModal(true);
 
@@ -17,18 +27,18 @@ const PopUp = (props: { setShowModal: Function, callback: Function}) => {
         handleSubmit,
         reset,
         formState: {errors},
-    } = useForm<PopUpEmailInterface>({mode: "onTouched"});
+    } = useForm<FieldObject>({mode: "onTouched"});
 
-    const onSubmit: SubmitHandler<PopUpEmailInterface> = (data) => {
+    const onSubmit: SubmitHandler<FieldObject> = (data) => {
         console.log(data);
-        callback(data)
+        sendEmail(data)
         reset();
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div
-                className="flex justify-center  items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3x2">
                     <div
                         className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
