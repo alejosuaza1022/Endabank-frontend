@@ -2,13 +2,13 @@ import "./index.css";
 import {useContext, useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AxiosError} from "axios";
-import {Input, SelectForm,PopUpMessage,Spinner} from "../../components/index";
+import {Input, PopUpMessage, SelectForm, Spinner} from "../../components/index";
 import UserObject from "./userObject.interface";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {postAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
 import AuthContext from "../../contexts/AuthProvider";
-import strings  from "../../constants/strings";
+import strings from "../../constants/strings";
 
 const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -24,26 +24,35 @@ const Form = () => {
     } = useForm<UserObject>({mode: "onTouched"});
     const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(strings.COLOR_SUCCESS);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
+    const [linkPopUp, setLinkPopUp] = useState("");
     const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
+    const [linkPopUpMessage, setLinkPopUpMessage] = useState<string>("");
     const onSubmit: SubmitHandler<UserObject> = async (data) => {
         setShowPopUpMessage(false);
         try {
             setIsLoading(true);
-            await postAxios(
+            const response = await postAxios(
                 apiUrls.POST_CREATE_USERS,
                 data,
                 undefined
             );
             setIsLoading(false);
             setColorPopUpMessage(strings.COLOR_SUCCESS);
-            setMessagePopUp(strings.USER_REGISTERED);
+            setMessagePopUp(response.message);
             setShowPopUpMessage(true);
+            setLinkPopUp("/verify-email?email=" + data.email);
+            setLinkPopUpMessage("Lets verify your email")
             reset();
+
+
         } catch (err) {
             const error = err as AxiosError;
+            let message = strings.ERROR_MESSAGE;
+            if (error.response?.data?.statusCode != 500) {
+                message = error.response?.data?.message || strings.ERROR_MESSAGE;
+            }
             setShowPopUpMessage(true);
             setColorPopUpMessage(strings.COLOR_ERROR);
-            const message = error.response?.data?.message || strings.ERROR_MESSAGE;
             setMessagePopUp(message);
             setIsLoading(false);
         }
@@ -135,32 +144,32 @@ const Form = () => {
                                 },
                             }}
                         />
-                            <Input
-                                type="password"
-                                id="password"
-                                label="Password"
-                                error={errors.password}
-                                register={register}
-                                optionsValidations={{
-                                    pattern: {
-                                        value:
-                                            /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
-                                        message:
-                                            "1 Captial, 1 lowercase, 1 number, 1 special character, 8-20 characters",
-                                    },
-                                }}
-                            />
-                            <Input
-                                type="password"
-                                id="rePassword"
-                                label="Confirm password"
-                                error={errors.rePassword}
-                                register={register}
-                                optionsValidations={{
-                                    validate: () =>
-                                        getValues("password") === getValues("rePassword"),
-                                }}
-                            />
+                        <Input
+                            type="password"
+                            id="password"
+                            label="Password"
+                            error={errors.password}
+                            register={register}
+                            optionsValidations={{
+                                pattern: {
+                                    value:
+                                        /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
+                                    message:
+                                        "1 Captial, 1 lowercase, 1 number, 1 special character, 8-20 characters",
+                                },
+                            }}
+                        />
+                        <Input
+                            type="password"
+                            id="rePassword"
+                            label="Confirm password"
+                            error={errors.rePassword}
+                            register={register}
+                            optionsValidations={{
+                                validate: () =>
+                                    getValues("password") === getValues("rePassword"),
+                            }}
+                        />
                         <button
                             type="submit"
                             className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
@@ -181,7 +190,8 @@ const Form = () => {
                 )}
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
-                    <PopUpMessage message={messagePopUp}  setShowPopUpMessage={setShowPopUpMessage} color={colorPopUpMessage}/>
+                    <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
+                                  color={colorPopUpMessage} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
         </>

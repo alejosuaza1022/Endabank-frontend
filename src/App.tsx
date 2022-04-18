@@ -10,6 +10,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import { AuthProvider } from "./contexts/AuthProvider";
+import UserEmailVerification from "./pages/UserEmailVerification/UserEmailVerification";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 path="activate-account"
                 element={<ActivateAccountForm />}
               />
+              <Route path="verify-email" element={<UserEmailVerification email={""} />} />
             </Route>
           </Routes>
         </AuthProvider>

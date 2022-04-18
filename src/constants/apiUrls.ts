@@ -3,5 +3,6 @@ class apiUrls {
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly POST_CREATE_USERS = `${this.BASE_URL}/users`;
   static readonly LOG_IN_URL = `${this.BASE_URL}/login`;
+  static readonly VERIFY_USER_EMAIL_URL = `${this.BASE_URL}/users/verify-email/`;
 }
 export default apiUrls;
