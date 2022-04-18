@@ -8,27 +8,29 @@ Feature: Password Reset
     #     * the user is on the Login page
 
     # @focus
-    Scenario: User forgot his password and wants to recover it
+    Scenario: User wants to see if forgot password button is displayed
         Given the user is on the Login page
         # When the user clicks on "Log-in" button
         Then the user should see "Forgot password?" in the link
 
     # @focus
-    Scenario: User clicks forgot password link
-        Given the user is on the Login page
-        When the user clicks on the "Forgot password?" link
-        Then the user should see "Please, type your email:" in the pop-up
+    # Scenario: User forgot his password
+    #     Given the user is on the Login page
+    #     When the user clicks on the "Forgot password?" link
+    #     Then the user should see "Please, type your email:" in the pop-up
 
-    @skip
-    Scenario Outline: User forgot their password
+    # @skip
+    Scenario Outline: See the recovery password form
         Given the user is on the Login page
         When the user clicks on "forgot password?" link
-        Then the user should see "Please, type your email:" in the pop-up
-        And the following elements should be displayed:
+        # Then the user should see "Please, type your email:" in the pop-up
+        Then the user should see "<Element name>"
+        Examples:
             | Element name   | Type   | is mandatory? | Status   |
             | Recovery label | Text   |               |          |
             | Recovery email | Input  | Yes           | Enabled  |
             | Submit         | Button |               | Disabled |
+            | Cancel         | Button |               | Enabled  |
 
     @skip
     Scenario Outline: User fills recovery email form
