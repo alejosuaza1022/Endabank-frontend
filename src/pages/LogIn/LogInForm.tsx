@@ -5,6 +5,8 @@ import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
+import useAuth from "../../Hooks/useAuth";
+import Cookies from 'js-cookie'
 
 const LogInForm = () => {
   const {
@@ -17,7 +19,7 @@ const LogInForm = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState('');
-  const {auth,setAuth} = useContext(AuthContext);
+  const {auth,setAuth,readCookie} = useAuth();
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
@@ -32,11 +34,21 @@ const LogInForm = () => {
           }
           );
       const token = res.data.access_token;
-      const currentUser = email;
-      if (setAuth) {
-        setAuth({currentUser, token});
+      // const currentUser = email;
+      // const isApproved = res.data.isApproved
+      // const rol = res.data.rol
+      // if (setAuth) {
+      //   setAuth({token});
+      //   console.log(token)
+      //
+      // }
+
+      Cookies.set('token',token, {sameSite: 'strict'});
+      if (readCookie) {
+        readCookie()
+        navigate('/profile');
       }
-      navigate('/');
+
     }catch (err){
       const error = err as AxiosError;
 
@@ -45,7 +57,6 @@ const LogInForm = () => {
 
     reset();
   };
-
 
   const openModal = () =>{
     setShowModal(true);
@@ -113,7 +124,7 @@ const LogInForm = () => {
         </div>
       </form>
       <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
-        New merchant? <Link to="/signup">create an account</Link>
+        New merchant? <Link to="/sign-up">create an account</Link>
       </div>
     </div>
   );

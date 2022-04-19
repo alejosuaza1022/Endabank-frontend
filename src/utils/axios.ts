@@ -11,7 +11,6 @@ function headers(token: string | undefined): AxiosRequestHeaders {
 }
 
 async function getAxios(url: string, token: string | undefined) {
-
   const response = await axios.get(url, { headers: headers(token) });
   return await response?.data;
 }
