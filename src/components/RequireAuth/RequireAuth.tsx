@@ -7,19 +7,18 @@ import AuthContext from "../../contexts/AuthProvider";
 
 const RequireAuth = ({ allowedRoles}: { allowedRoles:string[] }) => {
     const {
-        auth: { authorities,currentUser },
+        auth: { authorities,currentUser,token },
     } = useContext(AuthContext);
     const location = useLocation()
-    //const [test, setTest] = useState(false);
-    const token = Cookies.get('token');
+    const tokenCookie = Cookies.get('token');
+    console.log(typeof tokenCookie)
 
     console.log('in required');
-    console.log(authorities)
 
 
 
     return(
-        token
+        tokenCookie
             ? <Outlet />
             :<Navigate to="/log-in" state={{from: location}} replace />
     )
