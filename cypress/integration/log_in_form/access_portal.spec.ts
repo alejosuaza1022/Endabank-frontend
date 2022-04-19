@@ -15,6 +15,7 @@ Then('I click on Log In', () => {
 
 })
 
-//Then('I see {string} displayed' , (url) => {
-//	cy.url().should('eq', url)
-//})
+Then('I dont see Log-in in the page' , () => {
+	cy.get('[href="/log-in/"]')
+	  .should('not.exist')
+})

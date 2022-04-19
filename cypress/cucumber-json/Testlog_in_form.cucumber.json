@@ -27,27 +27,28 @@
             "line": 8,
             "name": "I open Endabank login page and wants to sign in",
             "result": {
-              "status": "failed",
-              "duration": 118000000,
-              "error_message": "CypressError: `cy.exec('npm run dev')` failed because the command exited with a non-zero code.\n\nPass `{failOnNonZeroExit: false}` to ignore exit code failures.\n\nInformation about the failure:\nCode: 127\n\nStderr:\n/c/Program: Files\\Git\\usr\\bin\\bash.exe: No such file or directory\n    at http://localhost:50259/__cypress/runner/cypress_runner.js:157452:85\nFrom previous event:\n    at Context.exec (http://localhost:50259/__cypress/runner/cypress_runner.js:157425:149)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:43:8)\n    at Context.resolveAndRunStepDefinition (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:10481:29)\n    at Context.eval (http://localhost:50259/__cypress/tests?p=cypress\\integration\\features\\log_in_form.feature:9802:35)"
+              "status": "passed",
+              "duration": 1511000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "I need to write an email as \"davidandreshr@gmail.com\"",
+            "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 721000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 10,
-            "name": "I need to write a password as \"Davidandres23*\"",
+            "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 362000000
             }
           },
           {
@@ -56,7 +57,18 @@
             "line": 11,
             "name": "I click on Log In",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 123000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I dont see Log-in in the page",
+            "result": {
+              "status": "passed",
+              "duration": 1041000000
             }
           }
         ]

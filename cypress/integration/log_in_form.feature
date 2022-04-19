@@ -6,10 +6,10 @@ Feature: Log in Form
 
 	Scenario: Access the portal
 		Given I open Endabank login page and wants to sign in
-		When I need to write an email as "davidandreshr@gmail.com"
-		Then I need to write a password as "Davidandres23*"
+		When I need to write an email as "nicolas.cardona@endava.com"
+		Then I need to write a password as "Nicolas17*"
 		Then I click on Log In
-#		Then I see "portal" displayed
+		Then I dont see Log-in in the page
 #
 #	Scenario: Log in with incorrect password
 #		Given I open Endabank login page and wants to sign in
