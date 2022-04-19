@@ -1,4 +1,4 @@
-import React, {createContext, useState, FC, ReactNode} from "react";
+import React, {createContext, useState, FC, ReactNode, useEffect} from "react";
 import IAuthProvider from "./IAuthProvider";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -7,8 +7,8 @@ const defaultState = {
     auth:{
         currentUser:'',
         isApproved: false,
-        authorities:['']
-
+        authorities:[''],
+        token: ''
     }
 };
 
@@ -17,13 +17,13 @@ const AuthContext = createContext<IAuthProvider>(defaultState);
 export const AuthProvider = ({children}:{children:ReactNode} ) => {
 
     const [auth, setAuth] = useState(defaultState.auth);
-    const [lostData, setLostData] = useState(-1);
+    const [loadedData, setLoadedData] = useState(false);
 
     const readCookie = () => {
         const token = Cookies.get('token');
-        if(token){
 
-                (async () =>{
+        if(token) {
+            (async () => {
                 const res = await getCurrentUserDetail(token);
 
                 const currentUser = res?.data.firstName;
@@ -31,22 +31,21 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
                 const authorities = res?.data.authorities;
 
                 console.log(res?.data);
-                    console.log("readToken");
+                console.log("readToken");
                 console.log(currentUser, authorities, isApproved);
 
-                setAuth({currentUser,isApproved, authorities});
+                if (setAuth) {
+                    setAuth({currentUser, isApproved, authorities, token});
+                }
 
-
-             })()
-            //const data = getCurrentUserDetail(token)
-        } else {
-            console.log('err')
+            })()
         }
+        //const data = getCurrentUserDetail(token)
     }
 
-    const getCurrentUserDetail = async (token:string) =>{
+    const getCurrentUserDetail = (token:string) =>{
         try{
-            return await axios.get('http://localhost:8080/api/v1/users/details',
+            return axios.get('http://localhost:8080/api/v1/users/details',
                 {
                     headers: {'Authorization': 'Bearer ' + token}
                 }
@@ -55,6 +54,11 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
             console.error("el error es: ",err)
         }
     }
+
+    useEffect(() => {
+        readCookie()
+    }, [loadedData]);
+
 
     const logOut = () =>{
         Cookies.remove('token');
@@ -68,7 +72,7 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
 
 
     return(
-    <AuthContext.Provider value={{auth,setAuth,readCookie,logOut,setLostData}}>
+    <AuthContext.Provider value={{auth,setAuth,logOut,setLoadedData,loadedData}}>
         {children}
     </AuthContext.Provider>
   );

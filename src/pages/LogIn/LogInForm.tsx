@@ -7,6 +7,9 @@ import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
 import useAuth from "../../Hooks/useAuth";
 import Cookies from 'js-cookie'
+import {Simulate} from "react-dom/test-utils";
+import load = Simulate.load;
+import loadedData = Simulate.loadedData;
 
 const LogInForm = () => {
   const {
@@ -19,7 +22,7 @@ const LogInForm = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState('');
-  const {auth,setAuth,readCookie} = useAuth();
+  const {auth,setAuth,setLoadedData} = useAuth();
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
@@ -33,7 +36,7 @@ const LogInForm = () => {
                     headers: {'Content-type': "application/json"}
           }
           );
-      const token = res.data.access_token;
+      const tokenRes = res.data.access_token;
       // const currentUser = email;
       // const isApproved = res.data.isApproved
       // const rol = res.data.rol
@@ -43,11 +46,13 @@ const LogInForm = () => {
       //
       // }
 
-      Cookies.set('token',token, {sameSite: 'strict'});
-      if (readCookie) {
-        readCookie()
-        navigate('/profile');
+      Cookies.set('token',tokenRes, {sameSite: 'strict'});
+
+      if (setLoadedData) {
+        setLoadedData(true)
       }
+
+      navigate('/profile');
 
     }catch (err){
       const error = err as AxiosError;
