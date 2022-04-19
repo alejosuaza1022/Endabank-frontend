@@ -11,14 +11,9 @@
       {
         "id": "log-in-form;access-the-portal",
         "keyword": "Scenario",
-        "line": 7,
+        "line": 10,
         "name": "Access the portal",
-        "tags": [
-          {
-            "name": "@focus",
-            "line": 5
-          }
-        ],
+        "tags": [],
         "type": "scenario",
         "steps": [
           {
@@ -28,47 +23,147 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1511000000
+              "duration": 1364000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
+            "line": 12,
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 721000000
+              "duration": 685000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
+            "line": 13,
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 362000000
+              "duration": 379000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
+            "line": 14,
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 123000000
+              "duration": 157000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
+            "line": 15,
             "name": "I dont see Log-in in the page",
             "result": {
               "status": "passed",
-              "duration": 1041000000
+              "duration": 1076000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "log-in-form;log-in-with-incorrect-password",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Log in with incorrect password",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "passed",
+              "duration": 799000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
+            "result": {
+              "status": "passed",
+              "duration": 600000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I need to write a password as \"Ni*colas17\"",
+            "result": {
+              "status": "passed",
+              "duration": 315000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I click on Log In",
+            "result": {
+              "status": "passed",
+              "duration": 115000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "log-in-form;log-in-with-incorrect-email",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Log in with incorrect email",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "passed",
+              "duration": 836000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I need to write an email as \"nicolas.cardonaendava.com\"",
+            "result": {
+              "status": "passed",
+              "duration": 599000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I need to write a password as \"Nicolas17*\"",
+            "result": {
+              "status": "passed",
+              "duration": 319000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "I click on Log In",
+            "result": {
+              "status": "passed",
+              "duration": 121000000
             }
           }
         ]

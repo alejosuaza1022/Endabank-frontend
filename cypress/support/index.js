@@ -14,14 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-Cypress.Commands.add('login', (email, pw) => {
-    cy.get('input[id=email]')
-	  .type(email)
-    cy.get('input[id=password]')
-   	  .type(password)
-    cy.get('button[type=submit]').click()
-})
+//import './commands'
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
+//require('./commands')
