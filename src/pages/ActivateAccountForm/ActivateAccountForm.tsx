@@ -13,7 +13,7 @@ import { Navigate } from "react-router-dom";
 
 const ActivateAccountForm = () => {
   const [list, setList] = useState<Array<ApproveUserProps>>([]);
-  const [appr, setAppr] = useState(true);
+  const [approved, setApproved] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(
     strings.COLOR_SUCCESS
@@ -23,10 +23,10 @@ const ActivateAccountForm = () => {
     strings.USER_REGISTERED
   );
   const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY1MDM4MTE4MCwiaWF0IjoxNjUwMzc5OTgwLCJ1c2VySWQiOjV9.fFYXYDyRqjxrMv8dtodL0Is9MRwON2uwxV98jU3wdgFSFhImygsErpdOLgO82YM2XI8et9WX_RxjT01465QyKw";
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY1MDQwMTc2NiwiaWF0IjoxNjUwNDAwNTY2LCJ1c2VySWQiOjV9.KwX4FsGQZO3FMEwP5m3HgIcX_JTk3HhEoUAnAaZ4yy_r_GJgYmaLOOXAY1n5toCtGPHZ9T0sits8Y76EFMNvRA";
   useEffect(() => {
     async function getData() {
-      setAppr(true);
+      setApproved(true);
       try {
         setIsLoading(true);
         const response: Array<ApproveUserProps> = await getAxios(
@@ -46,7 +46,7 @@ const ActivateAccountForm = () => {
         setMessagePopUp(message);
         setShowPopUpMessage(true);
         setIsLoading(false);
-        setAppr(false);
+        setApproved(false);
       }
     }
     getData();
@@ -56,7 +56,7 @@ const ActivateAccountForm = () => {
       <Spinner />
     ) : (
       <div>
-        {appr ? (
+        {approved ? (
           <div className="flex w-full justify-center mt-20 ">
             <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
               <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">

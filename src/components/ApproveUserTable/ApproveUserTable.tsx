@@ -20,7 +20,6 @@ const SelectForm: React.FC<ApproveUserProps> = ({
         {value:e.target.checked},
         token
       );
-      console.log(response);
     }
     putData();
   };
