@@ -1,17 +1,28 @@
-import SelectFormProps from "./approveUserTable.interface";
-import React, { useState } from "react";
+import ApproveUserProps from "./approveUserTable.interface";
+import React, { useEffect, useState } from "react";
+import { getAxios, putAxios } from "../../utils/axios";
+import apiUrls from "../../constants/apiUrls";
 
-const SelectForm: React.FC<SelectFormProps> = ({
+const SelectForm: React.FC<ApproveUserProps> = ({
   firstName,
   lastName,
   email,
-  approved = true,
+  approved = false,
   id,
+  token,
 }) => {
-  const [actualState, changeCheckState] = useState(false);
+  const [actualState, changeCheckState] = useState(approved);
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeCheckState(e.target.checked);
-    alert(firstName + " toggle " + e.target.checked);
+    async function putData() {
+      const response: Array<ApproveUserProps> = await putAxios(
+        apiUrls.PUT_USERS_TO_APPROVE_URL + "/" + id,
+        {value:e.target.checked},
+        token
+      );
+      console.log(response);
+    }
+    putData();
   };
 
   return (

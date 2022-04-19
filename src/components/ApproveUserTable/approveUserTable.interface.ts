@@ -4,5 +4,6 @@ interface ApproveUserProps{
     email:string,
     approved?:boolean,
     id:string,
+    token?:string,
 }
 export default ApproveUserProps;
