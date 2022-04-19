@@ -23,11 +23,12 @@ function App() {
                 <Route path="/" element={<Home />}>
                     <Route path="profile" element={<UserProfile/>}/>
                     <Route path="reset-password" element={<FormResetPassword />} />
+                    <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
+                        <Route path="activate-account" element={<ActivateAccountForm />} />
+                    </Route>
                 </Route>
             </Route>
-            <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
-                <Route path="activate-account" element={<ActivateAccountForm />} />
-            </Route>
+
 
 
         </Route>

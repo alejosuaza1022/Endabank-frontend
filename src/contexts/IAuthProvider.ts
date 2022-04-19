@@ -1,3 +1,5 @@
+import {Dispatch, SetStateAction} from "react";
+
 interface IAuthProvider{
     auth: {
         currentUser: string;
@@ -5,12 +7,17 @@ interface IAuthProvider{
         authorities?: string[];
         token?: string;
     };
-    setAuth?: (auth:{currentUser:string,isApproved:boolean,authorities:string[]}) => void;
+    setAuth?: (auth:{currentUser:string,isApproved:boolean,authorities:string[],token:string}) => void;
     readCookie?: () => void;
     logOut?: () => void;
-    lostData?: number;
-    setLostData?: (lostData:number) => void;
+    loadedData?: boolean;
+    setLoadedData?: (loadedData:boolean) => void;
 
 }
+
+// interface IStateLoadedData<T> {
+//     value: T
+//     setValue: Dispatch<SetStateAction<T>>
+// }
 
 export default IAuthProvider;

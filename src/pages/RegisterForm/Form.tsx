@@ -8,13 +8,14 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {postAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
 import AuthContext from "../../contexts/AuthProvider";
-import strings from "../../constants/strings";
+import Strings from "../../constants/strings";
 
 const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {
         auth: {token},
     } = useContext(AuthContext);
+    console.log(token)
     const {
         register,
         handleSubmit,
@@ -22,10 +23,10 @@ const Form = () => {
         getValues,
         formState: {errors},
     } = useForm<UserObject>({mode: "onTouched"});
-    const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(strings.COLOR_SUCCESS);
+    const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [linkPopUp, setLinkPopUp] = useState("");
-    const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
+    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
     const [linkPopUpMessage, setLinkPopUpMessage] = useState<string>("");
     const onSubmit: SubmitHandler<UserObject> = async (data) => {
         setShowPopUpMessage(false);
@@ -36,26 +37,24 @@ const Form = () => {
                 data,
                 undefined
             );
-            setIsLoading(false);
-            setColorPopUpMessage(strings.COLOR_SUCCESS);
+            setIsColorError(false)
             setMessagePopUp(response.message);
-            setShowPopUpMessage(true);
             setLinkPopUp("/verify-email?email=" + data.email);
-            setLinkPopUpMessage("Lets verify your email")
+            setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
             reset();
-
-
         } catch (err) {
             const error = err as AxiosError;
-            let message = strings.ERROR_MESSAGE;
+            let message = Strings.ERROR_MESSAGE;
             if (error.response?.data?.statusCode != 500) {
-                message = error.response?.data?.message || strings.ERROR_MESSAGE;
+                message = error.response?.data?.message || Strings.ERROR_MESSAGE;
             }
-            setShowPopUpMessage(true);
-            setColorPopUpMessage(strings.COLOR_ERROR);
+            setIsColorError(true);
             setMessagePopUp(message);
-            setIsLoading(false);
+            setLinkPopUp("#");
+            setLinkPopUpMessage("");
         }
+        setIsLoading(false);
+        setShowPopUpMessage(true);
     };
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (<div className="flex w-full justify-center mt-20 ">
@@ -77,9 +76,9 @@ const Form = () => {
                                 error={errors.identifier}
                                 optionsValidations={{
                                     pattern: {
-                                        value: /^\d{10,20}/,
+                                        value: /^\d{6,20}/,
                                         message:
-                                            "This field must be just numbers with a length between 10 and 20",
+                                            "This field must be just numbers with a length between 6 and 20",
                                     },
                                 }}
                             />
@@ -155,7 +154,7 @@ const Form = () => {
                                     value:
                                         /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
                                     message:
-                                        "1 Captial, 1 lowercase, 1 number, 1 special character, 8-20 characters",
+                                        "1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters",
                                 },
                             }}
                         />
@@ -181,9 +180,10 @@ const Form = () => {
             </div>
         );
     }
+
     return (
         <>
-            {token.length === 0 ?
+            {token?.length == 0 ?
                 renderFormOrLoading()
                 : (
                     <Navigate replace to="/"/>
@@ -191,7 +191,7 @@ const Form = () => {
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
                     <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
-                                  color={colorPopUpMessage} link={linkPopUp} linkMessage={linkPopUpMessage}/>
+                                  isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
         </>

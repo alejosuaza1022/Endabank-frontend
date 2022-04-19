@@ -5,9 +5,10 @@ import MainImage from "../components/MainImage/MainImage";
 import "./index.css";
 const LayoutHome = () => {
   const {
-    auth: { token },
+    auth: { token,currentUser },
   } = useContext(AuthContext);
   useEffect(() => {}, [token]);
+  console.log('from homelayout',token)
   return (
     <div className="h-screen">
       <header className="w-full flex justify-between items-center color-endabank">
@@ -16,14 +17,21 @@ const LayoutHome = () => {
         </div>
         <div className="flex justify-around sm:w-1/4 text-white text-bold">
 
-          {/*{token?.length === 0 && (*/}
-            <>
-              {" "}
-              <Link to="/profile">Inicio</Link>
-              <Link to="/log-in/">Log-in</Link>
-              <Link to="/sign-up/">Sing-up</Link>{" "}
-            </>
-          {/*)}*/}
+          {token?.length === 0
+              ? (
+                  <>
+                    {" "}
+                    <Link to="/profile">Inicio</Link>
+                    <Link to="/log-in/">Log-in</Link>
+                    <Link to="/sign-up/">Sing-up</Link>{" "}
+                  </>
+                )
+              : (<>
+                {" "}
+                <Link to="/profile">Inicio</Link>
+                <div>{currentUser}</div>{" "}
+              </>)
+          }
         </div>
       </header>
       <Outlet/>

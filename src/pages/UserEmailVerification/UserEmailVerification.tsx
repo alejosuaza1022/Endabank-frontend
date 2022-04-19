@@ -12,9 +12,10 @@ const UserEmailVerification = ({email}: { email: string }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [searchParams] = useSearchParams();
     const token = searchParams.get("token");
-    email = email ?? searchParams.get("email");
+    email = email && email.length > 0 ? email : searchParams.get("email") ?? "";
     console.log(email);
-    const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(Strings.COLOR_SUCCESS);
+
+    const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
     const [linkMessagePopUp, setLinkMessagePopUp] = useState<string>("#");
@@ -22,18 +23,18 @@ const UserEmailVerification = ({email}: { email: string }) => {
     async function handleGenerateNewEmailVerification() {
         setIsLoading(true);
         try {
-            const data = await getAxios(apiUrls.VERIFY_USER_EMAIL_URL+email, undefined);
+            const data = await getAxios(apiUrls.VERIFY_USER_EMAIL_URL + email, undefined);
             setIsLoading(false);
             setShowPopUpMessage(true);
             setMessagePopUp(data.message);
-            setColorPopUpMessage(Strings.COLOR_SUCCESS)
+            setIsColorError(false)
         } catch (e) {
             const error = e as AxiosError;
             setIsLoading(false);
             setShowPopUpMessage(true);
             console.log(error)
             setMessagePopUp(error?.response?.data?.message || Strings.ERROR_MESSAGE);
-            setColorPopUpMessage(Strings.COLOR_ERROR);
+            setIsColorError(true)
         }
     }
 
@@ -49,14 +50,14 @@ const UserEmailVerification = ({email}: { email: string }) => {
                         setShowPopUpMessage(true);
                         setMessagePopUp(data.message);
                         setLinkMessagePopUp("/login");
-                        setColorPopUpMessage(Strings.COLOR_SUCCESS)
+                        setIsColorError(false)
                     } catch (e) {
                         const error = e as AxiosError;
                         setIsLoading(false);
                         setShowPopUpMessage(true);
                         console.log(error)
                         setMessagePopUp(error?.response?.data?.message || Strings.ERROR_MESSAGE);
-                        setColorPopUpMessage(Strings.COLOR_ERROR);
+                        setIsColorError(true);
                     }
                 }
             }
@@ -87,7 +88,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
                             </p>
                             <div
                                 className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3"
-                                onClick={ () =>  handleGenerateNewEmailVerification()}
+                                onClick={() => handleGenerateNewEmailVerification()}
                             >
                                 <p>
                                     Resend Email
@@ -114,7 +115,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
                 {showPopUpMessage ? (
                     <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
                         <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
-                                      color={colorPopUpMessage}/>
+                                      isColorError={isColorError}/>
                     </div>) : null}
             </>)}
     </>;

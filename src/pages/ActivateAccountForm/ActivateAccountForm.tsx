@@ -15,9 +15,7 @@ const ActivateAccountForm = () => {
   const [list, setList] = useState<Array<ApproveUserProps>>([]);
   const [approved, setApproved] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(
-    strings.COLOR_SUCCESS
-  );
+  const [colorPopUpMessage, setColorPopUpMessage] = useState(false);
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [messagePopUp, setMessagePopUp] = useState<string>(
     strings.USER_REGISTERED
@@ -42,7 +40,7 @@ const ActivateAccountForm = () => {
           message = error.response?.data?.message || strings.ERROR_MESSAGE;
         }
         setShowPopUpMessage(true);
-        setColorPopUpMessage(strings.COLOR_ERROR);
+        setColorPopUpMessage(false);
         setMessagePopUp(message);
         setShowPopUpMessage(true);
         setIsLoading(false);
@@ -114,7 +112,7 @@ const ActivateAccountForm = () => {
           <PopUpMessage
             message={messagePopUp}
             setShowPopUpMessage={setShowPopUpMessage}
-            color={colorPopUpMessage}
+            isColorError={colorPopUpMessage}
           />
         </div>
       )}
