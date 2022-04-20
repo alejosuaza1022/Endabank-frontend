@@ -1,20 +1,18 @@
 import "./index.css";
-import {useContext, useState} from "react";
+import { useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AxiosError} from "axios";
+import Cookies from "js-cookie";
 import {Input, PopUpMessage, SelectForm, Spinner} from "../../components/index";
 import UserObject from "./userObject.interface";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {postAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
-import AuthContext from "../../contexts/AuthProvider";
 import Strings from "../../constants/strings";
 
 const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const {
-        auth: {token},
-    } = useContext(AuthContext);
+    const token = Cookies.get('token') ?? "";
     const {
         register,
         handleSubmit,
