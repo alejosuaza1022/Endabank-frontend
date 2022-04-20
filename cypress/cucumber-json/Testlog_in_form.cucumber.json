@@ -23,7 +23,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 606000000
+              "duration": 1279000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 651000000
+              "duration": 940000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 343000000
+              "duration": 358000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 118000000
+              "duration": 122000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "I dont see Log-in in the page",
             "result": {
               "status": "passed",
-              "duration": 1469000000
+              "duration": 2145000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 474000000
+              "duration": 978000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 659000000
+              "duration": 844000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "I need to write an incorrect password as \"Ni*colas17\"",
             "result": {
               "status": "passed",
-              "duration": 344000000
+              "duration": 370000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 113000000
+              "duration": 154000000
             }
           },
           {
@@ -122,8 +122,8 @@
             "line": 22,
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credential Error. Verify User and password' within the element: <div#alert-2.alert-toast.flex.p-4.mb-4.rounded-lg.dark:bg-red-200.bg-red-100> but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:64:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11926:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11247:35)"
+              "status": "passed",
+              "duration": 614000000
             }
           }
         ]
@@ -143,7 +143,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1069000000
+              "duration": 1261000000
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "I need to write an incorrect email as \"nicolas.cardonae@ndava.com\"",
             "result": {
               "status": "passed",
-              "duration": 624000000
+              "duration": 786000000
             }
           },
           {
@@ -163,7 +163,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 360000000
+              "duration": 372000000
             }
           },
           {
@@ -173,7 +173,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 145000000
+              "duration": 171000000
             }
           },
           {
@@ -182,8 +182,8 @@
             "line": 29,
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credential Error. Verify User and password' within the element: <div#alert-2.alert-toast.flex.p-4.mb-4.rounded-lg.dark:bg-red-200.bg-red-100> but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:64:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11926:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11247:35)"
+              "status": "passed",
+              "duration": 576000000
             }
           }
         ]
@@ -203,7 +203,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 971000000
+              "duration": 1244000000
             }
           },
           {
@@ -213,7 +213,7 @@
             "name": "I need to write an email with incorrect format as \"nicolas.cardonaendava.com\"",
             "result": {
               "status": "passed",
-              "duration": 596000000
+              "duration": 894000000
             }
           },
           {
@@ -223,7 +223,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 330000000
+              "duration": 354000000
             }
           },
           {
@@ -233,7 +233,7 @@
             "name": "I see \"This field must be a valid email\" highlight error displayed",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 36000000
             }
           }
         ]
