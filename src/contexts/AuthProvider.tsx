@@ -61,6 +61,7 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
 
 
     const logOut = () =>{
+        setLoadedData(false)
         Cookies.remove('token');
         setAuth(defaultState.auth);
     }
