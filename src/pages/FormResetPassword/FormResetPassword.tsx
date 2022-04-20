@@ -9,23 +9,22 @@ import {AxiosError} from "axios";
 import { Navigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthProvider";
 import Cookies from "js-cookie";
+import Strings from "../../constants/strings";
 
 
 const FormResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-  const [resp,setResp] = useState("");
   const [isColorError, setIsColorError] = useState<boolean>(false);
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
 
   const {
-    auth
+    loadedData
   } = useContext(AuthContext);
 
   //{auth ? setIsActive(true):setIsActive(false)}
 
-  console.log(auth);
+  console.log(loadedData);
   //console.log(isActive);
 
   const token = Cookies.get('token');
@@ -44,34 +43,33 @@ const FormResetPassword = () => {
       data,
       token
     );
-    console.log(response);
-    setResp(response.message);
+    console.log(response.message);
   }
 
   async function resetPassword(data: FieldObject) {
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     data.token = urlParams.get("token") ?? "";
-
+      console.log(data.token);
+      console.log(loadedData);
     const response = await putAxios(
       apiUrls.GET_USERS_RESET_PASSWORD_URL,
       data,
       ""
     );
-    console.log(response);
-    setResp(response.message);
+    console.log(response.message);
 }
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
-
     setShowPopUpMessage(false);
         try {
-            setIsLoading(true);
             console.log(data);
-            {auth ? changePassword(data):resetPassword(data)}
+            console.log(loadedData);
+            setIsLoading(true);
+            {loadedData! ? changePassword(data):resetPassword(data)}
             setIsLoading(false);
             setIsColorError(false)
-            setMessagePopUp(resp);
+            setMessagePopUp(Strings.PASSWORD_UPDATED);
             setShowPopUpMessage(true);
             reset();
 
@@ -98,7 +96,7 @@ const FormResetPassword = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid xl:grid-cols-1 xl:gap-6">
                 <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
-                {auth ?
+                {loadedData ?
                 (<Input
                   type="password"
                   id="oldPassword"
@@ -167,11 +165,8 @@ const FormResetPassword = () => {
 
 return (
     <>
-        {token?.length === 0 ?
-            renderFormOrLoading()
-            : (
-                <Navigate replace to="/"/>
-            )}
+        {renderFormOrLoading()
+            }
         {showPopUpMessage && (
             <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
                 <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}

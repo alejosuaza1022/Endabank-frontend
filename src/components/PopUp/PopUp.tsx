@@ -1,13 +1,21 @@
 import {SubmitHandler, useForm} from "react-hook-form";
-import {Input} from "../index";
+import {Input, PopUpMessage} from "../index";
 import apiUrls from "../../constants/apiUrls";
 import {getAxios} from "../../utils/axios";
+import Strings from "../../constants/strings";
+import {AxiosError} from "axios";
+import strings from "../../constants/strings";
+import {useState} from "react";
 
 interface FieldObject {
     email: string;
 }
 
 const PopUp = (props: { setShowModal: Function }) => {
+
+    const [isColorError, setIsColorError] = useState<boolean>(false);
+    const [showPopUpMessage, setShowPopUpMessage] = useState(false);
+    const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
 
     async function sendEmail(data: FieldObject) {
         console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email);
@@ -30,9 +38,26 @@ const PopUp = (props: { setShowModal: Function }) => {
     } = useForm<FieldObject>({mode: "onTouched"});
 
     const onSubmit: SubmitHandler<FieldObject> = (data) => {
-        console.log(data);
-        sendEmail(data)
-        reset();
+        setShowPopUpMessage(false);
+        try {
+            console.log(data);
+            sendEmail(data)
+            setIsColorError(false)
+            setMessagePopUp(Strings.MAIL_SEND);
+            setShowPopUpMessage(true);
+            reset();
+
+        } catch (err) {
+            const error = err as AxiosError;
+            let message = strings.ERROR_MESSAGE;
+            if (error.response?.data?.statusCode != 500) {
+                message = error.response?.data?.message || strings.ERROR_MESSAGE;
+            }
+            setShowPopUpMessage(true);
+            setIsColorError(true)
+            setMessagePopUp(message);
+        }
+        setShowPopUpMessage(true);
     };
 
     return (
@@ -85,9 +110,14 @@ const PopUp = (props: { setShowModal: Function }) => {
                         </div>
                     </div>
                 </div>
+                {showPopUpMessage && (
+                    <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
+                        <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
+                                      isColorError={isColorError}/>
+                    </div>
+                )}
             </div>
         </form>
-
     );
 };
 

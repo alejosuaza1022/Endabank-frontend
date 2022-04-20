@@ -7,6 +7,8 @@ class Strings {
     static readonly LETS_VERIFY_EMAIL = "Let's verify your email address.";
     static readonly UNVERIFIED_USER = "The user is no verified yet. Please contact with your admin";
     static readonly INCORRECT_CREDENTIALS =  "Credential Error. Verify User and password";
+    static readonly PASSWORD_UPDATED =  "Password updated successfully";
+    static readonly MAIL_SEND = "Mail send"
 
 }
 export default Strings;
