@@ -10,6 +10,7 @@ import {
 import strings from "../../constants/strings";
 import { AxiosError } from "axios";
 import { Navigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const ActivateAccountForm = () => {
   const [list, setList] = useState<Array<ApproveUserProps>>([]);
@@ -20,9 +21,8 @@ const ActivateAccountForm = () => {
   const [messagePopUp, setMessagePopUp] = useState<string>(
     strings.USER_REGISTERED
   );
-  const token =
-    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbnRob255LmdhbGxlZ29AZW5kYXZhLmNvbSIsImV4cCI6MTY1MDQwMTc2NiwiaWF0IjoxNjUwNDAwNTY2LCJ1c2VySWQiOjV9.KwX4FsGQZO3FMEwP5m3HgIcX_JTk3HhEoUAnAaZ4yy_r_GJgYmaLOOXAY1n5toCtGPHZ9T0sits8Y76EFMNvRA";
-  useEffect(() => {
+  const token = Cookies.get('token');
+    useEffect(() => {
     async function getData() {
       setApproved(true);
       try {
@@ -55,8 +55,7 @@ const ActivateAccountForm = () => {
     ) : (
       <div>
         {approved ? (
-          <div className="flex w-full justify-center mt-20 ">
-            <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
+            <div className="p-4 w-full item-center  bg-white rounded-lg border shadow-md sm:p-8">
               <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
                 <span className="text-xl">User Approval</span>
               </header>
@@ -85,7 +84,7 @@ const ActivateAccountForm = () => {
                         firstName={value.firstName}
                         lastName={value.lastName}
                         email={value.email}
-                        id={value.id}
+                        id={"approve_toggle_"+value.id}
                         approved={value.approved}
                         key={value.id}
                         token={token}
@@ -95,10 +94,10 @@ const ActivateAccountForm = () => {
                 </table>
               </div>
             </div>
-          </div>
+          
         ) : (
           <div>
-            <Navigate replace to="/" />
+            <Navigate replace to="/profile" />
           </div>
         )}
       </div>
@@ -106,7 +105,7 @@ const ActivateAccountForm = () => {
   };
   return (
     <>
-      {token.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
+      {token?.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
       {showPopUpMessage && (
         <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
           <PopUpMessage
