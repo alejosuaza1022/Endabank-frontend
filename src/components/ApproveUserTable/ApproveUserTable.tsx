@@ -14,6 +14,7 @@ const SelectForm: React.FC<ApproveUserProps> = ({
   const [actualState, changeCheckState] = useState(approved);
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeCheckState(e.target.checked);
+    console.log(token);
     async function putData() {
       const response: Array<ApproveUserProps> = await putAxios(
         apiUrls.PUT_USERS_TO_APPROVE_URL + "/" + id,
@@ -32,12 +33,12 @@ const SelectForm: React.FC<ApproveUserProps> = ({
       <td className="px-6 py-4">{lastName}</td>
       <td className="px-6 py-4">{email}</td>
       <td className="px-6 py-4 ">
-        <label htmlFor={id} className="flex relative mb-4 cursor-pointer ">
+        <label htmlFor={"approveToggle"+id} className="flex relative mb-4 cursor-pointer ">
           <input
             checked={actualState}
             onChange={handleCheckbox}
             type="checkbox"
-            id={id}
+            id={"approveToggle"+id}
             className="sr-only"
           />
           <div className="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>

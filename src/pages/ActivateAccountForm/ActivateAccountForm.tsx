@@ -84,7 +84,7 @@ const ActivateAccountForm = () => {
                         firstName={value.firstName}
                         lastName={value.lastName}
                         email={value.email}
-                        id={"approve_toggle_"+value.id}
+                        id={value.id}
                         approved={value.approved}
                         key={value.id}
                         token={token}
