@@ -1,0 +1,170 @@
+[
+  {
+    "description": "\tAs an old merchant\n\tI want to have access a portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "Log in Form",
+    "line": 1,
+    "id": "log-in-form",
+    "tags": [],
+    "uri": "log_in_form2.feature",
+    "elements": [
+      {
+        "id": "log-in-form;access-the-portal",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Access the portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "undefined",
+              "duration": 102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I need to write a password as \"Nicolas17*\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I click on Log In",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I dont see Log-in in the page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "log-in-form;log-in-with-incorrect-password",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Log in with incorrect password",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I need to write a password as \"Ni*colas17\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I click on Log In",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "log-in-form;log-in-with-incorrect-email",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Log in with incorrect email",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I need to write an email as \"nicolas.cardonaendava.com\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "I need to write a password as \"Nicolas17*\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "I click on Log In",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

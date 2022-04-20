@@ -5,7 +5,7 @@ When('I need to write an email as {string}', (email) => {
 	  .type(email)
 });
 
-Then('I need to write a incorrect password as {string}', (password) => {
+Then('I need to write an incorrect password as {string}', (password) => {
 	cy.get('input[id=password]')
    	  .type(password)
 });
@@ -16,5 +16,6 @@ Then('I click on Log In', () => {
 });
 
 Then('I see {string} message error displayed' , (errorMessage) => {
-	cy.get('button[type=submit]').should('eq', errorMessage)
+	cy.get('#alert-2')
+	  .contains(errorMessage)
 })

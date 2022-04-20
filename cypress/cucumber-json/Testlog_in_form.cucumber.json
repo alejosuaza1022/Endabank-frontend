@@ -23,7 +23,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1364000000
+              "duration": 606000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 685000000
+              "duration": 651000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 379000000
+              "duration": 343000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 157000000
+              "duration": 118000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "I dont see Log-in in the page",
             "result": {
               "status": "passed",
-              "duration": 1076000000
+              "duration": 1469000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 799000000
+              "duration": 474000000
             }
           },
           {
@@ -93,17 +93,17 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 600000000
+              "duration": 659000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 20,
-            "name": "I need to write a password as \"Ni*colas17\"",
+            "name": "I need to write an incorrect password as \"Ni*colas17\"",
             "result": {
               "status": "passed",
-              "duration": 315000000
+              "duration": 344000000
             }
           },
           {
@@ -113,7 +113,17 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 115000000
+              "duration": 113000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I see \"Credential Error. Verify User and password\" message error displayed",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credential Error. Verify User and password' within the element: <div#alert-2.alert-toast.flex.p-4.mb-4.rounded-lg.dark:bg-red-200.bg-red-100> but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:64:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11926:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11247:35)"
             }
           }
         ]
@@ -133,17 +143,17 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 836000000
+              "duration": 1069000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 26,
-            "name": "I need to write an email as \"nicolas.cardonaendava.com\"",
+            "name": "I need to write an incorrect email as \"nicolas.cardonae@ndava.com\"",
             "result": {
               "status": "passed",
-              "duration": 599000000
+              "duration": 624000000
             }
           },
           {
@@ -153,7 +163,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 319000000
+              "duration": 360000000
             }
           },
           {
@@ -163,7 +173,67 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 121000000
+              "duration": 145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "I see \"Credential Error. Verify User and password\" message error displayed",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credential Error. Verify User and password' within the element: <div#alert-2.alert-toast.flex.p-4.mb-4.rounded-lg.dark:bg-red-200.bg-red-100> but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:64:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11926:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11247:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "log-in-form;log-in-with-incorrect-email-format",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Log in with incorrect email format",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I open Endabank login page and wants to sign in",
+            "result": {
+              "status": "passed",
+              "duration": 971000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "I need to write an email with incorrect format as \"nicolas.cardonaendava.com\"",
+            "result": {
+              "status": "passed",
+              "duration": 596000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "I need to write a password as \"Nicolas17*\"",
+            "result": {
+              "status": "passed",
+              "duration": 330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "I see \"This field must be a valid email\" highlight error displayed",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
             }
           }
         ]
