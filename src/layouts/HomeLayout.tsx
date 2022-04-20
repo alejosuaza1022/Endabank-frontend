@@ -8,7 +8,7 @@ const LayoutHome = () => {
     auth: { token,currentUser },
   } = useContext(AuthContext);
   useEffect(() => {}, [token]);
-  console.log('from homelayout',token)
+
   return (
     <div className="h-screen">
       <header className="w-full flex justify-between items-center color-endabank">
@@ -21,14 +21,12 @@ const LayoutHome = () => {
               ? (
                   <>
                     {" "}
-                    <Link to="/profile">Inicio</Link>
                     <Link to="/log-in/">Log-in</Link>
                     <Link to="/sign-up/">Sing-up</Link>{" "}
                   </>
                 )
               : (<>
                 {" "}
-                <Link to="/profile">Inicio</Link>
                 <div>{currentUser}</div>{" "}
               </>)
           }
