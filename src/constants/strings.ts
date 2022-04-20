@@ -6,6 +6,7 @@ class Strings {
     static readonly ERROR_MESSAGE = "There was an issue with the request. Please try again later.";
     static readonly TOGGLE_MESSAGE = "toggle"
     static readonly LETS_VERIFY_EMAIL = "Let's verify your email address.";
+    static readonly UNVERIFIED_USER = "The user is no verified yet. Please contact with your admin"
 
 }
 export default Strings;
