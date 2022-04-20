@@ -5,7 +5,11 @@ import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
+import useAuth from "../../Hooks/useAuth";
+import Cookies from 'js-cookie'
+
 import Strings from "../../constants/strings";
+
 
 const LogInForm = () => {
     const {
@@ -16,7 +20,7 @@ const LogInForm = () => {
     } = useForm<LoginObject>({mode: "onTouched"});
 
     const [showModal, setShowModal] = useState(false);
-    const {auth, setAuth} = useContext(AuthContext);
+    const {setLoadedData} = useContext(AuthContext);
     const navigate = useNavigate();
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -36,12 +40,15 @@ const LogInForm = () => {
                     headers: {'Content-type': "application/json"}
                 }
             );
+
             const token = res.data.access_token;
-            const currentUser = email;
-            if (setAuth) {
-                setAuth({currentUser, token});
+
+            Cookies.set('token',token, {sameSite: 'strict'});
+
+            if (setLoadedData) {
+                setLoadedData(true)
             }
-            navigate('/');
+            navigate('/profile');
         } catch (err) {
             const error = err as AxiosError;
             if (error.response?.data?.statusCode == 403) {
@@ -51,7 +58,6 @@ const LogInForm = () => {
                 setLinkPopUp("/verify-email?email=" + data.email);
                 setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
                 setShowPopUpMessage(true);
-
             }
         }
 
@@ -131,7 +137,6 @@ const LogInForm = () => {
                                   isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
-
         </div>
     );
 };
