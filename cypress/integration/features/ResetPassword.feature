@@ -2,40 +2,40 @@ Feature: Password Reset
 
     I want to change my forgotten password
 
-    # Background:
-    #     Given the user is on the Landing page
-    #     * the user clicks on "Log-in" button
-    #     * the user is on the Login page
-
-    # @focus
-    Scenario: User wants to see if forgot password button is displayed
+    Background:
         Given the user is on the Login page
-        # When the user clicks on "Log-in" button
+
+    @focus
+    Scenario: Happy path reset password
+        When the user clicks on "Forgot password?" link
+        * the user fills in the "Email"
+        * clicks in the "Submit" button
+        * the user opens the recovery link
+        * the user fills in the fields for the recovery password
+        * clicks in the "Submit" button
+        Then the user should see a green message showing success
+
+    @skip
+    Scenario: User wants to see if forgot password button is displayed
         Then the user should see "Forgot password?" in the link
 
-    # @focus
-    # Scenario: User forgot his password
-    #     Given the user is on the Login page
-    #     When the user clicks on the "Forgot password?" link
-    #     Then the user should see "Please, type your email:" in the pop-up
-
-    # @skip
-    Scenario Outline: See the recovery password form
-        Given the user is on the Login page
-        When the user clicks on "forgot password?" link
+    @skip
+    Scenario: See the send email for recovery password form
+        When the user clicks on "Forgot password?" link
         # Then the user should see "Please, type your email:" in the pop-up
-        Then the user should see "<Element name>"
-        Examples:
-            | Element name   | Type   | is mandatory? | Status   |
-            | Recovery label | Text   |               |          |
-            | Recovery email | Input  | Yes           | Enabled  |
-            | Submit         | Button |               | Disabled |
-            | Cancel         | Button |               | Enabled  |
+        Then the user should see the following elements:
+            # Examples:
+            | Element name   | Type   | Value                    | is mandatory? | Status   |
+            | Recovery label | Text   | Please, type your email: |               |          |
+            | Recovery email | Input  | email                    | Yes           | Enabled  |
+            | Submit         | Button | Submit                   |               | Disabled |
+            | Cancel         | Button | Close                    |               | Enabled  |
 
     @skip
     Scenario Outline: User fills recovery email form
-        Given the user is on the "Email confirmation" page
-        When the user fills in the <recovery email> field
+        # Given the user is on the "Email confirmation" page
+        # When the user fills in the <recovery email> field
+        When the user clicks on "Forgot password?" link
         And clicks the <Submit> button
         Then an email containing the recovery link is sent to the user
             | Element name   | Type   | is mandatory? | Status   |

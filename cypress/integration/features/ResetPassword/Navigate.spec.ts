@@ -5,10 +5,10 @@ import {
     Then,
     But,
   } from "cypress-cucumber-preprocessor/steps";
-  
+import apiUrls from "../../../../src/constants/apiUrls";
 
-const url = "http://localhost:3000";
+const loginUrl = Cypress.env('LOGIN_URL');
   
 Given("the user is on the Login page", () => {
-cy.visit(`${url}/log-in`);
+  cy.visit(`${loginUrl}`);
 });
