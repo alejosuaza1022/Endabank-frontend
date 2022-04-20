@@ -20,7 +20,7 @@ const LogInForm = () => {
     } = useForm<LoginObject>({mode: "onTouched"});
 
     const [showModal, setShowModal] = useState(false);
-    const {setLoadedData} = useContext(AuthContext);
+    const {setLoadedData,setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -30,8 +30,10 @@ const LogInForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
         e?.preventDefault()
-        const email = data.email;
-        const password = data.password;
+        const email = data.emailLogin;
+        const password = data.passwordLogin;
+
+        console.log(email,password)
         setShowPopUpMessage(false)
         try {
             const res = await axios.post('http://localhost:8080/api/v1/login',
@@ -42,21 +44,35 @@ const LogInForm = () => {
             );
 
             const token = res.data.access_token;
+            const isApproved = res.data.isApproved;
 
-            Cookies.set('token',token, {sameSite: 'strict'});
-
-            if (setLoadedData) {
-                setLoadedData(true)
+            if(isApproved){
+                Cookies.set('token',token, {sameSite: 'strict'});
+                if (setLoadedData) {
+                    setLoadedData(true)
+                }
+                navigate('/profile');
+            } else{
+                setMessagePopUp(Strings.UNVERIFIED_USER)
+                setIsColorError(true);
+                setShowPopUpMessage(true)
             }
-            navigate('/profile');
+
+
+
         } catch (err) {
             const error = err as AxiosError;
             if (error.response?.data?.statusCode == 403) {
                 setIsLoading(false);
                 setIsColorError(true);
                 setMessagePopUp(error?.response?.data?.message || Strings.ERROR_MESSAGE);
-                setLinkPopUp("/verify-email?email=" + data.email);
+                setLinkPopUp("/verify-email?email=" + data.emailLogin);
                 setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
+                setShowPopUpMessage(true);
+            }
+            else if(error.response?.data?.statusCode == 401){
+                setIsColorError(true);
+                setMessagePopUp(Strings.INCORRECT_CREDENTIALS)
                 setShowPopUpMessage(true);
             }
         }
@@ -77,13 +93,13 @@ const LogInForm = () => {
             <>
                 <div className="flex w-full justify-center mt-20 ">
                     <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
                             <Input
                                 type="text"
-                                id="email"
+                                id="emailLogin"
                                 label="Email"
                                 register={register}
-                                error={errors.email}
+                                error={errors.emailLogin}
                                 optionsValidations={{
                                     pattern: {
                                         value:
@@ -94,32 +110,26 @@ const LogInForm = () => {
                             />
                             <Input
                                 type="password"
-                                id="password"
+                                id="passwordLogin"
                                 label="Password"
-                                error={errors.password}
+                                error={errors.passwordLogin}
                                 register={register}
-                                optionsValidations={{
-                                    pattern: {
-                                        value: /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,20})/,
-                                        message:
-                                            "1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters",
-                                    },
-                                }}
                             />
                             <button
+                                id="submitLogin"
                                 type="submit"
                                 className="text-white color-endabank focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
                                 Log In
                             </button>
                             <div className="m-5 text-right text-sm">
-                                <a className="decoration-0 cursor-pointer" onClick={openModal}>
+                                <a id="forgotPasswordHyperlink" className="decoration-0 cursor-pointer" onClick={openModal}>
                                     Forgot password?
                                 </a>
                             </div>
                         </form>
                         <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
-                            New merchant? <Link to="/signup">create an account</Link>
+                            New merchant? <Link id="signUpHyperlink" to="/sign-up">create an account</Link>
                         </div>
                     </div>
                 </div>
