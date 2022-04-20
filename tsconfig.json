@@ -22,7 +22,7 @@
     },
     "types": ["cypress"]
   },
-  "include": ["src", "**/*.ts"],
+  "include": ["src", "**/*.ts", "cypress/integration/user_registration/account_link.spec.js"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

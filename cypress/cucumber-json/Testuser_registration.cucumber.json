@@ -1,0 +1,403 @@
+[
+  {
+    "description": "\tAs user\n\tI want to have a section where I can register my data\n\tAnd with this data create an account in endabank",
+    "keyword": "Feature",
+    "name": "User registration",
+    "line": 1,
+    "id": "user-registration",
+    "tags": [],
+    "uri": "user_registration.feature",
+    "elements": [
+      {
+        "id": "user-registration;verify-that-the-user-can-use-the-\"create-an-account\"-link",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Verify that the user can use the \"Create an account\" link",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "an user enter to the login page using the url",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the page loads correctly",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the create an account link exists",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "it is working",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "validate the mandatory fields in the User Registration page",
+        "tags": [
+          {
+            "name": "@focus",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "an user goes to the register page url site",
+            "result": {
+              "status": "passed",
+              "duration": 623000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "the user types a wrong value in the field_name",
+            "result": {
+              "status": "passed",
+              "duration": 212000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the user tries to fill another field_name",
+            "result": {
+              "status": "passed",
+              "duration": 132000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the following error_message should be displayed",
+            "result": {
+              "status": "passed",
+              "duration": 13000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the field_name should be highlighted",
+            "result": {
+              "status": "passed",
+              "duration": 248000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-the-happy-path-for-a-new-user",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Validate the happy path for a new user",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "an user that has clicked on the \"Create an account\" link in the Login page",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "the Registration page loaded correctly",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "the user completes all the mandatory fields",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the user clicks on the \"Submit\" button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "the information is saved and sent correctly.",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;submit-form",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Submit form",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "the user has filled the registration form correctly",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "the user clicks on the \"submit\" button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "the page will commit the information",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "the field Approved will remain with the value [False]",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;user-submits-incomplete-form",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "User submits incomplete form",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 38,
+            "name": "the user has filled some mandatory fields but not all",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "the user clicks on submit button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "an error message should be shown",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-if-the-user-types-the-same-in-the-password-and-confirm-password-fields",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "Validate if the user types the same in the password and confirm password fields",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "the user is filling the password and confirm password fields",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "the user writes different values on those fields",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "the fields will be highlighted in red",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "a label message is shown indicating \"Pattern password no match\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;email-in-the-form-is-already-registered",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Email in the form is already registered",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "the user is entering data in the Registration form",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "the user enters an email that is already in use",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "an error message should be shown",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;user-tries-to-correct-\"field_name\"-after-writing-wrong-value",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "User tries to correct \"field_name\" after writing wrong value",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 54,
+            "name": "an user has entered a wrong \"value\" in \"field_name\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "the user is correcting \"value\" in \"field_name\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "value",
+                      "field_name",
+                      "error_message",
+                      "URL"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "\" \"",
+                      "Tax document Type",
+                      "",
+                      ""
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "the following \"error_message\" should be displayed under \"field_name\" until the user writes the correct \"value\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
