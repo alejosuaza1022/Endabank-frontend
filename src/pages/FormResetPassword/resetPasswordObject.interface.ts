@@ -1,6 +1,6 @@
 interface FieldObject {
   oldPassword?: string;
-  newPassword: string;
+  password: string;
   rePassword: string;
   token?: string;
 }

@@ -1,4 +1,3 @@
-import "./index.css";
 import { Input, Spinner, PopUpMessage} from "../../components/index";
 import FieldObject from "./resetPasswordObject.interface";
 import {SubmitHandler, useForm} from "react-hook-form";
@@ -8,21 +7,28 @@ import apiUrls from "../../constants/apiUrls";
 import strings from "../../constants/strings";
 import {AxiosError} from "axios";
 import { Navigate } from "react-router-dom";
-import AuthContext from "contexts/AuthProvider";
+import AuthContext from "../../contexts/AuthProvider";
+import Cookies from "js-cookie";
 
 
 const FormResetPassword = () => {
-
-  const [isActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [resp,setResp] = useState("");
   const [isColorError, setIsColorError] = useState<boolean>(false);
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
 
   const {
-    auth: {token},
+    auth
   } = useContext(AuthContext);
+
+  //{auth ? setIsActive(true):setIsActive(false)}
+
+  console.log(auth);
+  //console.log(isActive);
+
+  const token = Cookies.get('token');
 
   const {
       register,
@@ -62,7 +68,7 @@ const FormResetPassword = () => {
         try {
             setIsLoading(true);
             console.log(data);
-            {isActive ? changePassword(data):resetPassword(data)};
+            {auth ? changePassword(data):resetPassword(data)}
             setIsLoading(false);
             setIsColorError(false)
             setMessagePopUp(resp);
@@ -80,6 +86,8 @@ const FormResetPassword = () => {
             setMessagePopUp(message);
             setIsLoading(false);
         }
+      setIsLoading(false);
+      setShowPopUpMessage(true);
   };
   
 
@@ -87,11 +95,10 @@ const FormResetPassword = () => {
     return isLoading ? <Spinner/> : (
     <div className="flex w-full justify-center mt-20 ">
         <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-
           <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid xl:grid-cols-1 xl:gap-6">
                 <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
-                {isActive ? 
+                {auth ?
                 (<Input
                   type="password"
                   id="oldPassword"
@@ -160,7 +167,7 @@ const FormResetPassword = () => {
 
 return (
     <>
-        {token.length === 0 ?
+        {token?.length === 0 ?
             renderFormOrLoading()
             : (
                 <Navigate replace to="/"/>
