@@ -46,8 +46,6 @@ const LogInForm = () => {
             const token = res.data.access_token;
             const isApproved = res.data.isApproved;
 
-            console.log(isApproved)
-
             if(isApproved){
                 Cookies.set('token',token, {sameSite: 'strict'});
                 if (setLoadedData) {
