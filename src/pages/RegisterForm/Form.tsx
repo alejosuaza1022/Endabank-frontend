@@ -14,6 +14,10 @@ const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
     const token = Cookies.get('token') ?? "";
     const {
+        auth: {token},
+    } = useContext(AuthContext);
+    console.log(token)
+    const {
         register,
         handleSubmit,
         reset,
@@ -186,9 +190,10 @@ const Form = () => {
             </div>
         );
     }
+
     return (
         <>
-            {token.length === 0 ?
+            {token?.length == 0 ?
                 renderFormOrLoading()
                 : (
                     <Navigate replace to="/"/>
