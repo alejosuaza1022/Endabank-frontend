@@ -14,7 +14,7 @@ const defaultState = {
 
 const AuthContext = createContext<IAuthProvider>(defaultState);
 
-export const AuthProvider = ({children}:{children:ReactNode} ) => {
+export const AuthProvider = ({ children }:{children:ReactNode}) => {
 
     const [auth, setAuth] = useState(defaultState.auth);
     const [loadedData, setLoadedData] = useState(false);
