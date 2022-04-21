@@ -56,10 +56,11 @@ const Form = () => {
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (<div className="flex w-full justify-center mt-20 ">
                 <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} id="signUp">
                         <div className="grid-cc">
                             <SelectForm
                                 id="typeIdentifierId"
+                                dataId="typeIdentifierIdSignUp"
                                 value="Document type"
                                 options={{"1": "CC", "2": "CE"}}
                                 error={errors.typeIdentifierId}
@@ -68,6 +69,7 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="identifier"
+                                dataId="identifierSignUp"
                                 label="Identifier"
                                 register={register}
                                 error={errors.identifier}
@@ -85,6 +87,7 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="firstName"
+                                dataId="firstNameSignUp"
                                 label="First name"
                                 error={errors.firstName}
                                 register={register}
@@ -99,6 +102,7 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="lastName"
+                                dataId="lastNameSignUp"
                                 label="Last name"
                                 error={errors.lastName}
                                 register={register}
@@ -115,6 +119,7 @@ const Form = () => {
                         <Input
                             type="tel"
                             id="phoneNumber"
+                            dataId="phoneNumberSignUp"
                             label="Phone Number"
                             error={errors.phoneNumber}
                             register={register}
@@ -129,6 +134,7 @@ const Form = () => {
                         <Input
                             type="text"
                             id="email"
+                            dataId="emailSignUp"
                             label="Email"
                             error={errors.email}
                             register={register}
@@ -143,6 +149,7 @@ const Form = () => {
                         <Input
                             type="password"
                             id="password"
+                            dataId="passwordSignUp"
                             label="Password"
                             error={errors.password}
                             register={register}
@@ -158,6 +165,7 @@ const Form = () => {
                         <Input
                             type="password"
                             id="rePassword"
+                            dataId="passwordSignUp"
                             label="Confirm password"
                             error={errors.rePassword}
                             register={register}
@@ -168,6 +176,7 @@ const Form = () => {
                         />
                         <button
                             type="submit"
+                            id="submitSignUp"
                             className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
                         >
                             Submit
