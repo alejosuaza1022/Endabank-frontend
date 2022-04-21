@@ -8,10 +8,9 @@ const PopUpMessage: React.FC<PopUpMessageProps>
            message, setShowPopUpMessage, isColorError
            , link = "#", linkMessage = ""
        }) => {
-    console.log(isColorError)
     return (
         <div
-            id="alert-2"
+            id="alertPopUpMessage"
             className={`alert-toast flex p-4 mb-4  rounded-lg ${isColorError ? "dark:bg-red-200 bg-red-100" : "dark:bg-green-200 bg-green-100 "}`}
             role="alert"
         >

@@ -71,7 +71,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
     return <>{
         isLoading ? <Spinner/> : (
             <>
-                <div className="flex flex-col h-5/6 w-full items-center ">
+                <div className="flex flex-col h-5/6 w-full items-center " id="userEmailVerification">
                     <div
                         className=" lg:w-1/3 sm:w-1/2 p-4 bg-white h-full bg-gray-50 rounded-lg border shadow-md sm:p-8 justify-between items-center mt-10 ">
                         <div className="w-full h-1/2 flex justify-center  ">
@@ -80,17 +80,18 @@ const UserEmailVerification = ({email}: { email: string }) => {
                             </div>
                         </div>
                         <div className="flex flex-col items-center w-full mt-2">
-                            <h2 className="font-bold text-center text-2xl">
+                            <h2 className="font-bold text-center text-2xl" id="textEmailVerification">
                                 Email Verification
                             </h2>
-                            <p className="mt-10 text-center">
+                            <p className="mt-10 text-center" id="textEmailEmailVerification">
                                 Please verify your email using the link sent to {email}.
                             </p>
                             <div
                                 className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3"
                                 onClick={() => handleGenerateNewEmailVerification()}
+                                id="btnSendEmailVerification"
                             >
-                                <p>
+                                <p id="textResendEmailEmailVerification">
                                     Resend Email
                                 </p>
                                 <svg className="h-5 w-1/4 " xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +106,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
                                 </svg>
                             </div>
 
-                            <p className="mt-4 text-center">
+                            <p className="mt-4 text-center" id="textNotGotEmailEmailVerification">
                                 Didn't receive the email?, <br/>press the button to resend it.
                             </p>
 

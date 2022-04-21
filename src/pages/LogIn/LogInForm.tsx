@@ -113,7 +113,7 @@ const LogInForm = () => {
                             </div>
                         </form>
                         <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
-                            New merchant? <Link to="/signup">create an account</Link>
+                            New merchant? <Link to="/sign-up">create an account</Link>
                         </div>
                     </div>
                 </div>

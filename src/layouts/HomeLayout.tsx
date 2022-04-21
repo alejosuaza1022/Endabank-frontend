@@ -12,7 +12,7 @@ const LayoutHome = () => {
     <div className="h-screen">
       <header className="w-full flex justify-between items-center color-endabank">
         <div className=" flex justify-start">
-          <MainImage></MainImage>
+          <MainImage/>
         </div>
         <div className="flex justify-around sm:w-1/4 text-white text-bold">
           {token.length === 0 && (
@@ -20,12 +20,12 @@ const LayoutHome = () => {
               {" "}
               <Link to="/">Inicio</Link>
               <Link to="/log-in/">Log-in</Link>
-              <Link to="/sign-up/">Sing-up</Link>{" "}
+              <Link to="/sign-up/">Sign-up</Link>{" "}
             </>
           )}
         </div>
       </header>
-      <Outlet></Outlet>
+      <Outlet/>
     </div>
   );
 };
