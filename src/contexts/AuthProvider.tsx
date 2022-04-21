@@ -1,4 +1,4 @@
-import React, { createContext, useState, FC } from "react";
+import React, {createContext, useState, FC, ReactNode} from "react";
 import IAuthProvider from "./IAuthProvider";
 
 const defaultState = {
@@ -10,7 +10,7 @@ const defaultState = {
 
 const AuthContext = createContext<IAuthProvider>(defaultState);
 
-export const AuthProvider: FC = ({ children }) => {
+export const AuthProvider = ({ children }:{children:ReactNode}) => {
   const [auth, setAuth] = useState(defaultState.auth);
 
   return (
