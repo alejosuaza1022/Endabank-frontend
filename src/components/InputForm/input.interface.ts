@@ -10,5 +10,6 @@ interface InputProps {
   error?: FieldError;
   register: UseFormRegister<any>;
   optionsValidations?: object;
+  dataId: string;
 }
 export default InputProps;
