@@ -5,6 +5,7 @@ Feature: Password Reset
     Background:
         Given the user is on the Login page
 
+    # Happy Path
     @focus
     Scenario: Happy path reset password
         When the user clicks on "Forgot password?" link
@@ -13,7 +14,13 @@ Feature: Password Reset
         * the user opens the recovery link
         * the user fills in the fields for the recovery password
         * clicks in the "Submit" button
-        Then the user should see a green message showing success
+        Then the user should see a green message that says "Password updated successfully"
+
+    Scenario: Happy path change password
+        Given the user is logged in
+        When the user clicks on the "Password management" left side button
+        * the user fills in the old, new and confirmation password
+        * the user clicks the "Submit" button
 
     @skip
     Scenario: User wants to see if forgot password button is displayed
@@ -62,11 +69,11 @@ Feature: Password Reset
         * fills in the <Confirm password> field
         * clicks on the <Submit> button
         Then a <Success message> is shown to the user
-            | Element name         | Type   | is mandatory? | Status   | Value                       |
-            | New password         | Input  | Yes           | Enabled  |                             |
-            | Confirm new password | Input  | Yes           | Enabled  |                             |
-            | Submit               | Button |               | Disabled |                             |
-            | Success message      | Text   |               | Visible  | The password has been reset |
+            | Element name         | Type   | is mandatory? | Status   | Value                         |
+            | New password         | Input  | Yes           | Enabled  |                               |
+            | Confirm new password | Input  | Yes           | Enabled  |                               |
+            | Submit               | Button |               | Disabled |                               |
+            | Success message      | Text   |               | Visible  | Password updated successfully |
 
     @skip
     Scenario Outline: User fills in incorrect email

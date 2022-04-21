@@ -11,7 +11,7 @@ interface FieldObject {
     email: string;
 }
 
-const PopUp = (props: { setShowModal: Function }) => {
+const PopUpEmail = (props: { setShowModal: Function }) => {
 
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -75,6 +75,7 @@ const PopUp = (props: { setShowModal: Function }) => {
                                 type="text"
                                 id="email"
                                 label="Email"
+                                dataId="emailResetPassword"
                                 error={errors.email}
                                 register={register}
                                 optionsValidations={{
@@ -96,6 +97,7 @@ const PopUp = (props: { setShowModal: Function }) => {
                             <button
                                 className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
                                 type="submit"
+                                id="submitSendEmailPopUp"
                             >
                                 Submit
                             </button>
@@ -103,6 +105,7 @@ const PopUp = (props: { setShowModal: Function }) => {
                             <button
                                 className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
                                 type="button"
+                                id="closePopUp"
                                 onClick={() => setShowModal(false)}
                             >
                                 Close
@@ -121,4 +124,4 @@ const PopUp = (props: { setShowModal: Function }) => {
     );
 };
 
-export default PopUp
+export default PopUpEmail;

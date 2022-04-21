@@ -14,10 +14,6 @@ const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
     const token = Cookies.get('token') ?? "";
     const {
-        auth: {token},
-    } = useContext(AuthContext);
-    console.log(token)
-    const {
         register,
         handleSubmit,
         reset,

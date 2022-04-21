@@ -101,6 +101,7 @@ const FormResetPassword = () => {
                   type="password"
                   id="oldPassword"
                   label="Old Password"
+                  dataId="oldPasswordResetPassword"
                   register={register}
                   error={errors.oldPassword}
                   optionsValidations={{
@@ -114,6 +115,7 @@ const FormResetPassword = () => {
                   type="password"
                   id="password"
                   label="New Password"
+                  dataId="newPasswordResetPassword"
                   register={register}
                   error={errors.password}
                   optionsValidations={{
@@ -134,6 +136,7 @@ const FormResetPassword = () => {
                   type="password"
                   id="rePassword"
                   label="Confirm password"
+                  dataId="confirmPasswordResetPassword"
                   error={errors.rePassword}
                   register={register}
                   optionsValidations={{
@@ -153,6 +156,7 @@ const FormResetPassword = () => {
               </div>
               <button
                 type="submit"
+                id="submitResetPassword"
                 className="text-white color-endabank  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Submit
