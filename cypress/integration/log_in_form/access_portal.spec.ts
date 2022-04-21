@@ -16,6 +16,6 @@ Then('I click on Log In', () => {
 })
 
 Then('I dont see Log-in in the page' , () => {
-	cy.get('[href="/log-in/"]')
-	  .should('not.exist')
+	cy.get('#logoutSidebarElement')
+	  .should('exist')
 })
