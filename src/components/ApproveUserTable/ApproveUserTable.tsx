@@ -33,7 +33,7 @@ const SelectForm: React.FC<ApproveUserProps> = ({
       <td className="px-6 py-4">{lastName}</td>
       <td className="px-6 py-4">{email}</td>
       <td className="px-6 py-4 ">
-        <label htmlFor={"approveToggle"+id} className="flex relative mb-4 cursor-pointer ">
+        <label htmlFor={"ToggleApproveUser"+id} className="flex relative mb-4 cursor-pointer ">
           <input
             checked={actualState}
             onChange={handleCheckbox}
