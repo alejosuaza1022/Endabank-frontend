@@ -16,7 +16,8 @@ const LayoutHome = () => {
           <MainImage/>
         </div>
         <div className="flex justify-around sm:w-1/4 text-white text-bold">
-            {token?.length === 0
+
+          {token?.length === 0
               ? (
                   <>
                     {" "}

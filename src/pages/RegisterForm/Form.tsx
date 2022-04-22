@@ -13,6 +13,7 @@ import Strings from "../../constants/strings";
 const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
     const token = Cookies.get('token') ?? "";
+
     const {
         register,
         handleSubmit,
