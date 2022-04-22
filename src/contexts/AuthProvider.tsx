@@ -14,7 +14,7 @@ const defaultState = {
 
 const AuthContext = createContext<IAuthProvider>(defaultState);
 
-export const AuthProvider = ({children}:{children:ReactNode} ) => {
+export const AuthProvider = ({ children }:{children:ReactNode}) => {
 
     const [auth, setAuth] = useState(defaultState.auth);
     const [loadedData, setLoadedData] = useState(false);
@@ -30,17 +30,12 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
                 const isApproved = res?.data.approved;
                 const authorities = res?.data.authorities;
 
-                console.log(res?.data);
-                console.log("readToken");
-                console.log(currentUser, authorities, isApproved);
-
                 if (setAuth) {
                     setAuth({currentUser, isApproved, authorities, token});
                 }
 
             })()
         }
-        //const data = getCurrentUserDetail(token)
     }
 
     const getCurrentUserDetail = (token:string) =>{
@@ -65,12 +60,6 @@ export const AuthProvider = ({children}:{children:ReactNode} ) => {
         Cookies.remove('token');
         setAuth(defaultState.auth);
     }
-
-    // useEffect(() => {
-    //     readCookie();
-    //     console.log("cookie read")
-    // }, [lostData]);
-
 
     return(
     <AuthContext.Provider value={{auth,setAuth,logOut,setLoadedData,loadedData}}>
