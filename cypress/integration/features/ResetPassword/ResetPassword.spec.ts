@@ -6,20 +6,20 @@ import {
     But,
     And
   } from "cypress-cucumber-preprocessor/steps";
-import DummyUser from "./DummyUser";
+import DummyUser from "../../../test-data/DummyUser";
 
 const recoveryLink: string = `http://localhost:3000/reset-password/?token=${DummyUser.token}`
 
-When("the user clicks on {string} link", (linkText) => {
-    cy.contains(`${linkText}`).click();
+When('the user clicks on "Forgot password?" link', () => {
+    cy.get("#forgotPasswordHyperlink").click();
 })
 
 And('the user fills in the "Email"', () => {
-    cy.get('.p-6 > .relative > #email').type(DummyUser.email);
+    cy.get('[data-id="emailResetPassword"]').type(DummyUser.email);
 })
 
-And('clicks in the "Submit" button', () => {
-    cy.get('.flex > [type="submit"]').click();
+And('clicks in the "Submit" button on the pop up', () => {
+    cy.get('#submitSendEmailPopUp').click();
     cy.wait(3000);
 })
 
@@ -32,10 +32,10 @@ And("the user fills in the fields for the recovery password", () => {
     cy.get("#rePassword").type(DummyUser.newPassword);
 })
 
-And("clicks in the \"Submit\" button", () => {
-    cy.get('form > [type="submit"]').click();
+And('clicks in the "Submit" button on the reset password page', () => {
+    cy.get('#submitResetPassword').click();
 })
 
 Then('the user should see a green message that says {string}', (successMessage) => {
-    cy.get('#alert-2').should('have.text', successMessage);
+    cy.get('#alertPopUpMessage').should('contain.text', successMessage);
 })

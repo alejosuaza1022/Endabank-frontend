@@ -1,4 +1,3 @@
-
 class DummyUser {
     static readonly id: string = "24";
     static readonly email: string = "nicolas.cardona@endava.com";

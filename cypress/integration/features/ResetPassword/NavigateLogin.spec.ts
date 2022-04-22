@@ -5,7 +5,6 @@ import {
     Then,
     But,
   } from "cypress-cucumber-preprocessor/steps";
-import apiUrls from "../../../../src/constants/apiUrls";
 
 const loginUrl = Cypress.env('LOGIN_URL');
   
