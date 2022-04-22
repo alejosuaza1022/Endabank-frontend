@@ -72,7 +72,7 @@ const InputForm: React.FC<InputProps> = ({
                 {label}
             </label>
 
-            {error && error.type === "validate" && id === "newPassword" ? (
+            {error && error.type === "validate" && id === "password" ? (
                 <p className="text-xs text-red-600 ml-1 mt-2 text-bold">
                     The old password and new password must be different
                 </p>

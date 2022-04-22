@@ -131,9 +131,7 @@ const LogInForm = () => {
                             </div>
                         </form>
                         <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
-
                             New merchant? <Link id="signUpHyperlink" to="/sign-up">create an account</Link>
-
                         </div>
                     </div>
                 </div>
@@ -151,6 +149,7 @@ const LogInForm = () => {
                                   isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
+
         </div>
     );
 };

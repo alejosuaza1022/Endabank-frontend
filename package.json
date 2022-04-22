@@ -21,22 +21,16 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.1.1",
-<<<<<<< HEAD
-=======
     "@types/js-cookie": "^3.0.1",
->>>>>>> c1394b6ef8e9a11018b275d32c1543edd27e88ba
     "@types/node": "^17.0.24",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
-<<<<<<< HEAD
     "cors": "^2.8.5",
-=======
     "cypress": "^9.5.4",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "multiple-cucumber-html-reporter": "^1.20.0",
->>>>>>> c1394b6ef8e9a11018b275d32c1543edd27e88ba
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.4",
