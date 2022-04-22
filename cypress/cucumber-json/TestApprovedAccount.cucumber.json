@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Verify that the user is approved",
+    "line": 2,
+    "id": "verify-that-the-user-is-approved",
+    "tags": [
+      {
+        "name": "@focus",
+        "line": 1
+      }
+    ],
+    "uri": "ApprovedAccount.feature",
+    "elements": [
+      {
+        "id": "verify-that-the-user-is-approved;when-activating-a-user-the-toggle-behaves-as-expected,-changed-to-activated-and-blue",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "when activating a user the toggle behaves as expected, changed to activated and blue",
+        "tags": [
+          {
+            "name": "@focus",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Logged user as admin in the approval section",
+            "result": {
+              "status": "passed",
+              "duration": 4312000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "The toggle is activated",
+            "result": {
+              "status": "passed",
+              "duration": 2047000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Change to true and the color turns blue",
+            "result": {
+              "status": "passed",
+              "duration": 2112000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

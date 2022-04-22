@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Validate the default table and layout of the user approval section",
+    "line": 2,
+    "id": "validate-the-default-table-and-layout-of-the-user-approval-section",
+    "tags": [
+      {
+        "name": "@focus",
+        "line": 1
+      }
+    ],
+    "uri": "ValidateTable.feature",
+    "elements": [
+      {
+        "id": "validate-the-default-table-and-layout-of-the-user-approval-section;verification-of-the-user-interface-will-be-performed",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verification of the user interface will be performed",
+        "tags": [
+          {
+            "name": "@focus",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Logged user as admin",
+            "result": {
+              "status": "passed",
+              "duration": 3042000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "Im in the session User Approval",
+            "result": {
+              "status": "passed",
+              "duration": 2161000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I verify that the table user approval contains this: FIRST NAME, LAST NAME, EMAIL, APPROVED",
+            "result": {
+              "status": "passed",
+              "duration": 2167000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
