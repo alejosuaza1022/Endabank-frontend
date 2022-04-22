@@ -38,7 +38,7 @@ const SelectForm: React.FC<ApproveUserProps> = ({
             checked={actualState}
             onChange={handleCheckbox}
             type="checkbox"
-            id={"approveToggle"+id}
+            id={"ToggleApproveUser"+id}
             className="sr-only"
           />
           <div className="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
