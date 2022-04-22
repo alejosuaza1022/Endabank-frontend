@@ -1,17 +1,28 @@
-import SelectFormProps from "./approveUserTable.interface";
-import React, { useState } from "react";
+import ApproveUserProps from "./approveUserTable.interface";
+import React, { useEffect, useState } from "react";
+import { getAxios, putAxios } from "../../utils/axios";
+import apiUrls from "../../constants/apiUrls";
 
-const SelectForm: React.FC<SelectFormProps> = ({
+const SelectForm: React.FC<ApproveUserProps> = ({
   firstName,
   lastName,
   email,
-  approved = true,
+  approved = false,
   id,
+  token,
 }) => {
-  const [actualState, changeCheckState] = useState(false);
+  const [actualState, changeCheckState] = useState(approved);
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeCheckState(e.target.checked);
-    alert(firstName + " toggle " + e.target.checked);
+    console.log(token);
+    async function putData() {
+      const response: Array<ApproveUserProps> = await putAxios(
+        apiUrls.PUT_USERS_TO_APPROVE_URL + "/" + id,
+        {value:e.target.checked},
+        token
+      );
+    }
+    putData();
   };
 
   return (
@@ -22,12 +33,12 @@ const SelectForm: React.FC<SelectFormProps> = ({
       <td className="px-6 py-4">{lastName}</td>
       <td className="px-6 py-4">{email}</td>
       <td className="px-6 py-4 ">
-        <label htmlFor={id} className="flex relative mb-4 cursor-pointer ">
+        <label htmlFor={"approveToggle"+id} className="flex relative mb-4 cursor-pointer ">
           <input
             checked={actualState}
             onChange={handleCheckbox}
             type="checkbox"
-            id={id}
+            id={"approveToggle"+id}
             className="sr-only"
           />
           <div className="w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600"></div>
