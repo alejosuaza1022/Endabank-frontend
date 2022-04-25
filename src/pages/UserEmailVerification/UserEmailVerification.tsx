@@ -13,7 +13,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
     const [searchParams] = useSearchParams();
     const token = searchParams.get("token");
     email = email && email.length > 0 ? email : searchParams.get("email") ?? "";
-    console.log(email);
+
 
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);

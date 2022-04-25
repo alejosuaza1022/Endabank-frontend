@@ -6,3 +6,4 @@ export { default as Home } from "../pages/Home/Home";
 export { default as LandingPage} from "../pages/LandingPage/LandingPage"
 export { default as UserProfile} from "../pages/Profile/UserProfile"
 export { default as Unauthorized} from "../pages/Unauthorized/Unauthorized"
+export  {default as  UserEmailVerification } from "../pages/UserEmailVerification/UserEmailVerification"
