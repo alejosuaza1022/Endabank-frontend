@@ -4,9 +4,9 @@ Feature: Password Reset
 
     Background:
         Given the user is on the Login page
-        * the user clicks on "Forgo password?" link
+        * the user clicks on "Forgot password?" link
 
-    @skip
+    @focus
     Scenario: Happy path reset password
         When the user fills in the "Email"
         * clicks in the "Submit" button on the pop up
