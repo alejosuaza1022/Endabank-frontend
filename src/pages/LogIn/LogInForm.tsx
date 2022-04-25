@@ -30,8 +30,8 @@ const LogInForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const onSubmit: SubmitHandler<LoginObject> = async (data, e) => {
         e?.preventDefault()
-        const email = data.emailLogin;
-        const password = data.passwordLogin;
+        const email = data.email;
+        const password = data.password;
 
         console.log(email,password)
         setShowPopUpMessage(false)
@@ -66,7 +66,7 @@ const LogInForm = () => {
                 setIsLoading(false);
                 setIsColorError(true);
                 setMessagePopUp(error?.response?.data?.message || Strings.ERROR_MESSAGE);
-                setLinkPopUp("/verify-email?email=" + data.emailLogin);
+                setLinkPopUp("/verify-email?email=" + data.email);
                 setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
                 setShowPopUpMessage(true);
             }
@@ -96,10 +96,11 @@ const LogInForm = () => {
                         <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
                             <Input
                                 type="text"
-                                id="emailLogin"
+                                id="email"
+                                dataId="emailInputLogin"
                                 label="Email"
                                 register={register}
-                                error={errors.emailLogin}
+                                error={errors.email}
                                 optionsValidations={{
                                     pattern: {
                                         value:
@@ -110,9 +111,10 @@ const LogInForm = () => {
                             />
                             <Input
                                 type="password"
-                                id="passwordLogin"
+                                id="password"
+                                dataId="passwordInputLogin"
                                 label="Password"
-                                error={errors.passwordLogin}
+                                error={errors.password}
                                 register={register}
                             />
                             <button
