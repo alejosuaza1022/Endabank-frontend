@@ -73,7 +73,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
             <>
                 <div className="flex flex-col h-5/6 w-full items-center " id="userEmailVerification">
                     <div
-                        className=" lg:w-1/3 sm:w-1/2 p-4 bg-white h-full bg-gray-50 rounded-lg border shadow-md sm:p-8 justify-between items-center mt-10 ">
+                        className=" lg:w-1/3 sm:w-1/2 p-4 h-full bg-gray-50 rounded-lg border shadow-md sm:p-8 justify-between items-center mt-10 ">
                         <div className="w-full h-1/2 flex justify-center  ">
                             <div className="flex justify-center color-endabank circle-container">
                                 <img className="  w-24 my-2 item-center" src={emailSentLogo} alt="imagen endabank"/>
