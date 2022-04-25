@@ -6,7 +6,6 @@ import {putAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
 import strings from "../../constants/strings";
 import {AxiosError} from "axios";
-import { Navigate } from "react-router-dom";
 import AuthContext from "../../contexts/AuthProvider";
 import Cookies from "js-cookie";
 import Strings from "../../constants/strings";
@@ -22,10 +21,7 @@ const FormResetPassword = () => {
     loadedData
   } = useContext(AuthContext);
 
-  //{auth ? setIsActive(true):setIsActive(false)}
-
   console.log(loadedData);
-  //console.log(isActive);
 
   const token = Cookies.get('token');
 
@@ -38,12 +34,27 @@ const FormResetPassword = () => {
   } = useForm<FieldObject>({mode: "onTouched"});
     
   async function changePassword (data: FieldObject) {
-    const response = await putAxios(
-      apiUrls.GET_USERS_CHANGE_PASSWORD_URL,
-      data,
-      token
-    );
-    console.log(response.message);
+      try {
+          const response = await putAxios(
+              apiUrls.GET_USERS_CHANGE_PASSWORD_URL,
+              data,
+              token
+          );
+          console.log(response.message);
+          setIsColorError(false)
+          setMessagePopUp(Strings.PASSWORD_UPDATED);
+          setShowPopUpMessage(true);
+      }catch (err) {
+          const error = err as AxiosError;
+          let message = strings.ERROR_MESSAGE;
+          if (error.response?.data?.statusCode != 500) {
+              message = error.response?.data?.message || strings.ERROR_MESSAGE;
+          }
+          setShowPopUpMessage(true);
+          setIsColorError(true)
+          setMessagePopUp(message);
+      }
+
   }
 
   async function resetPassword(data: FieldObject) {
@@ -52,40 +63,37 @@ const FormResetPassword = () => {
     data.token = urlParams.get("token") ?? "";
       console.log(data.token);
       console.log(loadedData);
-    const response = await putAxios(
-      apiUrls.GET_USERS_RESET_PASSWORD_URL,
-      data,
-      ""
-    );
-    console.log(response.message);
+    try {
+        const response = await putAxios(
+            apiUrls.GET_USERS_RESET_PASSWORD_URL,
+            data,
+            ""
+        );
+        console.log(response.message);
+        setIsColorError(false)
+        setMessagePopUp(Strings.PASSWORD_UPDATED);
+        setShowPopUpMessage(true);
+    }catch (err) {
+        const error = err as AxiosError;
+        let message = strings.ERROR_MESSAGE;
+        if (error.response?.data?.statusCode != 500) {
+            message = error.response?.data?.message || strings.ERROR_MESSAGE;
+        }
+        setShowPopUpMessage(true);
+        setIsColorError(true)
+        setMessagePopUp(message);
+    }
+
 }
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
     setShowPopUpMessage(false);
-        try {
-            console.log(data);
-            console.log(loadedData);
-            setIsLoading(true);
-            {loadedData! ? changePassword(data):resetPassword(data)}
-            setIsLoading(false);
-            setIsColorError(false)
-            setMessagePopUp(Strings.PASSWORD_UPDATED);
-            setShowPopUpMessage(true);
-            reset();
-
-        } catch (err) {
-            const error = err as AxiosError;
-            let message = strings.ERROR_MESSAGE;
-            if (error.response?.data?.statusCode != 500) {
-                message = error.response?.data?.message || strings.ERROR_MESSAGE;
-            }
-            setShowPopUpMessage(true);
-            setIsColorError(true)
-            setMessagePopUp(message);
-            setIsLoading(false);
-        }
-      setIsLoading(false);
-      setShowPopUpMessage(true);
+    console.log(data);
+    console.log(loadedData);
+    setIsLoading(true);
+    {loadedData! ? changePassword(data):resetPassword(data)}
+    setIsLoading(false);
+    reset();
   };
   
 
@@ -95,7 +103,10 @@ const FormResetPassword = () => {
         <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
           <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid xl:grid-cols-1 xl:gap-6">
-                <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>
+                  {loadedData ?
+                      (<p className="font-sans hover:font-arial text-[28px] text-center">Update Password</p>)
+                      :( <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>)
+                  }
                 {loadedData ?
                 (<Input
                   type="password"

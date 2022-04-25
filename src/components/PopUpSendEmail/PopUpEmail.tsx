@@ -17,17 +17,7 @@ const PopUpEmail = (props: { setShowModal: Function }) => {
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
 
-    async function sendEmail(data: FieldObject) {
-        console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email);
-        const response: Array<FieldObject> = await getAxios(
-            apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email,
-            ""
-        );
-        console.log(response);
-    }
-
     const {setShowModal} = props;
-
     setShowModal(true);
 
     const {
@@ -37,11 +27,16 @@ const PopUpEmail = (props: { setShowModal: Function }) => {
         formState: {errors},
     } = useForm<FieldObject>({mode: "onTouched"});
 
-    const onSubmit: SubmitHandler<FieldObject> = (data) => {
+    const onSubmit: SubmitHandler<FieldObject> = async (data) => {
         setShowPopUpMessage(false);
         try {
             console.log(data);
-            sendEmail(data)
+            console.log(apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email);
+            const response: Array<FieldObject> = await getAxios(
+                apiUrls.GET_USERS_RESET_PASSWORD_URL + "/" + data.email,
+                ""
+            );
+            console.log(response);
             setIsColorError(false)
             setMessagePopUp(Strings.MAIL_SEND);
             setShowPopUpMessage(true);
