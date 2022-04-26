@@ -1,7 +1,7 @@
 interface LoginObject {
   id?: string;
-  emailLogin: string;
-  passwordLogin: string;
+  email: string;
+  password: string;
 }
 
 export default LoginObject;

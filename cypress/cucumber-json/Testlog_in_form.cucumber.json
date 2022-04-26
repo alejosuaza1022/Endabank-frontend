@@ -23,7 +23,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 529000000
+              "duration": 3041000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 590000000
+              "duration": 1428000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 297000000
+              "duration": 428000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 110000000
+              "duration": 176000000
             }
           },
           {
@@ -62,8 +62,9 @@
             "line": 15,
             "name": "I dont see Log-in in the page",
             "result": {
-              "status": "passed",
-              "duration": 890000000
+              "status": "failed",
+              "duration": 4058000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#logoutSidebarElement`, but never found it.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:37:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11926:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11247:35)"
             }
           }
         ]
@@ -83,7 +84,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 515000000
+              "duration": 3695000000
             }
           },
           {
@@ -93,7 +94,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 608000000
+              "duration": 1346000000
             }
           },
           {
@@ -103,7 +104,7 @@
             "name": "I need to write an incorrect password as \"Ni*colas17\"",
             "result": {
               "status": "passed",
-              "duration": 291000000
+              "duration": 389000000
             }
           },
           {
@@ -113,7 +114,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 97000000
+              "duration": 388000000
             }
           },
           {
@@ -123,7 +124,7 @@
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
               "status": "passed",
-              "duration": 547000000
+              "duration": 2167000000
             }
           }
         ]
@@ -143,7 +144,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 533000000
+              "duration": 2294000000
             }
           },
           {
@@ -153,7 +154,7 @@
             "name": "I need to write an incorrect email as \"nicolas.cardonae@ndava.com\"",
             "result": {
               "status": "passed",
-              "duration": 545000000
+              "duration": 1318000000
             }
           },
           {
@@ -163,7 +164,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 282000000
+              "duration": 542000000
             }
           },
           {
@@ -173,7 +174,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 101000000
+              "duration": 178000000
             }
           },
           {
@@ -183,7 +184,7 @@
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
               "status": "passed",
-              "duration": 344000000
+              "duration": 1226000000
             }
           }
         ]
@@ -203,7 +204,7 @@
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 554000000
+              "duration": 1987000000
             }
           },
           {
@@ -213,7 +214,7 @@
             "name": "I need to write an email with incorrect format as \"nicolas.cardonaendava.com\"",
             "result": {
               "status": "passed",
-              "duration": 545000000
+              "duration": 1025000000
             }
           },
           {
@@ -223,7 +224,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 280000000
+              "duration": 649000000
             }
           },
           {
@@ -233,7 +234,7 @@
             "name": "I see \"This field must be a valid email\" highlight error displayed",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 200000000
             }
           }
         ]
