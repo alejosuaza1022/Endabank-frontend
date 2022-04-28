@@ -33,9 +33,10 @@ const LogInForm = () => {
         const email = data.email;
         const password = data.password;
 
-        console.log(email,password)
         setShowPopUpMessage(false)
+
         try {
+            setIsLoading(true)
             const res = await axios.post('http://localhost:8080/api/v1/login',
                 JSON.stringify({email, password}),
                 {
@@ -70,13 +71,15 @@ const LogInForm = () => {
                 setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
                 setShowPopUpMessage(true);
             }
-            else if(error.response?.data?.statusCode == 401){
+            else if(error.response?.data?.statusCode == (401 || 400)){
                 setIsColorError(true);
+                setLinkPopUpMessage('')
+                setLinkPopUp('')
                 setMessagePopUp(Strings.INCORRECT_CREDENTIALS)
                 setShowPopUpMessage(true);
             }
         }
-
+        setIsLoading(false)
         reset();
     };
 
