@@ -11,7 +11,7 @@ class UpdatePasswordPage {
     public writeNewPassword(newPassword: string) {
         cy.get(this.newPasswordFieldId).type(newPassword)
     }
-    public confirmNewPasswprd(confirmedPassword: string) {
+    public confirmNewPassword(confirmedPassword: string) {
         cy.get(this.confirmPasswordFieldId).type(confirmedPassword)
     }
     public clickSubmitButton() {
