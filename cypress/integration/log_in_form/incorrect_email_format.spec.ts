@@ -1,12 +1,12 @@
 import { When, Then } from "cypress-cucumber-preprocessor/steps";
 
 When('I need to write an email with incorrect format as {string}', (email) => {
-	cy.get('#emailLogin')
+	cy.get('#email')
 	  .type(email)
 });
 
 Then('I need to write a password as {string}', (password) => {
-	cy.get('#passwordLogin')
+	cy.get('#password')
    	  .type(password)
 });
 

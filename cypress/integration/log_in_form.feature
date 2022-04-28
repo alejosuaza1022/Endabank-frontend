@@ -12,7 +12,7 @@ Feature: Log in Form
 		When I need to write an email as "nicolas.cardona@endava.com"
 		Then I need to write a password as "Nicolas17*"
 		Then I click on Log In
-		Then I dont see Log-in in the page
+		Then I see My Profile, Password Management and Log-out in the page
 
 	Scenario: Log in with incorrect password
 

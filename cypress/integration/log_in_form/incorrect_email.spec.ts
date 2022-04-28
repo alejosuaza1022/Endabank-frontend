@@ -1,12 +1,12 @@
 import { When, Then } from "cypress-cucumber-preprocessor/steps";
 
 When('I need to write an incorrect email as {string}', (email) => {
-	cy.get('#emailLogin')
+	cy.get('#email')
 	  .type(email)
 });
 
 Then('I need to write a password as {string}', (password) => {
-	cy.get('#passwordLogin')
+	cy.get('#password')
    	  .type(password)
 });
 
@@ -16,6 +16,6 @@ Then('I click on Log In', () => {
 });
 
 Then('I see {string} message error displayed' , (errorMessage) => {
-	cy.get('#alert-2')
+	cy.get('#alertPopUpMessage')
 	  .contains(errorMessage)
 })
