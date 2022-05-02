@@ -43,8 +43,8 @@ const LogInForm = () => {
                     headers: {'Content-type': "application/json"}
                 }
             );
-
-            const token = res.data.access_token;
+            //TODO Add token verification
+            const token = res.data.accessToken;
             const isApproved = res.data.isApproved;
 
             if(isApproved){
