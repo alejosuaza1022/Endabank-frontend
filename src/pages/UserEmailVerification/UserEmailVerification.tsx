@@ -87,7 +87,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
                                 Please verify your email using the link sent to {email}.
                             </p>
                             <div
-                                className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3"
+                                className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3 text-white"
                                 onClick={() => handleGenerateNewEmailVerification()}
                                 id="btnSendEmailVerification"
                             >
@@ -98,10 +98,10 @@ const UserEmailVerification = ({email}: { email: string }) => {
                                      viewBox="0 0 24 24">
                                     <g data-name="20.Arrow Right">
                                         <path
-                                            d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z"/>
+                                            d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" fill="white"/>
                                         <path
-                                            d="m13.707 16.707-1.414-1.414L15.586 12l-3.293-3.293 1.414-1.414L18.414 12l-4.707 4.707z"/>
-                                        <path d="M6 11h11v2H6z"/>
+                                            d="m13.707 16.707-1.414-1.414L15.586 12l-3.293-3.293 1.414-1.414L18.414 12l-4.707 4.707z" fill="white"/>
+                                        <path d="M6 11h11v2H6z" fill="white"/>
                                     </g>
                                 </svg>
                             </div>
