@@ -22,7 +22,7 @@ Feature: User registration
 		Examples:
 
 			| value | field_name		 | error_message 															|
-			|  jd	| #identifier		 | This field must be just numbers with a length between 10 and 20			|
+			|  jd	| #identifier		 | This field must be just numbers with a length between 6 and 20			|
 			|  52 	| #firstName	     | This field must be just letters with a length between 2 and 20			|
 			|  89  	| #lastName		     | This field must be just letters with a length between 2 and 20			|
 			|  js 	| #phoneNumber		 | This field must be just numbers with a length between 10 and 20			|
@@ -57,6 +57,7 @@ Feature: User registration
 		Then the fields will be highlighted in red
 		And a label message is shown indicating "Passwords do not match"
 
+	@ignore
 	Scenario: Email in the form is already registered
 		Given the user is entering data in the Registration form
 		When the user enters an email that is already in use

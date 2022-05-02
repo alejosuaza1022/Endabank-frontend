@@ -1,20 +1,19 @@
 import "./index.css";
-import {useContext, useState} from "react";
+import { useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AxiosError} from "axios";
+import Cookies from "js-cookie";
 import {Input, PopUpMessage, SelectForm, Spinner} from "../../components/index";
 import UserObject from "./userObject.interface";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {postAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
-import AuthContext from "../../contexts/AuthProvider";
-import strings from "../../constants/strings";
+import Strings from "../../constants/strings";
 
 const Form = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const {
-        auth: {token},
-    } = useContext(AuthContext);
+    const token = Cookies.get('token') ?? "";
+
     const {
         register,
         handleSubmit,
@@ -22,10 +21,10 @@ const Form = () => {
         getValues,
         formState: {errors},
     } = useForm<UserObject>({mode: "onTouched"});
-    const [colorPopUpMessage, setColorPopUpMessage] = useState<string>(strings.COLOR_SUCCESS);
+    const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [linkPopUp, setLinkPopUp] = useState("");
-    const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
+    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
     const [linkPopUpMessage, setLinkPopUpMessage] = useState<string>("");
     const onSubmit: SubmitHandler<UserObject> = async (data) => {
         setShowPopUpMessage(false);
@@ -36,20 +35,18 @@ const Form = () => {
                 data,
                 undefined
             );
-            setColorPopUpMessage(strings.COLOR_SUCCESS);
+            setIsColorError(false)
             setMessagePopUp(response.message);
             setLinkPopUp("/verify-email?email=" + data.email);
-            setLinkPopUpMessage("Lets verify your email")
+            setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
             reset();
-
-
         } catch (err) {
             const error = err as AxiosError;
-            let message = strings.ERROR_MESSAGE;
+            let message = Strings.ERROR_MESSAGE;
             if (error.response?.data?.statusCode != 500) {
-                message = error.response?.data?.message || strings.ERROR_MESSAGE;
+                message = error.response?.data?.message || Strings.ERROR_MESSAGE;
             }
-            setColorPopUpMessage(strings.COLOR_ERROR);
+            setIsColorError(true);
             setMessagePopUp(message);
             setLinkPopUp("#");
             setLinkPopUpMessage("");
@@ -60,10 +57,11 @@ const Form = () => {
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (<div className="flex w-full justify-center mt-20 ">
                 <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)} id="signUp">
                         <div className="grid-cc">
                             <SelectForm
                                 id="typeIdentifierId"
+                                dataId="typeIdentifierIdSignUp"
                                 value="Document type"
                                 options={{"1": "CC", "2": "CE"}}
                                 error={errors.typeIdentifierId}
@@ -72,14 +70,15 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="identifier"
+                                dataId="identifierSignUp"
                                 label="Identifier"
                                 register={register}
                                 error={errors.identifier}
                                 optionsValidations={{
                                     pattern: {
-                                        value: /^\d{10,20}/,
+                                        value: /^\d{6,20}/,
                                         message:
-                                            "This field must be just numbers with a length between 10 and 20",
+                                            "This field must be just numbers with a length between 6 and 20",
                                     },
                                 }}
                             />
@@ -89,6 +88,7 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="firstName"
+                                dataId="firstNameSignUp"
                                 label="First name"
                                 error={errors.firstName}
                                 register={register}
@@ -103,6 +103,7 @@ const Form = () => {
                             <Input
                                 type="text"
                                 id="lastName"
+                                dataId="lastNameSignUp"
                                 label="Last name"
                                 error={errors.lastName}
                                 register={register}
@@ -119,6 +120,7 @@ const Form = () => {
                         <Input
                             type="tel"
                             id="phoneNumber"
+                            dataId="phoneNumberSignUp"
                             label="Phone Number"
                             error={errors.phoneNumber}
                             register={register}
@@ -133,6 +135,7 @@ const Form = () => {
                         <Input
                             type="text"
                             id="email"
+                            dataId="emailSignUp"
                             label="Email"
                             error={errors.email}
                             register={register}
@@ -147,6 +150,7 @@ const Form = () => {
                         <Input
                             type="password"
                             id="password"
+                            dataId="passwordSignUp"
                             label="Password"
                             error={errors.password}
                             register={register}
@@ -162,6 +166,7 @@ const Form = () => {
                         <Input
                             type="password"
                             id="rePassword"
+                            dataId="passwordSignUp"
                             label="Confirm password"
                             error={errors.rePassword}
                             register={register}
@@ -172,6 +177,7 @@ const Form = () => {
                         />
                         <button
                             type="submit"
+                            id="submitSignUp"
                             className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
                         >
                             Submit
@@ -181,9 +187,10 @@ const Form = () => {
             </div>
         );
     }
+
     return (
         <>
-            {token.length === 0 ?
+            {token?.length == 0 ?
                 renderFormOrLoading()
                 : (
                     <Navigate replace to="/"/>
@@ -191,7 +198,7 @@ const Form = () => {
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
                     <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
-                                  color={colorPopUpMessage} link={linkPopUp} linkMessage={linkPopUpMessage}/>
+                                  isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
         </>

@@ -23,7 +23,7 @@
             "name": "an user enter to the login page using the url",
             "result": {
               "status": "passed",
-              "duration": 1389000000
+              "duration": 588000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the page loads correctly",
             "result": {
               "status": "passed",
-              "duration": 88000000
+              "duration": 64000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the create an account link exists",
             "result": {
               "status": "passed",
-              "duration": 232000000
+              "duration": 151000000
             }
           },
           {
@@ -52,9 +52,8 @@
             "line": 12,
             "name": "it is working",
             "result": {
-              "status": "failed",
-              "duration": 4079000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'First name' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:39:31)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10574:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9895:35)"
+              "status": "passed",
+              "duration": 14000000
             }
           }
         ]
@@ -74,7 +73,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 845000000
+              "duration": 577000000
             }
           },
           {
@@ -84,7 +83,7 @@
             "name": "the user types a wrong \"jd\" in the \"#identifier\"",
             "result": {
               "status": "passed",
-              "duration": 225000000
+              "duration": 273000000
             }
           },
           {
@@ -94,17 +93,17 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 129000000
+              "duration": 142000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 19,
-            "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
+            "name": "the following \"This field must be just numbers with a length between 6 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 19000000
             }
           },
           {
@@ -114,7 +113,7 @@
             "name": "the \"#identifier\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 25000000
+              "duration": 14000000
             }
           }
         ]
@@ -134,7 +133,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 750000000
+              "duration": 527000000
             }
           },
           {
@@ -144,7 +143,7 @@
             "name": "the user types a wrong \"52\" in the \"#firstName\"",
             "result": {
               "status": "passed",
-              "duration": 203000000
+              "duration": 260000000
             }
           },
           {
@@ -154,7 +153,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 119000000
+              "duration": 102000000
             }
           },
           {
@@ -164,7 +163,7 @@
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 15000000
             }
           },
           {
@@ -174,7 +173,7 @@
             "name": "the \"#firstName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 11000000
             }
           }
         ]
@@ -194,7 +193,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 662000000
+              "duration": 516000000
             }
           },
           {
@@ -204,7 +203,7 @@
             "name": "the user types a wrong \"89\" in the \"#lastName\"",
             "result": {
               "status": "passed",
-              "duration": 208000000
+              "duration": 296000000
             }
           },
           {
@@ -214,7 +213,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 120000000
+              "duration": 137000000
             }
           },
           {
@@ -224,7 +223,7 @@
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 22000000
             }
           },
           {
@@ -234,7 +233,7 @@
             "name": "the \"#lastName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 23000000
+              "duration": 13000000
             }
           }
         ]
@@ -254,7 +253,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 698000000
+              "duration": 592000000
             }
           },
           {
@@ -264,7 +263,7 @@
             "name": "the user types a wrong \"js\" in the \"#phoneNumber\"",
             "result": {
               "status": "passed",
-              "duration": 211000000
+              "duration": 282000000
             }
           },
           {
@@ -274,7 +273,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 147000000
+              "duration": 169000000
             }
           },
           {
@@ -284,7 +283,7 @@
             "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 21000000
             }
           },
           {
@@ -294,7 +293,7 @@
             "name": "the \"#phoneNumber\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 20000000
             }
           }
         ]
@@ -314,7 +313,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 757000000
+              "duration": 638000000
             }
           },
           {
@@ -324,7 +323,7 @@
             "name": "the user types a wrong \"asi\" in the \"#email\"",
             "result": {
               "status": "passed",
-              "duration": 242000000
+              "duration": 301000000
             }
           },
           {
@@ -334,7 +333,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 143000000
+              "duration": 122000000
             }
           },
           {
@@ -344,7 +343,7 @@
             "name": "the following \"This field must be a valid email\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 53000000
+              "duration": 22000000
             }
           },
           {
@@ -354,7 +353,7 @@
             "name": "the \"#email\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 34000000
+              "duration": 14000000
             }
           }
         ]
@@ -374,7 +373,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 821000000
+              "duration": 587000000
             }
           },
           {
@@ -384,7 +383,7 @@
             "name": "the user types a wrong \"25d\" in the \"#password\"",
             "result": {
               "status": "passed",
-              "duration": 250000000
+              "duration": 326000000
             }
           },
           {
@@ -394,7 +393,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 155000000
+              "duration": 150000000
             }
           },
           {
@@ -404,7 +403,7 @@
             "name": "the following \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 20000000
             }
           },
           {
@@ -414,7 +413,7 @@
             "name": "the \"#password\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 15000000
             }
           }
         ]
@@ -434,7 +433,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 767000000
+              "duration": 610000000
             }
           },
           {
@@ -444,7 +443,7 @@
             "name": "the user types a wrong \"25e\" in the \"#rePassword\"",
             "result": {
               "status": "passed",
-              "duration": 214000000
+              "duration": 305000000
             }
           },
           {
@@ -454,7 +453,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 123000000
+              "duration": 152000000
             }
           },
           {
@@ -464,7 +463,7 @@
             "name": "the following \"Passwords do not match\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 19000000
             }
           },
           {
@@ -474,7 +473,7 @@
             "name": "the \"#rePassword\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 25000000
+              "duration": 15000000
             }
           }
         ]
@@ -494,7 +493,7 @@
             "name": "an user that has clicked on the \"Create an account\" link in the Login page",
             "result": {
               "status": "passed",
-              "duration": 841000000
+              "duration": 603000000
             }
           },
           {
@@ -504,7 +503,7 @@
             "name": "the Registration page loaded correctly",
             "result": {
               "status": "passed",
-              "duration": 27000000
+              "duration": 71000000
             }
           },
           {
@@ -514,7 +513,7 @@
             "name": "the user enters value in all fields",
             "result": {
               "status": "passed",
-              "duration": 2503000000
+              "duration": 2466000000
             }
           },
           {
@@ -524,7 +523,7 @@
             "name": "the user clicks on the \"Submit\" button",
             "result": {
               "status": "passed",
-              "duration": 113000000
+              "duration": 102000000
             }
           },
           {
@@ -534,7 +533,7 @@
             "name": "the information is saved and sent correctly.",
             "result": {
               "status": "passed",
-              "duration": 57000000
+              "duration": 40000000
             }
           }
         ]
@@ -605,7 +604,7 @@
             "name": "the user has filled some mandatory fields but not all",
             "result": {
               "status": "passed",
-              "duration": 1085000000
+              "duration": 1205000000
             }
           },
           {
@@ -615,7 +614,7 @@
             "name": "the user clicks on submit button",
             "result": {
               "status": "passed",
-              "duration": 156000000
+              "duration": 147000000
             }
           },
           {
@@ -625,7 +624,7 @@
             "name": "an error message should be visible",
             "result": {
               "status": "passed",
-              "duration": 27000000
+              "duration": 19000000
             }
           }
         ]
@@ -645,7 +644,7 @@
             "name": "the user is filling the password and confirm password fields",
             "result": {
               "status": "passed",
-              "duration": 1093000000
+              "duration": 1159000000
             }
           },
           {
@@ -655,7 +654,7 @@
             "name": "the user writes different values on those fields",
             "result": {
               "status": "passed",
-              "duration": 439000000
+              "duration": 445000000
             }
           },
           {
@@ -664,8 +663,8 @@
             "line": 57,
             "name": "the fields will be highlighted in red",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: expected '<p.text-xs.text-red-600.ml-1.mt-2.text-bold>' to have CSS property 'color' with the value 'rgb(240, 82, 82)', but the value was 'rgb(224, 36, 36)'\n    + expected - actual\n\n    -'rgb(224, 36, 36)'\n    +'rgb(240, 82, 82)'\n\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:156:40)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10574:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9895:35)"
+              "status": "passed",
+              "duration": 151000000
             }
           },
           {
@@ -674,7 +673,8 @@
             "line": 58,
             "name": "a label message is shown indicating \"Passwords do not match\"",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 19000000
             }
           }
         ]
@@ -682,39 +682,41 @@
       {
         "id": "user-registration;email-in-the-form-is-already-registered",
         "keyword": "Scenario",
-        "line": 60,
+        "line": 61,
         "name": "Email in the form is already registered",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@ignore",
+            "line": 60
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 61,
+            "line": 62,
             "name": "the user is entering data in the Registration form",
             "result": {
-              "status": "passed",
-              "duration": 894000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 62,
+            "line": 63,
             "name": "the user enters an email that is already in use",
             "result": {
-              "status": "passed",
-              "duration": 365000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 63,
+            "line": 64,
             "name": "an error message should be shown",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'email already exists' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:95:41)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10574:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9895:35)"
+              "status": "skipped"
             }
           }
         ]
@@ -722,7 +724,7 @@
       {
         "id": "user-registration;user-tries-to-correct-fields-after-writing-wrong-value",
         "keyword": "Scenario",
-        "line": 65,
+        "line": 66,
         "name": "User tries to correct fields after writing wrong value",
         "tags": [],
         "type": "scenario",
@@ -730,41 +732,41 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 66,
+            "line": 67,
             "name": "an user has entered a wrong value in a field",
             "result": {
               "status": "passed",
-              "duration": 2725000000
+              "duration": 2515000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 67,
+            "line": 68,
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 93000000
+              "duration": 76000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 68,
+            "line": 69,
             "name": "the user is correcting value in a field",
             "result": {
               "status": "passed",
-              "duration": 3281000000
+              "duration": 2966000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 69,
+            "line": 70,
             "name": "the error message should dissappear",
             "result": {
               "status": "passed",
-              "duration": 54000000
+              "duration": 51000000
             }
           }
         ]

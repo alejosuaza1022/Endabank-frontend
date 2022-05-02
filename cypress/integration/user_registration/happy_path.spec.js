@@ -26,7 +26,7 @@ When('the user enters value in all fields', () => {
 })
 
 And ('the user clicks on the "Submit" button', () => {
-    cy.get('#root > div > div > div > div > form > button').click()
+    cy.get('#submitSignUp').click()
     
 })
 

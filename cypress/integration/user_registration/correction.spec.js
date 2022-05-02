@@ -17,7 +17,7 @@ Given('an user has entered a wrong value in a field',()=>{
 })
 
 Then('an error message should be displayed',()=>{
-    cy.get('.grid-cc > :nth-child(2) > .text-xs').should('have.text','This field must be just numbers with a length between 10 and 20')
+    cy.get('.grid-cc > :nth-child(2) > .text-xs').should('have.text','This field must be just numbers with a length between 6 and 20')
     cy.get(':nth-child(1) > .text-xs').should('have.text','This field must be just letters with a length between 2 and 20')
     cy.get('.grid > :nth-child(2) > .text-xs').should('have.text','This field must be just letters with a length between 2 and 20')
     cy.get(':nth-child(3) > .text-xs').should('have.text','This field must be just numbers with a length between 10 and 20')

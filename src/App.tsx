@@ -1,38 +1,40 @@
-import { useState } from "react";
-import {
-  ActivateAccountForm,
-  LogIn,
-  RegisterForm,
-  FormResetPassword,
-  Home,
-} from "./pages/index";
+
+import {ActivateAccountForm, LogIn,
+    RegisterForm, FormResetPassword,
+    Home, UserProfile,
+    LandingPage,Unauthorized, UserEmailVerification} from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
-import { AuthProvider } from "./contexts/AuthProvider";
-import UserEmailVerification from "./pages/UserEmailVerification/UserEmailVerification";
+import {RequireAuth} from "./components/index";
+
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/" element={<HomeLayout />}>
-              <Route index element={<Home />} />
-              <Route path="log-in" element={<LogIn />} />
-              <Route path="sign-up" element={<RegisterForm />} />
-              <Route path="reset-password" element={<FormResetPassword />} />
-              <Route
-                path="activate-account"
-                element={<ActivateAccountForm />}
-              />
-              <Route path="verify-email" element={<UserEmailVerification email={""} />} />
+
+      <Routes>
+        <Route path="/" element={<HomeLayout/>}>
+
+            {/*public routes*/}
+            <Route path="log-in" element={<LogIn />} />
+            <Route path="sign-up" element={<RegisterForm />} />
+            <Route path="unauthorized" element={<Unauthorized/>}/>
+            <Route path="reset-password" element={<FormResetPassword />} />
+
+            <Route path="verify-email" element={<UserEmailVerification email={""} />} />
+            {/*private routes*/}
+            <Route element={<RequireAuth allowedRoles={['ROLE_USER','ROLE_ADMIN']}/>}>
+                <Route path="/" element={<Home />}>
+                    <Route path="profile" element={<UserProfile/>}/>
+                    <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
+                        <Route path="activate-account" element={<ActivateAccountForm />} />
+                    </Route>
+                    <Route path="home/reset-password" element={<FormResetPassword />} />
+                </Route>
             </Route>
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-    </div>
+
+        </Route>
+      </Routes>
   );
 }
 export default App;

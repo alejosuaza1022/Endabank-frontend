@@ -13,7 +13,7 @@ When('the user writes different values on those fields',()=> {
 Then('the fields will be highlighted in red',()=> {
     cy.get("#identifier").click()
     
-    cy.get(':nth-child(6) > .text-xs').should('have.css','color','rgb(240, 82, 82)')
+    cy.get('#rePassword').should('have.css','borderColor','rgb(240, 82, 82)')
     
     
 })
