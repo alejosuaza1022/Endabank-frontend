@@ -15,7 +15,7 @@ Given('the user is logged in', () => {
     // cy.get('[data-id="emailInputLogin"]').type(DummyUser.email);
     // cy.get('[data-id="passwordInputLogin"]').type(DummyUser.password)
     // cy.get('#submitLogin').click();
-    cy.fixture('dummy-user.json').then((userData) => {
+    cy.fixture('existing-user.json').then((userData) => {
       loginPage.writeEmail(userData.email);
       loginPage.writePassword(userData.password);
     })
