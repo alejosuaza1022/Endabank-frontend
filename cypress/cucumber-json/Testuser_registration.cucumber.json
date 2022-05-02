@@ -23,7 +23,7 @@
             "name": "an user enter to the login page using the url",
             "result": {
               "status": "passed",
-              "duration": 1217000000
+              "duration": 1389000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the page loads correctly",
             "result": {
               "status": "passed",
-              "duration": 47000000
+              "duration": 88000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the create an account link exists",
             "result": {
               "status": "passed",
-              "duration": 202000000
+              "duration": 232000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "it is working",
             "result": {
               "status": "failed",
-              "duration": 4066000000,
+              "duration": 4079000000,
               "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'First name' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:39:31)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10574:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9895:35)"
             }
           }
@@ -74,7 +74,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 722000000
+              "duration": 845000000
             }
           },
           {
@@ -84,7 +84,7 @@
             "name": "the user types a wrong \"jd\" in the \"#identifier\"",
             "result": {
               "status": "passed",
-              "duration": 212000000
+              "duration": 225000000
             }
           },
           {
@@ -94,7 +94,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 115000000
+              "duration": 129000000
             }
           },
           {
@@ -104,7 +104,7 @@
             "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 24000000
+              "duration": 22000000
             }
           },
           {
@@ -114,7 +114,7 @@
             "name": "the \"#identifier\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 25000000
             }
           }
         ]
@@ -134,7 +134,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 676000000
+              "duration": 750000000
             }
           },
           {
@@ -144,7 +144,7 @@
             "name": "the user types a wrong \"52\" in the \"#firstName\"",
             "result": {
               "status": "passed",
-              "duration": 201000000
+              "duration": 203000000
             }
           },
           {
@@ -154,7 +154,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 110000000
+              "duration": 119000000
             }
           },
           {
@@ -164,7 +164,7 @@
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 20000000
+              "duration": 22000000
             }
           },
           {
@@ -174,7 +174,7 @@
             "name": "the \"#firstName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 19000000
             }
           }
         ]
@@ -194,7 +194,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 602000000
+              "duration": 662000000
             }
           },
           {
@@ -204,7 +204,7 @@
             "name": "the user types a wrong \"89\" in the \"#lastName\"",
             "result": {
               "status": "passed",
-              "duration": 197000000
+              "duration": 208000000
             }
           },
           {
@@ -214,7 +214,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 112000000
+              "duration": 120000000
             }
           },
           {
@@ -234,7 +234,7 @@
             "name": "the \"#lastName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 23000000
             }
           }
         ]
@@ -254,7 +254,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 595000000
+              "duration": 698000000
             }
           },
           {
@@ -264,7 +264,7 @@
             "name": "the user types a wrong \"js\" in the \"#phoneNumber\"",
             "result": {
               "status": "passed",
-              "duration": 207000000
+              "duration": 211000000
             }
           },
           {
@@ -274,7 +274,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 109000000
+              "duration": 147000000
             }
           },
           {
@@ -314,7 +314,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 536000000
+              "duration": 757000000
             }
           },
           {
@@ -324,7 +324,7 @@
             "name": "the user types a wrong \"asi\" in the \"#email\"",
             "result": {
               "status": "passed",
-              "duration": 217000000
+              "duration": 242000000
             }
           },
           {
@@ -334,7 +334,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 107000000
+              "duration": 143000000
             }
           },
           {
@@ -344,7 +344,7 @@
             "name": "the following \"This field must be a valid email\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 53000000
             }
           },
           {
@@ -354,7 +354,7 @@
             "name": "the \"#email\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 34000000
             }
           }
         ]
@@ -374,7 +374,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 598000000
+              "duration": 821000000
             }
           },
           {
@@ -384,7 +384,7 @@
             "name": "the user types a wrong \"25d\" in the \"#password\"",
             "result": {
               "status": "passed",
-              "duration": 214000000
+              "duration": 250000000
             }
           },
           {
@@ -394,7 +394,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 111000000
+              "duration": 155000000
             }
           },
           {
@@ -404,7 +404,7 @@
             "name": "the following \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 25000000
+              "duration": 22000000
             }
           },
           {
@@ -414,7 +414,7 @@
             "name": "the \"#password\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 18000000
             }
           }
         ]
@@ -434,7 +434,7 @@
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 505000000
+              "duration": 767000000
             }
           },
           {
@@ -444,7 +444,7 @@
             "name": "the user types a wrong \"25e\" in the \"#rePassword\"",
             "result": {
               "status": "passed",
-              "duration": 230000000
+              "duration": 214000000
             }
           },
           {
@@ -454,7 +454,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 131000000
+              "duration": 123000000
             }
           },
           {
@@ -464,7 +464,7 @@
             "name": "the following \"Passwords do not match\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 21000000
             }
           },
           {
@@ -474,7 +474,7 @@
             "name": "the \"#rePassword\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 25000000
             }
           }
         ]
@@ -494,7 +494,7 @@
             "name": "an user that has clicked on the \"Create an account\" link in the Login page",
             "result": {
               "status": "passed",
-              "duration": 488000000
+              "duration": 841000000
             }
           },
           {
@@ -504,7 +504,7 @@
             "name": "the Registration page loaded correctly",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 27000000
             }
           },
           {
@@ -514,7 +514,7 @@
             "name": "the user enters value in all fields",
             "result": {
               "status": "passed",
-              "duration": 2357000000
+              "duration": 2503000000
             }
           },
           {
@@ -524,7 +524,7 @@
             "name": "the user clicks on the \"Submit\" button",
             "result": {
               "status": "passed",
-              "duration": 104000000
+              "duration": 113000000
             }
           },
           {
@@ -534,7 +534,7 @@
             "name": "the information is saved and sent correctly.",
             "result": {
               "status": "passed",
-              "duration": 37000000
+              "duration": 57000000
             }
           }
         ]
@@ -542,24 +542,29 @@
       {
         "id": "user-registration;submit-form",
         "keyword": "Scenario",
-        "line": 41,
+        "line": 42,
         "name": "Submit form",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@ignore",
+            "line": 41
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 42,
+            "line": 43,
             "name": "the user has filled the registration form correctly",
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 43,
+            "line": 44,
             "name": "the user clicks on the \"submit\" button",
             "result": {
               "status": "skipped"
@@ -568,7 +573,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 44,
+            "line": 45,
             "name": "the page will commit the information",
             "result": {
               "status": "skipped"
@@ -577,7 +582,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 45,
+            "line": 46,
             "name": "the field Approved will remain with the value [False]",
             "result": {
               "status": "skipped"
@@ -588,7 +593,7 @@
       {
         "id": "user-registration;user-submits-incomplete-form",
         "keyword": "Scenario",
-        "line": 48,
+        "line": 49,
         "name": "User submits incomplete form",
         "tags": [],
         "type": "scenario",
@@ -596,31 +601,31 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 49,
+            "line": 50,
             "name": "the user has filled some mandatory fields but not all",
             "result": {
               "status": "passed",
-              "duration": 964000000
+              "duration": 1085000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 50,
+            "line": 51,
             "name": "the user clicks on submit button",
             "result": {
               "status": "passed",
-              "duration": 152000000
+              "duration": 156000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 51,
+            "line": 52,
             "name": "an error message should be visible",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 27000000
             }
           }
         ]
@@ -628,7 +633,7 @@
       {
         "id": "user-registration;validate-if-the-user-types-the-same-in-the-password-and-confirm-password-fields",
         "keyword": "Scenario",
-        "line": 53,
+        "line": 54,
         "name": "Validate if the user types the same in the password and confirm password fields",
         "tags": [],
         "type": "scenario",
@@ -636,27 +641,27 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 54,
+            "line": 55,
             "name": "the user is filling the password and confirm password fields",
             "result": {
               "status": "passed",
-              "duration": 913000000
+              "duration": 1093000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 55,
+            "line": 56,
             "name": "the user writes different values on those fields",
             "result": {
               "status": "passed",
-              "duration": 454000000
+              "duration": 439000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 56,
+            "line": 57,
             "name": "the fields will be highlighted in red",
             "result": {
               "status": "failed",
@@ -666,7 +671,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 57,
+            "line": 58,
             "name": "a label message is shown indicating \"Passwords do not match\"",
             "result": {
               "status": "skipped"
@@ -677,7 +682,7 @@
       {
         "id": "user-registration;email-in-the-form-is-already-registered",
         "keyword": "Scenario",
-        "line": 59,
+        "line": 60,
         "name": "Email in the form is already registered",
         "tags": [],
         "type": "scenario",
@@ -685,27 +690,27 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 60,
+            "line": 61,
             "name": "the user is entering data in the Registration form",
             "result": {
               "status": "passed",
-              "duration": 789000000
+              "duration": 894000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 61,
+            "line": 62,
             "name": "the user enters an email that is already in use",
             "result": {
               "status": "passed",
-              "duration": 348000000
+              "duration": 365000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 62,
+            "line": 63,
             "name": "an error message should be shown",
             "result": {
               "status": "failed",
@@ -717,7 +722,7 @@
       {
         "id": "user-registration;user-tries-to-correct-fields-after-writing-wrong-value",
         "keyword": "Scenario",
-        "line": 64,
+        "line": 65,
         "name": "User tries to correct fields after writing wrong value",
         "tags": [],
         "type": "scenario",
@@ -725,41 +730,41 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 65,
+            "line": 66,
             "name": "an user has entered a wrong value in a field",
             "result": {
               "status": "passed",
-              "duration": 2110000000
+              "duration": 2725000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 66,
+            "line": 67,
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 60000000
+              "duration": 93000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 67,
+            "line": 68,
             "name": "the user is correcting value in a field",
             "result": {
               "status": "passed",
-              "duration": 2867000000
+              "duration": 3281000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 68,
+            "line": 69,
             "name": "the error message should dissappear",
             "result": {
               "status": "passed",
-              "duration": 53000000
+              "duration": 54000000
             }
           }
         ]

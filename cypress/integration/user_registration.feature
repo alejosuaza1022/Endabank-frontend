@@ -38,6 +38,7 @@ Feature: User registration
 		And the user clicks on the "Submit" button
 		Then the information is saved and sent correctly.
 
+	@ignore
 	Scenario: Submit form
 		Given the user has filled the registration form correctly
 		When the user clicks on the "submit" button
