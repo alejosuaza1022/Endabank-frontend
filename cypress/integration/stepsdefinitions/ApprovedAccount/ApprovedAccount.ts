@@ -7,10 +7,10 @@ Given('Logged user as admin in the approval section', ()=>{
 })
 When('The toggle is activated',()=>{
     cy.wait(2000)
-    cy.get('#approveToggle42').should('not.be.checked')
+    cy.get('#ToggleApproveUser42').should('not.be.checked')
 })
 Then('Change to true and the color turns blue',()=>{
     cy.wait(2000)
-    cy.get('#approveToggle42').click({ force: true })
+    cy.get('#ToggleApproveUser42').click({ force: true })
    
 })
