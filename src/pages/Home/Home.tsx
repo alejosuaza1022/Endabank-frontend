@@ -6,7 +6,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Home = () => {
   return(
-      <div className="flex">
+      <div className="flex h-screen">
         <SideBar/>
           <div className="flex justify-center w-full">
               <Outlet />
