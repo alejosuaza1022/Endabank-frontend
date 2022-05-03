@@ -32,7 +32,7 @@
             "name": "Logged user as admin",
             "result": {
               "status": "passed",
-              "duration": 3042000000
+              "duration": 2978000000
             }
           },
           {
@@ -41,8 +41,9 @@
             "line": 6,
             "name": "Im in the session User Approval",
             "result": {
-              "status": "passed",
-              "duration": 2161000000
+              "status": "failed",
+              "duration": 847000000,
+              "error_message": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Request failed with status code 401\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n    createError@http://localhost:3000/node_modules/.vite/axios.js?v=42891579:324:19\n    settle@http://localhost:3000/node_modules/.vite/axios.js?v=42891579:340:16\n    onloadend@http://localhost:3000/node_modules/.vite/axios.js?v=42891579:588:17\nFrom previous event:\n    run@http://localhost:3000/__cypress/runner/cypress_runner.js:186670:21\n    run@http://localhost:3000/__cypress/runner/cypress_runner.js:172308:15\n    ../driver/src/cypress/cy.ts/addCommand/cy[name]@http://localhost:3000/__cypress/runner/cypress_runner.js:173306:18\n    runTest/<@http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\ValidateTable.feature:9973:10\n    __stackReplacementMarker@http://localhost:3000/__cypress/runner/cypress_runner.js:172791:13\n    ../driver/src/cypress/cy.ts/setRunnable/runnable.fn@http://localhost:3000/__cypress/runner/cypress_runner.js:173524:43\n    callFn@http://localhost:3000/__cypress/runner/cypress_runner.js:125614:21\n    ../driver/node_modules/mocha/lib/runnable.js/</Runnable.prototype.run@http://localhost:3000/__cypress/runner/cypress_runner.js:125601:13\n    ../driver/src/cypress/runner.ts/create/onRunnableRun/<@http://localhost:3000/__cypress/runner/cypress_runner.js:180445:30\nFrom previous event:\n    onRunnableRun@http://localhost:3000/__cypress/runner/cypress_runner.js:180430:12\n    action@http://localhost:3000/__cypress/runner/cypress_runner.js:169793:28\n    ../driver/src/cypress/mocha.ts/patchRunnableRun/Runnable.prototype.run@http://localhost:3000/__cypress/runner/cypress_runner.js:178107:13\n    ../driver/node_modules/mocha/lib/runner.js/</Runner.prototype.runTest@http://localhost:3000/__cypress/runner/cypress_runner.js:126273:10\n    ../driver/node_modules/mocha/lib/runner.js/</Runner.prototype.runTests/next/<@http://localhost:3000/__cypress/runner/cypress_runner.js:126399:12\n    next@http://localhost:3000/__cypress/runner/cypress_runner.js:126182:14\n    ../driver/node_modules/mocha/lib/runner.js/</Runner.prototype.hooks/next/<@http://localhost:3000/__cypress/runner/cypress_runner.js:126192:11\n    next@http://localhost:3000/__cypress/runner/cypress_runner.js:126094:14\n    ../driver/node_modules/mocha/lib/runner.js/</Runner.prototype.hook/next/<@http://localhost:3000/__cypress/runner/cypress_runner.js:126155:11\n    next@http://localhost:3000/__cypress/runner/cypress_runner.js:180343:24\n    ../driver/src/cypress/runner.ts/create/onRunnableRun/onNext/<@http://localhost:3000/__cypress/runner/cypress_runner.js:180372:17\nFrom previous event:\n    onNext@http://localhost:3000/__cypress/runner/cypress_runner.js:180369:59\n    done@http://localhost:3000/__cypress/runner/cypress_runner.js:125554:7\n    callFn@http://localhost:3000/__cypress/runner/cypress_runner.js:125637:7\n    ../driver/node_modules/mocha/lib/runnable.js/</Runnable.prototype.run@http://localhost:3000/__cypress/runner/cypress_runner.js:125601:13\n    ../driver/src/cypress/runner.ts/create/onRunnableRun/<@http://localhost:3000/__cypress/runner/cypress_runner.js:180445:30\nFrom previous event:\n    onRunnableRun@http://localhost:3000/__cypress/runner/cypress_runner.js:180430:12\n    action@http://localhost:3000/__cypress/runner/cypress_runner.js:169793:28\n    ../driver/src/cypress/mocha.ts/patchRunnableRun/Runnable.prototype.run@http://localhost:3000/__cypress/runner/cypress_runner.js:178107:13\n    next@http://localhost:3000/__cypress/runner/cypress_runner.js:126116:10\n    ../driver/node_modules/mocha/lib/runner.js/</Runner.prototype.hook/<@http://localhost:3000/__cypress/runner/cypress_runner.js:126160:9\n    timeslice@http://localhost:3000/__cypress/runner/cypress_runner.js:120086:27"
             }
           },
           {
@@ -51,8 +52,7 @@
             "line": 7,
             "name": "I verify that the table user approval contains this: FIRST NAME, LAST NAME, EMAIL, APPROVED",
             "result": {
-              "status": "passed",
-              "duration": 2167000000
+              "status": "skipped"
             }
           }
         ]
