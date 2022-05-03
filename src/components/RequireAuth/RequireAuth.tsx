@@ -11,11 +11,6 @@ const RequireAuth = ({ allowedRoles}: { allowedRoles:string[] }) => {
     } = useContext(AuthContext);
     const location = useLocation()
     const tokenCookie = Cookies.get('token');
-    console.log(typeof tokenCookie)
-
-    console.log('in required');
-
-
 
     return(
         tokenCookie

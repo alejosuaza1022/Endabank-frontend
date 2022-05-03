@@ -9,6 +9,7 @@ const InputForm: React.FC<InputProps> = ({
                                              error,
                                              register,
                                              optionsValidations,
+                                             dataId
                                          }) => {
     const [typeInput, setTypeInput] = React.useState(type);
     const [offsetRevealPassword, setOffsetRevealPassword] = React.useState(2);
@@ -23,6 +24,7 @@ const InputForm: React.FC<InputProps> = ({
             <input
                 type={typeInput}
                 id={id}
+                data-id={dataId}
                 className={`block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 ${
                     error
                         ? "border-red-500 focus:border-red-500"
@@ -56,7 +58,6 @@ const InputForm: React.FC<InputProps> = ({
                               d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                               d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-
                     </svg>
                 </div>
             )}

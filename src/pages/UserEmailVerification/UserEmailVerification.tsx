@@ -13,7 +13,7 @@ const UserEmailVerification = ({email}: { email: string }) => {
     const [searchParams] = useSearchParams();
     const token = searchParams.get("token");
     email = email && email.length > 0 ? email : searchParams.get("email") ?? "";
-    console.log(email);
+
 
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -71,41 +71,42 @@ const UserEmailVerification = ({email}: { email: string }) => {
     return <>{
         isLoading ? <Spinner/> : (
             <>
-                <div className="flex flex-col h-5/6 w-full items-center ">
+                <div className="flex flex-col h-5/6 w-full items-center " id="userEmailVerification">
                     <div
-                        className=" lg:w-1/3 sm:w-1/2 p-4 bg-white h-full bg-gray-50 rounded-lg border shadow-md sm:p-8 justify-between items-center mt-10 ">
+                        className=" lg:w-1/3 sm:w-1/2 p-4 h-full bg-gray-50 rounded-lg border shadow-md sm:p-8 justify-between items-center mt-10 ">
                         <div className="w-full h-1/2 flex justify-center  ">
                             <div className="flex justify-center color-endabank circle-container">
                                 <img className="  w-24 my-2 item-center" src={emailSentLogo} alt="imagen endabank"/>
                             </div>
                         </div>
                         <div className="flex flex-col items-center w-full mt-2">
-                            <h2 className="font-bold text-center text-2xl">
+                            <h2 className="font-bold text-center text-2xl" id="textEmailVerification">
                                 Email Verification
                             </h2>
-                            <p className="mt-10 text-center">
+                            <p className="mt-10 text-center" id="textEmailEmailVerification">
                                 Please verify your email using the link sent to {email}.
                             </p>
                             <div
-                                className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3"
+                                className="cursor-pointer lg:w-1/2  sm:w-3/4 flex  justify-between items-center color-endabank font-bold mt-4 h-1/2 text-center text-2xl rounded-lg pl-4  py-3 text-white"
                                 onClick={() => handleGenerateNewEmailVerification()}
+                                id="btnSendEmailVerification"
                             >
-                                <p>
+                                <p id="textResendEmailEmailVerification">
                                     Resend Email
                                 </p>
                                 <svg className="h-5 w-1/4 " xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 24 24">
                                     <g data-name="20.Arrow Right">
                                         <path
-                                            d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z"/>
+                                            d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" fill="white"/>
                                         <path
-                                            d="m13.707 16.707-1.414-1.414L15.586 12l-3.293-3.293 1.414-1.414L18.414 12l-4.707 4.707z"/>
-                                        <path d="M6 11h11v2H6z"/>
+                                            d="m13.707 16.707-1.414-1.414L15.586 12l-3.293-3.293 1.414-1.414L18.414 12l-4.707 4.707z" fill="white"/>
+                                        <path d="M6 11h11v2H6z" fill="white"/>
                                     </g>
                                 </svg>
                             </div>
 
-                            <p className="mt-4 text-center">
+                            <p className="mt-4 text-center" id="textNotGotEmailEmailVerification">
                                 Didn't receive the email?, <br/>press the button to resend it.
                             </p>
 

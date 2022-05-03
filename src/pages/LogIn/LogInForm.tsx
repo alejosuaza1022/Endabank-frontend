@@ -32,19 +32,20 @@ const LogInForm = () => {
         e?.preventDefault()
         const email = data.email;
         const password = data.password;
+
         setShowPopUpMessage(false)
+
         try {
+            setIsLoading(true)
             const res = await axios.post('http://localhost:8080/api/v1/login',
                 JSON.stringify({email, password}),
                 {
                     headers: {'Content-type': "application/json"}
                 }
             );
-
-            const token = res.data.access_token;
+            //TODO Add token verification
+            const token = res.data.accessToken;
             const isApproved = res.data.isApproved;
-
-            console.log(isApproved)
 
             if(isApproved){
                 Cookies.set('token',token, {sameSite: 'strict'});
@@ -70,13 +71,15 @@ const LogInForm = () => {
                 setLinkPopUpMessage(Strings.LETS_VERIFY_EMAIL)
                 setShowPopUpMessage(true);
             }
-            else if(error.response?.data?.statusCode == 401){
+            else if(error.response?.data?.statusCode == (401 || 400)){
                 setIsColorError(true);
-                setMessagePopUp('Incorrect login credentials. Please try again')
+                setLinkPopUpMessage('')
+                setLinkPopUp('')
+                setMessagePopUp(Strings.INCORRECT_CREDENTIALS)
                 setShowPopUpMessage(true);
             }
         }
-
+        setIsLoading(false)
         reset();
     };
 
@@ -93,10 +96,11 @@ const LogInForm = () => {
             <>
                 <div className="flex w-full justify-center mt-20 ">
                     <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
                             <Input
                                 type="text"
                                 id="email"
+                                dataId="emailInputLogin"
                                 label="Email"
                                 register={register}
                                 error={errors.email}
@@ -111,25 +115,26 @@ const LogInForm = () => {
                             <Input
                                 type="password"
                                 id="password"
+                                dataId="passwordInputLogin"
                                 label="Password"
                                 error={errors.password}
                                 register={register}
                             />
                             <button
-                                id="logIn_btn"
+                                id="submitLogin"
                                 type="submit"
                                 className="text-white color-endabank focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  sm:w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
                                 Log In
                             </button>
                             <div className="m-5 text-right text-sm">
-                                <a className="decoration-0 cursor-pointer" onClick={openModal}>
+                                <a id="forgotPasswordHyperlink" className="decoration-0 cursor-pointer" onClick={openModal}>
                                     Forgot password?
                                 </a>
                             </div>
                         </form>
                         <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
-                            New merchant? <Link to="/sign-up">create an account</Link>
+                            New merchant? <Link id="signUpHyperlink" to="/sign-up">create an account</Link>
                         </div>
                     </div>
                 </div>
