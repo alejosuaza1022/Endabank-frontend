@@ -1,7 +1,6 @@
-@focus
-Feature: Verify that the user is approved
+Feature: Validate the activation of a user
 
-Scenario: when activating a user the toggle behaves as expected, changed to activated and blue
+Scenario: Validate the activation of a user
 Given Logged user as admin in the approval section
 When The toggle is activated
 Then Change to true and the color turns blue

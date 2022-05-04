@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "Validate the activation of a user",
+    "name": "Validate the deactivation of a user",
     "line": 1,
-    "id": "validate-the-activation-of-a-user",
+    "id": "validate-the-deactivation-of-a-user",
     "tags": [],
-    "uri": "ApprovedAccount.feature",
+    "uri": "DisapprovedAccount.feature",
     "elements": [
       {
-        "id": "validate-the-activation-of-a-user;validate-the-activation-of-a-user",
+        "id": "validate-the-deactivation-of-a-user;validate-the-deactivation-of-a-user",
         "keyword": "Scenario",
         "line": 3,
-        "name": "Validate the activation of a user",
+        "name": "Validate the deactivation of a user",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -22,27 +22,27 @@
             "name": "Logged user as admin in the approval section",
             "result": {
               "status": "passed",
-              "duration": 5350000000
+              "duration": 13578000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 5,
-            "name": "The toggle is activated",
+            "name": "The toggle change to disable",
             "result": {
               "status": "passed",
-              "duration": 2083000000
+              "duration": 2100000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "Change to true and the color turns blue",
+            "name": "Toggle change to false and the color turns grey",
             "result": {
               "status": "passed",
-              "duration": 2125000000
+              "duration": 2137000000
             }
           }
         ]

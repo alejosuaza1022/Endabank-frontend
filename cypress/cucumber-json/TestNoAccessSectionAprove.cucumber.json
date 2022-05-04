@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Verify that a non-admin user can't see the user approval section",
+    "line": 1,
+    "id": "verify-that-a-non-admin-user-can't-see-the-user-approval-section",
+    "tags": [],
+    "uri": "NoAccessSectionAprove.feature",
+    "elements": [
+      {
+        "id": "verify-that-a-non-admin-user-can't-see-the-user-approval-section;verify-that-a-non-admin-user-can't-see-the-user-approval-section",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Verify that a non-admin user can't see the user approval section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open Endabank login page and wants to login",
+            "result": {
+              "status": "passed",
+              "duration": 19352000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I need to login with email as \"dbnaer71@gmail.com\" and password as \"Alexis17*\"",
+            "result": {
+              "status": "passed",
+              "duration": 1125000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the user tries to enter in the approval section",
+            "result": {
+              "status": "passed",
+              "duration": 2043000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "tries to enter trough the url \"http://localhost:3000/activate-account\" its redirected to home",
+            "result": {
+              "status": "passed",
+              "duration": 3425000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

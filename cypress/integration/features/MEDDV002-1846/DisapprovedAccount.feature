@@ -1,7 +1,6 @@
-@focus
-Feature: Verify that the user is approved
+Feature: Validate the deactivation of a user
 
-Scenario: when activating a user the toggle behaves as expected, changed to activated and blue
+Scenario: Validate the deactivation of a user
 Given Logged user as admin in the approval section
 When The toggle change to disable
 Then Toggle change to false and the color turns grey

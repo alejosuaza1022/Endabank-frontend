@@ -10,7 +10,7 @@ name: "chrome",
 device: "Local test machine",
 platform: {
 name: "mac",
-version: "Catalina",
+version: "Windows",
 },
 },
 });

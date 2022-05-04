@@ -1,1 +1,1 @@
-export const URL ="http://localhost:3000/log-in";
+export const URL ="http://localhost:3000/profile";

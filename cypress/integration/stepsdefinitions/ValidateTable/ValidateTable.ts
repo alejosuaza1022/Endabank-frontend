@@ -7,7 +7,7 @@ Given('Logged user as admin', ()=>{
 })
 When('Im in the session User Approval',()=>{
     cy.wait(2000)
-    cy.get(':nth-child(4) > .flex').click()
+    cy.get('#usersManagementSidebarElement').click()
 })
 Then('I verify that the table user approval contains this: FIRST NAME, LAST NAME, EMAIL, APPROVED',()=>{
     cy.wait(2000)
