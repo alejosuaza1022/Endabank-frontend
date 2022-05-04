@@ -17,13 +17,11 @@ const FormResetPassword = () => {
   const [showPopUpMessage, setShowPopUpMessage] = useState(false);
   const [messagePopUp, setMessagePopUp] = useState<string>(strings.USER_REGISTERED);
 
+  const token = Cookies.get('token');
+
   const {
     loadedData
   } = useContext(AuthContext);
-
-  console.log(loadedData);
-
-  const token = Cookies.get('token');
 
   const {
       register,
@@ -62,7 +60,7 @@ const FormResetPassword = () => {
     const urlParams = new URLSearchParams(url);
     data.token = urlParams.get("token") ?? "";
       console.log(data.token);
-      console.log(loadedData);
+      console.log("loadedData "+loadedData);
     try {
         const response = await putAxios(
             apiUrls.GET_USERS_RESET_PASSWORD_URL,
@@ -91,7 +89,7 @@ const FormResetPassword = () => {
     console.log(data);
     console.log(loadedData);
     setIsLoading(true);
-    {loadedData! ? changePassword(data):resetPassword(data)}
+    {token! ? changePassword(data):resetPassword(data)}
     setIsLoading(false);
     reset();
   };
@@ -103,11 +101,11 @@ const FormResetPassword = () => {
         <div className="p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
           <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid xl:grid-cols-1 xl:gap-6">
-                  {loadedData ?
+                  {token ?
                       (<p className="font-sans hover:font-arial text-[28px] text-center">Update Password</p>)
                       :( <p className="font-sans hover:font-arial text-[28px] text-center">Reset Password</p>)
                   }
-                {loadedData ?
+                {token ?
                 (<Input
                   type="password"
                   id="oldPassword"
