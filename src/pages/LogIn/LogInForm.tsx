@@ -128,12 +128,12 @@ const LogInForm = () => {
                                 Log In
                             </button>
                             <div className="m-5 text-right text-sm">
-                                <a id="forgotPasswordHyperlink" className="decoration-0 cursor-pointer" onClick={openModal}>
+                                <a id="forgotPasswordHyperlink" className="decoration-0 cursor-pointer underline" onClick={openModal}>
                                     Forgot password?
                                 </a>
                             </div>
                         </form>
-                        <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5">
+                        <div className="text-center text-sm m-0 border-t-2 border-gray-300 pt-5 underline">
                             New merchant? <Link id="signUpHyperlink" to="/sign-up">create an account</Link>
                         </div>
                     </div>
