@@ -11,7 +11,7 @@
       {
         "id": "user-registration;verify-that-the-user-can-use-the-\"create-an-account\"-link",
         "keyword": "Scenario",
-        "line": 8,
+        "line": 7,
         "name": "Verify that the user can use the \"Create an account\" link",
         "tags": [],
         "type": "scenario",
@@ -19,38 +19,98 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
+            "line": 8,
             "name": "an user enter to the login page using the url",
             "result": {
               "status": "passed",
-              "duration": 588000000
+              "duration": 984000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
+            "line": 9,
             "name": "the page loads correctly",
             "result": {
               "status": "passed",
-              "duration": 64000000
+              "duration": 117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the create an account link exists",
+            "result": {
+              "status": "passed",
+              "duration": 241000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "the create an account link exists",
+            "name": "it is working",
             "result": {
               "status": "passed",
-              "duration": 151000000
+              "duration": 22000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "validate the mandatory fields in the User Registration page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "an user goes to the register page url site",
+            "result": {
+              "status": "passed",
+              "duration": 599000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "the user types a wrong \"jd\" in the \"#identifier\"",
+            "result": {
+              "status": "passed",
+              "duration": 276000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 12,
-            "name": "it is working",
+            "line": 17,
+            "name": "the user tries to fill another",
+            "result": {
+              "status": "passed",
+              "duration": 162000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "the following \"This field must be just numbers with a length between 6 and 20\" should be displayed",
+            "result": {
+              "status": "passed",
+              "duration": 18000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the \"#identifier\" should be highlighted",
             "result": {
               "status": "passed",
               "duration": 14000000
@@ -69,27 +129,27 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 577000000
+              "duration": 523000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"jd\" in the \"#identifier\"",
+            "line": 16,
+            "name": "the user types a wrong \"52\" in the \"#firstName\"",
             "result": {
               "status": "passed",
-              "duration": 273000000
+              "duration": 236000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
@@ -99,21 +159,21 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
-            "name": "the following \"This field must be just numbers with a length between 6 and 20\" should be displayed",
+            "line": 18,
+            "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 16000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"#identifier\" should be highlighted",
+            "line": 19,
+            "name": "the \"#firstName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 10000000
             }
           }
         ]
@@ -129,37 +189,37 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 527000000
+              "duration": 467000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"52\" in the \"#firstName\"",
+            "line": 16,
+            "name": "the user types a wrong \"89\" in the \"#lastName\"",
             "result": {
               "status": "passed",
-              "duration": 260000000
+              "duration": 243000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 102000000
+              "duration": 133000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
+            "line": 18,
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
@@ -169,11 +229,11 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"#firstName\" should be highlighted",
+            "line": 19,
+            "name": "the \"#lastName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 11000000
+              "duration": 12000000
             }
           }
         ]
@@ -189,27 +249,27 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 516000000
+              "duration": 476000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"89\" in the \"#lastName\"",
+            "line": 16,
+            "name": "the user types a wrong \"js\" in the \"#phoneNumber\"",
             "result": {
               "status": "passed",
-              "duration": 296000000
+              "duration": 214000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
@@ -219,18 +279,18 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
-            "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
+            "line": 18,
+            "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 16000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"#lastName\" should be highlighted",
+            "line": 19,
+            "name": "the \"#phoneNumber\" should be highlighted",
             "result": {
               "status": "passed",
               "duration": 13000000
@@ -249,51 +309,51 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 592000000
+              "duration": 507000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"js\" in the \"#phoneNumber\"",
+            "line": 16,
+            "name": "the user types a wrong \"asi\" in the \"#email\"",
             "result": {
               "status": "passed",
-              "duration": 282000000
+              "duration": 261000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 169000000
+              "duration": 149000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
-            "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
+            "line": 18,
+            "name": "the following \"This field must be a valid email\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 18000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"#phoneNumber\" should be highlighted",
+            "line": 19,
+            "name": "the \"#email\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 20000000
+              "duration": 15000000
             }
           }
         ]
@@ -309,51 +369,51 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 638000000
+              "duration": 574000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"asi\" in the \"#email\"",
+            "line": 16,
+            "name": "the user types a wrong \"25d\" in the \"#password\"",
             "result": {
               "status": "passed",
-              "duration": 301000000
+              "duration": 308000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 122000000
+              "duration": 166000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
-            "name": "the following \"This field must be a valid email\" should be displayed",
+            "line": 18,
+            "name": "the following \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 16000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
-            "name": "the \"#email\" should be highlighted",
+            "line": 19,
+            "name": "the \"#password\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 10000000
             }
           }
         ]
@@ -369,222 +429,51 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 15,
             "name": "an user goes to the register page url site",
             "result": {
               "status": "passed",
-              "duration": 587000000
+              "duration": 546000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
-            "name": "the user types a wrong \"25d\" in the \"#password\"",
-            "result": {
-              "status": "passed",
-              "duration": 326000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "the user tries to fill another",
-            "result": {
-              "status": "passed",
-              "duration": 150000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 19,
-            "name": "the following \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\" should be displayed",
-            "result": {
-              "status": "passed",
-              "duration": 20000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "the \"#password\" should be highlighted",
-            "result": {
-              "status": "passed",
-              "duration": 15000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
-        "keyword": "Scenario",
-        "line": 31,
-        "name": "validate the mandatory fields in the User Registration page",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
             "line": 16,
-            "name": "an user goes to the register page url site",
-            "result": {
-              "status": "passed",
-              "duration": 610000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 17,
             "name": "the user types a wrong \"25e\" in the \"#rePassword\"",
             "result": {
               "status": "passed",
-              "duration": 305000000
+              "duration": 282000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 17,
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 152000000
+              "duration": 163000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
+            "line": 18,
             "name": "the following \"Passwords do not match\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 16000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
+            "line": 19,
             "name": "the \"#rePassword\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 15000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "user-registration;validate-the-happy-path-for-a-new-user",
-        "keyword": "Scenario",
-        "line": 34,
-        "name": "Validate the happy path for a new user",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 35,
-            "name": "an user that has clicked on the \"Create an account\" link in the Login page",
-            "result": {
-              "status": "passed",
-              "duration": 603000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 36,
-            "name": "the Registration page loaded correctly",
-            "result": {
-              "status": "passed",
-              "duration": 71000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 37,
-            "name": "the user enters value in all fields",
-            "result": {
-              "status": "passed",
-              "duration": 2466000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 38,
-            "name": "the user clicks on the \"Submit\" button",
-            "result": {
-              "status": "passed",
-              "duration": 102000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 39,
-            "name": "the information is saved and sent correctly.",
-            "result": {
-              "status": "passed",
-              "duration": 40000000
-            }
-          }
-        ]
-      },
-      {
-        "id": "user-registration;submit-form",
-        "keyword": "Scenario",
-        "line": 42,
-        "name": "Submit form",
-        "tags": [
-          {
-            "name": "@ignore",
-            "line": 41
-          }
-        ],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 43,
-            "name": "the user has filled the registration form correctly",
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 44,
-            "name": "the user clicks on the \"submit\" button",
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 45,
-            "name": "the page will commit the information",
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 46,
-            "name": "the field Approved will remain with the value [False]",
-            "result": {
-              "status": "skipped"
+              "duration": 12000000
             }
           }
         ]
@@ -592,7 +481,7 @@
       {
         "id": "user-registration;user-submits-incomplete-form",
         "keyword": "Scenario",
-        "line": 49,
+        "line": 33,
         "name": "User submits incomplete form",
         "tags": [],
         "type": "scenario",
@@ -600,31 +489,31 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 50,
+            "line": 34,
             "name": "the user has filled some mandatory fields but not all",
             "result": {
               "status": "passed",
-              "duration": 1205000000
+              "duration": 940000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 51,
+            "line": 35,
             "name": "the user clicks on submit button",
             "result": {
               "status": "passed",
-              "duration": 147000000
+              "duration": 148000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 52,
+            "line": 36,
             "name": "an error message should be visible",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 17000000
             }
           }
         ]
@@ -632,7 +521,7 @@
       {
         "id": "user-registration;validate-if-the-user-types-the-same-in-the-password-and-confirm-password-fields",
         "keyword": "Scenario",
-        "line": 54,
+        "line": 38,
         "name": "Validate if the user types the same in the password and confirm password fields",
         "tags": [],
         "type": "scenario",
@@ -640,41 +529,41 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 55,
+            "line": 39,
             "name": "the user is filling the password and confirm password fields",
             "result": {
               "status": "passed",
-              "duration": 1159000000
+              "duration": 930000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 56,
+            "line": 40,
             "name": "the user writes different values on those fields",
             "result": {
               "status": "passed",
-              "duration": 445000000
+              "duration": 306000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 57,
+            "line": 41,
             "name": "the fields will be highlighted in red",
             "result": {
               "status": "passed",
-              "duration": 151000000
+              "duration": 122000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 58,
+            "line": 42,
             "name": "a label message is shown indicating \"Passwords do not match\"",
             "result": {
               "status": "passed",
-              "duration": 19000000
+              "duration": 14000000
             }
           }
         ]
@@ -682,41 +571,79 @@
       {
         "id": "user-registration;email-in-the-form-is-already-registered",
         "keyword": "Scenario",
-        "line": 61,
+        "line": 44,
         "name": "Email in the form is already registered",
-        "tags": [
-          {
-            "name": "@ignore",
-            "line": 60
-          }
-        ],
+        "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 62,
+            "line": 45,
             "name": "the user is entering data in the Registration form",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 488000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 63,
+            "line": 46,
             "name": "the user enters an email that is already in use",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 2973000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 64,
+            "line": 47,
             "name": "an error message should be shown",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 1403000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;identifier-in-the-form-is-already-registered",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "Identifier in the form is already registered",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 50,
+            "name": "the user is entering data in the Registration form",
+            "result": {
+              "status": "passed",
+              "duration": 594000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 51,
+            "name": "the user enters an indentifier that is already in use",
+            "result": {
+              "status": "passed",
+              "duration": 2989000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "an error message should be displayed in a popup window",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'There is already a user registered with this identifier' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:185:76)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10669:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9990:35)"
             }
           }
         ]
@@ -724,7 +651,7 @@
       {
         "id": "user-registration;user-tries-to-correct-fields-after-writing-wrong-value",
         "keyword": "Scenario",
-        "line": 66,
+        "line": 54,
         "name": "User tries to correct fields after writing wrong value",
         "tags": [],
         "type": "scenario",
@@ -732,41 +659,152 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 67,
+            "line": 55,
             "name": "an user has entered a wrong value in a field",
             "result": {
               "status": "passed",
-              "duration": 2515000000
+              "duration": 2582000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 68,
+            "line": 56,
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 76000000
+              "duration": 65000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 69,
+            "line": 57,
             "name": "the user is correcting value in a field",
             "result": {
               "status": "passed",
-              "duration": 2966000000
+              "duration": 2951000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 70,
+            "line": 58,
             "name": "the error message should dissappear",
             "result": {
               "status": "passed",
-              "duration": 51000000
+              "duration": 44000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-the-happy-path-for-a-new-user",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "Validate the happy path for a new user",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 61,
+            "name": "an user that has clicked on the \"Create an account\" link in the Login page",
+            "result": {
+              "status": "passed",
+              "duration": 577000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "the Registration page loaded correctly",
+            "result": {
+              "status": "passed",
+              "duration": 69000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "the user enters value in all fields",
+            "result": {
+              "status": "passed",
+              "duration": 2459000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "the user clicks on the \"Submit\" button",
+            "result": {
+              "status": "passed",
+              "duration": 117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 65,
+            "name": "the information is saved and sent correctly.",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User registered, Check your email for the link for verification Let's verify your email address.' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:157:117)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10669:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9990:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;validate-new-user-is-not-approved-yet",
+        "keyword": "Scenario",
+        "line": 68,
+        "name": "validate new user is not approved yet",
+        "tags": [
+          {
+            "name": "@ignore",
+            "line": 67
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "an admin user has logged in",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "an admin user clicks on the user management option",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "the new user is visible",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "the user approved toggle is off",
+            "result": {
+              "status": "skipped"
             }
           }
         ]

@@ -1,9 +1,8 @@
 Feature: User registration
-	As user
+	As new user
 	I want to have a section where I can register my data
 	And with this data create an account in endabank
 	
-		
 	
 	Scenario: Verify that the user can use the "Create an account" link
 		When an user enter to the login page using the url
@@ -29,21 +28,6 @@ Feature: User registration
 			|  asi	| #email			 | This field must be a valid email											|
 			|  25d	| #password			 | 1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters	|
 			|  25e 	| #rePassword	 	 | Passwords do not match													|
-
-
-	Scenario: Validate the happy path for a new user
-		Given an user that has clicked on the "Create an account" link in the Login page
-		And the Registration page loaded correctly
-		When the user enters value in all fields
-		And the user clicks on the "Submit" button
-		Then the information is saved and sent correctly.
-
-	@ignore
-	Scenario: Submit form
-		Given the user has filled the registration form correctly
-		When the user clicks on the "submit" button
-		Then the page will commit the information
-		And the field Approved will remain with the value [False]
 	
 	
 	Scenario: User submits incomplete form
@@ -57,14 +41,33 @@ Feature: User registration
 		Then the fields will be highlighted in red
 		And a label message is shown indicating "Passwords do not match"
 
-	@ignore
 	Scenario: Email in the form is already registered
 		Given the user is entering data in the Registration form
 		When the user enters an email that is already in use
 		Then an error message should be shown
+
+	Scenario: Identifier in the form is already registered
+		Given the user is entering data in the Registration form
+		When the user enters an indentifier that is already in use
+		Then an error message should be displayed in a popup window                                                                  
 
 	Scenario: User tries to correct fields after writing wrong value
 		Given an user has entered a wrong value in a field
 		Then an error message should be displayed
 		When the user is correcting value in a field
 		Then the error message should dissappear 
+	
+	Scenario: Validate the happy path for a new user
+		Given an user that has clicked on the "Create an account" link in the Login page
+		And the Registration page loaded correctly
+		When the user enters value in all fields
+		And the user clicks on the "Submit" button
+		Then the information is saved and sent correctly.
+
+	@ignore
+	Scenario: validate new user is not approved yet
+		Given an admin user has logged in
+		When an admin user clicks on the user management option
+		Then the new user is visible
+		And the user approved toggle is off
+

@@ -1,8 +1,11 @@
 import {Given,  When, Then } from "cypress-cucumber-preprocessor/steps";
 
+const url = 'http://localhost:3000/sign-up/'
+const identifier = '1107007501'
+
 Given('the user has filled some mandatory fields but not all', () => {
-    cy.visit('http://localhost:3000/sign-up/')
-    cy.get('#identifier').type(1107007501)
+    cy.visit(url)
+    cy.get('#identifier').type(identifier)
 })
 
 When('the user clicks on submit button', () =>{

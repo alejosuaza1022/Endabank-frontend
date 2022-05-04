@@ -1,6 +1,9 @@
 import {Given, And,  When, Then } from "cypress-cucumber-preprocessor/steps";
+
+const url = 'http://localhost:3000/sign-up/'
+
 Given('an user goes to the register page url site', () => {
-    cy.visit('http://localhost:3000/sign-up/')
+    cy.visit(url)
 })
 When('the user types a wrong {string} in the {string}', (value, fieldName) =>{
     cy.get(fieldName).type(value)

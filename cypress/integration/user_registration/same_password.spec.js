@@ -1,12 +1,16 @@
 import {Given, And,  When, Then } from "cypress-cucumber-preprocessor/steps";
+
 const url = 'http://localhost:3000/sign-up/'
+const password_wrongValue = 'Leduinabela1$'
+const rePassword_wrongValue = 'Leduinabel1$'
+
 Given('the user is filling the password and confirm password fields',()=> {
     cy.visit(url)
-    cy.get("#password").type("Leduinabel1$")
+    cy.get("#password").type(password_wrongValue)
 })
 
 When('the user writes different values on those fields',()=> {
-    cy.get("#rePassword").type("Leduinabel258$")
+    cy.get("#rePassword").type(rePassword_wrongValue)
 
 })
 
