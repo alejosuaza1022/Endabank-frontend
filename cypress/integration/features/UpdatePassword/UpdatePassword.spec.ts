@@ -14,7 +14,7 @@ const profilePage: ProfilePage = new ProfilePage();
 
 When('the user clicks on the "Password management" left side button', () => {
     // cy.get('#pwdManagementSidebarElement').click();
-    profilePage.clickProfileButton();
+    profilePage.clickPasswordManagementButton();
 })
 
 And('the user fills in the old, new and confirmation password', () => {

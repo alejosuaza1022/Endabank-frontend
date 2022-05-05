@@ -12,6 +12,7 @@ Feature: Update password
         * the user clicks the "Submit" button on the update password page
         Then the user should see a green message that says "Password updated successfully"
 
+    @skip
     Scenario Outline: User leaves 1 or more fields empty on change my password page
         Given the user is in the "Change my password page"
         When the user leaves the <Old password>, <New password> or <Confirm password> field(s) empty
@@ -24,6 +25,7 @@ Feature: Update password
             | Submit               | Button |              | Disabled |                            |
             | Error message        | Text   |              | Visible  | This field cannot be empty |
 
+    @skip
     Scenario Outline: Logged user enters new password and it doesn't meet the security requirements
         Given the user is in the "Change my password page"
         When the user fills in the <Old password> field
@@ -39,6 +41,7 @@ Feature: Update password
             | Submit               | Button |              | Disabled |                                                    |
             | Error message        | Text   |              | Visible  | The password must follow the next requirements:... |
 
+    @skip
     Scenario Outline: Logged user entered a different password in new and confirm password fields
         Given the user is in the "Change my password page"
         When the user fills in the <Old password> field
@@ -54,6 +57,7 @@ Feature: Update password
             | Submit               | Button |              | Disabled |                                                |
             | Error message        | Text   |              | Visible  | Confirm password and new password should match |
 
+    @skip
     Scenario Outline: Logged user entered the old password as the new one
         Given the user is in the "Change my password page"
         When the user fills in the <Old password> field
