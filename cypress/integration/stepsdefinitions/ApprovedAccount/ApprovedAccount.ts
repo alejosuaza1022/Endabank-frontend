@@ -7,7 +7,6 @@ Given('Logged user as admin in the approval section', ()=>{
 })
 When('The toggle is activated',()=>{
     cy.wait(2000)
-    //cy.get('.sidebar').scrollTo('bottom')
     cy.get('#ToggleApproveUser42').scrollIntoView().should('not.be.checked')
 })
 Then('Change to true and the color turns blue',()=>{
