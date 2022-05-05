@@ -13,17 +13,22 @@
         "keyword": "Scenario",
         "line": 10,
         "name": "Access the portal",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@Access",
+            "line": 9
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1254000000
+              "duration": 1225000000
             }
           },
           {
@@ -33,7 +38,7 @@
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
               "status": "passed",
-              "duration": 778000000
+              "duration": 725000000
             }
           },
           {
@@ -43,7 +48,7 @@
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 352000000
+              "duration": 371000000
             }
           },
           {
@@ -53,7 +58,7 @@
             "name": "I click on Log In",
             "result": {
               "status": "passed",
-              "duration": 146000000
+              "duration": 157000000
             }
           },
           {
@@ -63,7 +68,7 @@
             "name": "I see My Profile, Password Management and Log-out in the page",
             "result": {
               "status": "passed",
-              "duration": 3597000000
+              "duration": 929000000
             }
           }
         ]
@@ -71,59 +76,61 @@
       {
         "id": "log-in-form;log-in-with-incorrect-password",
         "keyword": "Scenario",
-        "line": 17,
+        "line": 18,
         "name": "Log in with incorrect password",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@IncorrectPass",
+            "line": 17
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1622000000
+              "duration": 999000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 19,
+            "line": 20,
             "name": "I need to write an email as \"nicolas.cardona@endava.com\"",
             "result": {
-              "status": "passed",
-              "duration": 1060000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 20,
-            "name": "I need to write an incorrect password as \"Ni*colas17\"",
-            "result": {
-              "status": "passed",
-              "duration": 342000000
+              "status": "failed",
+              "error_message": "CypressError: `cy.type()` failed because it requires a DOM element.\n\nThe subject received was:\n\n  > `undefined`\n\nThe previous command that ran was:\n\n  > `cy.get()`\n    at ensureElement (http://localhost:3000/__cypress/runner/cypress_runner.js:167999:76)\n    at validateType (http://localhost:3000/__cypress/runner/cypress_runner.js:167822:16)\n    at $Cy.ensureSubjectByType (http://localhost:3000/__cypress/runner/cypress_runner.js:167858:9)\n    at $Cy.pushSubjectAndValidate (http://localhost:3000/__cypress/runner/cypress_runner.js:178651:12)\n    at Context.<anonymous> (http://localhost:3000/__cypress/runner/cypress_runner.js:178135:19)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:26:10)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11930:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\log_in_form.feature:11251:35)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 21,
-            "name": "I click on Log In",
+            "name": "I need to write an incorrect password as \"Ni*colas17\"",
             "result": {
-              "status": "passed",
-              "duration": 144000000
+              "status": "skipped"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 22,
+            "name": "I click on Log In",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
-              "status": "passed",
-              "duration": 1384000000
+              "status": "skipped"
             }
           }
         ]
@@ -131,59 +138,64 @@
       {
         "id": "log-in-form;log-in-with-incorrect-email",
         "keyword": "Scenario",
-        "line": 24,
+        "line": 26,
         "name": "Log in with incorrect email",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@IncorrectEmail",
+            "line": 25
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1414000000
+              "duration": 1123000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 26,
+            "line": 28,
             "name": "I need to write an incorrect email as \"nicolas.cardonae@ndava.com\"",
             "result": {
               "status": "passed",
-              "duration": 722000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 27,
-            "name": "I need to write a password as \"Nicolas17*\"",
-            "result": {
-              "status": "passed",
-              "duration": 351000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 28,
-            "name": "I click on Log In",
-            "result": {
-              "status": "passed",
-              "duration": 141000000
+              "duration": 643000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 29,
+            "name": "I need to write a password as \"Nicolas17*\"",
+            "result": {
+              "status": "passed",
+              "duration": 358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "I click on Log In",
+            "result": {
+              "status": "passed",
+              "duration": 138000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
             "name": "I see \"Credential Error. Verify User and password\" message error displayed",
             "result": {
               "status": "passed",
-              "duration": 1620000000
+              "duration": 566000000
             }
           }
         ]
@@ -191,49 +203,54 @@
       {
         "id": "log-in-form;log-in-with-incorrect-email-format",
         "keyword": "Scenario",
-        "line": 31,
+        "line": 34,
         "name": "Log in with incorrect email format",
-        "tags": [],
+        "tags": [
+          {
+            "name": "@IncorrectEmailFormat",
+            "line": 33
+          }
+        ],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I open Endabank login page and wants to sign in",
             "result": {
               "status": "passed",
-              "duration": 1037000000
+              "duration": 988000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 33,
+            "line": 36,
             "name": "I need to write an email with incorrect format as \"nicolas.cardonaendava.com\"",
             "result": {
               "status": "passed",
-              "duration": 645000000
+              "duration": 655000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 34,
+            "line": 37,
             "name": "I need to write a password as \"Nicolas17*\"",
             "result": {
               "status": "passed",
-              "duration": 323000000
+              "duration": 331000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 35,
+            "line": 38,
             "name": "I see \"This field must be a valid email\" highlight error displayed",
             "result": {
               "status": "passed",
-              "duration": 29000000
+              "duration": 44000000
             }
           }
         ]
