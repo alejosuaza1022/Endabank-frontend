@@ -6,8 +6,9 @@ interface IAuthProvider{
         isApproved?:boolean;
         authorities?: string[];
         token?: string;
+        email:string;
     };
-    setAuth?: (auth:{currentUser:string,isApproved:boolean,authorities:string[],token:string}) => void;
+    setAuth?: (auth:{currentUser:string,isApproved:boolean,authorities:string[],token:string,email:string}) => void;
     readCookie?: () => void;
     logOut?: () => void;
     loadedData?: boolean;

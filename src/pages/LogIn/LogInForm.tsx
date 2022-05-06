@@ -9,6 +9,7 @@ import useAuth from "../../Hooks/useAuth";
 import Cookies from 'js-cookie'
 
 import Strings from "../../constants/strings";
+import apiUrls from "../../constants/apiUrls";
 
 
 const LogInForm = () => {
@@ -32,12 +33,11 @@ const LogInForm = () => {
         e?.preventDefault()
         const email = data.email;
         const password = data.password;
-
         setShowPopUpMessage(false)
 
         try {
             setIsLoading(true)
-            const res = await axios.post('http://localhost:8080/api/v1/login',
+            const res = await axios.post(`${apiUrls.LOG_IN_URL}`,
                 JSON.stringify({email, password}),
                 {
                     headers: {'Content-type': "application/json"}
