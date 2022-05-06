@@ -2,9 +2,11 @@ import React, {createContext, useState, FC, ReactNode, useEffect} from "react";
 import IAuthProvider from "./IAuthProvider";
 import Cookies from "js-cookie";
 import axios from "axios";
+import apiUrls from "../constants/apiUrls";
 
 const defaultState = {
     auth:{
+        email: '',
         currentUser:'',
         isApproved: false,
         authorities:[''],
@@ -29,9 +31,10 @@ export const AuthProvider = ({ children }:{children:ReactNode}) => {
                 const currentUser = res?.data.firstName;
                 const isApproved = res?.data.approved;
                 const authorities = res?.data.authorities;
+                const email = res?.data.email;
 
                 if (setAuth) {
-                    setAuth({currentUser, isApproved, authorities, token});
+                    setAuth({currentUser, isApproved, authorities, token,email});
                 }
 
             })()
@@ -40,7 +43,7 @@ export const AuthProvider = ({ children }:{children:ReactNode}) => {
 
     const getCurrentUserDetail = (token:string) =>{
         try{
-            return axios.get('http://localhost:8080/api/v1/users/details',
+            return axios.get(`${apiUrls.GET_USER_DETAILS}`,
                 {
                     headers: {'Authorization': 'Bearer ' + token}
                 }

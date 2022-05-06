@@ -1,6 +1,6 @@
 import ApproveUserProps from "@components/ApproveUserTable/approveUserTable.interface";
 import apiUrls from "../../constants/apiUrls";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAxios } from "../../utils/axios";
 import {
   PopUpMessage,
@@ -11,6 +11,7 @@ import strings from "../../constants/strings";
 import { AxiosError } from "axios";
 import { Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import AuthContext from "../../contexts/AuthProvider";
 
 const ActivateAccountForm = () => {
   const [list, setList] = useState<Array<ApproveUserProps>>([]);
@@ -21,8 +22,12 @@ const ActivateAccountForm = () => {
   const [messagePopUp, setMessagePopUp] = useState<string>(
     strings.USER_REGISTERED
   );
-  const token = Cookies.get('token');
-    useEffect(() => {
+  const token = Cookies.get("token");
+  const {
+    auth: { email },
+  } = useContext(AuthContext);
+  console.log(email?.toString());
+  useEffect(() => {
     async function getData() {
       setApproved(true);
       try {
@@ -55,31 +60,33 @@ const ActivateAccountForm = () => {
     ) : (
       <div>
         {approved ? (
-            <div className="p-4 w-full item-center  bg-white rounded-lg border shadow-md sm:p-8">
-              <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-                <span className="text-xl">User Approval</span>
-              </header>
+          <div className="p-4 w-full item-center  bg-white rounded-lg border shadow-md sm:p-8">
+            <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+              <span className="text-xl">User Approval</span>
+            </header>
 
-              <div className="flex w-full justify-center mt-10">
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                      <th scope="col" className="px-6 py-3">
-                        First Name
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Last Name
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-left">
-                        Email
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Approved
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {list.map((value, key) => (
+            <div className="flex w-full justify-center mt-10">
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" className="px-6 py-3">
+                      First Name
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Last Name
+                    </th>
+                    <th scope="col" className="px-6 py-3 text-left">
+                      Email
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Approved
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {list.map((value, key) =>
+                    email?.toString() != value.email.toString() ? 
+                    (
                       <ApproveUserTable
                         firstName={value.firstName}
                         lastName={value.lastName}
@@ -89,12 +96,12 @@ const ActivateAccountForm = () => {
                         key={value.id}
                         token={token}
                       ></ApproveUserTable>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    ) : null
+                  )}
+                </tbody>
+              </table>
             </div>
-          
+          </div>
         ) : (
           <div>
             <Navigate replace to="/profile" />
