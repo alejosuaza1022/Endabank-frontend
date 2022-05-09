@@ -58,10 +58,10 @@ const ActivateAccountForm = () => {
     return isLoading ? (
       <Spinner />
     ) : (
-      <div>
+      <div className="w-full">
         {approved ? (
-          <div className="p-4 w-full item-center  bg-white rounded-lg border shadow-md sm:p-8">
-            <header className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+          <div className="p-4  item-center  bg-white rounded-lg border shadow-md sm:p-8">
+            <header className="p-4 bg-white justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
               <span className="text-xl">User Approval</span>
             </header>
 
