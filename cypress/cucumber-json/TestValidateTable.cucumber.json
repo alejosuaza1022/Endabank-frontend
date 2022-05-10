@@ -22,7 +22,7 @@
             "name": "Logged user as admin",
             "result": {
               "status": "passed",
-              "duration": 27986000000
+              "duration": 28663000000
             }
           },
           {
@@ -31,8 +31,9 @@
             "line": 5,
             "name": "Im in the session User Approval",
             "result": {
-              "status": "passed",
-              "duration": 2198000000
+              "status": "failed",
+              "duration": 6025000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\ValidateTable.feature:149:8)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\ValidateTable.feature:10632:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\ValidateTable.feature:9953:35)"
             }
           },
           {
@@ -41,8 +42,7 @@
             "line": 6,
             "name": "I verify that the table user approval contains this: FIRST NAME, LAST NAME, EMAIL, APPROVED",
             "result": {
-              "status": "passed",
-              "duration": 2232000000
+              "status": "skipped"
             }
           }
         ]

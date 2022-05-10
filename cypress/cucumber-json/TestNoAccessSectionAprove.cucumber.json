@@ -22,7 +22,7 @@
             "name": "I open Endabank login page and wants to login",
             "result": {
               "status": "passed",
-              "duration": 19352000000
+              "duration": 15743000000
             }
           },
           {
@@ -32,7 +32,7 @@
             "name": "I need to login with email as \"dbnaer71@gmail.com\" and password as \"Alexis17*\"",
             "result": {
               "status": "passed",
-              "duration": 1125000000
+              "duration": 1491000000
             }
           },
           {
@@ -42,7 +42,7 @@
             "name": "the user tries to enter in the approval section",
             "result": {
               "status": "passed",
-              "duration": 2043000000
+              "duration": 2047000000
             }
           },
           {
@@ -51,8 +51,9 @@
             "line": 9,
             "name": "tries to enter trough the url \"http://localhost:3000/activate-account\" its redirected to home",
             "result": {
-              "status": "passed",
-              "duration": 3425000000
+              "status": "failed",
+              "duration": 7107000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/log-in' to equal 'http://localhost:3000/profile'\n    + expected - actual\n\n    -'http://localhost:3000/log-in'\n    +'http://localhost:3000/profile'\n\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\support\\index.js:19:14)"
             }
           }
         ]

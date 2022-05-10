@@ -21,8 +21,9 @@
             "line": 4,
             "name": "Logged user as admin in the approval section",
             "result": {
-              "status": "passed",
-              "duration": 13578000000
+              "status": "failed",
+              "duration": 14236000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\DisapprovedAccount.feature:53:8)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\DisapprovedAccount.feature:10632:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\features\\MEDDV002-1846\\DisapprovedAccount.feature:9953:35)"
             }
           },
           {
@@ -31,8 +32,7 @@
             "line": 5,
             "name": "The toggle change to disable",
             "result": {
-              "status": "passed",
-              "duration": 2100000000
+              "status": "skipped"
             }
           },
           {
@@ -41,8 +41,7 @@
             "line": 6,
             "name": "Toggle change to false and the color turns grey",
             "result": {
-              "status": "passed",
-              "duration": 2137000000
+              "status": "skipped"
             }
           }
         ]

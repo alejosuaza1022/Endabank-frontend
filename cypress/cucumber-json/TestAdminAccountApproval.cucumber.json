@@ -1,0 +1,107 @@
+[
+  {
+    "description": "              As an admin user of the Endabank,\n              I want to be able to approve or disapprove an account,\n    So that only allowed users will be able to sign into the application",
+    "keyword": "Feature",
+    "name": "Admin Accounts Approval",
+    "line": 1,
+    "id": "admin-accounts-approval",
+    "tags": [],
+    "uri": "AdminAccountApproval.feature",
+    "elements": [
+      {
+        "id": "admin-accounts-approval;activate-an-account-under-admin-approval",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Activate an account under admin approval",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is logged in as an 'Admin' user",
+            "result": {
+              "status": "undefined",
+              "duration": 772000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the user is on the Admin Panel section",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "the user toggles to 'Activate' an account under review",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the account should be 'Activated'",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "admin-accounts-approval;deactivate-an-account-under-admin-approval",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Deactivate an account under admin approval",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is logged in as an 'Admin' user",
+            "result": {
+              "status": "undefined",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the user is on the Admin Panel section",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "the user toggles to 'Deactivate' an account under review",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the account should be 'Deactivated'",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
