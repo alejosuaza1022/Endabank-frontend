@@ -14,3 +14,14 @@ Feature: Admin Accounts Approval
                   | userType | status     | accountStatus |
                   | Admin    | Activate   | Activated     |
                   | Admin    | Deactivate | Deactivated   |
+
+        Scenario: The Admin user should see the users table with the proper columns order
+            Given the user is logged in as an 'Admin' user
+             When the user is on the Admin Panel section
+             Then the user should see the user table columns with the following order
+                  | FIRST NAME |
+                  | LAST NAME  |
+                  | EMAIL      |
+                  | APPROVED   |
+        
+
