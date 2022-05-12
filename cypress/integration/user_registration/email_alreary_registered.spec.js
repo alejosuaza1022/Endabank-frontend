@@ -7,7 +7,7 @@ const lastName = 'Bejarano'
 const phoneNumber = '3108818966'
 const password = 'Leduinabel1$'
 const rePassword = 'Leduinabel1$'
-const emailAlreadyRegistered = 'asb@asb.com'
+const emailAlreadyRegistered = 'juanpablo.perezleon@endava.com'
 
 
 Given('the user is entering data in the Registration form', () => {

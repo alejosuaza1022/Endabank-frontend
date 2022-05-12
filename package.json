@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "cucumber-report": "node cucumber-html-report.js",
     "cy-open": "cypress open",
+    "cy-run": "cypress run",
+    "cy-run-report": "cy-run && cucumber-report",
     "preview": "vite preview"
   },
   "dependencies": {

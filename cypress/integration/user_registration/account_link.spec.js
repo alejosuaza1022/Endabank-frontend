@@ -1,16 +1,19 @@
 import {And,  When, Then } from "cypress-cucumber-preprocessor/steps";
+import logInPage from "../../pageObjects/logInPage/logInPage";
 
-const url = 'http://localhost:3000/log-in/'
+const url = 'http://localhost:3000/'
 
-When('an user enter to the login page using the url', () => {
-    cy.visit(url)
-})
-Then('the page loads correctly', () => {
+Given('the user is on the Login page', () => {
+    logInPage.relativePath
+    logInPage.checkCorrectPath()
     cy.contains('Log In').should('be.visible')
 })
-And('the create an account link exists', () => {
-    cy.contains('create an account').click()
+
+When('the user clicks on the {string} link', (linkName) => {
+    cy.contains(linkName).click()
+    
 })
-And('it is working', () => {
+
+Then('the user should be redirected to the Register page', () => {
     cy.contains('First name').should('be.visible')
 })

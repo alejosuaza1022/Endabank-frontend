@@ -1,18 +1,16 @@
 Feature: User registration
-	As new user
-	I want to have a section where I can register my data
-	And with this data create an account in endabank
+	As a new user
+	I want to be able to have access to the endabank application
 	
 	
-	Scenario: Verify that the user can use the "Create an account" link
-		When an user enter to the login page using the url
-		Then the page loads correctly
-		And the create an account link exists
-		And it is working
+	Scenario: The user should be allowed to create a new account
+		Given the user is on the Login page
+		 When the user clicks on the "create a new account" link
+		 Then the user should be redirected to the Register page
 
    
-	Scenario Outline: validate the mandatory fields in the User Registration page
-		Given an user goes to the register page url site
+	Scenario Outline: Validate the mandatory fields in the User Registration page
+		Given the user goes to the register page site
 		When the user types a wrong "<value>" in the "<field_name>"
 		And the user tries to fill another
 		Then the following "<error_message>" should be displayed
@@ -21,11 +19,11 @@ Feature: User registration
 		Examples:
 
 			| value | field_name		 | error_message 															|
-			|  jd	| #identifier		 | This field must be just numbers with a length between 6 and 20			|
+			| jaime	| #identifier		 | This field must be just numbers with a length between 6 and 20			|
 			|  52 	| #firstName	     | This field must be just letters with a length between 2 and 20			|
-			|  89  	| #lastName		     | This field must be just letters with a length between 2 and 20			|
-			|  js 	| #phoneNumber		 | This field must be just numbers with a length between 10 and 20			|
-			|  asi	| #email			 | This field must be a valid email											|
+			|  97  	| #lastName		     | This field must be just letters with a length between 2 and 20			|
+			|celular| #phoneNumber		 | This field must be just numbers with a length between 10 and 20			|
+			|asi.com| #email			 | This field must be a valid email											|
 			|  25d	| #password			 | 1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters	|
 			|  25e 	| #rePassword	 	 | Passwords do not match													|
 	
@@ -52,20 +50,19 @@ Feature: User registration
 		Then an error message should be displayed in a popup window                                                                  
 
 	Scenario: User tries to correct fields after writing wrong value
-		Given an user has entered a wrong value in a field
+		Given the user has entered a wrong value in a field
 		Then an error message should be displayed
 		When the user is correcting value in a field
 		Then the error message should dissappear 
 	
 	Scenario: Validate the happy path for a new user
-		Given an user that has clicked on the "Create an account" link in the Login page
+		Given the user that has clicked on the "Create an account" link in the Login page
 		And the Registration page loaded correctly
-		When the user enters value in all fields
+		When the user enters correct values in all fields
 		And the user clicks on the "Submit" button
 		Then the information is saved and sent correctly.
 
-	@ignore
-	Scenario: validate new user is not approved yet
+	Scenario: Validate new user is not approved yet
 		Given an admin user has logged in
 		When an admin user clicks on the user management option
 		Then the new user is visible

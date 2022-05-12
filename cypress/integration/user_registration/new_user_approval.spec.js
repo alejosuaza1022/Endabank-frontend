@@ -15,10 +15,6 @@ Given('an admin user has logged in', ()=>{
 When('an admin user clicks on the user management option',()=>{
     cy.get('#usersManagementSidebarElement').click()
     cy.wait(2000)
-
-    //cy.get('.sidebar').scrollTo('bottom')
-
-    cy.get('#ToggleApproveUser42').scrollIntoView().should('not.be.checked')
 })
 
 Then ('the new user is visible',()=>{
@@ -26,5 +22,5 @@ Then ('the new user is visible',()=>{
 })
 
 And ('the user approved toggle is off',()=>{
-    cy.get('#ToggleApproveUser42').scrollIntoView().should('not.be.checked')
+    cy.get(`#ToggleApproveUser${89}`).should('not.be.checked')
 })

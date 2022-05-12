@@ -9,7 +9,7 @@ const phoneNumber = '3108818966'
 const password = 'Leduinabel1$'
 const rePassword = 'Leduinabel1$'
 
-Given('an user that has clicked on the "Create an account" link in the Login page', () => {
+Given('the user that has clicked on the "Create an account" link in the Login page', () => {
     cy.visit(url)
 })
 
@@ -17,7 +17,7 @@ And('the Registration page loaded correctly', () => {
     cy.get('#typeIdentifierId').should('be.visible')
 })
 
-When('the user enters value in all fields', () => {
+When('the user enters correct values in all fields', () => {
     cy.get("#identifier").type(identifier)
     cy.get("#firstName").type(firstName)
     cy.get("#lastName").type(lastName)
@@ -32,10 +32,5 @@ And ('the user clicks on the "Submit" button', () => {
 })
 
 Then ('the information is saved and sent correctly.',()=> {
-    cy.contains("User registered, Check your email for the link for verification Let's verify your email address.").should('be.visible')
-})
-
-And ('the field Approved will remain with the value [False]',()=> {
-    cy.get()
-    cy.contains("User registered, Check your email for the link for verification Let's verify your email address.").should('be.visible')
+    cy.contains("User registered").should('be.visible')
 })

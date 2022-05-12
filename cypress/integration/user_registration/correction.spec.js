@@ -16,7 +16,7 @@ const phoneNumber = '3108818966'
 const password = 'Leduinabel1$'
 const rePassword = 'Leduinabel1$'
 
-Given('an user has entered a wrong value in a field',()=>{
+Given('the user has entered a wrong value in a field',()=>{
     cy.visit(url)
     cy.get("#identifier").type(identifier_wrongValue)
     cy.get("#firstName").type(firstName_wrongValue)

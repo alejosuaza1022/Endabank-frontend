@@ -1,7 +1,7 @@
 import { When, Then } from "cypress-cucumber-preprocessor/steps";
 
 const newEmail = 'leduinabel@hola.com'
-const identifierAlreadyRegistered = '11111111'
+const identifierAlreadyRegistered = '12342312'
 const firstName = 'LeduinAbel'
 const lastName = 'Bejarano'
 const phoneNumber = '3108818966'

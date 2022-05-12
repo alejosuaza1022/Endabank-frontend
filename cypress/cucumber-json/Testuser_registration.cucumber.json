@@ -1,6 +1,6 @@
 [
   {
-    "description": "\tAs user\n\tI want to have a section where I can register my data\n\tAnd with this data create an account in endabank",
+    "description": "\tAs new user\n\tI want to have a section where I can register my data\n\tAnd with this data create an account in endabank",
     "keyword": "Feature",
     "name": "User registration",
     "line": 1,
@@ -9,10 +9,10 @@
     "uri": "user_registration.feature",
     "elements": [
       {
-        "id": "user-registration;verify-that-the-user-can-use-the-\"create-an-account\"-link",
+        "id": "user-registration;verify-the-user-can-use-the-\"create-an-account\"-link",
         "keyword": "Scenario",
         "line": 7,
-        "name": "Verify that the user can use the \"Create an account\" link",
+        "name": "Verify the user can use the \"Create an account\" link",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -20,10 +20,10 @@
             "arguments": [],
             "keyword": "When ",
             "line": 8,
-            "name": "an user enter to the login page using the url",
+            "name": "the user enter to the login page using the url",
             "result": {
               "status": "passed",
-              "duration": 984000000
+              "duration": 11721000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the page loads correctly",
             "result": {
               "status": "passed",
-              "duration": 117000000
+              "duration": 426000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the create an account link exists",
             "result": {
               "status": "passed",
-              "duration": 241000000
+              "duration": 270000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "it is working",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 68000000
             }
           }
         ]
@@ -62,7 +62,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 24,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -70,20 +70,20 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 599000000
+              "duration": 1257000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 16,
-            "name": "the user types a wrong \"jd\" in the \"#identifier\"",
+            "name": "the user types a wrong \"jaime\" in the \"#identifier\"",
             "result": {
               "status": "passed",
-              "duration": 276000000
+              "duration": 857000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 162000000
+              "duration": 325000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the following \"This field must be just numbers with a length between 6 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 63000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "the \"#identifier\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 80000000
             }
           }
         ]
@@ -122,7 +122,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 25,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -130,10 +130,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 523000000
+              "duration": 828000000
             }
           },
           {
@@ -143,7 +143,7 @@
             "name": "the user types a wrong \"52\" in the \"#firstName\"",
             "result": {
               "status": "passed",
-              "duration": 236000000
+              "duration": 295000000
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 142000000
+              "duration": 122000000
             }
           },
           {
@@ -163,7 +163,7 @@
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 18000000
             }
           },
           {
@@ -173,7 +173,7 @@
             "name": "the \"#firstName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 25000000
             }
           }
         ]
@@ -182,7 +182,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 26,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -190,20 +190,20 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 467000000
+              "duration": 777000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 16,
-            "name": "the user types a wrong \"89\" in the \"#lastName\"",
+            "name": "the user types a wrong \"97\" in the \"#lastName\"",
             "result": {
               "status": "passed",
-              "duration": 243000000
+              "duration": 275000000
             }
           },
           {
@@ -213,7 +213,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 133000000
+              "duration": 124000000
             }
           },
           {
@@ -223,7 +223,7 @@
             "name": "the following \"This field must be just letters with a length between 2 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 15000000
+              "duration": 19000000
             }
           },
           {
@@ -233,7 +233,7 @@
             "name": "the \"#lastName\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 17000000
             }
           }
         ]
@@ -242,7 +242,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 27,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -250,20 +250,20 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 476000000
+              "duration": 650000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 16,
-            "name": "the user types a wrong \"js\" in the \"#phoneNumber\"",
+            "name": "the user types a wrong \"celular\" in the \"#phoneNumber\"",
             "result": {
               "status": "passed",
-              "duration": 214000000
+              "duration": 370000000
             }
           },
           {
@@ -273,7 +273,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 137000000
+              "duration": 138000000
             }
           },
           {
@@ -283,7 +283,7 @@
             "name": "the following \"This field must be just numbers with a length between 10 and 20\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 26000000
             }
           },
           {
@@ -293,7 +293,7 @@
             "name": "the \"#phoneNumber\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 13000000
+              "duration": 19000000
             }
           }
         ]
@@ -302,7 +302,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 28,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -310,20 +310,20 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 507000000
+              "duration": 863000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 16,
-            "name": "the user types a wrong \"asi\" in the \"#email\"",
+            "name": "the user types a wrong \"asi.com\" in the \"#email\"",
             "result": {
               "status": "passed",
-              "duration": 261000000
+              "duration": 381000000
             }
           },
           {
@@ -333,7 +333,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 149000000
+              "duration": 127000000
             }
           },
           {
@@ -353,7 +353,7 @@
             "name": "the \"#email\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 15000000
+              "duration": 31000000
             }
           }
         ]
@@ -362,7 +362,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 29,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -370,10 +370,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 574000000
+              "duration": 645000000
             }
           },
           {
@@ -383,7 +383,7 @@
             "name": "the user types a wrong \"25d\" in the \"#password\"",
             "result": {
               "status": "passed",
-              "duration": 308000000
+              "duration": 356000000
             }
           },
           {
@@ -393,7 +393,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 166000000
+              "duration": 142000000
             }
           },
           {
@@ -403,7 +403,7 @@
             "name": "the following \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 37000000
             }
           },
           {
@@ -413,7 +413,7 @@
             "name": "the \"#password\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 22000000
             }
           }
         ]
@@ -422,7 +422,7 @@
         "id": "user-registration;validate-the-mandatory-fields-in-the-user-registration-page",
         "keyword": "Scenario",
         "line": 30,
-        "name": "validate the mandatory fields in the User Registration page",
+        "name": "Validate the mandatory fields in the User Registration page",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -430,10 +430,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 15,
-            "name": "an user goes to the register page url site",
+            "name": "the user goes to the register page site",
             "result": {
               "status": "passed",
-              "duration": 546000000
+              "duration": 896000000
             }
           },
           {
@@ -443,7 +443,7 @@
             "name": "the user types a wrong \"25e\" in the \"#rePassword\"",
             "result": {
               "status": "passed",
-              "duration": 282000000
+              "duration": 318000000
             }
           },
           {
@@ -453,7 +453,7 @@
             "name": "the user tries to fill another",
             "result": {
               "status": "passed",
-              "duration": 163000000
+              "duration": 131000000
             }
           },
           {
@@ -463,7 +463,7 @@
             "name": "the following \"Passwords do not match\" should be displayed",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 49000000
             }
           },
           {
@@ -473,7 +473,7 @@
             "name": "the \"#rePassword\" should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 46000000
             }
           }
         ]
@@ -493,7 +493,7 @@
             "name": "the user has filled some mandatory fields but not all",
             "result": {
               "status": "passed",
-              "duration": 940000000
+              "duration": 1294000000
             }
           },
           {
@@ -503,7 +503,7 @@
             "name": "the user clicks on submit button",
             "result": {
               "status": "passed",
-              "duration": 148000000
+              "duration": 143000000
             }
           },
           {
@@ -513,7 +513,7 @@
             "name": "an error message should be visible",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 35000000
             }
           }
         ]
@@ -533,7 +533,7 @@
             "name": "the user is filling the password and confirm password fields",
             "result": {
               "status": "passed",
-              "duration": 930000000
+              "duration": 1116000000
             }
           },
           {
@@ -543,7 +543,7 @@
             "name": "the user writes different values on those fields",
             "result": {
               "status": "passed",
-              "duration": 306000000
+              "duration": 349000000
             }
           },
           {
@@ -553,7 +553,7 @@
             "name": "the fields will be highlighted in red",
             "result": {
               "status": "passed",
-              "duration": 122000000
+              "duration": 124000000
             }
           },
           {
@@ -563,7 +563,7 @@
             "name": "a label message is shown indicating \"Passwords do not match\"",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 17000000
             }
           }
         ]
@@ -583,7 +583,7 @@
             "name": "the user is entering data in the Registration form",
             "result": {
               "status": "passed",
-              "duration": 488000000
+              "duration": 646000000
             }
           },
           {
@@ -593,7 +593,7 @@
             "name": "the user enters an email that is already in use",
             "result": {
               "status": "passed",
-              "duration": 2973000000
+              "duration": 3482000000
             }
           },
           {
@@ -602,8 +602,8 @@
             "line": 47,
             "name": "an error message should be shown",
             "result": {
-              "status": "passed",
-              "duration": 1403000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'There is already a user registered with this email' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:124:71)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10663:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9984:35)"
             }
           }
         ]
@@ -623,7 +623,7 @@
             "name": "the user is entering data in the Registration form",
             "result": {
               "status": "passed",
-              "duration": 594000000
+              "duration": 1323000000
             }
           },
           {
@@ -633,7 +633,7 @@
             "name": "the user enters an indentifier that is already in use",
             "result": {
               "status": "passed",
-              "duration": 2989000000
+              "duration": 4995000000
             }
           },
           {
@@ -643,7 +643,7 @@
             "name": "an error message should be displayed in a popup window",
             "result": {
               "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'There is already a user registered with this identifier' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:185:76)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10669:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9990:35)"
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'There is already a user registered with this identifier' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:181:76)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10663:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9984:35)"
             }
           }
         ]
@@ -660,10 +660,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 55,
-            "name": "an user has entered a wrong value in a field",
+            "name": "the user has entered a wrong value in a field",
             "result": {
               "status": "passed",
-              "duration": 2582000000
+              "duration": 3038000000
             }
           },
           {
@@ -673,7 +673,7 @@
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 65000000
+              "duration": 101000000
             }
           },
           {
@@ -683,7 +683,7 @@
             "name": "the user is correcting value in a field",
             "result": {
               "status": "passed",
-              "duration": 2951000000
+              "duration": 3200000000
             }
           },
           {
@@ -693,7 +693,7 @@
             "name": "the error message should dissappear",
             "result": {
               "status": "passed",
-              "duration": 44000000
+              "duration": 31000000
             }
           }
         ]
@@ -710,10 +710,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 61,
-            "name": "an user that has clicked on the \"Create an account\" link in the Login page",
+            "name": "the user that has clicked on the \"Create an account\" link in the Login page",
             "result": {
               "status": "passed",
-              "duration": 577000000
+              "duration": 1738000000
             }
           },
           {
@@ -723,17 +723,17 @@
             "name": "the Registration page loaded correctly",
             "result": {
               "status": "passed",
-              "duration": 69000000
+              "duration": 949000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 63,
-            "name": "the user enters value in all fields",
+            "name": "the user enters correct values in all fields",
             "result": {
               "status": "passed",
-              "duration": 2459000000
+              "duration": 3511000000
             }
           },
           {
@@ -743,7 +743,7 @@
             "name": "the user clicks on the \"Submit\" button",
             "result": {
               "status": "passed",
-              "duration": 117000000
+              "duration": 247000000
             }
           },
           {
@@ -753,7 +753,7 @@
             "name": "the information is saved and sent correctly.",
             "result": {
               "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User registered, Check your email for the link for verification Let's verify your email address.' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:157:117)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10669:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9990:35)"
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User registered' but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:157:36)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10663:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9984:35)"
             }
           }
         ]
@@ -761,38 +761,35 @@
       {
         "id": "user-registration;validate-new-user-is-not-approved-yet",
         "keyword": "Scenario",
-        "line": 68,
-        "name": "validate new user is not approved yet",
-        "tags": [
-          {
-            "name": "@ignore",
-            "line": 67
-          }
-        ],
+        "line": 67,
+        "name": "Validate new user is not approved yet",
+        "tags": [],
         "type": "scenario",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 69,
+            "line": 68,
             "name": "an admin user has logged in",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 3553000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 70,
+            "line": 69,
             "name": "an admin user clicks on the user management option",
             "result": {
-              "status": "skipped"
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:218:8)\n    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:10663:29)\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\user_registration.feature:9984:35)"
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 71,
+            "line": 70,
             "name": "the new user is visible",
             "result": {
               "status": "skipped"
@@ -801,7 +798,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 72,
+            "line": 71,
             "name": "the user approved toggle is off",
             "result": {
               "status": "skipped"

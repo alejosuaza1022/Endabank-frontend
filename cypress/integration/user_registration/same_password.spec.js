@@ -11,15 +11,11 @@ Given('the user is filling the password and confirm password fields',()=> {
 
 When('the user writes different values on those fields',()=> {
     cy.get("#rePassword").type(rePassword_wrongValue)
-
 })
 
 Then('the fields will be highlighted in red',()=> {
     cy.get("#identifier").click()
-    
     cy.get('#rePassword').should('have.css','borderColor','rgb(240, 82, 82)')
-    
-    
 })
 
 And('a label message is shown indicating "Passwords do not match"',()=> {
