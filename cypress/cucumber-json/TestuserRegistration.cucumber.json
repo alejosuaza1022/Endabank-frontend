@@ -1,0 +1,53 @@
+[
+  {
+    "description": "        As a new User\n        I want to be able to have access to the endabank application",
+    "keyword": "Feature",
+    "name": "User registration",
+    "line": 1,
+    "id": "user-registration",
+    "tags": [],
+    "uri": "userRegistration.feature",
+    "elements": [
+      {
+        "id": "user-registration;the-user-should-be-allowed-to-create-a-new-account",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "The user should be allowed to create a new account",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the Login page",
+            "result": {
+              "status": "passed",
+              "duration": 911000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "the user clicks on the \"create an account\" link",
+            "result": {
+              "status": "passed",
+              "duration": 196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user should be redirected to the Register page",
+            "result": {
+              "status": "passed",
+              "duration": 29000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
