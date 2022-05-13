@@ -23,7 +23,7 @@
             "name": "the user is on the Login page",
             "result": {
               "status": "passed",
-              "duration": 911000000
+              "duration": 630000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user clicks on the \"create an account\" link",
             "result": {
               "status": "passed",
-              "duration": 196000000
+              "duration": 248000000
             }
           },
           {
@@ -43,7 +43,67 @@
             "name": "the user should be redirected to the Register page",
             "result": {
               "status": "passed",
-              "duration": 29000000
+              "duration": 24000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;the-user-should-complete-an-successful-happy-path-for-a-new-user",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "The user should complete an successful happy path for a new user",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "the user that has clicked on the \"create an account\" link in the Login page",
+            "result": {
+              "status": "passed",
+              "duration": 461000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user has been redirected to the Register page",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "the user enters correct values in all fields",
+            "result": {
+              "status": "passed",
+              "duration": 2560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the user clicks on the \"Submit\" button",
+            "result": {
+              "status": "passed",
+              "duration": 105000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the user should see a pop-up with the next information \"User registered\"",
+            "result": {
+              "status": "passed",
+              "duration": 1575000000
             }
           }
         ]

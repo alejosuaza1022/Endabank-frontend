@@ -1,7 +1,6 @@
 import {Given,  When, Then } from "cypress-cucumber-preprocessor/steps";
 import logInPage from "../../../cypress/pageObjects/logInPage";
 
-const url = 'http://localhost:3000/'
 const loginPage: logInPage = new logInPage();
 
 Given('the user is on the Login page', () => {

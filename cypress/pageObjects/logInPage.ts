@@ -6,7 +6,7 @@ export default class logInPage extends basePage{
     relativePath: string = this.relativePath +'/log-in'
 
     getCreateAccountLink(){
-        return(cy.get('#signUpHyperLink'))
+        return(cy.get('#signUpHyperlink'))
     }
 
     getPasswordInput(){

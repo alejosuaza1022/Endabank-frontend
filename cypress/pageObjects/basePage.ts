@@ -1,6 +1,6 @@
 
 export default class basePage{
-    relativePath ='http://localhost:3000';
+    relativePath ='http://medellin-med.uc.r.appspot.com';
 
     constructor() {}
 
