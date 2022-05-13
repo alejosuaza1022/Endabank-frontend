@@ -517,20 +517,17 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                 
                 
                 
-                <i class="fa fa-tag fa-lg"></i>
-                <span class="tag">@focus</span>
-                
                 
             </div>
             <h1>Feature:
-                <small>Validate the activation of a user</small>
+                <small>Validate the deactivation of a user</small>
             </h1>
             <p>
            <p><strong>File name:</strong>
-                ApprovedAccount.feature
+                DisapprovedAccount.feature
             </p>
             <p><strong>Relative path:</strong>
-                ApprovedAccount.feature</p>
+                DisapprovedAccount.feature</p>
         </div>
 
         <div class="clearfix"></div>
@@ -578,7 +575,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -587,7 +584,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -648,7 +645,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     <i class="fa fa-question-circle not-defined-color fa-lg">
                         <span>question-circle not-defined-color</span>
                     </i>
-                    Catalina
+                    Windows
                 </span>
             </li>
             
@@ -715,15 +712,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                         
                         
-                            <i class="fa fa-tag fa-lg"></i>
-                            
-                                <span class="tag">@focus</span>
-                            
-                        
                     
                 </div>
 
-                <h2>Scenario: <small>Validate the activation of a user</small></h2>
+                <h2>Scenario: <small>Validate the deactivation of a user</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -735,13 +727,17 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
 
                     
-
+                        <li>
+                            <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">2</span>
+                        </li>
                     
 
                     
                         <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">3</span>
+                            <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
                         </li>
+                    
+
                     
 
                     
@@ -760,8 +756,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                                            <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
                                         </div>
                                     
                                 
@@ -782,6 +778,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     
 
                                     
+                                        <a href="#error0-0-error" data-toggle="collapse">+ Show Error</a>
+                                    
 
                                     
 
@@ -794,6 +792,13 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                             </div>
 
                         
+                            
+                                <div id="error0-0-error" class="scenario-step-collapse collapse">
+                                    <pre class=info>AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\integration\features\MEDDV002-1846\DisapprovedAccount.feature:53:8)
+    at Context.resolveAndRunStepDefinition (http://localhost:3000/__cypress/tests?p=cypress\integration\features\MEDDV002-1846\DisapprovedAccount.feature:10632:29)
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\integration\features\MEDDV002-1846\DisapprovedAccount.feature:9953:35)</pre>
+                                </div>
                             
 
                             
@@ -818,8 +823,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                                            <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
                                         </div>
                                     
                                 
@@ -828,7 +833,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     <span class="keyword highlight">When </span>
 
                                     
-                                        The toggle is activated
+                                        The toggle change to disable
                                         
                                     
 
@@ -876,8 +881,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                                            <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
                                         </div>
                                     
                                 
@@ -886,7 +891,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     <span class="keyword highlight">Then </span>
 
                                     
-                                        Change to true and the color turns blue
+                                        Toggle change to false and the color turns grey
                                         
                                     
 
@@ -978,8 +983,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,

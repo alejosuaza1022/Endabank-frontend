@@ -517,20 +517,17 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                 
                 
                 
-                <i class="fa fa-tag fa-lg"></i>
-                <span class="tag">@focus</span>
-                
                 
             </div>
             <h1>Feature:
-                <small>Validate the deactivation of a user</small>
+                <small>Verify that a non-admin user can't see the user approval section</small>
             </h1>
             <p>
            <p><strong>File name:</strong>
-                DisapprovedAccount.feature
+                NoAccessSectionAprove.feature
             </p>
             <p><strong>Relative path:</strong>
-                DisapprovedAccount.feature</p>
+                NoAccessSectionAprove.feature</p>
         </div>
 
         <div class="clearfix"></div>
@@ -578,7 +575,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -587,7 +584,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -648,7 +645,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     <i class="fa fa-question-circle not-defined-color fa-lg">
                         <span>question-circle not-defined-color</span>
                     </i>
-                    Catalina
+                    Windows
                 </span>
             </li>
             
@@ -715,15 +712,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                         
                         
-                            <i class="fa fa-tag fa-lg"></i>
-                            
-                                <span class="tag">@focus</span>
-                            
-                        
                     
                 </div>
 
-                <h2>Scenario: <small>Validate the deactivation of a user</small></h2>
+                <h2>Scenario: <small>Verify that a non-admin user can't see the user approval section</small></h2>
 
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
@@ -736,6 +728,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
                     
 
+                    
+                        <li>
+                            <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+                        </li>
                     
 
                     
@@ -770,7 +766,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     <span class="keyword highlight">Given </span>
 
                                     
-                                        Logged user as admin in the approval section
+                                        I open Endabank login page and wants to login
                                         
                                     
 
@@ -828,7 +824,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     <span class="keyword highlight">When </span>
 
                                     
-                                        The toggle change to disable
+                                        I need to login with email as "dbnaer71@gmail.com" and password as "Alexis17*"
                                         
                                     
 
@@ -886,7 +882,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                     <span class="keyword highlight">Then </span>
 
                                     
-                                        Toggle change to false and the color turns grey
+                                        the user tries to enter in the approval section
                                         
                                     
 
@@ -910,6 +906,76 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                             </div>
 
                         
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        
+
+                        
+                            
+                        
+
+                    
+                
+                        
+                            <div class="scenario-step-container">
+
+                                
+                                    
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                                            <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
+                                        </div>
+                                    
+                                
+
+                                <div class="text">
+                                    <span class="keyword highlight">Then </span>
+
+                                    
+                                        tries to enter trough the url "http://localhost:3000/activate-account" its redirected to home
+                                        
+                                    
+
+                                    
+
+                                </div>
+
+                                
+                                    
+
+                                    
+                                        <a href="#error0-3-error" data-toggle="collapse">+ Show Error</a>
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                
+                            </div>
+
+                        
+                            
+                                <div id="error0-3-error" class="scenario-step-collapse collapse">
+                                    <pre class=info>AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/log-in' to equal 'http://localhost:3000/profile'
+    + expected - actual
+
+    -'http://localhost:3000/log-in'
+    +'http://localhost:3000/profile'
+
+    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\support\index.js:19:14)</pre>
+                                </div>
                             
 
                             
@@ -978,8 +1044,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,

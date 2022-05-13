@@ -23,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 216000000
+              "duration": 1553000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 7000000
+              "duration": 1207000000
             }
           },
           {
@@ -42,8 +42,9 @@
             "line": 10,
             "name": "the user toggles to 'Activate' an account under review",
             "result": {
-              "status": "undefined",
-              "duration": 28000000
+              "status": "failed",
+              "duration": 22000000,
+              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:48:8)\n    at Context.resolveAndRunStepDefinition (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10463:29)\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:9784:35)\nFrom previous event:\n    at Context.thenFn (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160174:63)\n    at Context.then (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160626:21)\n    at Context.<anonymous> (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178136:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176929:15\nFrom previous event:\n    at CommandQueue.runCommand (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176908:17)\n    at next (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177062:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177091:16"
             }
           },
           {
@@ -72,7 +73,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 206000000
+              "duration": 1419000000
             }
           },
           {
@@ -82,7 +83,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 468000000
             }
           },
           {
@@ -91,7 +92,8 @@
             "line": 10,
             "name": "the user toggles to 'Deactivate' an account under review",
             "result": {
-              "status": "undefined"
+              "status": "failed",
+              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:48:8)\n    at Context.resolveAndRunStepDefinition (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10463:29)\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:9784:35)\nFrom previous event:\n    at Context.thenFn (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160174:63)\n    at Context.then (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160626:21)\n    at Context.<anonymous> (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178136:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176929:15\nFrom previous event:\n    at CommandQueue.runCommand (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176908:17)\n    at next (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177062:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177091:16"
             }
           },
           {
@@ -106,10 +108,10 @@
         ]
       },
       {
-        "id": "admin-accounts-approval;the-admin-user-should-see-the-users-table-with-the-proper-columns-order",
+        "id": "admin-accounts-approval;scenario-outline-name:-the-admin-user-should-see-the-users-table-with-the-proper-columns-order",
         "keyword": "Scenario",
-        "line": 18,
-        "name": "The Admin user should see the users table with the proper columns order",
+        "line": 28,
+        "name": "Scenario Outline name: The Admin user should see the users table with the proper columns order",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -120,7 +122,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 91000000
+              "duration": 1420000000
             }
           },
           {
@@ -130,7 +132,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 498000000
             }
           },
           {
@@ -164,7 +166,8 @@
             "line": 21,
             "name": "the user should see the user table columns with the following order",
             "result": {
-              "status": "undefined"
+              "status": "passed",
+              "duration": 2257000000
             }
           }
         ]
