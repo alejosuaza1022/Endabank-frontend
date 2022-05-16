@@ -24,6 +24,29 @@ export default class signUpPage extends basePage{
         return(sDigits)
     }
 
+    
+    wrongEmailGenerator(){
+        var wrongEmail: string;
+        var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        var username = '';
+        for(var ii=0; ii<10; ii++){
+            username += chars[Math.floor(Math.random() * chars.length)];
+        }
+        wrongEmail=username+'@gmail.com'
+        return (wrongEmail)
+    }
+
+    wrongIdentifier(){
+        var chars = 'abcdefghijk';
+        var sWrongDigits: string = '';
+        for(var ii=0; ii<10; ii++){
+            sWrongDigits += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return(sWrongDigits)
+    }
+
+    
+
 
 
     getPhoneNumberInput(){
