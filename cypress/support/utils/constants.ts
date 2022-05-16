@@ -1,1 +1,1 @@
-export const URL ="http://localhost:3000/profile";
+export const URL ="http://level-strategy-346315.uc.r.appspot.com/profile";

@@ -1,4 +1,6 @@
 {
-  "email": "juanpablo.perezleon@endava.com",
-  "password": "Jpperezl25."
+  "emailAdmin": "juanpablo.perezleon@endava.com",
+  "passwordAdmin": "Jpperezl25.",
+  "emailNormalUser": "test@gmail.com",
+  "passwordNormalUser": "Alexis17*"
 }

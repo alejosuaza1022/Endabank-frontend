@@ -2,10 +2,15 @@ import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import user from "../../fixtures/user.json";
 import url from "../../fixtures/url.json";
 import adminPanelPage from "../../support/pages/adminPanelPage";
+import { URL } from "../../support/utils/constants";
 
 Given("the user is logged in as an {string} user", (userType) => {
-  cy.visit(url.url);
-  cy.login(user.email, user.password);
+  cy.visit(url.urlLogin);
+  if (userType == "Admin") {
+    cy.login(user.emailAdmin, user.passwordAdmin);
+  } else {
+    cy.login(user.emailNormalUser, user.passwordNormalUser);
+  }
 });
 
 And("the user is on the Admin Panel section", () => {
@@ -16,13 +21,20 @@ When("the user toggles to {string} an account under review", (status) => {
   cy.verifyStatus(status);
 });
 
-Then(
-  "the user should see the user table columns with the following order",
-  () => {
+Then("the user should see the user table columns with the following order", (table) => {
     cy.wait(url.wait);
-    cy.get("thead").find("tr th").contains("First Name");
-    cy.get("thead").find("tr th").contains("Last Name");
-    cy.get("thead").find("tr th").contains("Email");
-    cy.get("thead").find("tr th").contains("Approved");
+    let imput = table.hashes();
+    for (let i = 0; i < imput.length; i++) {
+      cy.get("thead").find("tr th").contains(imput[i].Titles);
+    }
   }
 );
+
+When("the user tries to enter in the approval section", () => {
+  cy.wait(2000);
+  cy.get(adminPanelPage.USER_MANAGEMENT_BUTTON).should("not.exist");
+});
+
+Then("tries to enter trough the url {string} its redirected to home", (url) => {
+  cy.verifySection(url, 2000, URL);
+});

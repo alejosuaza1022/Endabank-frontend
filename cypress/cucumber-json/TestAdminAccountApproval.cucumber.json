@@ -1,6 +1,6 @@
 [
   {
-    "description": "              As an admin user of the Endabank,\n              I want to be able to approve or disapprove an account,\n    So that only allowed users will be able to sign into the application",
+    "description": "     As an admin user of the Endabank,\n     I want to be able to approve or disapprove an account,\n     So that only allowed users will be able to sign into the application",
     "keyword": "Feature",
     "name": "Admin Accounts Approval",
     "line": 1,
@@ -9,59 +9,9 @@
     "uri": "AdminAccountApproval.feature",
     "elements": [
       {
-        "id": "admin-accounts-approval;activate-an-account-under-admin-approval",
-        "keyword": "Scenario",
-        "line": 15,
-        "name": "Activate an account under admin approval",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "the user is logged in as an 'Admin' user",
-            "result": {
-              "status": "passed",
-              "duration": 1553000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "the user is on the Admin Panel section",
-            "result": {
-              "status": "passed",
-              "duration": 1207000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "the user toggles to 'Activate' an account under review",
-            "result": {
-              "status": "failed",
-              "duration": 22000000,
-              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:48:8)\n    at Context.resolveAndRunStepDefinition (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10463:29)\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:9784:35)\nFrom previous event:\n    at Context.thenFn (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160174:63)\n    at Context.then (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160626:21)\n    at Context.<anonymous> (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178136:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176929:15\nFrom previous event:\n    at CommandQueue.runCommand (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176908:17)\n    at next (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177062:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177091:16"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "the account should be 'Activated'",
-            "result": {
-              "status": "skipped"
-            }
-          }
-        ]
-      },
-      {
         "id": "admin-accounts-approval;deactivate-an-account-under-admin-approval",
         "keyword": "Scenario",
-        "line": 16,
+        "line": 15,
         "name": "Deactivate an account under admin approval",
         "tags": [],
         "type": "scenario",
@@ -73,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1419000000
+              "duration": 1473000000
             }
           },
           {
@@ -83,7 +33,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 468000000
+              "duration": 1195000000
             }
           },
           {
@@ -92,26 +42,57 @@
             "line": 10,
             "name": "the user toggles to 'Deactivate' an account under review",
             "result": {
-              "status": "failed",
-              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:48:8)\n    at Context.resolveAndRunStepDefinition (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10463:29)\n    at Context.eval (http://level-strategy-346315.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:9784:35)\nFrom previous event:\n    at Context.thenFn (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160174:63)\n    at Context.then (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160626:21)\n    at Context.<anonymous> (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178136:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176929:15\nFrom previous event:\n    at CommandQueue.runCommand (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:176908:17)\n    at next (http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177062:19)\n    at http://level-strategy-346315.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177091:16"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "the account should be 'Deactivated'",
-            "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 4145000000
             }
           }
         ]
       },
       {
-        "id": "admin-accounts-approval;scenario-outline-name:-the-admin-user-should-see-the-users-table-with-the-proper-columns-order",
+        "id": "admin-accounts-approval;activate-an-account-under-admin-approval",
         "keyword": "Scenario",
-        "line": 28,
-        "name": "Scenario Outline name: The Admin user should see the users table with the proper columns order",
+        "line": 16,
+        "name": "Activate an account under admin approval",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the user is logged in as an 'Admin' user",
+            "result": {
+              "status": "passed",
+              "duration": 1157000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the user is on the Admin Panel section",
+            "result": {
+              "status": "passed",
+              "duration": 595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "the user toggles to 'Activate' an account under review",
+            "result": {
+              "status": "passed",
+              "duration": 4137000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "admin-accounts-approval;the-admin-user-should-see-the-users-table-with-the-proper-columns-order",
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "The Admin user should see the users table with the proper columns order",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -122,7 +103,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1420000000
+              "duration": 1452000000
             }
           },
           {
@@ -132,7 +113,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 498000000
+              "duration": 422000000
             }
           },
           {
@@ -141,22 +122,27 @@
                 "rows": [
                   {
                     "cells": [
-                      "FIRST NAME"
+                      "Titles"
                     ]
                   },
                   {
                     "cells": [
-                      "LAST NAME"
+                      "First Name"
                     ]
                   },
                   {
                     "cells": [
-                      "EMAIL"
+                      "Last Name"
                     ]
                   },
                   {
                     "cells": [
-                      "APPROVED"
+                      "Email"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Approve"
                     ]
                   }
                 ]
@@ -167,7 +153,47 @@
             "name": "the user should see the user table columns with the following order",
             "result": {
               "status": "passed",
-              "duration": 2257000000
+              "duration": 2147000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "admin-accounts-approval;non-admin-user-can't-see-the-user-approval-section",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "Non-admin user can't see the user approval section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "the user is logged in as an 'NormalUser' user",
+            "result": {
+              "status": "passed",
+              "duration": 1095000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "the user tries to enter in the approval section",
+            "result": {
+              "status": "passed",
+              "duration": 2013000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "tries to enter trough the url 'http://level-strategy-346315.uc.r.appspot.com/activate-account' its redirected to home",
+            "result": {
+              "status": "passed",
+              "duration": 2193000000
             }
           }
         ]
