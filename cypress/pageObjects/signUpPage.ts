@@ -46,4 +46,30 @@ export default class signUpPage extends basePage{
         return(cy.get('#submitSignUp'));
     }
 
+    getTypeIdentifierID(){
+        return(cy.get('#typeIdentifierId'));
+    }
+
+    getIdentifier(){
+        return(cy.get('#identifier'));
+    }
+
+    getFirstName(){
+        return(cy.get('#firstName'));
+    }
+
+    getFirstName(){
+        return(cy.get('#firstName'));
+    }
+
+    getLastName(){
+        return(cy.get('#lastName'));
+    }
+
+
+
+
+
+
+
 }
