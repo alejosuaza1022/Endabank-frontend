@@ -17,7 +17,8 @@ Feature: User registration
              Then the user should see a pop-up with the next information "User registered"
 
         Scenario: The user tries to correct fields after writing wrong value
-            Given the user has entered a wrong value in a field
+            Given the user has been redirected to the Register page
+              And the user has entered a wrong value in a field
              Then an error message should be displayed
              When the user is correcting value in a field
              Then the error message should dissappear

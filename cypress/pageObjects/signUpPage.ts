@@ -32,7 +32,7 @@ export default class signUpPage extends basePage{
         for(var ii=0; ii<10; ii++){
             username += chars[Math.floor(Math.random() * chars.length)];
         }
-        wrongEmail=username+'@gmail.com'
+        wrongEmail=username+'gmail.com'
         return (wrongEmail)
     }
 
@@ -46,29 +46,6 @@ export default class signUpPage extends basePage{
     }
 
     
-
-
-
-    getPhoneNumberInput(){
-        return (cy.get('#phoneNumber'));
-    }
-
-    getNewEmailInput(){
-        return (cy.get('#email'))
-    }
-    
-    getPasswordInput(){
-        return(cy.get('#password'));
-    }
-
-    getRePasswordInput(){
-        return(cy.get('#rePassword'));
-    }
-
-    getSubmitSignUpButton(){
-        return(cy.get('#submitSignUp'));
-    }
-
     getTypeIdentifierID(){
         return(cy.get('#typeIdentifierId'));
     }
@@ -77,22 +54,60 @@ export default class signUpPage extends basePage{
         return(cy.get('#identifier'));
     }
 
-    getFirstName(){
-        return(cy.get('#firstName'));
+    getIdentifierMessage(){
+        return(cy.get('.grid-cc > :nth-child(2) > .text-xs'));
     }
 
     getFirstName(){
         return(cy.get('#firstName'));
+    }
+
+    getFirstNameMessage(){
+        return (cy.get(':nth-child(1) > .text-xs'));
     }
 
     getLastName(){
-        return(cy.get('#lastName'));
+        return (cy.get('#lastName'));
     }
 
+    getLastNameMessage(){
+        return (cy.get('.grid > :nth-child(2) > .text-xs'));
+    }
 
+    getPhoneNumberInput(){
+        return (cy.get('#phoneNumber'));
+    }
 
+    getPhoneNumberMessage(){
+        return (cy.get(':nth-child(3) > .text-xs'))
+    }
 
+    getNewEmailInput(){
+        return (cy.get('#email'))
+    }
 
+    getNewEmailMessage(){
+        return (cy.get(':nth-child(4) > .text-xs'))
+    }
+    
+    getPasswordInput(){
+        return (cy.get('#password'));
+    }
 
+    getPasswordMessage(){
+        return (cy.get(':nth-child(5) > .text-xs'));
+    }
 
+    getRePasswordInput(){
+        return (cy.get('#rePassword'));
+    }
+
+    getRePasswordMessage(){
+        return (cy.get(':nth-child(6) > .text-xs'));
+    }
+
+    getSubmitSignUpButton(){
+        return (cy.get('#submitSignUp'));
+    }
+    
 }

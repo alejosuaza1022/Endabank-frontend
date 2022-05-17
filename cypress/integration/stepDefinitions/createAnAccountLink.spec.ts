@@ -1,5 +1,5 @@
 import {Given,  When, Then } from "cypress-cucumber-preprocessor/steps";
-import logInPage from "../../../cypress/pageObjects/logInPage";
+import logInPage from "../../pageObjects/logInPage";
 
 const loginPage: logInPage = new logInPage();
 
