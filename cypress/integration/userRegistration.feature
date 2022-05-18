@@ -21,3 +21,9 @@ Feature: User registration
              Then an error message should be displayed
              When the user is correcting value in a field
              Then the error message should dissappear
+
+        Scenario: A new User has registered and is waiting approval
+            Given the admin user has logged in
+             When the admin user clicks on "Users management"
+             Then the new users are visible
+              And  the new useres are not approved yet
