@@ -1,7 +1,8 @@
 import {And,  When, Then , Given} from "cypress-cucumber-preprocessor/steps";
 
-import logInPage from "../../../cypress/pageObjects/logInPage";
+import logInPage from "../../pageObjects/logInPage";
 import signUpPage from "../../pageObjects/signUpPage";
+import userData from "../../fixtures/constants.json";
 
 const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
@@ -15,19 +16,17 @@ Given('the user that has clicked on the {string} link in the Login page', (link)
 })
 
 And('the user has been redirected to the Register page', () => {
-    cy.getTypeIdentifierID().should('be.visible')
+    signupPage.getTypeIdentifierID().should('be.visible')
 })
 
 When('the user enters correct values in all fields', () => {
-    cy.fixture('constants.json').then((userData) => {
-        signupPage.getIdentifier().type(newindetifier);
-        signupPage.getFirstName().type(userData.firstName);
-        signupPage.getLastName().type(userData.lastName)
-        signupPage.getPhoneNumberInput().type(userData.phoneNumber)
-        signupPage.getNewEmailInput().type(newEmail)
-        signupPage.getPasswordInput().type(userData.password)
-        signupPage.getRePasswordInput().type(userData.rePassword)
-    })
+    signupPage.getIdentifier().type(newindetifier);
+    signupPage.getFirstName().type(userData.firstName);
+    signupPage.getLastName().type(userData.lastName)
+    signupPage.getPhoneNumberInput().type(userData.phoneNumber)
+    signupPage.getNewEmailInput().type(newEmail)
+    signupPage.getPasswordInput().type(userData.password)
+    signupPage.getRePasswordInput().type(userData.rePassword)
 })
 
 And ('the user clicks on the "Submit" button', () => {
