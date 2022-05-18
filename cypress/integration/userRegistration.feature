@@ -34,3 +34,9 @@ Feature: User registration
              When the user writes different values on those fields
              Then the field will be highlighted in red
               And  a  message is shown indicating "Passwords do not match"
+
+        
+        Scenario: The user tries to submit an incomplete form
+            Given the user has not filled all mandatory fields
+             When the user clicks on submit button
+             Then an error message should be visible
