@@ -23,8 +23,14 @@ Feature: User registration
              When the user is correcting value in a field
              Then the error message should dissappear
 
-        Scenario: A new User has registered and is waiting approval
+        Scenario: A new User has registered and is awaiting approval
             Given the admin user has logged in
              When the admin user clicks on "Users management"
              Then the new users are visible
-              And  the new useres are not approved yet
+              And the new users are not approved yet
+        
+        Scenario: The user should be able to confirm password
+            Given the user is filling the password and confirm password fields
+             When the user writes different values on those fields
+             Then the field will be highlighted in red
+              And  a  message is shown indicating "Passwords do not match"

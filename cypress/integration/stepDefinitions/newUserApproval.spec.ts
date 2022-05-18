@@ -4,7 +4,7 @@ import homePage from "../../../cypress/pageObjects/homePage";
 import adminData from "../../fixtures/adminCredentials.json";
 
 const loginPage: logInPage = new logInPage();
-const homePage: homePage = new homePage();
+const homePageInstance: homePage = new homePage();
 
 Given('the admin user has logged in', ()=>{
     loginPage.visit()
@@ -14,7 +14,7 @@ Given('the admin user has logged in', ()=>{
 
 When('the admin user clicks on "Users management"', ()=> {
 
-    homePage.getUsersManagement().click()
+    homePageInstance.getUsersManagement().click()
     cy.wait(2000)
     
 })
