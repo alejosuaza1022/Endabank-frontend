@@ -23,7 +23,7 @@
             "name": "the user is on the Login page",
             "result": {
               "status": "passed",
-              "duration": 232000000
+              "duration": 1025000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user clicks on the \"create an account\" link",
             "result": {
               "status": "passed",
-              "duration": 135000000
+              "duration": 123000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user should be redirected to the Register page",
             "result": {
               "status": "passed",
-              "duration": 26000000
+              "duration": 10000000
             }
           }
         ]
@@ -63,7 +63,7 @@
             "name": "the user that has clicked on the \"create an account\" link in the Login page",
             "result": {
               "status": "passed",
-              "duration": 253000000
+              "duration": 256000000
             }
           },
           {
@@ -73,7 +73,7 @@
             "name": "the user has been redirected to the Register page",
             "result": {
               "status": "passed",
-              "duration": 88000000
+              "duration": 205000000
             }
           },
           {
@@ -83,7 +83,7 @@
             "name": "the user enters correct values in all fields",
             "result": {
               "status": "passed",
-              "duration": 2433000000
+              "duration": 2227000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the user clicks on the \"Submit\" button",
             "result": {
               "status": "passed",
-              "duration": 110000000
+              "duration": 118000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the user should see a pop-up with the next information \"User registered\"",
             "result": {
               "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User registered' but never did.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:132:26)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:12110:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:11431:35)"
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'User registered' but never did.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:137:26)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:12211:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:11532:35)"
             }
           }
         ]
@@ -123,7 +123,7 @@
             "name": "the user has been redirected to the Register page",
             "result": {
               "status": "passed",
-              "duration": 126000000
+              "duration": 438000000
             }
           },
           {
@@ -133,7 +133,7 @@
             "name": "the user has entered a wrong value in a field",
             "result": {
               "status": "passed",
-              "duration": 2081000000
+              "duration": 2139000000
             }
           },
           {
@@ -143,7 +143,7 @@
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 49000000
+              "duration": 40000000
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "the user is correcting value in a field",
             "result": {
               "status": "passed",
-              "duration": 2771000000
+              "duration": 2843000000
             }
           },
           {
@@ -163,7 +163,144 @@
             "name": "the error message should dissappear",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 23000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;a-new-user-has-registered-and-is-awaiting-approval",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "A new User has registered and is awaiting approval",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "the admin user has logged in",
+            "result": {
+              "status": "passed",
+              "duration": 1062000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "the admin user clicks on \"Users management\"",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at homePage.getUsersManagement (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:260:20)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:180:22)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:12211:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:11532:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "the new users are visible",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "the new users are not approved yet",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;the-user-should-be-able-to-confirm-password",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "The user should be able to confirm password",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "the user is filling the password and confirm password fields",
+            "result": {
+              "status": "passed",
+              "duration": 595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "the user writes different values on those fields",
+            "result": {
+              "status": "passed",
+              "duration": 516000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "the field will be highlighted in red",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: expected '<input#rePassword.block.py-2.5.px-0.w-full.text-sm.text-gray-900.bg-transparent.border-0.border-b-2.focus:border-black.border-gray-300.appearance-none.focus:outline-none.focus:ring-0.peer>' to have CSS property 'borderColor' with the value 'rgb(240, 82, 82', but the value was 'rgb(0, 0, 0)'\n    + expected - actual\n\n    -'rgb(0, 0, 0)'\n    +'rgb(240, 82, 82'\n\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:210:37)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:12211:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\userRegistration.feature:11532:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "a  message is shown indicating \"Passwords do not match\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-registration;the-user-tries-to-submit-an-incomplete-form",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "The user tries to submit an incomplete form",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "the user has not filled all mandatory fields",
+            "result": {
+              "status": "passed",
+              "duration": 590000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "the user clicks on submit button",
+            "result": {
+              "status": "passed",
+              "duration": 96000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "an error message should be visible",
+            "result": {
+              "status": "passed",
+              "duration": 11000000
             }
           }
         ]

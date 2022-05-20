@@ -3,7 +3,7 @@ import {And,  When, Then , Given} from "cypress-cucumber-preprocessor/steps";
 import logInPage from "../../pageObjects/logInPage";
 import signUpPage from "../../pageObjects/signUpPage";
 import wrongUserData from "../../fixtures/wrongConstants.json";
-import { sign } from "crypto";
+import userData from "../../fixtures/constants.json";
 
 const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
@@ -19,6 +19,7 @@ Given('the user has been redirected to the Register page',()=>{
 })
 
 And('the user has entered a wrong value in a field',()=>{
+    
     signupPage.getIdentifier().type(wrongIndetifier);
     signupPage.getFirstName().type(wrongUserData.firstName);
     signupPage.getLastName().type(wrongUserData.lastName)
@@ -30,6 +31,7 @@ And('the user has entered a wrong value in a field',()=>{
 })
 
 Then('an error message should be displayed',()=>{
+
     signupPage.getIdentifierMessage().should('have.text','This field must be just numbers with a length between 6 and 20')
     signupPage.getFirstNameMessage().should('have.text','This field must be just letters with a length between 2 and 20')
     signupPage.getLastNameMessage().should('have.text','This field must be just letters with a length between 2 and 20')
@@ -42,15 +44,14 @@ Then('an error message should be displayed',()=>{
 
 When('the user is correcting value in a field',()=> {
 
-    cy.fixture('constants.json').then((userData) => {
-        signupPage.getIdentifier().clear().type(newindetifier);
-        signupPage.getFirstName().clear().type(userData.firstName);
-        signupPage.getLastName().clear().type(userData.lastName)
-        signupPage.getPhoneNumberInput().clear().type(userData.phoneNumber)
-        signupPage.getNewEmailInput().clear().type(newEmail)
-        signupPage.getPasswordInput().clear().type(userData.password)
-        signupPage.getRePasswordInput().clear().type(userData.rePassword)
-    })
+    signupPage.getIdentifier().clear().type(newindetifier);
+    signupPage.getFirstName().clear().type(userData.firstName);
+    signupPage.getLastName().clear().type(userData.lastName)
+    signupPage.getPhoneNumberInput().clear().type(userData.phoneNumber)
+    signupPage.getNewEmailInput().clear().type(newEmail)
+    signupPage.getPasswordInput().clear().type(userData.password)
+    signupPage.getRePasswordInput().clear().type(userData.rePassword)
+    
 
 })
 
