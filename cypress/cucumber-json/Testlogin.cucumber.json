@@ -1,0 +1,288 @@
+[
+  {
+    "description": "              As an old merchant\n              I want to access the portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "The user should be able login to endabank",
+    "line": 1,
+    "id": "the-user-should-be-able-login-to-endabank",
+    "tags": [],
+    "uri": "login.feature",
+    "elements": [
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-allowed-to-login",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "The user should be allowed to login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1524000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the user types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 364000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 211000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the user has to be allowed to see their profile, password management and Logout in the page",
+            "result": {
+              "status": "passed",
+              "duration": 837000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-shouldn't-be-allowed-to-access-the-portal",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "The user shouldn't be allowed to access the portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1320000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the user types in a \"email\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the user types in a \"Password\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "the user clicks on the login buttton",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the user should see an error message as \"Credential Error. Verify User and password\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-shouldn't-be-allowed-to-access-the-portal",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "The user shouldn't be allowed to access the portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1283000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the user types in a \"email\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the user types in a \"Password\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "the user clicks on the login buttton",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the user should see an error message as \"Credential Error. Verify User and password\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-shouldn't-be-allowed-to-access-the-portal",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "The user shouldn't be allowed to access the portal",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the user types in a \"email\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the user types in a \"Password\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "the user clicks on the login buttton",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the user should see an error message as \"Credential Error. Verify User and password\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-warned-when-the-email-format-is-incorrect",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "The user should be warned when the email format is incorrect",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1371000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "the user types in an email with an incorrect format as \"emailWrongFormat\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "the user types in a password as \"password\"",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "the user should see a highlight error message \"This field must be a valid email\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
