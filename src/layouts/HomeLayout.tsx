@@ -22,7 +22,7 @@ const LayoutHome = () => {
                   <>
                     {" "}
                     <Link to="/log-in/">Log-in</Link>
-                    <Link to="/sign-up/">Sing-up</Link>{" "}
+                    <Link to="/sign-up/">Sign-up</Link>{" "}
                   </>
                 )
               : (<>
