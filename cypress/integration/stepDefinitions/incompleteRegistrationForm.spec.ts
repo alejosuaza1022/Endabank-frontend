@@ -8,7 +8,7 @@ const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
 
 
-Given('the user has not filled all mandatory fields',()=> {
+Given('the user has not completed the mandatory fields',()=> {
 
     loginPage.visit()
     loginPage.getCreateAccountLink().click()
@@ -16,7 +16,7 @@ Given('the user has not filled all mandatory fields',()=> {
 
 })
 
-When('the user clicks on submit button',()=>{
+When('the user tries to submit the incomplete information',()=>{
 
     signupPage.getSubmitSignUpButton().click()
 })

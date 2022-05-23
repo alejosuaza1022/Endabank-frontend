@@ -8,19 +8,19 @@ const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
 
 const newEmail = signupPage.newEmailGenerator();
-const newindetifier = signupPage.newIdentifier();
+const newidentifier = signupPage.newIdentifier();
 
-Given('the user that has clicked on the {string} link in the Login page', (link) => {
+Given('the user that has entered the registration form via the "create an account" link', () => {
     loginPage.visit()
     loginPage.getCreateAccountLink().click()
 })
 
-And('the user has been redirected to the Register page', () => {
+And('the user is on the Register page', () => {
     signupPage.getTypeIdentifierID().should('be.visible')
 })
 
-When('the user enters correct values in all fields', () => {
-    signupPage.getIdentifier().type(newindetifier);
+When('the user writes the requested information in each field', () => {
+    signupPage.getIdentifier().type(newidentifier);
     signupPage.getFirstName().type(userData.firstName);
     signupPage.getLastName().type(userData.lastName)
     signupPage.getPhoneNumberInput().type(userData.phoneNumber)

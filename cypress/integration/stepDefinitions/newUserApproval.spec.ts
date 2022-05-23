@@ -12,7 +12,7 @@ Given('the admin user has logged in', ()=>{
     loginPage.getPasswordInput().type(adminData.password)
 })
 
-When('the admin user clicks on "Users management"', ()=> {
+When('the admin user enters to the "Users management" page', ()=> {
 
     homePageInstance.getUsersManagement().click()
     cy.wait(2000)

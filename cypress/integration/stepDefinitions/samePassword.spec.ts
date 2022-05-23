@@ -8,14 +8,14 @@ const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
 
 
-Given('the user is filling the password and confirm password fields', ()=> {
+Given('the user is creating and confirming his password', ()=> {
 
     loginPage.visit()
     loginPage.getCreateAccountLink().click()
 
 })
 
-When('the user writes different values on those fields',()=>{
+When('the confirm password information does not match with password information',()=>{
 
     signupPage.getPasswordInput().type(wrongUserData.password)
     signupPage.getRePasswordInput().type(wrongUserData.rePassword)
@@ -27,7 +27,7 @@ Then('the field will be highlighted in red',()=>{
 
 })
 
-And('a  message is shown indicating "Passwords do not match"',()=>{
+And('a  message should be visible indicating "Passwords do not match"',()=>{
 
     signupPage.getRePasswordMessage().should('have.text', 'Passwords do not match')
 

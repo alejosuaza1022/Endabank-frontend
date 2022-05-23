@@ -5,60 +5,60 @@ Feature: User registration
 
         Scenario: The user should be allowed to create a new account
             Given the user is on the Login page
-             When the user clicks on the "create an account" link
+             When the user tries to enter the registration form via the "create an account" link
              Then the user should be redirected to the Register page
 
         
-        Scenario: The user should complete an successful happy path for a new user
-            Given the user that has clicked on the "create an account" link in the Login page
-              And the user has been redirected to the Register page
-             When the user enters correct values in all fields
+        Scenario: The user should be able to register successfully
+            Given the user that has entered the registration form via the "create an account" link
+              And the user is on the Register page
+             When the user writes the requested information in each field
               And the user clicks on the "Submit" button
              Then the user should see a pop-up with the next information "User registered"
 
-        Scenario: The user tries to correct fields after writing wrong value
-            Given the user has been redirected to the Register page
-              And the user has entered a wrong value in a field
+        Scenario: The user tries to correct fields after typing wrong information
+            Given the user is on the Register page
+              And the user has typed wrong information in a field
              Then an error message should be displayed
-             When the user is correcting value in a field
-             Then the error message should dissappear
+             When the user is correcting the information
+             Then the error message should disappear
 
         Scenario: A new user has registered and is awaiting approval
             Given the admin user has logged in
-             When the admin user clicks on "Users management"
+             When the admin user enters to the "Users management" page
              Then the new users are visible
               And the new users are not approved yet
         
         Scenario: The user should be able to confirm password
-            Given the user is filling the password and confirm password fields
-             When the user writes different values on those fields
+            Given the user is creating and confirming his password
+             When the confirm password information does not match with password information
              Then the field will be highlighted in red
-              And  a  message is shown indicating "Passwords do not match"
+              And  a  message should be visible indicating "Passwords do not match"
 
         
         Scenario: The user tries to submit an incomplete form
-            Given the user has not filled all mandatory fields
-             When the user clicks on submit button
+            Given the user has not completed the mandatory fields
+             When the user tries to submit the incomplete information
              Then an error message should be visible
 
-        Scenario: The user not should register an existing email
-            Given the user has been redirected to the Register page
-             When the user is entering data into the registration form fields
-              And  the user enters an email that is already in another account
-             Then the user should see "There is already a user registered with this email"  error message
+        Scenario: The user should not be able to register with an email already in use
+            Given the user is on the Register page
+             When the user is typing information into the registration form
+              And the user tries to register with an email that is already in use
+             Then the user should see the error message "There is already a user registered with this email"
 
-        Scenario: The user not should register an existing identifier
-            Given the user has been redirected to the Register page
-             When the user is entering data into the registration form fields
-              And  the user enters an identifier that is already in another account
-             Then the user should see "There is already a user registered with this identifier" error message
+        Scenario: The user should not be able to register with an identifier already in use
+            Given the user has is on the Register page
+             When the user is typing information into the registration form
+              And the user tries to register with an identifier that is already in use
+             Then the user should see the error message "There is already a user registered with this identifier"
 
-        Scenario Outline: Validate the mandatory fields in the User Registration page
-            Given the user has been redirected to the Register page
+        Scenario Outline: The user should complete all mandatory fields in the User Registration page
+            Given the user is on the Register page
              When the user types a wrong "<value>" into the "<field_name>"
-              And the user tries to fill another
-             Then the following "<error_message>" should be displayed
-              And the "<field_name>" should be highlighted
+              And the user tries to move on the next field
+             Then the error message "<error_message>"  should be displayed
+              And the "<field_name>" field should be highlighted
 	
         Examples:
 

@@ -9,18 +9,18 @@ const loginPage: logInPage = new logInPage();
 const signupPage: signUpPage = new signUpPage();
 
 const newEmail = signupPage.newEmailGenerator();
-const newindetifier = signupPage.newIdentifier();
+const newidentifier = signupPage.newIdentifier();
 
 const wrongEmail = signupPage.wrongEmailGenerator();
-const wrongIndetifier = signupPage.wrongIdentifier();
+const wrongIdentifier = signupPage.wrongIdentifier();
 
-Given('the user has been redirected to the Register page',()=>{
+Given('the user is on the Register page',()=>{
     signupPage.visit()
 })
 
-And('the user has entered a wrong value in a field',()=>{
+And('the user has typed wrong information in a field',()=>{
     
-    signupPage.getIdentifier().type(wrongIndetifier);
+    signupPage.getIdentifier().type(wrongIdentifier);
     signupPage.getFirstName().type(wrongUserData.firstName);
     signupPage.getLastName().type(wrongUserData.lastName)
     signupPage.getPhoneNumberInput().type(wrongUserData.phoneNumber)
@@ -42,9 +42,9 @@ Then('an error message should be displayed',()=>{
 
 })
 
-When('the user is correcting value in a field',()=> {
+When('the user is correcting the information',()=> {
 
-    signupPage.getIdentifier().clear().type(newindetifier);
+    signupPage.getIdentifier().clear().type(newidentifier);
     signupPage.getFirstName().clear().type(userData.firstName);
     signupPage.getLastName().clear().type(userData.lastName)
     signupPage.getPhoneNumberInput().clear().type(userData.phoneNumber)
@@ -55,7 +55,7 @@ When('the user is correcting value in a field',()=> {
 
 })
 
-Then('the error message should dissappear',()=> {
+Then('the error message should disappear',()=> {
 
     signupPage.getIdentifierMessage().should('not.exist')
     signupPage.getFirstNameMessage().should('not.exist')

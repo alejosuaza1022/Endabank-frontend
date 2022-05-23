@@ -4,7 +4,7 @@ import userData from "../../fixtures/constants.json";
 
 const signupPage: signUpPage= new signUpPage();
 
-When('the user is entering data into the registration form fields', () =>{
+When('the user is typing information into the registration form', () =>{
     signupPage.getFirstName().clear().type(userData.firstName);
     signupPage.getLastName().clear().type(userData.lastName);
     signupPage.getPhoneNumberInput().clear().type(userData.phoneNumber);
@@ -12,12 +12,12 @@ When('the user is entering data into the registration form fields', () =>{
     signupPage.getRePasswordInput().clear().type(userData.rePassword);
 })
 
-And('the user enters an email that is already in another account',()=>{
+And('the user tries to register with an email that is already in use',()=>{
     signupPage.getNewEmailInput().clear().type(userData.existingEmail);
     signupPage.getIdentifier().clear().type(signupPage.newIdentifier());
 })
 
-Then('the user should see {string} error message',(errorMessage)=>{
+Then('the user should see the error message {string}',(errorMessage)=>{
     signupPage.getSubmitSignUpButton().click();
     cy.contains(errorMessage).should('be.visible')
 })

@@ -5,12 +5,11 @@ const loginPage: logInPage = new logInPage();
 
 Given('the user is on the Login page', () => {
     loginPage.visit()
-    //loginPage.relativePath
-    //loginPage.checkCorrectPath()
+
     cy.contains('Log In').should('be.visible')
 })
 
-When('the user clicks on the {string} link', (linkName) => {
+When('t the user tries to enter the registration form via the {string} link', (linkName) => {
     cy.contains(linkName).click()
     
 })

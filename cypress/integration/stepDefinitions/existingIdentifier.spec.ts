@@ -4,12 +4,12 @@ import userData from "../../fixtures/constants.json";
 
 const signupPage: signUpPage= new signUpPage();
 
-And('the user enters an identifier that is already in another account',()=>{
+And('the user tries to register with an identifier that is already in use',()=>{
     signupPage.getNewEmailInput().clear().type(userData.existingIdentifier);
     signupPage.getNewEmailInput().clear().type(signupPage.newEmailGenerator());
 })
 
-Then('the user should see {string} error message',(errorMessage)=>{
+Then('the user should see the error message {string}',(errorMessage)=>{
     signupPage.getSubmitSignUpButton().click();
     cy.contains(errorMessage).should('be.visible')
 })
