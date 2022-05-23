@@ -23,7 +23,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1524000000
+              "duration": 1926000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 438000000
+              "duration": 337000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 364000000
+              "duration": 281000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the user clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 211000000
+              "duration": 110000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "the user has to be allowed to see their profile, password management and Logout in the page",
             "result": {
               "status": "passed",
-              "duration": 837000000
+              "duration": 783000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1320000000
+              "duration": 1179000000
             }
           },
           {
@@ -139,7 +139,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1283000000
+              "duration": 1182000000
             }
           },
           {
@@ -195,7 +195,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1358000000
+              "duration": 1155000000
             }
           },
           {
@@ -251,7 +251,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1371000000
+              "duration": 1192000000
             }
           },
           {

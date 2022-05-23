@@ -1,18 +1,28 @@
 class LoginPage {
-    private emailField: string = '[data-id-"emailInputLogin"]';
-    private passwordField: string = '[data-id-"passwordInputLogin"]';
-    private loginButton: string = '#submitLogin';
+    private emailFieldId: string = '[data-id="emailInputLogin"]';
+    private passwordFieldId: string = '[data-id="passwordInputLogin"]';
+    private loginButtonId: string = '#submitLogin';
+    private forgotPasswordButtonId: string = '#forgotPasswordHyperlink';
+    private createAccountButtonId: string = '#signUpHyperlink';
 
-    public writeEmail(email: string){
-        cy.get(this.emailField).type(email);
+    public writeEmail(email: string) {
+        cy.get(this.emailFieldId).type(email);
     }
 
-    public writePassword(password: string){
-        cy.get(this.passwordField).type(password);
+    public writePassword(password: string) {
+        cy.get(this.passwordFieldId).type(password);
     }
 
-    public clickLoginButton(){
-        cy.get(this.loginButton).click();
+    public clickLoginButton() {
+        cy.get(this.loginButtonId).click();
+    }
+
+    public clickForgotPasswordHyperlink() {
+        cy.get(this.forgotPasswordButtonId).click();
+    }
+
+    public clickCreateAccountHyperlink() {
+        cy.get(this.createAccountButtonId).click();
     }
 }
 

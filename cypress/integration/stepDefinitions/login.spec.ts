@@ -21,15 +21,33 @@ And( "the user clicks on login buttton",() =>{
 })
 
 And ("the user has to be allowed to see their profile, password management and Logout in the page",()=>{
-    //cy.get('#profileSidebarElement').should('exist')
-	//cy.get('#logoutSidebarElement').should('exist')
+    cy.get('#profileSidebarElement').should('exist')
+	cy.get('#logoutSidebarElement').should('exist')
 	cy.get('#pwdManagementSidebarElement').should('exist')
 })
 
+///////////////////////
 
 
 
 
+//////////////////////
 
+Given('the user is on the endabank login page', () => {
+    cy.visit(url)
+    cy.wait(1000)
+})
+
+When('the user types in an email with an incorrect format',() =>{
+    cy.get("#email").type(datauser.nonValidFormat)
+})
+
+And('the user types in a password',()=>{
+    cy.get("#password").type(datauser.password)
+})
+
+Then ("the user should see a highlight error message",()=>{
+	cy.get(':nth-child(1) > .text-xs').should('exist')
+})
 
 
