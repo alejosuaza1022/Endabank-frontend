@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "c-o": "cypress open",
+    "cy-open": "cypress open",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -39,7 +39,7 @@
     "vite": "^2.8.0"
   },
   "cypress-cucumber-preprocessor": {
-    "step_definitions": "cypress/integration/stepsdefinitions/**",
+    "step_definitions": "cypress/integration/stepsDefinitions/**",
     "cucumberJson": {
       "generate": true,
       "outputFolder": "cypress/cucumber-json",

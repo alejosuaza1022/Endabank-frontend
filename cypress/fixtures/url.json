@@ -1,5 +1,6 @@
 {
-    "urlLogin": "http://medellin-med.uc.r.appspot.com/log-in",
-    "wait": 2000,
+    "baseUrl": "http://medellin-med.uc.r.appspot.com",
+    "urlLogin": "/log-in",
+    "wait": 3000,
     "urlProfile": "http://medellin-med.uc.r.appspot.com/profile"
   }

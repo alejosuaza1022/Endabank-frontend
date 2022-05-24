@@ -1,19 +1,22 @@
 import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import user from "../../fixtures/user.json";
-import url from "../../fixtures/url.json";
-import adminPanelPage from "../../support/pages/adminPanelPage";
-import { URL } from "../../support/utils/constants";
+import Url from "../../fixtures/url.json";
+import adminPanelPage from "../../pageObjects/adminPanelPage";
+import logInPage from "../../pageObjects/logInPage";
+
+const loginPage: logInPage = new logInPage();
 
 Given("the user is logged in as an {string} user", (userType) => {
-  cy.visit(url.urlLogin);
+  loginPage.visit();
   if (userType == "Admin") {
-    cy.login(user.emailAdmin, user.passwordAdmin);
+    loginPage.logIn(user.emailAdmin,user.passwordAdmin);
   } else {
-    cy.login(user.emailNormalUser, user.passwordNormalUser);
+    loginPage.logIn(user.emailNormalUser, user.passwordNormalUser);
   }
 });
 
 And("the user is on the Admin Panel section", () => {
+  cy.wait(Url.wait);
   cy.get(adminPanelPage.USER_MANAGEMENT_BUTTON).click();
 });
 
@@ -22,7 +25,7 @@ When("the user toggles to {string} an account under review", (status) => {
 });
 
 Then("the user should see the user table columns with the following order", (table) => {
-    cy.wait(url.wait);
+    cy.wait(Url.wait);
     let imput = table.hashes();
     for (let i = 0; i < imput.length; i++) {
       cy.get("thead").find("tr th").contains(imput[i].Titles);
@@ -36,5 +39,5 @@ When("the user tries to enter in the approval section", () => {
 });
 
 Then("tries to enter trough the url {string} its redirected to home", (url) => {
-  cy.verifySection(url, 2000, URL);
+  cy.verifySection(url, 2000, Url.urlProfile);
 });

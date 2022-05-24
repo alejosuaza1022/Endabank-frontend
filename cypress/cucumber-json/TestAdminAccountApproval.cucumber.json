@@ -1,6 +1,6 @@
 [
   {
-    "description": "     As an admin user of the Endabank,\n     I want to be able to approve or disapprove an account,\n     So that only allowed users will be able to sign into the application",
+    "description": "              As an admin user of the Endabank,\n              I want to be able to approve or disapprove an account,\n     So that only allowed users will be able to sign into the application",
     "keyword": "Feature",
     "name": "Admin Accounts Approval",
     "line": 1,
@@ -23,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1327000000
+              "duration": 1312000000
             }
           },
           {
@@ -32,9 +32,8 @@
             "line": 9,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "failed",
-              "duration": 4010000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:51:8)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11908:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11229:35)"
+              "status": "passed",
+              "duration": 3159000000
             }
           },
           {
@@ -43,7 +42,9 @@
             "line": 10,
             "name": "the user toggles to 'Deactivate' an account under review",
             "result": {
-              "status": "skipped"
+              "status": "failed",
+              "duration": 7062000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: expected '<input#ToggleApproveUser3.sr-only>' to be 'checked'\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\support\\index.js:52:71)"
             }
           }
         ]
@@ -63,7 +64,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1387000000
+              "duration": 1324000000
             }
           },
           {
@@ -72,8 +73,8 @@
             "line": 9,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:51:8)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11908:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11229:35)"
+              "status": "passed",
+              "duration": 3235000000
             }
           },
           {
@@ -82,7 +83,8 @@
             "line": 10,
             "name": "the user toggles to 'Activate' an account under review",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 6316000000
             }
           }
         ]
@@ -102,7 +104,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1299000000
+              "duration": 1594000000
             }
           },
           {
@@ -111,8 +113,8 @@
             "line": 20,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:51:8)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11908:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11229:35)"
+              "status": "passed",
+              "duration": 3125000000
             }
           },
           {
@@ -151,7 +153,8 @@
             "line": 21,
             "name": "the user should see the user table columns with the following order",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 3078000000
             }
           }
         ]
@@ -171,7 +174,7 @@
             "name": "the user is logged in as an 'NormalUser' user",
             "result": {
               "status": "passed",
-              "duration": 1501000000
+              "duration": 972000000
             }
           },
           {
@@ -181,17 +184,17 @@
             "name": "the user tries to enter in the approval section",
             "result": {
               "status": "passed",
-              "duration": 2024000000
+              "duration": 2013000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 34,
-            "name": "tries to enter trough the url 'http://level-strategy-346315.uc.r.appspot.com/activate-account' its redirected to home",
+            "name": "tries to enter trough the url 'http://medellin-med.uc.r.appspot.com/activate-account' its redirected to home",
             "result": {
               "status": "failed",
-              "error_message": "CypressError: `cy.visit()` failed because you are attempting to visit a URL that is of a different origin.\n\nIn order to visit a different origin, you can enable the `experimentalSessionAndOrigin` flag and use `cy.origin()`:\n\n`cy.visit('http://medellin-med.uc.r.appspot.com/log-in')`\n`<commands targeting http://medellin-med.uc.r.appspot.com go here>`\n\n`cy.origin('http://level-strategy-346315.uc.r.appspot.com', () => {`\n`  cy.visit('http://level-strategy-346315.uc.r.appspot.com/activate-account')`\n`  <commands targeting http://level-strategy-346315.uc.r.appspot.com go here>`\n`})`\n\nThe new URL is considered a different origin because the following parts of the URL are different:\n\n  > superdomain\n\nYou may only `cy.visit()` same-origin URLs within a single test.\n\nThe previous URL you visited was:\n\n  > 'http://medellin-med.uc.r.appspot.com'\n\nYou're attempting to visit this URL:\n\n  > 'http://level-strategy-346315.uc.r.appspot.com'\n    at cannotVisitDifferentOrigin (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:162217:72)\n    at http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:163235:20\nFrom previous event:\n    at go (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:163176:41)\n    at visit (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:163362:16)\n    at Context.visit (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:163365:14)\nFrom Your Spec Code:\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\support\\index.js:25:8)"
+              "error_message": "AssertionError: Timed out retrying after 4000ms: expected 'http://medellin-med.uc.r.appspot.com/log-in' to equal 'http://medellin-med.uc.r.appspot.com/profile'\n    + expected - actual\n\n    -'http://medellin-med.uc.r.appspot.com/log-in'\n    +'http://medellin-med.uc.r.appspot.com/profile'\n\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\support\\index.js:38:14)"
             }
           }
         ]
