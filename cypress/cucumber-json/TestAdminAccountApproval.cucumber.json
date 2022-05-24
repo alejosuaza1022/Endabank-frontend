@@ -1,6 +1,6 @@
 [
   {
-    "description": "     As an admin user of the Endabank,\n     I want to be able to approve or disapprove an account,\n     So that only allowed users will be able to sign into the application",
+    "description": "              As an admin user of the Endabank,\n              I want to be able to approve or disapprove an account,\n     So that only allowed users will be able to sign into the application",
     "keyword": "Feature",
     "name": "Admin Accounts Approval",
     "line": 1,
@@ -8,46 +8,6 @@
     "tags": [],
     "uri": "AdminAccountApproval.feature",
     "elements": [
-      {
-        "id": "admin-accounts-approval;deactivate-an-account-under-admin-approval",
-        "keyword": "Scenario",
-        "line": 15,
-        "name": "Deactivate an account under admin approval",
-        "tags": [],
-        "type": "scenario",
-        "steps": [
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "the user is logged in as an 'Admin' user",
-            "result": {
-              "status": "passed",
-              "duration": 1473000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "the user is on the Admin Panel section",
-            "result": {
-              "status": "passed",
-              "duration": 1195000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 10,
-            "name": "the user toggles to 'Deactivate' an account under review",
-            "result": {
-              "status": "passed",
-              "duration": 4145000000
-            }
-          }
-        ]
-      },
       {
         "id": "admin-accounts-approval;activate-an-account-under-admin-approval",
         "keyword": "Scenario",
@@ -63,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1157000000
+              "duration": 4368000000
             }
           },
           {
@@ -73,7 +33,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 595000000
+              "duration": 3117000000
             }
           },
           {
@@ -83,7 +43,7 @@
             "name": "the user toggles to 'Activate' an account under review",
             "result": {
               "status": "passed",
-              "duration": 4137000000
+              "duration": 6394000000
             }
           }
         ]
@@ -103,7 +63,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1452000000
+              "duration": 1111000000
             }
           },
           {
@@ -113,7 +73,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 422000000
+              "duration": 3114000000
             }
           },
           {
@@ -153,7 +113,7 @@
             "name": "the user should see the user table columns with the following order",
             "result": {
               "status": "passed",
-              "duration": 2147000000
+              "duration": 3293000000
             }
           }
         ]
@@ -173,7 +133,7 @@
             "name": "the user is logged in as an 'NormalUser' user",
             "result": {
               "status": "passed",
-              "duration": 1095000000
+              "duration": 1145000000
             }
           },
           {
@@ -183,17 +143,17 @@
             "name": "the user tries to enter in the approval section",
             "result": {
               "status": "passed",
-              "duration": 2013000000
+              "duration": 2010000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 34,
-            "name": "tries to enter trough the url 'http://level-strategy-346315.uc.r.appspot.com/activate-account' its redirected to home",
+            "name": "tries to enter trough the url 'http://medellin-med.uc.r.appspot.com/activate-account' its redirected to home",
             "result": {
               "status": "passed",
-              "duration": 2193000000
+              "duration": 2243000000
             }
           }
         ]

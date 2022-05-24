@@ -25,10 +25,13 @@ Cypress.Commands.add("verifyStatus", (status) => {
       .should("not.be.checked");
     cy.wait(url.wait);
     cy.get(adminPanelPage.USER_TOGGLE).click({ force: true });
+    cy.get(adminPanelPage.USER_TOGGLE).click({ force: true });
+    cy.get(adminPanelPage.USER_LOGOUT_BUTTON).click({ force: true });
   } else {
     cy.wait(url.wait);
     cy.get(adminPanelPage.USER_TOGGLE).scrollIntoView().should("be.checked");
     cy.wait(url.wait);
     cy.get(adminPanelPage.USER_TOGGLE).click({ force: true });
+    cy.get(adminPanelPage.USER_LOGOUT_BUTTON).click({ force: true });
   }
 });

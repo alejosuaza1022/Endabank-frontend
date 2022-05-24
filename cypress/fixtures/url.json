@@ -1,5 +1,5 @@
 {
-    "urlLogin": "http://level-strategy-346315.uc.r.appspot.com/log-in",
-    "wait": 2000,
-    "urlProfile": "http://level-strategy-346315.uc.r.appspot.com/profile"
+    "urlLogin": "http://medellin-med.uc.r.appspot.com/log-in",
+    "wait": 3000,
+    "urlProfile": "http://medellin-med.uc.r.appspot.com/profile"
   }
