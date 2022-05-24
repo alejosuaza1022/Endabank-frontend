@@ -1,8 +1,9 @@
-import adminPanelPage from "../../pageObjects/adminPanelPage";
+import AdminPanelPage from "../../pageObjects/AdminPanelPage";
 //import logInPage from "../../pageObjects/logInPage";
 import url from "../../fixtures/url.json";
 
 //const loginPage: logInPage = new logInPage();
+const adminPanelPage: AdminPanelPage = new AdminPanelPage();
 
 Cypress.Commands.add("enterUrl", (url) => {
   cy.visit(url);

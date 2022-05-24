@@ -23,9 +23,30 @@ export default class logInPage extends basePage {
         return(cy.get(this.EMAIL_FIELD))
     }
 
+    getLoginButton() {
+        return cy.get(this.LOGIN_BUTTON);
+    }
+
+    getForgotPasswordHyperlink() {
+        return cy.get(this.FORGOT_PASSWORD_BUTTON);
+    }
+
+    getErrorMessageEmail(){
+        return cy.get('.text-xs');
+    }
+
     logIn (email: string,password: string){
         cy.get(this.EMAIL_FIELD).type(email);
         cy.get(this.PASSWORD_FIELD).type(password);
         cy.get(this.LOGIN_BUTTON).click();
     }
+
+    public writeEmail(email: string) {
+        cy.get(this.EMAIL_FIELD).type(email);
+    }
+
+    public writePassword(password: string) {
+        cy.get(this.PASSWORD_FIELD).type(password);
+    }
+
 }

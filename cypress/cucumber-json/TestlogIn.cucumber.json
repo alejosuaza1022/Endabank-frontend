@@ -1,0 +1,123 @@
+[
+  {
+    "description": "              As an old merchant\n              I want to access the portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "The user should be able login to endabank",
+    "line": 1,
+    "id": "the-user-should-be-able-login-to-endabank",
+    "tags": [],
+    "uri": "logIn.feature",
+    "elements": [
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-allowed-to-login",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "The user should be allowed to login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1409000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the user types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 350000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the user types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 292000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 106000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the user has to be allowed to see their profile, password management and Logout in the page",
+            "result": {
+              "status": "passed",
+              "duration": 653000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-warned-when-the-email-format-is-incorrect",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "The user should be warned when the email format is incorrect",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1274000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "the user types in an email with an incorrect format",
+            "result": {
+              "status": "passed",
+              "duration": 334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the user types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 308000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the user should see a highlight error message \"This field must be a valid email\"",
+            "result": {
+              "status": "passed",
+              "duration": 40000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

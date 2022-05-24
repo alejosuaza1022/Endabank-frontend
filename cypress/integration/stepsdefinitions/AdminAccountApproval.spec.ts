@@ -1,9 +1,10 @@
 import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import user from "../../fixtures/user.json";
 import Url from "../../fixtures/url.json";
-import adminPanelPage from "../../pageObjects/adminPanelPage";
+import AdminPanelPage from "../../pageObjects/AdminPanelPage";
 import logInPage from "../../pageObjects/logInPage";
 
+const adminPanelPage: AdminPanelPage = new AdminPanelPage();
 const loginPage: logInPage = new logInPage();
 
 Given("the user is logged in as an {string} user", (userType) => {
@@ -17,7 +18,7 @@ Given("the user is logged in as an {string} user", (userType) => {
 
 And("the user is on the Admin Panel section", () => {
   cy.wait(Url.wait);
-  cy.get(adminPanelPage.USER_MANAGEMENT_BUTTON).click();
+  adminPanelPage.getUserManagementButton().click();
 });
 
 When("the user toggles to {string} an account under review", (status) => {
@@ -35,9 +36,9 @@ Then("the user should see the user table columns with the following order", (tab
 
 When("the user tries to enter in the approval section", () => {
   cy.wait(2000);
-  cy.get(adminPanelPage.USER_MANAGEMENT_BUTTON).should("not.exist");
+  adminPanelPage.getUserManagementButton().should("not.exist");
 });
 
 Then("tries to enter trough the url {string} its redirected to home", (url) => {
-  cy.verifySection(url, 2000, Url.urlProfile);
+  adminPanelPage.verifySection(url,2000,Url.baseUrl+Url.urlProfile)
 });
