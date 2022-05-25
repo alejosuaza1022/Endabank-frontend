@@ -1,36 +1,36 @@
 import {And,  When, Then , Given} from "cypress-cucumber-preprocessor/steps";
 
-import logInPage from "../../pageObjects/logInPage";
-import signUpPage from "../../pageObjects/signUpPage";
+import LogInPage from "../../pageObjects/LogInPage";
+import SignUpPage from "../../pageObjects/SignUpPage";
 import userData from "../../fixtures/signUpConstants.json";
 
-const loginPage: logInPage = new logInPage();
-const signupPage: signUpPage = new signUpPage();
+const logInPage: LogInPage = new LogInPage();
+const signUpPage: SignUpPage = new SignUpPage();
 
-const newEmail = signupPage.newEmailGenerator();
-const newidentifier = signupPage.newIdentifier();
+const newEmail = signUpPage.newEmailGenerator();
+const newidentifier = signUpPage.newIdentifier();
 
 Given('the user that has entered the registration form via the "create an account" link', () => {
-    loginPage.visit()
-    loginPage.getCreateAccountLink().click()
+    logInPage.visit()
+    logInPage.getCreateAccountLink().click()
 })
 
 And('the user is on the Register page', () => {
-    signupPage.getTypeIdentifierID().should('be.visible')
+    signUpPage.getTypeIdentifierID().should('be.visible')
 })
 
 When('the user writes the requested information in each field', () => {
-    signupPage.getIdentifier().type(newidentifier);
-    signupPage.getFirstName().type(userData.firstName);
-    signupPage.getLastName().type(userData.lastName)
-    signupPage.getPhoneNumberInput().type(userData.phoneNumber)
-    signupPage.getNewEmailInput().type(newEmail)
-    signupPage.getPasswordInput().type(userData.password)
-    signupPage.getRePasswordInput().type(userData.rePassword)
+    signUpPage.getIdentifier().type(newidentifier);
+    signUpPage.getFirstName().type(userData.firstName);
+    signUpPage.getLastName().type(userData.lastName)
+    signUpPage.getPhoneNumberInput().type(userData.phoneNumber)
+    signUpPage.getNewEmailInput().type(newEmail)
+    signUpPage.getPasswordInput().type(userData.password)
+    signUpPage.getRePasswordInput().type(userData.rePassword)
 })
 
 And ('the user clicks on the "Submit" button', () => {
-    signupPage.getSubmitSignUpButton().click()
+    signUpPage.getSubmitSignUpButton().click()
 })
 
 Then ('the user should see a pop-up with the next information {string}',(message)=> {

@@ -1,27 +1,27 @@
 import {Given, And,  When, Then } from "cypress-cucumber-preprocessor/steps";
-import signUpPage from "../../pageObjects/signUpPage";
+import SignUpPage from "../../pageObjects/SignUpPage";
 import userData from "../../fixtures/signUpConstants.json";
 
-const signupPage: signUpPage= new signUpPage();
+const signUpPage: SignUpPage= new SignUpPage();
 
 Given('the user is on the Register page',()=>{
-    signupPage.visit()
+    signUpPage.visit()
 })
 
 When('the user is typing information into the registration form', () =>{
-    signupPage.getFirstName().clear().type(userData.firstName);
-    signupPage.getLastName().clear().type(userData.lastName);
-    signupPage.getPhoneNumberInput().clear().type(userData.phoneNumber);
-    signupPage.getPasswordInput().clear().type(userData.password);
-    signupPage.getRePasswordInput().clear().type(userData.rePassword);
+    signUpPage.getFirstName().clear().type(userData.firstName);
+    signUpPage.getLastName().clear().type(userData.lastName);
+    signUpPage.getPhoneNumberInput().clear().type(userData.phoneNumber);
+    signUpPage.getPasswordInput().clear().type(userData.password);
+    signUpPage.getRePasswordInput().clear().type(userData.rePassword);
 })
 
 And('the user tries to register with an email that is already in use',()=>{
-    signupPage.getNewEmailInput().clear().type(userData.existingEmail);
-    signupPage.getIdentifier().clear().type(signupPage.newIdentifier());
+    signUpPage.getNewEmailInput().clear().type(userData.existingEmail);
+    signUpPage.getIdentifier().clear().type(signUpPage.newIdentifier());
 })
 
 Then('the user should see the error message {string}',(errorMessage)=>{
-    signupPage.getSubmitSignUpButton().click();
+    signUpPage.getSubmitSignUpButton().click();
     cy.contains(errorMessage).should('be.visible')
 })

@@ -1,10 +1,10 @@
 import {Given,  When, Then } from "cypress-cucumber-preprocessor/steps";
-import logInPage from "../../pageObjects/logInPage";
+import LogInPage from "../../pageObjects/LogInPage";
 
-const loginPage: logInPage = new logInPage();
+const logInPage: LogInPage = new LogInPage();
 
 Given('the user is on the Login page', () => {
-    loginPage.visit()
+    logInPage.visit()
     cy.contains('Log In').should('be.visible')
 })
 

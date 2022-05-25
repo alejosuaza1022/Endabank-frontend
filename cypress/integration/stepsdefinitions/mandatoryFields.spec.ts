@@ -1,7 +1,7 @@
 import {Given, And,  When, Then } from "cypress-cucumber-preprocessor/steps";
-import signUpPage from "../../pageObjects/signUpPage";
+import SignUpPage from "../../pageObjects/SignUpPage";
 
-const signupPage: signUpPage=new signUpPage()
+const signUpPage: SignUpPage=new SignUpPage()
 
 When('the user types a wrong {string} into the {string}', (value, fieldName) =>{
     cy.get(fieldName).type(value)

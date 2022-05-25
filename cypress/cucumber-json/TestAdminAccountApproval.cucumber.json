@@ -23,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1312000000
+              "duration": 2121000000
             }
           },
           {
@@ -32,8 +32,9 @@
             "line": 9,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "passed",
-              "duration": 3159000000
+              "status": "failed",
+              "duration": 7017000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at AdminPanelPage.getUserManagementButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:432:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:87:20)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11026:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10347:35)"
             }
           },
           {
@@ -42,9 +43,7 @@
             "line": 10,
             "name": "the user toggles to 'Deactivate' an account under review",
             "result": {
-              "status": "failed",
-              "duration": 7062000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: expected '<input#ToggleApproveUser3.sr-only>' to be 'checked'\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\support\\index.js:52:71)"
+              "status": "skipped"
             }
           }
         ]
@@ -64,7 +63,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1324000000
+              "duration": 1325000000
             }
           },
           {
@@ -73,8 +72,8 @@
             "line": 9,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "passed",
-              "duration": 3235000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at AdminPanelPage.getUserManagementButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:432:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:87:20)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11026:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10347:35)"
             }
           },
           {
@@ -83,8 +82,7 @@
             "line": 10,
             "name": "the user toggles to 'Activate' an account under review",
             "result": {
-              "status": "passed",
-              "duration": 6316000000
+              "status": "skipped"
             }
           }
         ]
@@ -104,7 +102,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1594000000
+              "duration": 1665000000
             }
           },
           {
@@ -113,8 +111,8 @@
             "line": 20,
             "name": "the user is on the Admin Panel section",
             "result": {
-              "status": "passed",
-              "duration": 3125000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#usersManagementSidebarElement`, but never found it.\n    at AdminPanelPage.getUserManagementButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:432:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:87:20)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11026:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10347:35)"
             }
           },
           {
@@ -153,8 +151,7 @@
             "line": 21,
             "name": "the user should see the user table columns with the following order",
             "result": {
-              "status": "passed",
-              "duration": 3078000000
+              "status": "skipped"
             }
           }
         ]
@@ -174,7 +171,7 @@
             "name": "the user is logged in as an 'NormalUser' user",
             "result": {
               "status": "passed",
-              "duration": 972000000
+              "duration": 1137000000
             }
           },
           {
@@ -184,7 +181,7 @@
             "name": "the user tries to enter in the approval section",
             "result": {
               "status": "passed",
-              "duration": 2013000000
+              "duration": 2014000000
             }
           },
           {
@@ -194,7 +191,7 @@
             "name": "tries to enter trough the url 'http://medellin-med.uc.r.appspot.com/activate-account' its redirected to home",
             "result": {
               "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: expected 'http://medellin-med.uc.r.appspot.com/log-in' to equal 'http://medellin-med.uc.r.appspot.com/profile'\n    + expected - actual\n\n    -'http://medellin-med.uc.r.appspot.com/log-in'\n    +'http://medellin-med.uc.r.appspot.com/profile'\n\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\support\\index.js:38:14)"
+              "error_message": "AssertionError: Timed out retrying after 4000ms: expected 'http://medellin-med.uc.r.appspot.com/log-in' to equal 'http://medellin-med.uc.r.appspot.com/profile'\n    + expected - actual\n\n    -'http://medellin-med.uc.r.appspot.com/log-in'\n    +'http://medellin-med.uc.r.appspot.com/profile'\n\n    at AdminPanelPage.verifySection (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:455:18)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:104:20)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11026:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:10347:35)"
             }
           }
         ]

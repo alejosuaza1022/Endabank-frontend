@@ -1,7 +1,7 @@
-import basePage from "../pageObjects/basePage";
+import BasePage from "./BasePage";
 import url from "../fixtures/url.json"
 
-export default class homePage extends basePage{
+export default class homePage extends BasePage{
 
     relativePath: string = this.relativePath +url.urlProfile;
 

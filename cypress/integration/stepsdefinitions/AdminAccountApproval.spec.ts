@@ -2,17 +2,17 @@ import { Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import user from "../../fixtures/user.json";
 import Url from "../../fixtures/url.json";
 import AdminPanelPage from "../../pageObjects/AdminPanelPage";
-import logInPage from "../../pageObjects/logInPage";
+import LogInPage from "../../pageObjects/LogInPage";
 
 const adminPanelPage: AdminPanelPage = new AdminPanelPage();
-const loginPage: logInPage = new logInPage();
+const logInPage: LogInPage = new LogInPage();
 
 Given("the user is logged in as an {string} user", (userType) => {
-  loginPage.visit();
+  logInPage.visit();
   if (userType == "Admin") {
-    loginPage.logIn(user.emailAdmin,user.passwordAdmin);
+    logInPage.logIn(user.emailAdmin,user.passwordAdmin);
   } else {
-    loginPage.logIn(user.emailNormalUser, user.passwordNormalUser);
+    logInPage.logIn(user.emailNormalUser, user.passwordNormalUser);
   }
 });
 

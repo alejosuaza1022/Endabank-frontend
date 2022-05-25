@@ -1,19 +1,19 @@
 import {Given,  When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import logInPage from "../../../cypress/pageObjects/logInPage";
-import homePage from "../../../cypress/pageObjects/homePage";
+import LogInPage from "../../pageObjects/LogInPage";
+import HomePage from "../../pageObjects/HomePage";
 import adminData from "../../fixtures/user.json";
 
-const loginPage: logInPage = new logInPage();
-const homePageInstance: homePage = new homePage();
+const logInPage: LogInPage = new LogInPage();
+const homePage: HomePage = new HomePage();
 
 Given('the admin user has logged in', ()=>{
-    loginPage.visit();
-    loginPage.logIn(adminData.emailAdmin,adminData.passwordAdmin);
+    logInPage.visit();
+    logInPage.logIn(adminData.emailAdmin,adminData.passwordAdmin);
 })
 
 When('the admin user enters to the "Users management" page', ()=> {
     cy.wait(4000)
-    homePageInstance.getUsersManagement().click()
+    homePage.getUsersManagement().click()
     
     
 })

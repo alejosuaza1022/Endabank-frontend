@@ -1,7 +1,7 @@
-import basePage from "../pageObjects/basePage";
+import BasePage from "./BasePage";
 import Url from "../fixtures/url.json";
 
-export default class logInPage extends basePage {
+export default class logInPage extends BasePage {
 
     private EMAIL_FIELD: string = '[data-id="emailInputLogin"]';
     private PASSWORD_FIELD: string = '[data-id="passwordInputLogin"]';

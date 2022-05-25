@@ -1,6 +1,6 @@
-import basePage from "../pageObjects/basePage";
+import BasePage from "./BasePage";
 
-export default class signUpPage extends basePage{
+export default class signUpPage extends BasePage{
 
     relativePath: string = this.relativePath +'/sign-up'
 

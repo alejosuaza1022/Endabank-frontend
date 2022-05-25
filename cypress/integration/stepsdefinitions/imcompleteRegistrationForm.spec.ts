@@ -1,24 +1,24 @@
 import {And,  When, Then , Given} from "cypress-cucumber-preprocessor/steps";
 
-import logInPage from "../../pageObjects/logInPage";
-import signUpPage from "../../pageObjects/signUpPage";
+import LogInPage from "../../pageObjects/LogInPage";
+import SignUpPage from "../../pageObjects/SignUpPage";
 import userData from "../../fixtures/signUpConstants.json";
 
-const loginPage: logInPage = new logInPage();
-const signupPage: signUpPage = new signUpPage();
+const logInPage: LogInPage = new LogInPage();
+const signUpPage: SignUpPage = new SignUpPage();
 
 
 Given('the user has not completed the mandatory fields',()=> {
 
-    loginPage.visit()
-    loginPage.getCreateAccountLink().click()
-    signupPage.getFirstName().type(userData.firstName)
+    logInPage.visit()
+    logInPage.getCreateAccountLink().click()
+    signUpPage.getFirstName().type(userData.firstName)
 
 })
 
 When('the user tries to submit the incomplete information',()=>{
 
-    signupPage.getSubmitSignUpButton().click()
+    signUpPage.getSubmitSignUpButton().click()
 })
 
 Then('an error message should be visible', ()=>{
