@@ -2,7 +2,7 @@
 import {ActivateAccountForm, LogIn,
     RegisterForm, FormResetPassword,
     Home, UserProfile,
-    LandingPage,Unauthorized, UserEmailVerification} from "./pages/index";
+    LandingPage,Unauthorized, UserEmailVerification ,AccountSummary} from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
@@ -26,6 +26,7 @@ function App() {
             <Route element={<RequireAuth allowedRoles={['ROLE_USER','ROLE_ADMIN']}/>}>
                 <Route path="/" element={<Home />}>
                     <Route path="profile" element={<UserProfile/>}/>
+                    <Route path="account-summary" element={<AccountSummary/>}/>
                     <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
                         <Route path="activate-account" element={<ActivateAccountForm />} />
                     </Route>
