@@ -1,8 +1,9 @@
 interface TransactionSummaryProps {
-    date:string,
+    createAt:string,
     description:string,
     amount:number,
-    wasReceived?:boolean,
+    wasReceived:boolean,
     id:number,
+    stateTypeId:number,
 }
 export default TransactionSummaryProps;

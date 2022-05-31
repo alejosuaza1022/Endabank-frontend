@@ -2,6 +2,7 @@ import apiUrls from "../../constants/apiUrls";
 import { useContext, useEffect, useState } from "react";
 import { getAxios } from "../../utils/axios";
 import {
+    AccountSummaryData,
     PopUpMessage,
     Spinner,
 } from "../../components/index";
@@ -10,13 +11,12 @@ import { AxiosError } from "axios";
 import { Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
-import TransactionSummaryProps from "@components/AccountSummaryData/AccountSummaryTransactionsSummary.interface";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
+import PaginationDataProps from "@components/AccountSummaryData/AccountSummaryPaginationData.interface";
 
 const AccountSummary= () => {
     const [details, setDetails] = useState<AccountDetailsProps>();
-    const [list, setList] = useState<Array<TransactionSummaryProps>>([]);
-    const [approved, setApproved] = useState(true);
+    const [transactions, setTransactions] = useState<PaginationDataProps>();
     const [isLoading, setIsLoading] = useState(false);
     const [colorPopUpMessage, setColorPopUpMessage] = useState(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -25,7 +25,7 @@ const AccountSummary= () => {
     );
     const token = Cookies.get("token");
     const {
-        auth: { email },
+        auth : { email},
     } = useContext(AuthContext);
 
     function catchError(err: any) {
@@ -35,16 +35,14 @@ const AccountSummary= () => {
             message = error.response?.data?.message || strings.ERROR_MESSAGE;
         }
         setShowPopUpMessage(true);
-        setColorPopUpMessage(false);
+        setColorPopUpMessage(true);
         setMessagePopUp(message);
         setShowPopUpMessage(true);
         setIsLoading(false);
-        setApproved(false);
     }
 
     useEffect(() => {
-        async function getData() {
-            setApproved(true);
+        async function getDetails() {
             try {
                 setIsLoading(true);
                 const responseDetails: AccountDetailsProps = await getAxios(
@@ -52,159 +50,66 @@ const AccountSummary= () => {
                     token
                 );
                 setDetails(responseDetails);
-                try {
-                    const responseSummary: Array<TransactionSummaryProps> = await getAxios(
-                        apiUrls.GET_ACCOUNT_SUMMARY+email,
-                        token
-                    );
-                    setIsLoading(false);
-                    setList(responseSummary);
-                }
-                catch (err) {
-                    catchError(err);
-                }
             } catch (err) {
                 catchError(err);
             }
         }
-        getData();
+        async function getTransactions() {
+            try {
+                const responseSummary: PaginationDataProps= await getAxios(
+                    apiUrls.GET_ACCOUNT_SUMMARY+email+"/0",
+                    token
+                );
+                setIsLoading(false);
+                setTransactions(responseSummary);
+            }
+            catch (err) {
+                catchError(err);
+            }
+        }
+        getDetails();
+        getTransactions();
     }, []);
     const renderPageOrLoading = () => {
         return isLoading ? (
             <Spinner />
         ) : (
-            <div className="w-full">
-                {approved ? (
-                    <div>
+            <div className="w-full p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
+                    <span className="text-3xl">Account summary</span>
+                </header>
+                <div>
                         <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                Neil Sims
+                            <p className="text-lg font-bold text-gray-900 truncate dark:text-white">
+                                Account Number: {details?.accountNumber}
                             </p>
-                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                            <p className="text-base text-gray-500 truncate dark:text-gray-400">
+                                Founds available: ${details?.balance}
                             </p>
                         </div>
                     <div
-                        className="p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                        className="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex justify-between items-center mb-4">
-                            <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest
-                                Customers</h5>
-                            <a href="#"
-                               className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-                                View all
-                            </a>
+                            <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
+                                Transactions
+                            </h5>
                         </div>
                         <div className="flow-root">
                             <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                                <li className="py-3 sm:py-4">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img className="w-8 h-8 rounded-full"
-                                                 src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"/>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                Neil Sims
-                                            </p>
-                                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                email@windster.com
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            $320
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="py-3 sm:py-4">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img className="w-8 h-8 rounded-full"
-                                                 src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image"/>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                Bonnie Green
-                                            </p>
-                                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                email@windster.com
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            $3467
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="py-3 sm:py-4">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img className="w-8 h-8 rounded-full"
-                                                 src="/docs/images/people/profile-picture-2.jpg" alt="Michael image"/>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                Michael Gough
-                                            </p>
-                                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                email@windster.com
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            $67
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="py-3 sm:py-4">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img className="w-8 h-8 rounded-full"
-                                                 src="/docs/images/people/profile-picture-4.jpg" alt="Lana image"/>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                Lana Byrd
-                                            </p>
-                                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                email@windster.com
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            $367
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="pt-3 pb-0 sm:pt-4">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img className="w-8 h-8 rounded-full"
-                                                 src="/docs/images/people/profile-picture-5.jpg" alt="Thomas image"/>
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                Thomes Lean
-                                            </p>
-                                            <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                email@windster.com
-                                            </p>
-                                        </div>
-                                        <div
-                                            className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                            $2367
-                                        </div>
-                                    </div>
-                                </li>
+                                {transactions?.content.map((value, key) =>
+                                        (
+                                            <AccountSummaryData createAt={value.createAt}
+                                                                description={value.description}
+                                                                amount={value.amount}
+                                                                wasReceived={value.wasReceived}
+                                                                id={value.id}
+                                                                stateTypeId={value.stateTypeId}
+                                                                key={value.id}/>
+                                        ))}
                             </ul>
                         </div>
                     </div>
-                    </div>
-                    ) : (
-                    <div>
-                        <Navigate replace to="/profile" />
-                    </div>
-                )}
+                </div>
             </div>
         );
     };
