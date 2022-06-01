@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export { default as RegisterForm } from "../pages/RegisterForm/Form";
 export {default as ActivateAccountForm} from "../pages/ActivateAccountForm/ActivateAccountForm"
 export {default as FormResetPassword} from "../pages/FormResetPassword/FormResetPassword"
@@ -7,3 +9,4 @@ export { default as LandingPage} from "../pages/LandingPage/LandingPage"
 export { default as UserProfile} from "../pages/Profile/UserProfile"
 export { default as Unauthorized} from "../pages/Unauthorized/Unauthorized"
 export  {default as  UserEmailVerification } from "../pages/UserEmailVerification/UserEmailVerification"
+export { default as MerchantInfo} from "../pages/MerchantInfo/MerchantInfo"
