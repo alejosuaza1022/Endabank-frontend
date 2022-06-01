@@ -8,4 +8,5 @@ export { default as RequireAuth} from "./RequireAuth/RequireAuth";
 export { default as SideBar} from "./SideBar/SideBar";
 export { default as Spinner } from "./Spinner/Spinner";
 export { default as PopUpMessage } from "./PopUpMessage/PopUpMessage";
+export { default as AccountSummaryData } from "./AccountSummaryData/AccountSummaryData";
 
