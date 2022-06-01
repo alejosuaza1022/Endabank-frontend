@@ -78,7 +78,6 @@ const AccountSummary= () => {
         return isLoading ? (
             <Spinner />
         ) : (
-
             <div >
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
                     <span className="text-3xl">Account summary</span>
