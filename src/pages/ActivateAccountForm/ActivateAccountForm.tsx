@@ -26,7 +26,6 @@ const ActivateAccountForm = () => {
   const {
     auth: { email },
   } = useContext(AuthContext);
-  console.log(email?.toString());
   useEffect(() => {
     async function getData() {
       setApproved(true);

@@ -59,8 +59,6 @@ const FormResetPassword = () => {
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     data.token = urlParams.get("token") ?? "";
-      console.log(data.token);
-      console.log("loadedData "+loadedData);
     try {
         const response = await putAxios(
             apiUrls.GET_USERS_RESET_PASSWORD_URL,
@@ -86,8 +84,6 @@ const FormResetPassword = () => {
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
     setShowPopUpMessage(false);
-    console.log(data);
-    console.log(loadedData);
     setIsLoading(true);
     {token! ? changePassword(data):resetPassword(data)}
     setIsLoading(false);
