@@ -95,7 +95,7 @@ const AccountSummary= () => {
                                 className="foo"
                                 displayType={'text'}
                                 thousandSeparator={true}
-                                prefix={'Founds available: $'}
+                                prefix={'Funds available: $'}
                                 renderText={(value:any, props:any) => <div {...props}>{value}</div>}
                             />
                         </div>
