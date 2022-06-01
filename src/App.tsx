@@ -2,7 +2,7 @@
 import {ActivateAccountForm, LogIn,
     RegisterForm, FormResetPassword,
     Home, UserProfile,
-    LandingPage,Unauthorized, UserEmailVerification} from "./pages/index";
+    LandingPage,Unauthorized, UserEmailVerification, MerchantInfo} from "./pages/index";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
@@ -30,6 +30,7 @@ function App() {
                         <Route path="activate-account" element={<ActivateAccountForm />} />
                     </Route>
                     <Route path="home/reset-password" element={<FormResetPassword />} />
+                    <Route path="became-merchant" element={<MerchantInfo/>} />
                 </Route>
             </Route>
 

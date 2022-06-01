@@ -8,7 +8,7 @@ const Home = () => {
   return(
       <div className="flex h-screen">
         <SideBar/>
-          <div className="flex justify-center w-full">
+          <div className="flex w-full">
               <Outlet />
           </div>
       </div>
