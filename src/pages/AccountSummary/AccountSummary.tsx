@@ -13,6 +13,8 @@ import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import PaginationDataProps from "@components/AccountSummaryData/AccountSummaryPaginationData.interface";
+import NumberFormat from "react-number-format";
+import ReactPaginate from "react-paginate";
 
 const AccountSummary= () => {
     const [details, setDetails] = useState<AccountDetailsProps>();
@@ -40,56 +42,67 @@ const AccountSummary= () => {
         setShowPopUpMessage(true);
         setIsLoading(false);
     }
-
+    async function getDetails() {
+        try {
+            setIsLoading(true);
+            const responseDetails: AccountDetailsProps = await getAxios(
+                apiUrls.GET_ACCOUNT_DETAILS+email,
+                token
+            );
+            setDetails(responseDetails);
+        } catch (err) {
+            catchError(err);
+        }
+    }
+    async function getTransactions(page: number) {
+        try {
+            const responseSummary: PaginationDataProps= await getAxios(
+                apiUrls.GET_ACCOUNT_SUMMARY+email+"/"+page,
+                token
+            );
+            setIsLoading(false);
+            setTransactions(responseSummary);
+        }
+        catch (err) {
+            catchError(err);
+        }
+    }
     useEffect(() => {
-        async function getDetails() {
-            try {
-                setIsLoading(true);
-                const responseDetails: AccountDetailsProps = await getAxios(
-                    apiUrls.GET_ACCOUNT_DETAILS+email,
-                    token
-                );
-                setDetails(responseDetails);
-            } catch (err) {
-                catchError(err);
-            }
-        }
-        async function getTransactions() {
-            try {
-                const responseSummary: PaginationDataProps= await getAxios(
-                    apiUrls.GET_ACCOUNT_SUMMARY+email+"/0",
-                    token
-                );
-                setIsLoading(false);
-                setTransactions(responseSummary);
-            }
-            catch (err) {
-                catchError(err);
-            }
-        }
         getDetails();
-        getTransactions();
+        getTransactions(0);
     }, []);
+    const handlePageClick = (data:any) => {
+        getTransactions(data.selected);
+    }
     const renderPageOrLoading = () => {
         return isLoading ? (
             <Spinner />
         ) : (
-            <div className="w-full p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+
+            <div >
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
                     <span className="text-3xl">Account summary</span>
                 </header>
                 <div>
                         <div className="flex-1 min-w-0">
-                            <p className="text-lg font-bold text-gray-900 truncate dark:text-white">
-                                Account Number: {details?.accountNumber}
+                            <p className="text-lg font-bold text-gray-900 truncate dark:text-white mb-1">
+                                Account Number: {details?.accountNumber.substr(0,4).concat("-").
+                            concat(details?.accountNumber.substr(4,4)).concat("-").concat(details?.
+                            accountNumber.substr(8,4)).concat("-").concat(details?.accountNumber.
+                            substr(12,4))}
                             </p>
-                            <p className="text-base text-gray-500 truncate dark:text-gray-400">
-                                Founds available: ${details?.balance}
-                            </p>
+                                <NumberFormat
+                                value={details?.balance}
+                                className="foo"
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                prefix={'Founds available: $'}
+                                renderText={(value:any, props:any) => <div {...props}>{value}</div>}
+                            />
                         </div>
                     <div
-                        className="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                        <div className="flex justify-between items-center mb-4">
+                        className="p-4 bg-white rounded-lg border shadow-md dark:bg-gray-800 dark:border-gray-700">
+                        <div className="flex justify-between mb-4">
                             <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
                                 Transactions
                             </h5>
@@ -108,6 +121,23 @@ const AccountSummary= () => {
                                         ))}
                             </ul>
                         </div>
+                    </div>
+                    <div className="flex justify-center">
+                    <ReactPaginate
+                        previousLabel={"<"}
+                        nextLabel={">"}
+                        breakLabel={"..."}
+                        pageCount={transactions?.totalPages}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={2}
+                        onPageChange={handlePageClick}
+                        containerClassName={"inline-flex justify-content-center -space-x-px"}
+                        pageClassName={"py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}
+                        previousClassName={"py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}
+                        nextClassName={"py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}
+                        breakClassName={"py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}
+                        activeClassName={"py-2 px-3 text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"}
+                    />
                     </div>
                 </div>
             </div>

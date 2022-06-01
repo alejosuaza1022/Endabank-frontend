@@ -1,5 +1,6 @@
 import TransactionSummaryProps from "@components/AccountSummaryData/AccountSummaryTransactionsSummary.interface";
 import React, { useEffect, useState } from "react";
+import NumberFormat from "react-number-format";
 
 const SelectForm: React.FC<TransactionSummaryProps> = ({
     createAt,
@@ -11,7 +12,7 @@ const SelectForm: React.FC<TransactionSummaryProps> = ({
     }) => {
     return (
         <li className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-left space-x-60">
                 <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                         Date: {createAt}
@@ -22,12 +23,26 @@ const SelectForm: React.FC<TransactionSummaryProps> = ({
                 </div>{wasReceived?(
                     <div
                         className="inline-flex items-center text-base font-semibold text-green-500 dark:text-white">
-                        $ {amount}
+                        <NumberFormat
+                            value={amount}
+                            className="foo"
+                            displayType={'text'}
+                            thousandSeparator={true}
+                            prefix={'$'}
+                            renderText={(value:any, props:any) => <div {...props}>{value}</div>}
+                        />
                     </div>
                 ):(
                 <div
                     className="inline-flex items-center text-base font-semibold text-red-500 dark:text-white">
-                    $ -{amount}
+                    <NumberFormat
+                        value={amount}
+                        className="foo"
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'$-'}
+                        renderText={(value:any, props:any) => <div {...props}>{value}</div>}
+                    />
                 </div>
             )}
             </div>
