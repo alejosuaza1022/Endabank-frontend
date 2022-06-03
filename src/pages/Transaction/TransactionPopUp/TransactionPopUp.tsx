@@ -58,7 +58,12 @@ const TransactionPopUp = (props: { setShowModal: Function, data:TransactionPopUp
                                     value={data.amount}
                                 />
                             </div>
-
+                            <div className="text-base text-gray-900 dark:text-white">
+                                Reason
+                            </div>
+                            <div className="text-sm text-gray-900 dark:text-white mt-2 mb-2">
+                            {data.stateDescription}
+                            </div>
                             <div
                                 className="flex-1 p-4 items-center justify-center border-t border-solid border-blueGray-100 rounded-b">
                                 <Link id="profileSidebarElement" to={"/account-summary"}
