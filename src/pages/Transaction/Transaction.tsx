@@ -59,6 +59,7 @@ const Transaction= () => {
         bankAccountIssuer: {accountNumber: ""},
         createAt: "",
         stateType:{name:""},
+        stateDescription: "",
     }
     function catchError(err: any) {
         const error = err as AxiosError;
