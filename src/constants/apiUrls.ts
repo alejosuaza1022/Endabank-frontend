@@ -1,5 +1,5 @@
 class apiUrls {
-  static readonly BASE_URL = "http://localhost:8080/api/v1";
+  static readonly BASE_URL = "http://35.202.242.69:8081/api/v1";
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly BASE_ACCOUNT_URL =`${this.BASE_URL}/accounts`;
   static readonly BASE_TRANSACTIONS_URL = `${this.BASE_URL}/transactions`;

@@ -4,5 +4,6 @@ interface TransactionPopUpInterface{
     bankAccountIssuer: {accountNumber: string};
     createAt: string;
     stateType:{name:string};
+    stateDescription: string;
 }
 export default TransactionPopUpInterface;
