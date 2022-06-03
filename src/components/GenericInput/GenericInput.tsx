@@ -21,12 +21,11 @@ const GenericInput: React.FC<GenericInputProps> = ({
                       placeholder={placeholder}
                       maxLength={maxLength}
                       {...register(id, {
-                          required: {
-                              value: true,
-                              message: "This field is required",
-                          },
-                      })}
-                      />
+                required: {
+                    value: false,
+                    message: "",
+                },
+            })}/>
         ):(
             <input type={inputType}
                    id={id}

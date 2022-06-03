@@ -53,6 +53,13 @@ const Transaction= () => {
     const setShowModalFunction = (value: boolean) => {
         setShowModal(value);
     };
+    const dataDefault={
+        amount: 0,
+        bankAccountReceiver: {accountNumber: ""},
+        bankAccountIssuer: {accountNumber: ""},
+        createAt: "",
+        stateType:{name:""},
+    }
     function catchError(err: any) {
         const error = err as AxiosError;
         let message = strings.ERROR_MESSAGE;
@@ -187,7 +194,7 @@ const Transaction= () => {
     };
     return (
         <>
-            {showModal && (<TransactionPopUp setShowModal={setShowModalFunction} data={data}/>)}
+            {showModal && (<TransactionPopUp setShowModal={setShowModalFunction} data={data??dataDefault}/>)}
             {token?.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">

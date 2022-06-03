@@ -125,11 +125,12 @@ const AccountSummary= () => {
                         </div>
                     </div>
                     <div className="flex justify-center">
+                        {}
                     <ReactPaginate
                         previousLabel={"<"}
                         nextLabel={">"}
                         breakLabel={"..."}
-                        pageCount={transactions?.totalPages}
+                        pageCount={transactions != null ? transactions.totalPages : 0}
                         marginPagesDisplayed={2}
                         pageRangeDisplayed={2}
                         onPageChange={handlePageClick}
