@@ -61,7 +61,7 @@ const PopUpEmail = (props: { setShowModal: Function }) => {
                 className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3x2">
                     <div
-                        className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        className="border-0 rounded-lg shadow-lg relative flex flex-col w-96 bg-white outline-none focus:outline-none">
                         <div className="relative p-6 flex-auto">
                             <h3 className="text-center mb-5 text-sm font-normal text-gray-500 dark:text-gray-400">Please,
                                 type your email:</h3>
