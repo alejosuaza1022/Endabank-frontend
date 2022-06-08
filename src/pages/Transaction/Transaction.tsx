@@ -93,7 +93,6 @@ const Transaction= () => {
             setIp(res.data.IPv4);
         }
         catch (err) {
-            catchError(err);
         }
     }
     useEffect(() => {
