@@ -29,12 +29,21 @@
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
     "cors": "^2.8.5",
-    "cypress": "^9.5.4",
-    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress": "^9.7.0",
     "multiple-cucumber-html-reporter": "^1.20.0",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
+  },
+
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/stepsDefinitions/**",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "Test",
+      "fileSuffix": ".cucumber"
+    }
   }
 }

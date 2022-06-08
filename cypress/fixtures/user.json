@@ -1,0 +1,12 @@
+{
+  
+  "emailAdmin": "juanpablo.perezleon@endava.com",
+  "passwordAdmin": "Jpperezl25.",
+  "emailNormalUser": "test@gmail.com",
+  "passwordNormalUser": "Alexis17*",
+  "nonValidEmail":"tes@gmail.com",   
+  "nonValidPassword":"Alexis1*",
+  "nonValidFormat":"testgmail.com"
+  
+  
+}
