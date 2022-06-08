@@ -61,7 +61,7 @@ const UserGeneralInfo = () => {
 
 
     return(
-        <div>
+        <div id="userGeneralInfoContainer">
             <SectionTitle title="General information"/>
             <div>
                 <ul>

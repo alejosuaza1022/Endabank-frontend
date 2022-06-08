@@ -2,7 +2,7 @@ import {SectionTitle} from "../../components/index";
 
 const MerchantKeysSection = () => {
   return(
-      <div>
+      <div id="merchantKeysContainer">
         <SectionTitle title="Keys"/>
         <div>
           <ul>
