@@ -15,7 +15,11 @@ const SelectForm: React.FC<TransactionSummaryProps> = ({
             <div className="flex items-center justify-left space-x-60">
                 <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                        Date: {createAt}
+                        Date: <NumberFormat
+                                value={createAt}
+                                displayType={'text'}
+                                format={'####/##/## ##:##:##'}
+                    />
                     </p>
                     <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                         Description: {description}
@@ -25,11 +29,9 @@ const SelectForm: React.FC<TransactionSummaryProps> = ({
                         className="inline-flex items-center text-base font-semibold text-green-500 dark:text-white">
                         <NumberFormat
                             value={amount}
-                            className="foo"
                             displayType={'text'}
                             thousandSeparator={true}
                             prefix={'$'}
-                            renderText={(value:any, props:any) => <div {...props}>{value}</div>}
                         />
                     </div>
                 ):(
@@ -41,7 +43,6 @@ const SelectForm: React.FC<TransactionSummaryProps> = ({
                         displayType={'text'}
                         thousandSeparator={true}
                         prefix={'$-'}
-                        renderText={(value:any, props:any) => <div {...props}>{value}</div>}
                     />
                 </div>
             )}

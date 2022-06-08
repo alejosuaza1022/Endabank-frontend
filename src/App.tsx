@@ -1,6 +1,6 @@
 
 import {ActivateAccountForm, LogIn,
-    RegisterForm, FormResetPassword,
+    RegisterForm, FormResetPassword,Transaction,
     Home, UserProfile,
     LandingPage,Unauthorized, UserEmailVerification ,AccountSummary} from "./pages/index";
 import "./App.css";
@@ -27,6 +27,7 @@ function App() {
                 <Route path="/" element={<Home />}>
                     <Route path="profile" element={<UserProfile/>}/>
                     <Route path="account-summary" element={<AccountSummary/>}/>
+                    <Route path="transaction" element={<Transaction/>}/>
                     <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
                         <Route path="activate-account" element={<ActivateAccountForm />} />
                     </Route>

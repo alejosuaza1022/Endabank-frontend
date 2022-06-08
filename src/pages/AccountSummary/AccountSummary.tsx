@@ -85,19 +85,22 @@ const AccountSummary= () => {
                 <div>
                         <div className="flex-1 min-w-0">
                             <p className="text-lg font-bold text-gray-900 truncate dark:text-white mb-1">
-                                Account Number: {details?.accountNumber.substr(0,4).concat("-").
-                            concat(details?.accountNumber.substr(4,4)).concat("-").concat(details?.
-                            accountNumber.substr(8,4)).concat("-").concat(details?.accountNumber.
-                            substr(12,4))}
+                                Account Number:
+                                <NumberFormat value={details?.accountNumber}
+                                              displayType={"text"}
+                                              format="####-####-####-####"
+                            />
                             </p>
+                            <p className="text-lg font-light text-gray-900 dark:text-white mb-1">
+                                Funds available:
                                 <NumberFormat
                                 value={details?.balance}
                                 className="foo"
                                 displayType={'text'}
                                 thousandSeparator={true}
-                                prefix={'Funds available: $'}
-                                renderText={(value:any, props:any) => <div {...props}>{value}</div>}
+                                prefix={'$'}
                             />
+                            </p>
                         </div>
                     <div
                         className="p-4 bg-white rounded-lg border shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -122,11 +125,12 @@ const AccountSummary= () => {
                         </div>
                     </div>
                     <div className="flex justify-center">
+                        {}
                     <ReactPaginate
                         previousLabel={"<"}
                         nextLabel={">"}
                         breakLabel={"..."}
-                        pageCount={transactions?.totalPages}
+                        pageCount={transactions != null ? transactions.totalPages : 0}
                         marginPagesDisplayed={2}
                         pageRangeDisplayed={2}
                         onPageChange={handlePageClick}
