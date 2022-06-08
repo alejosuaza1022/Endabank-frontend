@@ -2,8 +2,10 @@ class apiUrls {
   static readonly BASE_URL = "http://35.202.242.69:8081/api/v1";
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly BASE_ACCOUNT_URL =`${this.BASE_URL}/accounts`;
+  static readonly BASE_MERCHANTS_URL =`${this.BASE_URL}/merchants`;
   static readonly BASE_TRANSACTIONS_URL = `${this.BASE_URL}/transactions`;
   static readonly POST_SEND_MONEY= `${this.BASE_TRANSACTIONS_URL}/send-money`;
+  static readonly POST_CREATE_MERCHANT_REQUEST =`${this.BASE_MERCHANTS_URL}/create-request`;
   static readonly GET_ACCOUNT_DETAILS=`${this.BASE_ACCOUNT_URL}/details/`;
   static readonly GET_ACCOUNT_SUMMARY=`${this.BASE_ACCOUNT_URL}/summary/`;
   static readonly GET_USER_DETAILS = `${this.BASE_URL}/users/details`;
