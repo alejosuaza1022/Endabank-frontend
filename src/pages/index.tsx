@@ -10,3 +10,6 @@ export { default as UserProfile} from "../pages/Profile/UserProfile"
 export { default as Unauthorized} from "../pages/Unauthorized/Unauthorized"
 export  {default as  UserEmailVerification } from "../pages/UserEmailVerification/UserEmailVerification"
 export { default as MerchantInfo} from "../pages/MerchantInfo/MerchantInfo"
+export {default as AccountSummary} from "../pages/AccountSummary/AccountSummary"
+export {default as Transaction} from "../pages/Transaction/Transaction"
+
