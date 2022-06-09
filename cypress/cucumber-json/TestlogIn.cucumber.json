@@ -1,0 +1,124 @@
+[
+  {
+    "description": "              As an old merchant\n              I want to access the portal using my email and the password set in the registration",
+    "keyword": "Feature",
+    "name": "The user should be able login to endabank",
+    "line": 1,
+    "id": "the-user-should-be-able-login-to-endabank",
+    "tags": [],
+    "uri": "logIn.feature",
+    "elements": [
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-allowed-to-login",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "The user should be allowed to login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1824000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 429000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the user types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 367000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the user clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 203000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the user has to be allowed to see their profile, password management and Logout in the page",
+            "result": {
+              "status": "failed",
+              "duration": 4765000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#logoutSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:64:32)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:10589:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:9910:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-warned-when-the-email-format-is-incorrect",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "The user should be warned when the email format is incorrect",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1376000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "the user types in an email with an incorrect format",
+            "result": {
+              "status": "passed",
+              "duration": 436000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the user types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 342000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "the user should see a highlight error message \"This field must be a valid email\"",
+            "result": {
+              "status": "passed",
+              "duration": 87000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
