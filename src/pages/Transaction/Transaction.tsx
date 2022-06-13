@@ -9,7 +9,7 @@ import {
 } from "../../components/index";
 import strings from "../../constants/strings";
 import axios, { AxiosError } from "axios";
-import { Navigate } from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
@@ -38,10 +38,7 @@ const Transaction= () => {
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
     const [data, setData] = useState<TransactionPopUpInterface>();
-    const [linkPopUp, setLinkPopUp] = useState("");
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
-    const [linkPopUpMessage, setLinkPopUpMessage] = useState<string>("");
-    const inputRef = React.createRef();
 
     const token = Cookies.get("token");
     const {
@@ -181,13 +178,25 @@ const Transaction= () => {
                                                 </div>
                                     </div>
                             </div>
+                            <div className="flex justify-between">
+                    <Link id="profileSidebarElement" to={"/profile"}
+                          className="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white">
+                            <button
+                                className="text-white color-endabank focus:ring-4 font-medium rounded-lg text-sm w-52 px-5 py-2.5 text-center "
+                                type="button"
+                                id="cancelTransaction"
+                            >
+                                Cancel
+                            </button>
+                    </Link>
                     <button
                         type="submit"
                         id="submitTransaction"
-                        className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-full px-5 py-2.5 text-center "
+                        className="text-white color-endabank  focus:ring-4  font-medium rounded-lg text-sm  w-52 px-5 py-2.5 text-center "
                     >
                         Submit
                     </button>
+                            </div>
                 </form>
             </div>
         );
