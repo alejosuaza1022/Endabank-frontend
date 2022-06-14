@@ -1,11 +1,13 @@
 
-import {ActivateAccountForm, LogIn,
-    RegisterForm, FormResetPassword,Transaction,
+import {
+    ActivateAccountForm, LogIn,
+    RegisterForm, FormResetPassword, Transaction,
     Home, UserProfile,
-    LandingPage,Unauthorized, UserEmailVerification, MerchantInfo,AccountSummary} from "./pages/index";
+    Unauthorized, UserEmailVerification, MerchantInfo, AccountSummary, MerchantApprovalLog
+} from "./pages/index";
 
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import {RequireAuth} from "./components/index";
 
@@ -34,6 +36,7 @@ function App() {
                     </Route>
                     <Route path="home/reset-password" element={<FormResetPassword />} />
                     <Route path="became-merchant" element={<MerchantInfo/>} />
+                    <Route path="merchant-log" element={<MerchantApprovalLog/>} />
                 </Route>
             </Route>
 
