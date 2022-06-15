@@ -20,7 +20,7 @@ const MerchantForm = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
-    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
+    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.MERCHANT_REQUEST_REGISTERED);
     const [isColorError, setIsColorError] = useState<boolean>(false);
 
     const onSubmit: SubmitHandler<MerchantFormObject> = async (data, e) => {
@@ -28,13 +28,9 @@ const MerchantForm = () => {
 
         const token = Cookies.get('token');
 
-        console.log("onsubmit")
-
         setShowPopUpMessage(false);
 
         try{
-
-
             setIsLoading(true);
 
             const res = await  postAxios(
@@ -86,6 +82,13 @@ const MerchantForm = () => {
                                     label="Tax id"
                                     register={register}
                                     error={errors.taxId}
+                                    optionsValidations={{
+                                        pattern: {
+                                            value: /^\d{10,11}$/,
+                                            message:
+                                                "This field must be only numbers with a length between 10 and 11",
+                                        },
+                                    }}
                                 />
                                 <Input
                                     type="text"
