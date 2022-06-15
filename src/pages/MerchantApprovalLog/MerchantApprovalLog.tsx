@@ -1,4 +1,4 @@
-import { Spinner} from "../../components/index";
+import {PopUpMessage, Spinner} from "../../components/index";
 import {ChangeEvent, useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
@@ -11,6 +11,7 @@ import LogTable from "./LogTable";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import {format} from "date-fns";
+import Strings from "../../constants/strings";
 
 const MerchantApprovalLog = () => {
 
@@ -25,12 +26,18 @@ const MerchantApprovalLog = () => {
 
     const token = Cookies.get("token");
     const [merchantLogs, setMerchantLogs] = useState<MerchantLogPaginationDataProps>();
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    // @ts-ignore
+    const [startDate, setStartDate] = useState<Date>(null);
+    // @ts-ignore
+    const [endDate, setEndDate] = useState<Date>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [logsFilter, setLogsFilter] = useState(defaultState.noFilter);
     const [merchantName, setMerchantName] = useState('');
     const [adminName, setAdminName] = useState('');
+
+    const [showPopUpMessage, setShowPopUpMessage] = useState(false);
+    const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
+    const [isColorError, setIsColorError] = useState<boolean>(false);
 
     const getMerchantLogs = async (filter: {}, page: number) => {
         try {
@@ -66,6 +73,7 @@ const MerchantApprovalLog = () => {
     }
 
     const applyFilter = () => {
+        setShowPopUpMessage(false);
 
         setMerchantName('');
         setAdminName('')
@@ -73,23 +81,32 @@ const MerchantApprovalLog = () => {
         let sDate = '';
         let eDate = '';
 
-        if(startDate != null ){
-            sDate = format(startDate, "yyyy-MM-dd")
-        }
-        if(endDate != null){
-            eDate = format(endDate, "yyyy-MM-dd")
+        if((startDate == null && endDate != null)||((startDate != null && endDate == null))){
+            setIsColorError(true);
+            setMessagePopUp("bad");
+            setShowPopUpMessage(true);
+
+        } else{
+
+            if(startDate != null && endDate != null){
+                sDate = format(startDate, "yyyy-MM-dd")
+                eDate = format(endDate, "yyyy-MM-dd")
+            }
+
+            const filter = {
+                merchantName: merchantName,
+                adminName: adminName,
+                startDate: sDate,
+                endDate: eDate
+            }
+
+            setLogsFilter({merchantName,adminName,starDate: sDate,endDate: eDate});
+            console.log(filter);
+            getMerchantLogs(filter,0)
         }
 
-        const filter = {
-            merchantName: merchantName,
-            adminName: adminName,
-            startDate: sDate,
-            endDate: eDate
-        }
 
-        setLogsFilter({merchantName,adminName,starDate: sDate,endDate: eDate});
-        console.log(filter);
-        getMerchantLogs(filter,0)
+
 
     }
 
@@ -211,6 +228,12 @@ const MerchantApprovalLog = () => {
     return(
         <>
             {token?.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
+            {showPopUpMessage && (
+                <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
+                    <PopUpMessage message={messagePopUp} setShowPopUpMessage={setShowPopUpMessage}
+                                  isColorError={isColorError} />
+                </div>
+            )}
         </>
     );
 }
