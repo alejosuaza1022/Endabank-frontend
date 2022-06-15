@@ -14,16 +14,23 @@ import {
 import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
+import MerchantLayout from "./layouts/MerchantLayout";
 import {RequireAuth} from "./components/index";
-import MerchantSite from "./pages/MerchantSite/MerchantSite";
+import MerchantSite from "./pages/Merchant/MerchantSite/MerchantSite";
+import ShoppingCart from "./pages/Merchant/ShoppingCart/ShoppingCart";
 
 
 function App() {
     return (
 
         <Routes>
-            <Route path="merchant-site" element={<MerchantSite/>}/>
-            <Route path="/" element={<HomeLayout/>}>
+            <Route path=""  element={<MerchantLayout/>}>
+                <Route path="merchant-site" element={<MerchantSite/>}/>
+                <Route path="merchant-site/checkout"
+                       element={<ShoppingCart/>}/>
+            </Route>
+
+            <Route path="" element={<HomeLayout/>}>
 
                 {/*public routes*/}
                 <Route path="log-in" element={<LogIn/>}/>

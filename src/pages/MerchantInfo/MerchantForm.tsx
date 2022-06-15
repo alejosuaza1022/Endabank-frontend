@@ -1,8 +1,7 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import MerchantFormObject from "./merchantFormObject.interface";
 import {useState} from "react";
-import {Input, PopUpMessage, Spinner} from "../../components/index";
-import {SectionTitle} from "../../components/index";
+import {Input, PopUpMessage, SectionTitle, Spinner} from "../../components/index";
 import Strings from "../../constants/strings";
 import {AxiosError} from "axios";
 import apiUrls from "../../constants/apiUrls";
