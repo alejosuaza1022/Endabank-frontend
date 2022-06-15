@@ -83,7 +83,7 @@ const MerchantApprovalLog = () => {
 
         if((startDate == null && endDate != null)||((startDate != null && endDate == null))){
             setIsColorError(true);
-            setMessagePopUp("bad");
+            setMessagePopUp(Strings.FIELD_MISSING_IN_DATE_RANGE);
             setShowPopUpMessage(true);
 
         } else{
