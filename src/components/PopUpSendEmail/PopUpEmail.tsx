@@ -58,10 +58,10 @@ const PopUpEmail = (props: { setShowModal: Function }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div
-                className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 sm:p-8 bg-gray-200 bg-opacity-80 rounded-lg">
                 <div className="relative w-auto my-6 mx-auto max-w-3x2">
                     <div
-                        className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        className="border-0 rounded-lg shadow-lg relative flex flex-col w-96 bg-white outline-none border-2 border-orange-500 sm:p-1 focus:outline-none">
                         <div className="relative p-6 flex-auto">
                             <h3 className="text-center mb-5 text-sm font-normal text-gray-500 dark:text-gray-400">Please,
                                 type your email:</h3>

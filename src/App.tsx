@@ -1,9 +1,12 @@
 import {
+    AccountSummary,
     ActivateAccountForm,
     FormResetPassword,
     Home,
     LogIn,
+    MerchantInfo,
     RegisterForm,
+    Transaction,
     Unauthorized,
     UserEmailVerification,
     UserProfile
@@ -13,7 +16,6 @@ import {Route, Routes} from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import {RequireAuth} from "./components/index";
 import MerchantSite from "./pages/MerchantSite/MerchantSite";
-
 
 
 function App() {
@@ -29,15 +31,17 @@ function App() {
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
                 <Route path="verify-email" element={<UserEmailVerification email={""}/>}/>
-
                 {/*private routes*/}
                 <Route element={<RequireAuth allowedRoles={['ROLE_USER', 'ROLE_ADMIN']}/>}>
                     <Route path="/" element={<Home/>}>
                         <Route path="profile" element={<UserProfile/>}/>
+                        <Route path="account-summary" element={<AccountSummary/>}/>
+                        <Route path="transaction" element={<Transaction/>}/>
                         <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
                             <Route path="activate-account" element={<ActivateAccountForm/>}/>
                         </Route>
                         <Route path="home/reset-password" element={<FormResetPassword/>}/>
+                        <Route path="became-merchant" element={<MerchantInfo/>}/>
                     </Route>
                 </Route>
 
