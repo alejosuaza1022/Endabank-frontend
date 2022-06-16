@@ -30,7 +30,7 @@ function App() {
                        element={<ShoppingCart/>}/>
             </Route>
 
-            <Route path="" element={<HomeLayout/>}>
+            <Route path="/" element={<HomeLayout/>}>
 
                 {/*public routes*/}
                 <Route path="log-in" element={<LogIn/>}/>
