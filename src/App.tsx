@@ -11,6 +11,7 @@ import {
     UserEmailVerification,
     UserProfile
 } from "./pages/index";
+
 import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
@@ -24,7 +25,7 @@ function App() {
     return (
 
         <Routes>
-            <Route path=""  element={<MerchantLayout/>}>
+            <Route path="" element={<MerchantLayout/>}>
                 <Route path="merchant-site" element={<MerchantSite/>}/>
                 <Route path="merchant-site/checkout"
                        element={<ShoppingCart/>}/>
@@ -37,6 +38,7 @@ function App() {
                 <Route path="sign-up" element={<RegisterForm/>}/>
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
+
                 <Route path="verify-email" element={<UserEmailVerification email={""}/>}/>
                 {/*private routes*/}
                 <Route element={<RequireAuth allowedRoles={['ROLE_USER', 'ROLE_ADMIN']}/>}>
