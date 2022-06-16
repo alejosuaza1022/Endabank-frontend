@@ -78,8 +78,9 @@ const FilterMerchant = () => {
                 </button>
             </div>
             <div id="filterSection"
-                 className={"relative md:pb-10 md:pt-5 lg:px-20 md:px-6 py-9 px-4  w-full " + (showFilters ? "block" : "hidden")}>
+                 className={"relative md:pb-10  lg:px-20 md:px-6 px-4  w-full " + (showFilters ? "block" : "hidden")}>
 
+                <hr className=" bg-gray-200  w-full md:mb-10 mb-8"/>
                 <div>
                     <div className=" flex space-x-2">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

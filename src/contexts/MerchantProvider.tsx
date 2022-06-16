@@ -4,12 +4,14 @@ import ShoppingItemProps from "@components/Merchant/ShoppingItem/ShoppingItemPro
 
 const ShoppingCartContext = createContext<ShoppingCartProps>({
     shoppingList: [], setShoppingList: () => {
+    }, totalPrice: 0, setTotalPrice: () => {
     }
 });
 const ShoppingCartProvider = ({children}: { children: ReactNode }) => {
     const [shoppingList, setShoppingList] = useState<Array<ShoppingItemProps>>([])
+    const [totalPrice, setTotalPrice] = useState(0)
     return (
-        <ShoppingCartContext.Provider value={{shoppingList, setShoppingList}}>
+        <ShoppingCartContext.Provider value={{shoppingList, setShoppingList,totalPrice,setTotalPrice}}>
             {children}
         </ShoppingCartContext.Provider>
     )

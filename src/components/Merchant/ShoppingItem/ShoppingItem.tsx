@@ -4,11 +4,11 @@ import QuantityCounter from "../QuantityCounter/QuantityCounter";
 import {ShoppingCartContext} from "../../../contexts/MerchantProvider";
 import NumberFormat from "react-number-format";
 
-const ShoppingItem: React.FC<ShoppingItemProps> = ({urlImage, name, price, id,quantity}) => {
-    const [totalPrice, setTotalPrice] = useState(price * quantity);
+const ShoppingItem: React.FC<ShoppingItemProps> = ({urlImage, name, price, id, quantity}) => {
+    const [totalPriceItem, setTotalPriceItem] = useState(price * quantity);
     const {shoppingList, setShoppingList} = useContext(ShoppingCartContext)
     const deleteItemFromCart = () => {
-        setShoppingList(shoppingList.filter(x => x.id !== id));
+        setShoppingList(shoppingList.filter(x => x.id !== id))
     }
 
     return (
@@ -30,10 +30,10 @@ const ShoppingItem: React.FC<ShoppingItemProps> = ({urlImage, name, price, id,qu
                     </div>
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <QuantityCounter price={price} setTotalPrice={setTotalPrice} currentQuantity={quantity}/>
+                    <QuantityCounter price={price} id={id} setTotalPriceItem={setTotalPriceItem} currentQuantity={quantity}/>
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <NumberFormat className="text-indigo-600 text-sm font-semibold" value={totalPrice}
+                    <NumberFormat className="text-indigo-600 text-sm font-semibold" value={totalPriceItem}
                                   displayType={'text'}
                                   thousandSeparator={true} prefix={'$'}/>
                 </td>

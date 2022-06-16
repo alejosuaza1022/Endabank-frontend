@@ -1,8 +1,9 @@
 import React from "react";
 
 interface QuantityCounterProps {
-    setTotalPrice: React.Dispatch<React.SetStateAction<number>>;
+    setTotalPriceItem: React.Dispatch<React.SetStateAction<number>>;
     price: number,
-    currentQuantity:number
+    currentQuantity:number,
+    id: number
 }
 export default QuantityCounterProps;

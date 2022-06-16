@@ -1,13 +1,24 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import ShoppingCartImg from "../../../assets/shopping-cart.svg"
+import HomeMerchant from "../../../assets/home-merchant.svg"
 import {ShoppingCartContext} from "../../../contexts/MerchantProvider";
 import ShoppingItem from "../../../components/Merchant/ShoppingItem/ShoppingItem";
+import NumberFormat from "react-number-format";
 
 
 const ShoppingCart = () => {
     const navigate = useNavigate();
-    const {shoppingList} = useContext(ShoppingCartContext)
+    const {shoppingList, totalPrice, setTotalPrice} = useContext(ShoppingCartContext)
+    useEffect(() => {
+            function setPriceToCart() {
+                let totalPriceCart = 0;
+                shoppingList.map(x => totalPriceCart += x.quantity * x.price)
+                setTotalPrice(totalPriceCart)
+            }
+
+            setPriceToCart()
+        },
+        [shoppingList])
     const goToMerchantSite = () => {
         navigate("/merchant-site/")
     }
@@ -16,7 +27,8 @@ const ShoppingCart = () => {
             <div className=" 2xl:mx-auto w-full">
                 <div className="bg-white rounded shadow-lg py-5 px-7">
                     <nav className="flex justify-between">
-                        <div className="flex items-center space-x-3 pr-6 cursor-pointer" onClick={() => goToMerchantSite()}>
+                        <div className="flex items-center space-x-3 pr-6 cursor-pointer"
+                             onClick={() => goToMerchantSite()}>
                             <svg width={34} height={34} viewBox="0 0 34 34" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -41,46 +53,121 @@ const ShoppingCart = () => {
                                     className=" w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto shadow-lg"/>
                             </div>
 
-                            <img src={ShoppingCartImg} alt="imagen endabank"/>
+                            <img className="cursor-pointer" src={HomeMerchant} onClick={() => goToMerchantSite()}
+                                 alt="imagen endabank"/>
                         </div>
                     </nav>
 
                 </div>
-                <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
-                    <div className="py-8">
-                        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                            <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                                <table className="min-w-full leading-normal">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col"
-                                            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
-                                            Product
-                                        </th>
-                                        <th scope="col"
-                                            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
-                                            Quantity
-                                        </th>
-                                        <th scope="col"
-                                            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
-                                            Total Price
-                                        </th>
-                                        <th scope="col"
-                                            className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                <div className="flex flex-col w-full items-center mt-10 w-full">
+                    <div className="self-left font-bold text-3xl w-1/2 px-8"><h2>Shopping cart</h2></div>
+                    <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
+                        <div className="py-2">
+                            <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                                <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                                    <table className="min-w-full leading-normal">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"
+                                                className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                                                Product
+                                            </th>
+                                            <th scope="col"
+                                                className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                                                Quantity
+                                            </th>
+                                            <th scope="col"
+                                                className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                                                Total Price
+                                            </th>
+                                            <th scope="col"
+                                                className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
 
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {shoppingList.map(x => <ShoppingItem key={x.id} urlImage={x.urlImage} price={x.price}
-                                                                         name={x.name} id={x.id} quantity={x.quantity}/>)}
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {shoppingList.map(x => <ShoppingItem key={x.id} urlImage={x.urlImage}
+                                                                             price={x.price}
+                                                                             name={x.name} id={x.id}
+                                                                             quantity={x.quantity}/>)}
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                    <div className="flex flex-col w-full bg-white">
+                                        <div className="sm:flex  sm:justify-center  w-full bg-white">
+                                            <div className="flex flex-col sm:w-1/2 justify-start items-center mt-4">
+                                                <h2 className="flex w-3/4 mb-1 text-left font-bold text-xl">Coupon
+                                                    code </h2>
+                                                <p className="flex w-3/4 mb-4 text-sm text-gray-500 font-semibold text-left">Enter
+                                                    to get your discount</p>
+                                                <hr className=" bg-gray-200  w-3/4  mb-4"/>
+                                                <div
+                                                    className="flex  items-center  w-3/4 rounded-md border-solid border-2 border-grey-500 px-4 py-1 mb-4">
+                                                    <div className="flex items-center justify-start  w-3/5 h-full"><p
+                                                        className="text-md font-semibold text-gray-600 text-center px-2">Coupon
+                                                        Code</p></div>
+                                                    <div className="flex w-2/5  justify-end">
+                                                        <button
+                                                            className="text-sm text-white bg-black rounded-md border-solid border-2 border-white py-2 px-4">Apply
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col sm:w-1/2 justify-start items-center mt-4">
+                                                <div className="flex justify-between w-3/4 mb-3">
+                                                    <h2 className="flex w-3/4 mb-1 text-left font-semibold  text-md"> Subtotal
+                                                    </h2>
+                                                    <NumberFormat
+                                                        className="flex w-3/4 mb-1 text-right font-semibold text-md justify-center"
+                                                        value={totalPrice}
+                                                        displayType={'text'}
+                                                        thousandSeparator={true} prefix={'$'}/>
+                                                </div>
+                                                <div className="flex justify-between w-3/4 mb-3">
+                                                    <h2 className="flex w-3/4 mb-1 text-left font-semibold  text-md"> Shipping
+                                                        Cost
+                                                    </h2>
+                                                    <NumberFormat
+                                                        className="flex w-3/4 mb-1 text-right font-semibold text-md justify-center"
+                                                        value={0}
+                                                        displayType={'text'}
+                                                        thousandSeparator={true} prefix={'$'}/>
+                                                </div>
+                                                <div className="flex justify-between w-3/4 mb-3">
+                                                    <h2 className="flex w-3/4 mb-1 text-left font-semibold  text-md"> Discount
+                                                    </h2>
+                                                    <NumberFormat
+                                                        className="flex w-3/4 mb-1 text-right font-semibold text-md justify-center"
+                                                        value={0}
+                                                        displayType={'text'}
+                                                        thousandSeparator={true} prefix={'$'}/>
+                                                </div>
+
+                                                <hr className=" bg-gray-200  w-3/4  mb-3"/>
+                                                <div className="flex justify-between w-3/4 mb-5">
+                                                    <h2 className="flex w-3/4 mb-1 text-left font-semibold  text-md"> Total
+                                                        Payable
+                                                    </h2>
+                                                    <NumberFormat
+                                                        className="flex w-3/4 mb-1 text-right font-semibold text-md justify-center"
+                                                        value={totalPrice}
+                                                        displayType={'text'}
+                                                        thousandSeparator={true} prefix={'$'}/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <button
+                                            className="text-sm text-white bg-black rounded-md border-solid border-2 border-white py-3  px-4"> Let's go to pay
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     )

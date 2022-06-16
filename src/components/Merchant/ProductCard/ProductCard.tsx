@@ -11,10 +11,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
                                                      price,
                                                      setShoppingList,
                                                      shoppingList,
-                                                     id, urlImage
+                                                     id, urlImage,
+                                                     setShowPopUpMessage
                                                  }) => {
     const addToShoppingList = () => {
         const item = shoppingList.filter(x => x.id === id)
+        setShowPopUpMessage(true)
+        setTimeout(() => {
+            setShowPopUpMessage(false)
+        }, 3000)
         if (item.length !== 0) {
             const newList = shoppingList.map(x => {
                 if (x.id === id) {
@@ -29,6 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             return
         }
         setShoppingList([...shoppingList, {name, price, id, urlImage, quantity: 1}])
+
     }
     return (
         <div className="card mx-2 w-64 mb-8 hover:cursor-pointer ">

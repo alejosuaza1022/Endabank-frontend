@@ -1,5 +1,12 @@
 import ProductCardObject from "./ProductCardObject.interface";
-import jordan1 from "../../../assets/jordan1.png"
+import jordan1 from "../../../assets/jordan1.jpg"
+import jordan11 from "../../../assets/jordan11.jpg"
+import jordan4 from "../../../assets/jordan4.jpg"
+import yeezy from "../../../assets/yeezy.jpg"
+import jordanlow from "../../../assets/jordanlow.jpg"
+import airforce from "../../../assets/airforce.jpg"
+import jordanracer from "../../../assets/jordanracer.jpg"
+import nikeair96 from "../../../assets/nike96.jpg"
 
 const products: Array<ProductCardObject> = [
     {
@@ -18,7 +25,7 @@ const products: Array<ProductCardObject> = [
         publishedDays: 5,
         placeToPickUp: "Medellín, Colombia",
         price: 330000,
-        urlImage: jordan1
+        urlImage: jordan4
     },
     {
         id: 3,
@@ -27,7 +34,7 @@ const products: Array<ProductCardObject> = [
         publishedDays: 7,
         placeToPickUp: "Medellín, Colombia",
         price: 210000,
-        urlImage: jordan1
+        urlImage: jordan11
     },
     {
         id: 4,
@@ -36,7 +43,7 @@ const products: Array<ProductCardObject> = [
         publishedDays: 15,
         placeToPickUp: "Medellín, Colombia",
         price: 202000,
-        urlImage: jordan1
+        urlImage: jordanracer
     },
     {
         id: 5,
@@ -45,7 +52,7 @@ const products: Array<ProductCardObject> = [
         publishedDays: 30,
         placeToPickUp: "Medellín, Colombia",
         price: 250000,
-        urlImage: jordan1
+        urlImage: airforce
     },
     {
         id: 6,
@@ -54,8 +61,7 @@ const products: Array<ProductCardObject> = [
         publishedDays: 1,
         placeToPickUp: "Medellín, Colombia",
         price: 170000,
-
-        urlImage: jordan1
+        urlImage:nikeair96
     },
     {
         id: 7,
@@ -65,7 +71,7 @@ const products: Array<ProductCardObject> = [
         placeToPickUp: "Medellín, Colombia",
         price: 280000,
 
-        urlImage: jordan1
+        urlImage: yeezy
     },
     {
         id: 8,
@@ -75,7 +81,7 @@ const products: Array<ProductCardObject> = [
         placeToPickUp: "Medellín, Colombia",
         price: 160000,
 
-        urlImage: jordan1
+        urlImage: jordanlow
     },
 
 ]

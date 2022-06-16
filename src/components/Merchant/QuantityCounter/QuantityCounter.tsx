@@ -1,18 +1,33 @@
 import "./index.css"
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import QuatityCounterProps from "./QuantityCounterProps";
+import {ShoppingCartContext} from "../../../contexts/MerchantProvider";
 
 
-const QuantityCounter: React.FC<QuatityCounterProps> = ({price, setTotalPrice, currentQuantity}) => {
-
+const QuantityCounter: React.FC<QuatityCounterProps> = ({price, setTotalPriceItem, currentQuantity, id}) => {
+    const {setShoppingList, shoppingList} = useContext(ShoppingCartContext)
     const [quantity, setQuantity] = useState(currentQuantity);
+    const updateQuantityToItem = (newQuantity: number) => {
+        setShoppingList(shoppingList.map(x => {
+            if (x.id === id) {
+                x.quantity = newQuantity;
+            }
+            return x;
+        }))
+    }
     const increaseQuantity = () => {
-        setQuantity(quantity + 1)
-        setTotalPrice(price * (quantity+1))
+        let auxQuantity = quantity + 1;
+        setQuantity(auxQuantity)
+        updateQuantityToItem(auxQuantity)
+        setTotalPriceItem(price * auxQuantity)
     }
     const decreaseQuantity = () => {
-        setQuantity(quantity - 1)
-        setTotalPrice(price * (quantity-1))
+        if (quantity - 1 < 0)
+            return
+        let auxQuantity = quantity - 1;
+        setQuantity(auxQuantity)
+        updateQuantityToItem(auxQuantity)
+        setTotalPriceItem(price * auxQuantity)
     }
 
     return (
@@ -24,7 +39,7 @@ const QuantityCounter: React.FC<QuatityCounterProps> = ({price, setTotalPrice, c
                 </button>
                 <input
                     className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
-                    name="custom-input-number" readOnly={true}  value={quantity}/>
+                    name="custom-input-number" readOnly={true} value={quantity}/>
                 <button onClick={() => increaseQuantity()}
                         className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                     <span className="m-auto text-2xl font-thin">+</span>
