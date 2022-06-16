@@ -6,8 +6,8 @@ export default class homePage extends BasePage{
     relativePath: string = this.relativePath +url.urlProfile;
 
     private MY_PROFILE_BUTTON: string = '#profileSidebarElement'
-    private PASSWORD_MANAGEMENT_SIDEBAR: string = '#pwdManagementSidebarElement'
-    private LOG_OUT_BUTTON: string = '#logoutSidebarElement'
+    private PASSWORD_MANAGEMENT_SIDEBAR: string = '#passwdManagementSidebarElement'
+    private LOG_OUT_BUTTON: string = '#logOutSidebarElement'
     private USER_MANAGEMENT_SIDEBAR: string = '#usersManagementSidebarElement'
 
     getProfileButton() {
