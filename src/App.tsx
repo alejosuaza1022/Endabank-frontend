@@ -3,7 +3,7 @@ import {
     ActivateAccountForm,
     FormResetPassword,
     Home,
-    LogIn,
+    LogIn, MerchantApprovalLog,
     MerchantInfo,
     RegisterForm,
     Transaction,
@@ -51,6 +51,7 @@ function App() {
                         </Route>
                         <Route path="home/reset-password" element={<FormResetPassword/>}/>
                         <Route path="became-merchant" element={<MerchantInfo/>}/>
+                        <Route path="merchant-log" element={<MerchantApprovalLog/>}/>
                     </Route>
                 </Route>
 
