@@ -25,16 +25,16 @@ function App() {
     return (
 
         <Routes>
-            <Route path="" element={<MerchantLayout/>}>
-                <Route path="merchant-site" element={<MerchantSite/>}/>
-                <Route path="merchant-site/checkout"
+            <Route path="merchant-site" element={<MerchantLayout/>}>
+                <Route index element={<MerchantSite/>}/>
+                <Route path="checkout"
                        element={<ShoppingCart/>}/>
             </Route>
 
-            <Route path="/" element={<HomeLayout/>}>
+            <Route path="/"   element={<HomeLayout/>}>
 
                 {/*public routes*/}
-                <Route path="log-in" element={<LogIn/>}/>
+                <Route   path="log-in"   element={<LogIn/>}/>
                 <Route path="sign-up" element={<RegisterForm/>}/>
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
