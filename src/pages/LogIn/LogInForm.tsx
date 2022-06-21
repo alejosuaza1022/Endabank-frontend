@@ -2,7 +2,7 @@ import {Input, PopUp, PopUpMessage, Spinner} from "../../components/index";
 import {SubmitHandler, useForm} from "react-hook-form";
 import LoginObject from "./loginObject.interface";
 import {Link, useNavigate} from "react-router-dom";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
 import Cookies from 'js-cookie'
@@ -90,6 +90,9 @@ const LogInForm = () => {
     const setShowModalFuntion = (value: boolean) => {
         setShowModal(value);
     };
+    useEffect(() => {
+        console.log(process.env)
+    }, []);
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (
             <>
