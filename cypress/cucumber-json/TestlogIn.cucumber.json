@@ -23,7 +23,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1257000000
+              "duration": 2111000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 402000000
+              "duration": 423000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the user clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 128000000
+              "duration": 145000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "the user has to be allowed to see their profile, password management and Logout in the page",
             "result": {
               "status": "passed",
-              "duration": 690000000
+              "duration": 904000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1237000000
+              "duration": 1285000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the user types in an email with an incorrect format",
             "result": {
               "status": "passed",
-              "duration": 380000000
+              "duration": 438000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 328000000
+              "duration": 342000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "the user should see a highlight error message \"This field must be a valid email\"",
             "result": {
               "status": "passed",
-              "duration": 53000000
+              "duration": 78000000
             }
           }
         ]
