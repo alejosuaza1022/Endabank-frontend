@@ -35,9 +35,6 @@ const Transaction= () => {
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
 
     const token = Cookies.get("token");
-    const {
-        auth : { email},
-    } = useContext(AuthContext);
     const openModal = () => {
         setShowModal(true);
     };
@@ -68,7 +65,7 @@ const Transaction= () => {
         try {
             setIsLoading(true);
             const responseDetails: AccountDetailsProps = await getAxios(
-                apiUrls.GET_ACCOUNT_DETAILS+email,
+                apiUrls.GET_ACCOUNT_DETAILS,
                 token
             );
             setDetails(responseDetails);
