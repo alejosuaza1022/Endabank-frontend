@@ -1,0 +1,64 @@
+[
+  {
+    "description": "              As an user\n              I want to complete a successful transaction",
+    "keyword": "Feature",
+    "name": "Transaction",
+    "line": 1,
+    "id": "transaction",
+    "tags": [],
+    "uri": "transaction.feature",
+    "elements": [
+      {
+        "id": "transaction;the-user-should-be-able-to-transfer-money-succesfully",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "The user should be able to transfer money succesfully",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the user has logged in",
+            "result": {
+              "status": "passed",
+              "duration": 3622000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "the user has entered the \"transfer transaction\" page",
+            "result": {
+              "status": "passed",
+              "duration": 2174000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user should be able to complete the form succesfully",
+            "result": {
+              "status": "passed",
+              "duration": 1065000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the user should see the transaction confirmation and summary",
+            "result": {
+              "status": "failed",
+              "duration": 4035000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#bankAccountIssuer`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\transaction.feature:117:50)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\transaction.feature:10682:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\transaction.feature:10003:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

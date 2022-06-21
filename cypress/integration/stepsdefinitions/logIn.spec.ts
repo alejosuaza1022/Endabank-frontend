@@ -26,7 +26,7 @@ And( "the user clicks on login buttton",() =>{
 And ("the user has to be allowed to see their profile, password management and Logout in the page",()=>{
     homePage.getProfileButton().should('exist');
     homePage.getLogoutButton().should('exist');
-    homePage.getPasswordManagementSidebar().should('exist');
+    homePage.getPasswordManagementSidebar().should('exist').wait(5000);
 })
 
 ///////////////////////
@@ -51,5 +51,5 @@ And('the user types in a password',()=>{
 
 Then ("the user should see a highlight error message {string}",(errorMessage)=>{
     logInPage.getErrorMessageEmail().should('exist');
-	logInPage.getErrorMessageEmail().contains(errorMessage).should('be.visible');
+	logInPage.getErrorMessageEmail().contains(errorMessage).should('be.visible').wait(5000);
 })
