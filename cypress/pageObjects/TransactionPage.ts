@@ -9,7 +9,7 @@ export default class TransactionPage extends BasePage{
     private DESTINY_ACCOUNT: string = '#bankAccountNumberReceiver'
     private AMOUNT: string = '#amount'
     private SUBMIT_TRANSACTION_BUTTON: string = '#submitTransaction'
-    private BANK_ISSUER: string = '#bankAccountIssuer'
+    private BANK_ISSUER: string = '#bankAccountNumberIssuer'
 
     getTransactionForm() {
         return cy.get(this.TRANSACTION_FORM);

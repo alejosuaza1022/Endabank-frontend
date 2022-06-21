@@ -23,7 +23,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1628000000
+              "duration": 1380000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 484000000
+              "duration": 334000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 361000000
+              "duration": 267000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the user clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 140000000
+              "duration": 99000000
             }
           },
           {
@@ -62,9 +62,8 @@
             "line": 14,
             "name": "the user has to be allowed to see their profile, password management and Logout in the page",
             "result": {
-              "status": "failed",
-              "duration": 5068000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#logoutSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:66:32)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:10682:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:10003:35)"
+              "status": "passed",
+              "duration": 5673000000
             }
           }
         ]
@@ -84,7 +83,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1461000000
+              "duration": 1228000000
             }
           },
           {
@@ -94,7 +93,7 @@
             "name": "the user types in an email with an incorrect format",
             "result": {
               "status": "passed",
-              "duration": 496000000
+              "duration": 321000000
             }
           },
           {
@@ -104,7 +103,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 469000000
+              "duration": 273000000
             }
           },
           {
@@ -114,7 +113,7 @@
             "name": "the user should see a highlight error message \"This field must be a valid email\"",
             "result": {
               "status": "passed",
-              "duration": 5136000000
+              "duration": 5037000000
             }
           }
         ]
