@@ -1,21 +1,19 @@
-import useAuth from "../../Hooks/useAuth";
-import {useLocation,Outlet,Navigate} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {Navigate, Outlet, useLocation} from "react-router-dom";
+import {useContext} from "react";
 import Cookies from "js-cookie";
-import axios from "axios";
 import AuthContext from "../../contexts/AuthProvider";
 
-const RequireAuth = ({ allowedRoles}: { allowedRoles:string[] }) => {
+const RequireAuth = ({allowedRoles}: { allowedRoles: string[] }) => {
     const {
-        auth: { authorities,currentUser,token },
+        auth: {authorities, currentUser, token},
     } = useContext(AuthContext);
     const location = useLocation()
     const tokenCookie = Cookies.get('token');
 
-    return(
+    return (
         tokenCookie
-            ? <Outlet />
-            :<Navigate to="/log-in" state={{from: location}} replace />
+            ? <Outlet/>
+            : <Navigate to="/log-in" state={{from: location}} replace/>
     )
 }
 

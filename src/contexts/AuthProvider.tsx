@@ -1,4 +1,4 @@
-import React, {createContext, useState, FC, ReactNode, useEffect} from "react";
+import React, {createContext, ReactNode, useEffect, useState} from "react";
 import IAuthProvider from "./IAuthProvider";
 import Cookies from "js-cookie";
 import axios from "axios";

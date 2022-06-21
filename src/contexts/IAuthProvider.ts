@@ -1,5 +1,3 @@
-import {Dispatch, SetStateAction} from "react";
-
 interface IAuthProvider{
     auth: {
         currentUser: string;

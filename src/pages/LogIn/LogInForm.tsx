@@ -5,7 +5,6 @@ import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
-import useAuth from "../../Hooks/useAuth";
 import Cookies from 'js-cookie'
 
 import Strings from "../../constants/strings";

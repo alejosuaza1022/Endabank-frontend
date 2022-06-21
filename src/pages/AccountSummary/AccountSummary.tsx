@@ -1,14 +1,10 @@
 import apiUrls from "../../constants/apiUrls";
-import { useContext, useEffect, useState } from "react";
-import { getAxios } from "../../utils/axios";
-import {
-    AccountSummaryData,
-    PopUpMessage,
-    Spinner,
-} from "../../components/index";
+import {useContext, useEffect, useState} from "react";
+import {getAxios} from "../../utils/axios";
+import {AccountSummaryData, PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
-import { AxiosError } from "axios";
-import { Navigate } from "react-router-dom";
+import {AxiosError} from "axios";
+import {Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
@@ -26,9 +22,6 @@ const AccountSummary= () => {
         strings.USER_REGISTERED
     );
     const token = Cookies.get("token");
-    const {
-        auth : { email},
-    } = useContext(AuthContext);
 
     function catchError(err: any) {
         const error = err as AxiosError;
@@ -46,7 +39,7 @@ const AccountSummary= () => {
         try {
             setIsLoading(true);
             const responseDetails: AccountDetailsProps = await getAxios(
-                apiUrls.GET_ACCOUNT_DETAILS+email,
+                apiUrls.GET_ACCOUNT_DETAILS,
                 token
             );
             setDetails(responseDetails);
@@ -57,7 +50,7 @@ const AccountSummary= () => {
     async function getTransactions(page: number) {
         try {
             const responseSummary: PaginationDataProps= await getAxios(
-                apiUrls.GET_ACCOUNT_SUMMARY+email+"/"+page,
+                apiUrls.GET_ACCOUNT_SUMMARY+page,
                 token
             );
             setIsLoading(false);
