@@ -9,4 +9,4 @@ handlers:
     static_files: dist/index.html
     upload: dist/index.html
 env_variables:
-  BACK_URL: 'http://35.202.242.69:8081/api/v1'
+  BACK_URL: ${http://35.202.242.69:8081/api/v1}
