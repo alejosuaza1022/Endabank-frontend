@@ -3,7 +3,8 @@ import {
     ActivateAccountForm,
     FormResetPassword,
     Home,
-    LogIn, MerchantApprovalLog,
+    LogIn,
+    MerchantApprovalLog,
     MerchantInfo,
     RegisterForm,
     Transaction,
@@ -31,10 +32,10 @@ function App() {
                        element={<ShoppingCart/>}/>
             </Route>
 
-            <Route path="/"   element={<HomeLayout/>}>
+            <Route path="/" element={<HomeLayout/>}>
 
                 {/*public routes*/}
-                <Route   path="log-in"   element={<LogIn/>}/>
+                <Route path="log-in" element={<LogIn/>}/>
                 <Route path="sign-up" element={<RegisterForm/>}/>
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
