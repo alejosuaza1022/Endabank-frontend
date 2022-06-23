@@ -23,7 +23,7 @@
             "name": "the admin is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1944000000
+              "duration": 1901000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the admin types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 910000000
+              "duration": 737000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the admin types in a password",
             "result": {
               "status": "passed",
-              "duration": 453000000
+              "duration": 375000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the admin clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 302000000
+              "duration": 148000000
             }
           },
           {
@@ -62,8 +62,9 @@
             "line": 14,
             "name": "the admin clicks on merchant approval log button",
             "result": {
-              "status": "passed",
-              "duration": 1671000000
+              "status": "failed",
+              "duration": 4036000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#merchantApprovalLogSidebarElement`, but never found it.\n    at homePage.getMerchantApprovalLogButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:712:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:397:14)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:11332:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:10653:35)"
             }
           },
           {
@@ -72,8 +73,7 @@
             "line": 15,
             "name": "the admin is allowed to see the merchant approval log section",
             "result": {
-              "status": "passed",
-              "duration": 661000000
+              "status": "skipped"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "name": "the admin is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1725000000
+              "duration": 1408000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the admin types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 888000000
+              "duration": 666000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "the admin types in a password",
             "result": {
               "status": "passed",
-              "duration": 479000000
+              "duration": 454000000
             }
           },
           {
@@ -123,7 +123,7 @@
             "name": "the admin clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 202000000
+              "duration": 140000000
             }
           },
           {
@@ -132,8 +132,8 @@
             "line": 21,
             "name": "the admin clicks on merchant approval log button",
             "result": {
-              "status": "passed",
-              "duration": 744000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#merchantApprovalLogSidebarElement`, but never found it.\n    at homePage.getMerchantApprovalLogButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:712:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:397:14)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:11332:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:10653:35)"
             }
           },
           {
@@ -142,8 +142,7 @@
             "line": 22,
             "name": "the admin is allowed to see the merchant approval log section",
             "result": {
-              "status": "passed",
-              "duration": 439000000
+              "status": "skipped"
             }
           },
           {
@@ -152,8 +151,7 @@
             "line": 23,
             "name": "the admin uses the merchant filter",
             "result": {
-              "status": "passed",
-              "duration": 326000000
+              "status": "skipped"
             }
           },
           {
@@ -162,8 +160,7 @@
             "line": 24,
             "name": "the admin clicks on submit filter button",
             "result": {
-              "status": "passed",
-              "duration": 426000000
+              "status": "skipped"
             }
           },
           {
@@ -172,8 +169,7 @@
             "line": 25,
             "name": "the grid will show the information according to the merchant filter",
             "result": {
-              "status": "passed",
-              "duration": 330000000
+              "status": "skipped"
             }
           }
         ]
@@ -193,7 +189,7 @@
             "name": "the admin is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1834000000
+              "duration": 4084000000
             }
           },
           {
@@ -203,7 +199,7 @@
             "name": "the admin types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 784000000
+              "duration": 1102000000
             }
           },
           {
@@ -213,7 +209,7 @@
             "name": "the admin types in a password",
             "result": {
               "status": "passed",
-              "duration": 439000000
+              "duration": 635000000
             }
           },
           {
@@ -223,7 +219,7 @@
             "name": "the admin clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 206000000
+              "duration": 457000000
             }
           },
           {
@@ -232,8 +228,8 @@
             "line": 31,
             "name": "the admin clicks on merchant approval log button",
             "result": {
-              "status": "passed",
-              "duration": 811000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#merchantApprovalLogSidebarElement`, but never found it.\n    at homePage.getMerchantApprovalLogButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:712:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:397:14)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:11332:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:10653:35)"
             }
           },
           {
@@ -242,8 +238,7 @@
             "line": 32,
             "name": "the admin is allowed to see the merchant approval log section",
             "result": {
-              "status": "passed",
-              "duration": 333000000
+              "status": "skipped"
             }
           },
           {
@@ -252,8 +247,7 @@
             "line": 33,
             "name": "the admin uses the reviewing user filter",
             "result": {
-              "status": "passed",
-              "duration": 409000000
+              "status": "skipped"
             }
           },
           {
@@ -262,8 +256,7 @@
             "line": 34,
             "name": "the admin clicks on submit filter button",
             "result": {
-              "status": "passed",
-              "duration": 358000000
+              "status": "skipped"
             }
           },
           {
@@ -272,8 +265,7 @@
             "line": 35,
             "name": "the grid will show the information according to the reviewing user filter",
             "result": {
-              "status": "passed",
-              "duration": 226000000
+              "status": "skipped"
             }
           }
         ]
@@ -293,7 +285,7 @@
             "name": "the admin is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1365000000
+              "duration": 1691000000
             }
           },
           {
@@ -303,7 +295,7 @@
             "name": "the admin types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 883000000
+              "duration": 1135000000
             }
           },
           {
@@ -313,7 +305,7 @@
             "name": "the admin types in a password",
             "result": {
               "status": "passed",
-              "duration": 472000000
+              "duration": 932000000
             }
           },
           {
@@ -323,7 +315,7 @@
             "name": "the admin clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 251000000
+              "duration": 516000000
             }
           },
           {
@@ -332,8 +324,8 @@
             "line": 41,
             "name": "the admin clicks on merchant approval log button",
             "result": {
-              "status": "passed",
-              "duration": 504000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#merchantApprovalLogSidebarElement`, but never found it.\n    at homePage.getMerchantApprovalLogButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:712:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:397:14)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:11332:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:10653:35)"
             }
           },
           {
@@ -342,8 +334,7 @@
             "line": 42,
             "name": "the admin is allowed to see the merchant approval log section",
             "result": {
-              "status": "passed",
-              "duration": 288000000
+              "status": "skipped"
             }
           },
           {
@@ -352,8 +343,7 @@
             "line": 43,
             "name": "the admin uses the reviewing user filter and the merchant filter",
             "result": {
-              "status": "passed",
-              "duration": 779000000
+              "status": "skipped"
             }
           },
           {
@@ -362,8 +352,7 @@
             "line": 44,
             "name": "the admin clicks on submit filter button",
             "result": {
-              "status": "passed",
-              "duration": 256000000
+              "status": "skipped"
             }
           },
           {
@@ -372,8 +361,7 @@
             "line": 45,
             "name": "the grid will show the information according to the merchant and reviewing user filters",
             "result": {
-              "status": "passed",
-              "duration": 177000000
+              "status": "skipped"
             }
           }
         ]
@@ -393,7 +381,7 @@
             "name": "the admin is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1321000000
+              "duration": 1955000000
             }
           },
           {
@@ -403,7 +391,7 @@
             "name": "the admin types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 770000000
+              "duration": 1714000000
             }
           },
           {
@@ -413,7 +401,7 @@
             "name": "the admin types in a password",
             "result": {
               "status": "passed",
-              "duration": 468000000
+              "duration": 931000000
             }
           },
           {
@@ -423,7 +411,7 @@
             "name": "the admin clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 195000000
+              "duration": 1029000000
             }
           },
           {
@@ -432,8 +420,8 @@
             "line": 51,
             "name": "the admin clicks on merchant approval log button",
             "result": {
-              "status": "passed",
-              "duration": 767000000
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#merchantApprovalLogSidebarElement`, but never found it.\n    at homePage.getMerchantApprovalLogButton (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:712:19)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:397:14)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:11332:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\merchantApprovalLog.feature:10653:35)"
             }
           },
           {
@@ -442,8 +430,7 @@
             "line": 52,
             "name": "the admin is allowed to see the merchant approval log section",
             "result": {
-              "status": "passed",
-              "duration": 243000000
+              "status": "skipped"
             }
           },
           {
@@ -452,8 +439,7 @@
             "line": 53,
             "name": "the admin uses the merchant filter with wrong data",
             "result": {
-              "status": "passed",
-              "duration": 332000000
+              "status": "skipped"
             }
           },
           {
@@ -462,8 +448,7 @@
             "line": 54,
             "name": "the admin clicks on submit filter button",
             "result": {
-              "status": "passed",
-              "duration": 220000000
+              "status": "skipped"
             }
           },
           {
@@ -472,8 +457,7 @@
             "line": 55,
             "name": "the grid will show the information according to the criteria",
             "result": {
-              "status": "passed",
-              "duration": 41000000
+              "status": "skipped"
             }
           }
         ]
