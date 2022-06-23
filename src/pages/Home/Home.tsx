@@ -1,14 +1,12 @@
-import axios from "axios";
-import { getAxios } from "../../utils/axios";
-import React, { useEffect } from "react";
+import React from "react";
 import {SideBar} from "../../components/index";
-import { Outlet, Link } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
 const Home = () => {
   return(
       <div className="flex h-screen">
         <SideBar/>
-          <div className="flex justify-center w-full">
+          <div className="flex w-full justify-center">
               <Outlet />
           </div>
       </div>

@@ -1,15 +1,11 @@
 import ApproveUserProps from "@components/ApproveUserTable/approveUserTable.interface";
 import apiUrls from "../../constants/apiUrls";
-import { useContext, useEffect, useState } from "react";
-import { getAxios } from "../../utils/axios";
-import {
-  PopUpMessage,
-  ApproveUserTable,
-  Spinner,
-} from "../../components/index";
+import {useContext, useEffect, useState} from "react";
+import {getAxios} from "../../utils/axios";
+import {ApproveUserTable, PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
-import { AxiosError } from "axios";
-import { Navigate } from "react-router-dom";
+import {AxiosError} from "axios";
+import {Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
 
@@ -26,7 +22,6 @@ const ActivateAccountForm = () => {
   const {
     auth: { email },
   } = useContext(AuthContext);
-  console.log(email?.toString());
   useEffect(() => {
     async function getData() {
       setApproved(true);

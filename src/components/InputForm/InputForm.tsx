@@ -1,6 +1,6 @@
 import InputProps from "./input.interface";
 import "./index.css";
-import React, {useEffect} from "react";
+import React from "react";
 
 const InputForm: React.FC<InputProps> = ({
                                              type,

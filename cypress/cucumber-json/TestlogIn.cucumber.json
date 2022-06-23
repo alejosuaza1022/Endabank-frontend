@@ -23,47 +23,48 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1409000000
+              "duration": 2464000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 12,
+            "line": 11,
             "name": "the user types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 350000000
+              "duration": 529000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 13,
+            "line": 12,
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 292000000
+              "duration": 497000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the user clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 288000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "the user clicks on login buttton",
-            "result": {
-              "status": "passed",
-              "duration": 106000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
             "name": "the user has to be allowed to see their profile, password management and Logout in the page",
             "result": {
-              "status": "passed",
-              "duration": 653000000
+              "status": "failed",
+              "duration": 5007000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#logoutSidebarElement`, but never found it.\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:65:32)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:12047:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\logIn.feature:11368:35)"
             }
           }
         ]
@@ -71,7 +72,7 @@
       {
         "id": "the-user-should-be-able-login-to-endabank;the-user-should-be-warned-when-the-email-format-is-incorrect",
         "keyword": "Scenario",
-        "line": 17,
+        "line": 16,
         "name": "The user should be warned when the email format is incorrect",
         "tags": [],
         "type": "scenario",
@@ -83,37 +84,37 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1274000000
+              "duration": 1473000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 18,
+            "line": 17,
             "name": "the user types in an email with an incorrect format",
             "result": {
               "status": "passed",
-              "duration": 334000000
+              "duration": 593000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 19,
+            "line": 18,
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 308000000
+              "duration": 422000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 20,
+            "line": 19,
             "name": "the user should see a highlight error message \"This field must be a valid email\"",
             "result": {
               "status": "passed",
-              "duration": 40000000
+              "duration": 205000000
             }
           }
         ]

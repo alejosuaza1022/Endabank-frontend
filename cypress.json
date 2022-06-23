@@ -1,4 +1,4 @@
 {
-    "testFiles": "**/*.{feature,features}",
-    "watchForFileChanges": false
-  }
+    "watchForFileChanges": false,
+    "testFiles": "**/*.{feature,features}"
+   }

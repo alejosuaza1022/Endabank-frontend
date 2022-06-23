@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import {createRoot} from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import "flowbite";
-import {BrowserRouter,Route,Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {AuthProvider} from "./contexts/AuthProvider";
 
 

@@ -1,6 +1,6 @@
 import ApproveUserProps from "./approveUserTable.interface";
-import React, { useEffect, useState } from "react";
-import { getAxios, putAxios } from "../../utils/axios";
+import React, {useState} from "react";
+import {putAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
 
 const SelectForm: React.FC<ApproveUserProps> = ({

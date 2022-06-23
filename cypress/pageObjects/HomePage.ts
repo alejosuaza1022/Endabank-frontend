@@ -6,9 +6,10 @@ export default class homePage extends BasePage{
     relativePath: string = this.relativePath +url.urlProfile;
 
     private MY_PROFILE_BUTTON: string = '#profileSidebarElement'
-    private PASSWORD_MANAGEMENT_SIDEBAR: string = '#pwdManagementSidebarElement'
-    private LOG_OUT_BUTTON: string = '#logoutSidebarElement'
+    private PASSWORD_MANAGEMENT_SIDEBAR: string = '#passwdManagementSidebarElement'
+    private LOG_OUT_BUTTON: string = '#logOutSidebarElement'
     private USER_MANAGEMENT_SIDEBAR: string = '#usersManagementSidebarElement'
+    private MERCHANT_APPROVAL_LOG_BUTTON: string = '#merchantApprovalLogSidebarElement';
 
     getProfileButton() {
         return cy.get(this.MY_PROFILE_BUTTON);
@@ -27,4 +28,7 @@ export default class homePage extends BasePage{
         return (cy.get(this.USER_MANAGEMENT_SIDEBAR));
     }
 
+    getMerchantApprovalLogButton() {
+        return cy.get(this.MERCHANT_APPROVAL_LOG_BUTTON);
+    }
 }

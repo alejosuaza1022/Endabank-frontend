@@ -1,14 +1,14 @@
-import { Input, Spinner, PopUpMessage} from "../../components/index";
+import {Input, PopUpMessage, Spinner} from "../../components/index";
 import FieldObject from "./resetPasswordObject.interface";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useContext, useState} from "react";
 import {putAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
 import strings from "../../constants/strings";
+import Strings from "../../constants/strings";
 import {AxiosError} from "axios";
 import AuthContext from "../../contexts/AuthProvider";
 import Cookies from "js-cookie";
-import Strings from "../../constants/strings";
 
 
 const FormResetPassword = () => {
@@ -59,8 +59,6 @@ const FormResetPassword = () => {
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     data.token = urlParams.get("token") ?? "";
-      console.log(data.token);
-      console.log("loadedData "+loadedData);
     try {
         const response = await putAxios(
             apiUrls.GET_USERS_RESET_PASSWORD_URL,
@@ -86,8 +84,6 @@ const FormResetPassword = () => {
 
   const onSubmit: SubmitHandler<FieldObject> = (data) => {
     setShowPopUpMessage(false);
-    console.log(data);
-    console.log(loadedData);
     setIsLoading(true);
     {token! ? changePassword(data):resetPassword(data)}
     setIsLoading(false);
