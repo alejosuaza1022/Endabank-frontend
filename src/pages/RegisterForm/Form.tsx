@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState} from "react";
+import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import {AxiosError} from "axios";
 import Cookies from "js-cookie";

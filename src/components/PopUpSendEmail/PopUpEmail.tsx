@@ -3,8 +3,8 @@ import {Input, PopUpMessage} from "../index";
 import apiUrls from "../../constants/apiUrls";
 import {getAxios} from "../../utils/axios";
 import Strings from "../../constants/strings";
-import {AxiosError} from "axios";
 import strings from "../../constants/strings";
+import {AxiosError} from "axios";
 import {useState} from "react";
 
 interface FieldObject {

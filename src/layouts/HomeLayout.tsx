@@ -1,8 +1,9 @@
 import AuthContext from "../contexts/AuthProvider";
-import { useContext, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
+import {useContext, useEffect} from "react";
+import {Link, Outlet} from "react-router-dom";
 import MainImage from "../components/MainImage/MainImage";
 import "./index.css";
+
 const LayoutHome = () => {
   const {
     auth: { token,currentUser },

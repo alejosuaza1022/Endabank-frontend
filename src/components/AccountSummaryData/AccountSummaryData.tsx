@@ -1,5 +1,5 @@
 import TransactionSummaryProps from "@components/AccountSummaryData/AccountSummaryTransactionsSummary.interface";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NumberFormat from "react-number-format";
 
 const SelectForm: React.FC<TransactionSummaryProps> = ({

@@ -1,24 +1,18 @@
 import apiUrls from "../../constants/apiUrls";
-import { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {getAxios, postAxios} from "../../utils/axios";
-import {
-    Input,
-    PopUpMessage,
-    Spinner,
-    GenericInput,
-} from "../../components/index";
+import {GenericInput, PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
-import axios, { AxiosError } from "axios";
+import Strings from "../../constants/strings";
+import axios, {AxiosError} from "axios";
 import {Link, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import NumberFormat from "react-number-format";
-import {SubmitHandler, useForm, Controller} from "react-hook-form";
-import Strings from "../../constants/strings";
+import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import GetIpDataProps from "@components/getIp/getIpData.interface";
 import TransactionObjectProps from "@pages/Transaction/transaction.interface";
-import React from "react";
 import TransactionPopUpInterface from "@pages/Transaction/TransactionPopUp/transactionPopUp.interface";
 import TransactionPopUp from "./TransactionPopUp/TransactionPopUp";
 
@@ -41,9 +35,6 @@ const Transaction= () => {
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
 
     const token = Cookies.get("token");
-    const {
-        auth : { email},
-    } = useContext(AuthContext);
     const openModal = () => {
         setShowModal(true);
     };
@@ -74,7 +65,7 @@ const Transaction= () => {
         try {
             setIsLoading(true);
             const responseDetails: AccountDetailsProps = await getAxios(
-                apiUrls.GET_ACCOUNT_DETAILS+email,
+                apiUrls.GET_ACCOUNT_DETAILS,
                 token
             );
             setDetails(responseDetails);
@@ -123,7 +114,7 @@ const Transaction= () => {
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
                     <span className="text-3xl">Transfer transaction</span>
                 </header>
-                <form onSubmit={handleSubmit(onSubmit)} id="submitTransaction">
+                <form onSubmit={handleSubmit(onSubmit)} id="transaction">
                             <div className="flex justify-between mb-4">
                                     <div className="flex-1 min-w-0 p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
                                         <div className="text-lg text-gray-900 dark:text-white">
