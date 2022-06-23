@@ -1,0 +1,483 @@
+[
+  {
+    "description": "              As an admin\n              I want to have a log to trace the approvals done by the admins\n              And a grid to see this traceability",
+    "keyword": "Feature",
+    "name": "The admin should be able to see merchant approval log section",
+    "line": 1,
+    "id": "the-admin-should-be-able-to-see-merchant-approval-log-section",
+    "tags": [],
+    "uri": "merchantApprovalLog.feature",
+    "elements": [
+      {
+        "id": "the-admin-should-be-able-to-see-merchant-approval-log-section;the-admin-should-be-allowed-to-see-the-merchant-approval-log-section",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "The admin should be allowed to see the merchant approval log section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the admin is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1944000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the admin types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 910000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the admin types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the admin clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 302000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "the admin clicks on merchant approval log button",
+            "result": {
+              "status": "passed",
+              "duration": 1671000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the admin is allowed to see the merchant approval log section",
+            "result": {
+              "status": "passed",
+              "duration": 661000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-admin-should-be-able-to-see-merchant-approval-log-section;the-admin-should-be-allowed-to-filter-logs-using-merchant-filter-in-merchant-approval-log-section",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "The admin should be allowed to filter logs using merchant filter in merchant approval log section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the admin is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1725000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the admin types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the admin types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 479000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the admin clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the admin clicks on merchant approval log button",
+            "result": {
+              "status": "passed",
+              "duration": 744000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "the admin is allowed to see the merchant approval log section",
+            "result": {
+              "status": "passed",
+              "duration": 439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "the admin uses the merchant filter",
+            "result": {
+              "status": "passed",
+              "duration": 326000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "the admin clicks on submit filter button",
+            "result": {
+              "status": "passed",
+              "duration": 426000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "the grid will show the information according to the merchant filter",
+            "result": {
+              "status": "passed",
+              "duration": 330000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-admin-should-be-able-to-see-merchant-approval-log-section;the-admin-should-be-allowed-to-filter-logs-using-reviewing-user-in-merchant-approval-log-section",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "The admin should be allowed to filter logs using reviewing user in merchant approval log section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the admin is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1834000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the admin types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 784000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "the admin types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "the admin clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 206000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "the admin clicks on merchant approval log button",
+            "result": {
+              "status": "passed",
+              "duration": 811000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "the admin is allowed to see the merchant approval log section",
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "the admin uses the reviewing user filter",
+            "result": {
+              "status": "passed",
+              "duration": 409000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "the admin clicks on submit filter button",
+            "result": {
+              "status": "passed",
+              "duration": 358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "the grid will show the information according to the reviewing user filter",
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-admin-should-be-able-to-see-merchant-approval-log-section;the-admin-should-be-allowed-to-filter-logs-using-merchant-and-reviewing-user-in-merchant-approval-log-section",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "The admin should be allowed to filter logs using merchant and reviewing user in merchant approval log section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the admin is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1365000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "the admin types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 883000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "the admin types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 472000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "the admin clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 251000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "the admin clicks on merchant approval log button",
+            "result": {
+              "status": "passed",
+              "duration": 504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "the admin is allowed to see the merchant approval log section",
+            "result": {
+              "status": "passed",
+              "duration": 288000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "the admin uses the reviewing user filter and the merchant filter",
+            "result": {
+              "status": "passed",
+              "duration": 779000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "the admin clicks on submit filter button",
+            "result": {
+              "status": "passed",
+              "duration": 256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "the grid will show the information according to the merchant and reviewing user filters",
+            "result": {
+              "status": "passed",
+              "duration": 177000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "the-admin-should-be-able-to-see-merchant-approval-log-section;the-admin-should-not-be-allowed-to-filter-logs-using-wrong-data-in-merchant-approval-log-section",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "The admin should not be allowed to filter logs using wrong data in merchant approval log section",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the admin is on the endabank login page",
+            "result": {
+              "status": "passed",
+              "duration": 1321000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "the admin types in a valid email",
+            "result": {
+              "status": "passed",
+              "duration": 770000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "the admin types in a password",
+            "result": {
+              "status": "passed",
+              "duration": 468000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "the admin clicks on login buttton",
+            "result": {
+              "status": "passed",
+              "duration": 195000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "the admin clicks on merchant approval log button",
+            "result": {
+              "status": "passed",
+              "duration": 767000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "the admin is allowed to see the merchant approval log section",
+            "result": {
+              "status": "passed",
+              "duration": 243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 53,
+            "name": "the admin uses the merchant filter with wrong data",
+            "result": {
+              "status": "passed",
+              "duration": 332000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "the admin clicks on submit filter button",
+            "result": {
+              "status": "passed",
+              "duration": 220000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "the grid will show the information according to the criteria",
+            "result": {
+              "status": "passed",
+              "duration": 41000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

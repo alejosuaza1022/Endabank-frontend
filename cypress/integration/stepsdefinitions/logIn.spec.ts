@@ -31,11 +31,6 @@ And ("the user has to be allowed to see their profile, password management and L
 
 ///////////////////////
 
-
-
-
-//////////////////////
-
 Given('the user is on the endabank login page', () => {
     logInPage.visit()
     cy.wait(1000)
