@@ -90,9 +90,6 @@ const LogInForm = () => {
     const setShowModalFuntion = (value: boolean) => {
         setShowModal(value);
     };
-    useEffect(() => {
-        console.log(process.env)
-    }, []);
     const renderFormOrLoading = () => {
         return isLoading ? <Spinner/> : (
             <>
