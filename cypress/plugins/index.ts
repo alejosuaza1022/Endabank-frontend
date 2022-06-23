@@ -8,7 +8,7 @@ const path = require("path");
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
+module.exports = (on:any, config:any) => {
  const options = {
  ...browserify.defaultOptions,
  typescript: path.join(path.resolve("."), "node_modules/typescript"),
