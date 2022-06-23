@@ -151,7 +151,6 @@ const LogInForm = () => {
                                   isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
-
         </div>
     );
 };

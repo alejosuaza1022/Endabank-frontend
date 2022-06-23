@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "cy-open": "cypress open",
     "preview": "vite preview"
   },
   "dependencies": {
