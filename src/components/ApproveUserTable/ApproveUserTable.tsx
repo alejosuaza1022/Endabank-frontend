@@ -14,7 +14,6 @@ const SelectForm: React.FC<ApproveUserProps> = ({
   const [actualState, changeCheckState] = useState(approved);
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeCheckState(e.target.checked);
-    console.log(token);
     async function putData() {
       const response: Array<ApproveUserProps> = await putAxios(
         apiUrls.PUT_USERS_TO_APPROVE_URL + "/" + id,
