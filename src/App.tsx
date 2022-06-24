@@ -1,6 +1,5 @@
 import {
     AccountSummary,
-    ActivateAccountForm,
     FormResetPassword,
     Home,
     LogIn,
@@ -10,7 +9,8 @@ import {
     Transaction,
     Unauthorized,
     UserEmailVerification,
-    UserProfile
+    UserProfile,
+    UsersManagement
 } from "./pages/index";
 
 import "./App.css";
@@ -20,6 +20,7 @@ import MerchantLayout from "./layouts/MerchantLayout";
 import {RequireAuth} from "./components/index";
 import MerchantSite from "./pages/Merchant/MerchantSite/MerchantSite";
 import ShoppingCart from "./pages/Merchant/ShoppingCart/ShoppingCart";
+
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
                         <Route path="account-summary" element={<AccountSummary/>}/>
                         <Route path="transaction" element={<Transaction/>}/>
                         <Route element={<RequireAuth allowedRoles={['ACCOUNT:VALIDATE']}/>}>
-                            <Route path="activate-account" element={<ActivateAccountForm/>}/>
+                            <Route path="users-management" element={<UsersManagement />}/>
                         </Route>
                         <Route path="home/reset-password" element={<FormResetPassword/>}/>
                         <Route path="became-merchant" element={<MerchantInfo/>}/>
