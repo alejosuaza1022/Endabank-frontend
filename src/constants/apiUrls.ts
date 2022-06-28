@@ -3,8 +3,10 @@ class apiUrls {
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly BASE_ACCOUNT_URL =`${this.BASE_URL}/accounts`;
   static readonly BASE_MERCHANTS_URL =`${this.BASE_URL}/merchants`;
+  static readonly MERCHANT_TRANSACTION =`${this.BASE_MERCHANTS_URL}/pay`;
   static readonly BASE_TRANSACTIONS_URL = `${this.BASE_URL}/transactions`;
   static readonly POST_SEND_MONEY= `${this.BASE_TRANSACTIONS_URL}/send-money`;
+  static readonly POST_MERCHANT_TRANSACTION= `${this.BASE_URL}/send-money`;
   static readonly POST_CREATE_MERCHANT_REQUEST =`${this.BASE_MERCHANTS_URL}/create-request`;
   static readonly GET_MERCHANT_APPROVAL_LOGS =`${this.BASE_MERCHANTS_URL}/filter`;
   static readonly GET_ACCOUNT_DETAILS=`${this.BASE_ACCOUNT_URL}/details/`;
