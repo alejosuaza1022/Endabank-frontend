@@ -1,0 +1,82 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Account Summary section",
+    "line": 1,
+    "id": "account-summary-section",
+    "tags": [],
+    "uri": "accountSummary.feature",
+    "elements": [
+      {
+        "id": "account-summary-section;the-users-should-see-the-account-summary-table-with-the-proper-columns-order",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "The Users should see the account summary table with the proper columns order",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is logged in Endabank",
+            "result": {
+              "status": "passed",
+              "duration": 4699000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user is on the Account summary section",
+            "result": {
+              "status": "passed",
+              "duration": 478000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Account Number"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Founds available"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Transactions"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the user should see the following information",
+            "result": {
+              "status": "passed",
+              "duration": 3065000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "a maximum of 10 transactions per page",
+            "result": {
+              "status": "passed",
+              "duration": 3115000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

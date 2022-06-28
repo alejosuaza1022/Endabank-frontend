@@ -10,6 +10,7 @@ export default class homePage extends BasePage{
     private LOG_OUT_BUTTON: string = '#logOutSidebarElement'
     private USER_MANAGEMENT_SIDEBAR: string = '#usersManagementSidebarElement'
     private TRANSACTION_ELEMENT: string = '#transactionsSidebarElement'
+    private ACCOUNT_SUMMARY_SIDEBAR: string = '#accountSummarySidebarElement'
 
     getProfileButton() {
         return cy.get(this.MY_PROFILE_BUTTON);
@@ -30,6 +31,9 @@ export default class homePage extends BasePage{
 
     getTransactionElement(){
         return (cy.get(this.TRANSACTION_ELEMENT))
+    }
+    getAccountSummary(){
+        return (cy.get(this.ACCOUNT_SUMMARY_SIDEBAR))
     }
 
 }

@@ -23,7 +23,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1380000000
+              "duration": 1794000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user types in a valid email",
             "result": {
               "status": "passed",
-              "duration": 334000000
+              "duration": 425000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 267000000
+              "duration": 303000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the user clicks on login buttton",
             "result": {
               "status": "passed",
-              "duration": 99000000
+              "duration": 128000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "the user has to be allowed to see their profile, password management and Logout in the page",
             "result": {
               "status": "passed",
-              "duration": 5673000000
+              "duration": 5865000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "the user is on the endabank login page",
             "result": {
               "status": "passed",
-              "duration": 1228000000
+              "duration": 1300000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the user types in an email with an incorrect format",
             "result": {
               "status": "passed",
-              "duration": 321000000
+              "duration": 331000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the user types in a password",
             "result": {
               "status": "passed",
-              "duration": 273000000
+              "duration": 270000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "the user should see a highlight error message \"This field must be a valid email\"",
             "result": {
               "status": "passed",
-              "duration": 5037000000
+              "duration": 5044000000
             }
           }
         ]
