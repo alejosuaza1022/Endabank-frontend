@@ -1,6 +1,6 @@
 import PayTransactionPopUpInterface from "./payTransactionPopUp.interface";
 import NumberFormat from "react-number-format";
-import React from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 
 const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactionPopUpInterface }) => {
@@ -8,6 +8,9 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
     const stateType:string =data.stateType;
     const {setShowModal} = props;
     setShowModal(true);
+    useEffect(() => {
+        console.log(data.merchant)
+    }, []);
     return (
         <>
         { stateType == "AUTHORISED" ? (
@@ -18,7 +21,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                         className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none border-2 border-orange-500 sm:p-8 focus:outline-none">
                         <div className="text-xl text-gray-900 dark:text-white text-center">
                             <div className="font-bold md:py-4">
-                                {stateType} + TRANSACTION
+                                {stateType} TRANSACTION
                                 <div className="text-lg">
                                     <NumberFormat
                                         value={data.createAt}
@@ -41,17 +44,13 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                     value={data.bankAccountIssuer}
                                 />
                             </div>
-                            <div className="text-base text-gray-900 dark:text-white">
+                            <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Destiny Merchant
-                                <NumberFormat
-                                    id="bankAccountIssuer"
-                                    displayType={"text"}
-                                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
-                                    format="####-####-####-####"
-                                    value={data.merchant}
-                                />
+                                <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                    {data.merchant}
+                                </div>
                             </div>
-                            <div className="text-base text-gray-900 dark:text-white">
+                            <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Amount
                                 <NumberFormat
                                     id="bankAccountIssuer"
@@ -61,15 +60,11 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                     value={data.amount}
                                 />
                             </div>
-                            <div className="text-base text-gray-900 dark:text-white">
+                            <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Purchase description
-                                <NumberFormat
-                                    id="bankAccountIssuer"
-                                    displayType={"text"}
-                                    prefix={'$'}
-                                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
-                                    value={data.description}
-                                />
+                                <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                    {data.description}
+                                </div>
                             </div>
                             <div
                                 className="flex-1 p-4 items-center justify-center border-t border-solid border-blueGray-100 rounded-b">
@@ -85,7 +80,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                     </div>
                                 </Link>
 
-                                <Link id="profileSidebarElement" to={"/merchant-site"}
+                                <Link id="linkCloseTransaction" to={"/merchant-site"}
                                       className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                     <p>
                                         <button
@@ -113,7 +108,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                 className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none border-2 border-orange-500 sm:p-8 focus:outline-none">
                                 <div className="text-xl text-gray-900 dark:text-white text-center">
                                     <div className="font-bold md:py-4">
-                                        {stateType} + TRANSACTION
+                                        {stateType} TRANSACTION
                                         <div className="text-lg">
                                             <NumberFormat
                                                 value={data.createAt}
@@ -122,8 +117,8 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                                 format={'####/##/## ##:##:##'}
                                             />
                                         </div>
-                                        <div className="text-sm text-gray-900 dark:text-white text-center">
-                                            {data.stateDescription}
+                                        <div className="text-lg text-gray-900 dark:text-white text-center mt-5 font-light">
+                                            Reason: {data.stateDescription}
                                         </div>
                                     </div>
                                     <div
@@ -139,7 +134,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                             </div>
                                         </Link>
 
-                                        <Link id="profileSidebarElement" to={"/merchant-site"}
+                                        <Link id="linkCloseTransaction" to={"/merchant-site"}
                                               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <p>
                                                 <button

@@ -13,7 +13,8 @@ import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import GetIpDataProps from "@components/getIp/getIpData.interface";
 import TransactionObjectProps from "@pages/Transaction/transaction.interface";
 import TransactionPopUpInterface from "@pages/Transaction/TransactionPopUp/transactionPopUp.interface";
-import TransactionPopUp from "../Transaction/TransactionPopUp/TransactionPopUp";
+import PayTransactionPopUp from "../PayTransactionPopUp/PayTransactionPopUp";
+import PayTransactionPopUpInterface from "@pages/PayTransactionPopUp/payTransactionPopUp.interface";
 
 const MerchantTransaction= () => {
     const {
@@ -30,13 +31,13 @@ const MerchantTransaction= () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
-    const [response, setResponse] = useState<TransactionPopUpInterface>();
+    const [response, setResponse] = useState<PayTransactionPopUpInterface>();
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
 
     const token = Cookies.get("token");
     const merchantKey="1H4VDJK5645HG2KLHY754GHF3";
     const apiId="245HKG654KJG327";
-    const identifier="1036664359";
+    const identifier="1006504371";
     const amount=1000;
     const description="test";
 
@@ -47,12 +48,13 @@ const MerchantTransaction= () => {
         setShowModal(value);
     };
     const dataDefault={
-            merchantKey: "",
-            apiId: "",
-            identifier: "",
-            amount: 0,
-            description: "",
-            address: "",
+        amount: 0,
+        stateType: "",
+        bankAccountIssuer: "",
+        merchant: "",
+        createAt: "",
+        stateDescription:"",
+        description: "",
     }
     function catchError(err: any) {
         const error = err as AxiosError;
@@ -92,11 +94,11 @@ const MerchantTransaction= () => {
         getDetails();
         getIP();
     }, []);
-    const onSubmit: SubmitHandler<TransactionObjectProps> = async (data) => {
+    const onSubmit: SubmitHandler<any> = async () => {
         setShowPopUpMessage(false);
         try {
             setIsLoading(true);
-            const response:TransactionPopUpInterface = await postAxios(
+            const response:PayTransactionPopUpInterface = await postAxios(
                 apiUrls.MERCHANT_TRANSACTION,
                 {merchantKey: merchantKey,
                     apiId: apiId,
@@ -120,13 +122,16 @@ const MerchantTransaction= () => {
         ) : (
             <div >
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
-                    <span className="text-3xl">Transfer transaction</span>
+                    <span className="text-3xl">Transaction</span>
                 </header>
                 <form onSubmit={handleSubmit(onSubmit)} id="transaction">
-                            <div className="flex justify-between mb-4">
-                                    <div className="flex-1 min-w-0 p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                                        <div className="text-lg text-gray-900 dark:text-white">
+                        <div className="flex justify-between mb-4">
+                            <div className="flex-1 min-w-0 p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
+                                <div className="flex justify-between">
+                                        <div className="text-lg text-gray-900 dark:text-white w-52">
+                                            <div className="font-bold">
                                             Source Account
+                                            </div>
                                             <NumberFormat
                                                     thousandSeparator={true}
                                                     id="bankAccountNumberIssuer"
@@ -136,24 +141,29 @@ const MerchantTransaction= () => {
                                                     value={details?.accountNumber}
                                                 />
                                         </div>
-                                        <div className="text-lg text-gray-900 dark:text-white">
+                                        <div className="text-lg text-gray-900 dark:text-white w-32">
+                                            <div className="font-bold">
                                             Balance
+                                            </div>
                                             <NumberFormat
                                                 thousandSeparator={true}
                                                 id={"amount"}
                                                 displayType={"text"}
-                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-right"
+                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
                                                 prefix={'$'}
                                                 value={details?.balance}
                                             />
                                         </div>
-                                        <div>
+                                    </div>
+                                        <div className="text-lg text-gray-900 dark:text-white w-full mt-2">
+                                            <div className="font-bold">
                                             Amount
+                                            </div>
                                             <NumberFormat
                                                 thousandSeparator={true}
                                                 id={"amount"}
                                                 displayType={"text"}
-                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-right"
+                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
                                                 placeholder="$0"
                                                 allowLeadingZeros={false}
                                                 allowNegative={false}
@@ -161,14 +171,18 @@ const MerchantTransaction= () => {
                                                 value={amount}
                                             />
                                         </div>
-                                        <div>
+                                        <div className="text-lg text-gray-900 dark:text-white mt-2">
+                                            <div className="font-bold">
                                             Description
-                                            <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                            </div>
+                                            <div className="block py-2.5 px-0 w-96 text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
                                                 {description}
                                             </div>
                                         </div>
-                                        <div>
+                                        <div className="text-lg text-gray-900 dark:text-white w-full mt-2">
+                                            <div className="font-bold">
                                             Address
+                                            </div>
                                             <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
                                                 {ip}
                                             </div>
@@ -200,8 +214,7 @@ const MerchantTransaction= () => {
     };
     return (
         <>
-            {//showModal && (<TransactionPopUp setShowModal={setShowModalFunction} data={response??dataDefault}/>)}
-            }
+            {showModal && (<PayTransactionPopUp setShowModal={setShowModalFunction} data={response??dataDefault}/>)}
             {token?.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
