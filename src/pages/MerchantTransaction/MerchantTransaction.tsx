@@ -9,10 +9,9 @@ import {Link, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import NumberFormat from "react-number-format";
-import {Controller, SubmitHandler, useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 import GetIpDataProps from "@components/getIp/getIpData.interface";
 import TransactionObjectProps from "@pages/Transaction/transaction.interface";
-import TransactionPopUpInterface from "@pages/Transaction/TransactionPopUp/transactionPopUp.interface";
 import PayTransactionPopUp from "../PayTransactionPopUp/PayTransactionPopUp";
 import PayTransactionPopUpInterface from "@pages/PayTransactionPopUp/payTransactionPopUp.interface";
 

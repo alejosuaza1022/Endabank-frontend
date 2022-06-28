@@ -1,4 +1,3 @@
-
 import MerchantLogProps from "./merchantLogProps.interface";
 
 interface MerchantLogPaginationDataProps {

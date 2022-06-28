@@ -6,12 +6,12 @@ import {
     LogIn,
     MerchantApprovalLog,
     MerchantInfo,
+    MerchantTransaction,
     RegisterForm,
     Transaction,
     Unauthorized,
     UserEmailVerification,
-    UserProfile,
-    MerchantTransaction
+    UserProfile
 } from "./pages/index";
 
 import "./App.css";

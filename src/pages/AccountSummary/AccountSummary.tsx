@@ -1,12 +1,11 @@
 import apiUrls from "../../constants/apiUrls";
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {getAxios} from "../../utils/axios";
 import {AccountSummaryData, PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
 import {AxiosError} from "axios";
 import {Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
-import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import PaginationDataProps from "@components/AccountSummaryData/AccountSummaryPaginationData.interface";
 import NumberFormat from "react-number-format";

@@ -1,5 +1,5 @@
 import apiUrls from "../../constants/apiUrls";
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {getAxios, postAxios} from "../../utils/axios";
 import {GenericInput, PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
@@ -7,7 +7,6 @@ import Strings from "../../constants/strings";
 import axios, {AxiosError} from "axios";
 import {Link, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
-import AuthContext from "../../contexts/AuthProvider";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import NumberFormat from "react-number-format";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";

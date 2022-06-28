@@ -4,8 +4,7 @@ import {Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import {postAxios} from "../../utils/axios";
 import apiUrls from "../../constants/apiUrls";
-import MerchantLogPaginationDataProps
-    from "./LogTable/merchantLogPaginationData.interfaceProps";
+import MerchantLogPaginationDataProps from "./LogTable/merchantLogPaginationData.interfaceProps";
 import ReactPaginate from "react-paginate";
 import LogTable from "./LogTable";
 import DatePicker from "react-datepicker"
