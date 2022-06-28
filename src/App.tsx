@@ -10,7 +10,8 @@ import {
     Transaction,
     Unauthorized,
     UserEmailVerification,
-    UserProfile
+    UserProfile,
+    MerchantTransaction
 } from "./pages/index";
 
 import "./App.css";
@@ -44,6 +45,7 @@ function App() {
                 {/*private routes*/}
                 <Route element={<RequireAuth allowedRoles={['ROLE_USER', 'ROLE_ADMIN']}/>}>
                     <Route path="/" element={<Home/>}>
+                        <Route path="merchant-transaction" element={<MerchantTransaction/>}/>
                         <Route path="profile" element={<UserProfile/>}/>
                         <Route path="account-summary" element={<AccountSummary/>}/>
                         <Route path="transaction" element={<Transaction/>}/>
