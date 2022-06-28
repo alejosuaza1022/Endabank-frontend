@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => {
     const [data, setData] = useState<PopUpPaymentData>(
         {
-            userId: "",
+            identifier: "",
             apiId: "245HKG654KJG327",
             merchantKey: "1H4VDJK5645HG2KLHY754GHF3",
             amount: amount,
@@ -14,7 +14,7 @@ const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => 
             address: "192.198.100.1"
         })
     const setUserId = (value: string) => {
-        setData({...data, userId: value})
+        setData({...data, identifier: value})
     }
     const setInfoToPay = () => {
         const dataString = JSON.stringify(data);
@@ -33,7 +33,7 @@ const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => 
                         Please enter your ID
                         <div className="text-lg pb-4 ">
                             <input
-                                value={data.userId}
+                                value={data.identifier}
                                 onChange={(event => {
                                     setUserId(event.target.value)
                                 })}

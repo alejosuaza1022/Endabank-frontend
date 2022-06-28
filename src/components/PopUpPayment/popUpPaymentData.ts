@@ -1,5 +1,5 @@
 interface PopUpPaymentData {
-    userId: string;
+    identifier: string;
     apiId:string;
     merchantKey:string;
     amount:number;

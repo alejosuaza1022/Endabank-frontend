@@ -14,6 +14,7 @@ import GetIpDataProps from "@components/getIp/getIpData.interface";
 import TransactionObjectProps from "@pages/Transaction/transaction.interface";
 import PayTransactionPopUp from "../PayTransactionPopUp/PayTransactionPopUp";
 import PayTransactionPopUpInterface from "@pages/PayTransactionPopUp/payTransactionPopUp.interface";
+import PopUpPaymentData from "@components/PopUpPayment/popUpPaymentData";
 
 const MerchantTransaction= () => {
     const {
@@ -34,11 +35,8 @@ const MerchantTransaction= () => {
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
 
     const token = Cookies.get("token");
-    const merchantKey="1H4VDJK5645HG2KLHY754GHF3";
-    const apiId="245HKG654KJG327";
-    const identifier="1006504371";
-    const amount=1000;
-    const description="test";
+    const dataReaded:PopUpPaymentData = JSON.parse(Cookies.get("dataMerchant") ?? "{}")
+    const {merchantKey, apiId, identifier, amount, description} = dataReaded
 
     const openModal = () => {
         setShowModal(true);
