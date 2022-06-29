@@ -1,5 +1,5 @@
 class apiUrls {
-  static readonly BASE_URL = "http://localhost:8080/api/v1";
+  static readonly BASE_URL = process.env.BACK_URL;
   static readonly GET_USERS_TO_APPROVE_URL = `${this.BASE_URL}/users`;
   static readonly BASE_ACCOUNT_URL =`${this.BASE_URL}/accounts`;
   static readonly BASE_MERCHANTS_URL =`${this.BASE_URL}/merchants`;
