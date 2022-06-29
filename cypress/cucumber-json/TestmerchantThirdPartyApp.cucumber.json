@@ -1,0 +1,143 @@
+[
+  {
+    "description": "              As a Merchant\n              I want to mock the website\n              And let the customer buy something",
+    "keyword": "Feature",
+    "name": "Mock merchant website in order to a customer can buy something on a merchant website",
+    "line": 1,
+    "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website",
+    "tags": [],
+    "uri": "merchantThirdPartyApp.feature",
+    "elements": [
+      {
+        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-customer-should-be-allowed-to-add-products-to-buy",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "The customer should be allowed to add products to buy",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the products are shown on the merchant website",
+            "result": {
+              "status": "passed",
+              "duration": 1744000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the customer want to select one or many products",
+            "result": {
+              "status": "passed",
+              "duration": 1016000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the products will be added to the shopping car",
+            "result": {
+              "status": "passed",
+              "duration": 267000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "change the value of the total amount",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-admin-should-be-allowed-to-remove-products-to-buy",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "The admin should be allowed to remove products to buy",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the products are shown on the merchant website",
+            "result": {
+              "status": "passed",
+              "duration": 1432000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the customer want to select some products",
+            "result": {
+              "status": "passed",
+              "duration": 852000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the products will be displayed at the shopping car",
+            "result": {
+              "status": "passed",
+              "duration": 287000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "change the value of the amount",
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the customer want to unselect one or many products",
+            "result": {
+              "status": "passed",
+              "duration": 471000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the products will be removed from the shopping car",
+            "result": {
+              "status": "passed",
+              "duration": 27000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "change the value of the total",
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

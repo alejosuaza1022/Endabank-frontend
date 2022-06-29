@@ -1,5 +1,6 @@
 {
     "baseUrl": "http://medellin-med.uc.r.appspot.com",
+    "baseUrlMerchant": "http://medellin-med.uc.r.appspot.com/merchant-site",
     "urlLogin": "/log-in",
     "wait": 3000,
     "urlProfile": "/profile"
