@@ -3,6 +3,7 @@ import {
     FormResetPassword,
     Home,
     LogIn,
+    LogInFromMerchant,
     MerchantApprovalLog,
     MerchantInfo,
     MerchantTransaction,
@@ -38,6 +39,7 @@ function App() {
 
                 {/*public routes*/}
                 <Route path="log-in" element={<LogIn/>}/>
+                <Route path="merchant/log-in" element={<LogInFromMerchant/>}/>
                 <Route path="sign-up" element={<RegisterForm/>}/>
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
