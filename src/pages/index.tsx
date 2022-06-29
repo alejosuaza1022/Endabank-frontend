@@ -9,6 +9,7 @@ export { default as Unauthorized} from "../pages/Unauthorized/Unauthorized"
 export  {default as  UserEmailVerification } from "../pages/UserEmailVerification/UserEmailVerification"
 export { default as MerchantInfo} from "../pages/MerchantInfo/MerchantInfo"
 export {default as AccountSummary} from "../pages/AccountSummary/AccountSummary"
+export {default as MerchantTransaction} from "../pages/MerchantTransaction/MerchantTransaction";
 export {default as Transaction} from "../pages/Transaction/Transaction"
 export {default as MerchantApprovalLog} from "../pages/MerchantApprovalLog/MerchantApprovalLog"
 export {default as UsersManagement} from "../pages/UsersManagement/UsersManagement"
