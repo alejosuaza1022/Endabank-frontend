@@ -2,12 +2,18 @@ import PayTransactionPopUpInterface from "./payTransactionPopUp.interface";
 import NumberFormat from "react-number-format";
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
+import Cookies from "js-cookie";
 
 const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactionPopUpInterface }) => {
     const {data} = props;
     const stateType:string =data.stateType;
     const {setShowModal} = props;
     setShowModal(true);
+
+    const removeCookie = () => {
+        Cookies.remove('token')
+    }
+
     useEffect(() => {
         console.log(data.merchant)
     }, []);
@@ -141,6 +147,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                                     className="text-white color-endabank w-96 focus:ring-4 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center "
                                                     type="button"
                                                     id="closePopUp"
+                                                    onClick={() => removeCookie()}
                                                 >
                                                     Back to merchant
                                                 </button>
