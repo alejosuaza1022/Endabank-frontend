@@ -41,12 +41,12 @@ function App() {
                 <Route path="sign-up" element={<RegisterForm/>}/>
                 <Route path="unauthorized" element={<Unauthorized/>}/>
                 <Route path="reset-password" element={<FormResetPassword/>}/>
+                <Route path="merchant-transaction" element={<MerchantTransaction/>}/>
 
                 <Route path="verify-email" element={<UserEmailVerification email={""}/>}/>
                 {/*private routes*/}
                 <Route element={<RequireAuth allowedRoles={['ROLE_USER', 'ROLE_ADMIN']}/>}>
                     <Route path="/" element={<Home/>}>
-                        <Route path="merchant-transaction" element={<MerchantTransaction/>}/>
                         <Route path="profile" element={<UserProfile/>}/>
                         <Route path="account-summary" element={<AccountSummary/>}/>
                         <Route path="transaction" element={<Transaction/>}/>

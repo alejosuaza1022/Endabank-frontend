@@ -117,7 +117,8 @@ const MerchantTransaction= () => {
         return isLoading ? (
             <Spinner />
         ) : (
-            <div >
+            <div className="flex h-screen justify-center">
+            <div className="flex-raw w-auto justify-center">
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
                     <span className="text-3xl">Transaction</span>
                 </header>
@@ -152,7 +153,7 @@ const MerchantTransaction= () => {
                                             />
                                         </div>
                                     </div>
-                                        <div className="text-lg text-gray-900 dark:text-white w-full mt-2">
+                                        <div className="text-lg text-gray-900 dark:text-white w-auto mt-2">
                                             <div className="font-bold">
                                             Amount
                                             </div>
@@ -160,7 +161,7 @@ const MerchantTransaction= () => {
                                                 thousandSeparator={true}
                                                 id={"amount"}
                                                 displayType={"text"}
-                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
+                                                className="block py-2.5 px-0 w-auto text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
                                                 placeholder="$0"
                                                 allowLeadingZeros={false}
                                                 allowNegative={false}
@@ -176,11 +177,11 @@ const MerchantTransaction= () => {
                                                 {description}
                                             </div>
                                         </div>
-                                        <div className="text-lg text-gray-900 dark:text-white w-full mt-2">
+                                        <div className="text-lg text-gray-900 dark:text-white w-auto mt-2">
                                             <div className="font-bold">
                                             Address
                                             </div>
-                                            <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                            <div className="block py-2.5 px-0 w-auto text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
                                                 {ip}
                                             </div>
                                         </div>
@@ -206,6 +207,7 @@ const MerchantTransaction= () => {
                     </button>
                             </div>
                 </form>
+            </div>
             </div>
         );
     };
