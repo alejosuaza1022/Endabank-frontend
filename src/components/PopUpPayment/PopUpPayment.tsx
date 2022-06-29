@@ -2,8 +2,11 @@ import React, {useState} from "react";
 import PopUpPaymentData from "./popUpPaymentData";
 import PopUpPaymentProps from "./popUpPaymentProps";
 import Cookies from "js-cookie";
+import {useNavigate} from "react-router-dom";
 
 const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => {
+
+    const navigate = useNavigate();
     const [data, setData] = useState<PopUpPaymentData>(
         {
             identifier: "",
@@ -23,6 +26,12 @@ const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => 
         console.log(dataReaded)
 
     }
+
+    const goToMerchantTransaction = () => {
+        setInfoToPay()
+        navigate("/merchant/log-in")
+    }
+
     return (<div
         className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 sm:p-2 bg-gray-900 bg-opacity-80 rounded-lg">
         <div className="relative w-auto my-6 mx-auto max-w-3x2">
@@ -51,7 +60,7 @@ const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => 
                             className="text-black border-2 border-gray-900 bg-white w-96 focus:ring-4 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center mb-4"
                             type="button"
                             id="closePopUp"
-                            onClick={() => setInfoToPay()}
+                            onClick={() => goToMerchantTransaction()}
                         >
                             Pay With EndaBank
                         </button>
