@@ -9,6 +9,8 @@ class apiUrls {
   static readonly POST_MERCHANT_TRANSACTION= `${this.BASE_URL}/send-money`;
   static readonly POST_CREATE_MERCHANT_REQUEST =`${this.BASE_MERCHANTS_URL}/create-request`;
   static readonly GET_MERCHANT_APPROVAL_LOGS =`${this.BASE_MERCHANTS_URL}/filter`;
+  static readonly GET_MERCHANT_REQUESTS =`${this.BASE_MERCHANTS_URL}/requests`;
+  static readonly UPDATE_MERCHANT_REQUEST =`${this.BASE_MERCHANTS_URL}/update-request`;
   static readonly GET_ACCOUNT_DETAILS=`${this.BASE_ACCOUNT_URL}/details/`;
   static readonly GET_ACCOUNT_SUMMARY=`${this.BASE_ACCOUNT_URL}/summary/`;
   static readonly GET_USER_DETAILS = `${this.BASE_URL}/users/details`;

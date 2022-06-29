@@ -55,9 +55,9 @@ const ActivateAccountForm = () => {
     ) : (
       <div className="w-full">
         {approved ? (
-          <div className="p-4  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-            <header className="p-4 bg-white justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
-              <span className="text-xl">User Approval</span>
+          <div className="p-4  item-center">
+            <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
+              <span className="text-3xl">User Approval</span>
             </header>
 
             <div className="flex w-full justify-center mt-10">
