@@ -21,7 +21,7 @@ const PopUpPayment: React.FC<PopUpPaymentProps> = ({setShowPayment, amount}) => 
     }
     const setInfoToPay = () => {
         const dataString = JSON.stringify(data);
-        Cookies.set("dataMerchant", dataString, {secure: true})
+        Cookies.set("dataMerchant", dataString )
         const dataReaded:PopUpPaymentData = JSON.parse(Cookies.get("dataMerchant") ?? "{}")
         console.log(dataReaded)
 
