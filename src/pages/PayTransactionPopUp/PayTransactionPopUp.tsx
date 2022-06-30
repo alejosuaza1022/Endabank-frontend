@@ -153,7 +153,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                         </Link>
 
                                         <Link id="linkCloseTransaction" to={"/merchant-site"}
-                                              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                              className="justify-center flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <p>
                                                 <button
                                                     className="justify-center text-white color-endabank w-96 focus:ring-4 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center "
