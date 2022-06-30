@@ -23,7 +23,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 5222000000
+              "duration": 2093000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 3595000000
+              "duration": 3155000000
             }
           },
           {
@@ -42,9 +42,8 @@
             "line": 10,
             "name": "the user toggles to 'Deactivate' an account under review",
             "result": {
-              "status": "failed",
-              "duration": 59000000,
-              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:99:8)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11745:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11066:35)\nFrom previous event:\n    at Context.thenFn (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160452:63)\n    at Context.then (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160904:21)\n    at Context.<anonymous> (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178437:19)\n    at http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177222:15\nFrom previous event:\n    at CommandQueue.runCommand (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177201:17)\n    at next (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177355:19)\n    at http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177384:16"
+              "status": "passed",
+              "duration": 99000000
             }
           }
         ]
@@ -64,7 +63,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 2513000000
+              "duration": 1190000000
             }
           },
           {
@@ -74,7 +73,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 3243000000
+              "duration": 3295000000
             }
           },
           {
@@ -83,8 +82,8 @@
             "line": 10,
             "name": "the user toggles to 'Activate' an account under review",
             "result": {
-              "status": "failed",
-              "error_message": "TypeError: cy.verifyStatus is not a function\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:99:8)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11745:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11066:35)\nFrom previous event:\n    at Context.thenFn (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160452:63)\n    at Context.then (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:160904:21)\n    at Context.<anonymous> (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:178437:19)\n    at http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177222:15\nFrom previous event:\n    at CommandQueue.runCommand (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177201:17)\n    at next (http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177355:19)\n    at http://medellin-med.uc.r.appspot.com/__cypress/runner/cypress_runner.js:177384:16"
+              "status": "passed",
+              "duration": 110000000
             }
           }
         ]
@@ -104,7 +103,7 @@
             "name": "the user is logged in as an 'Admin' user",
             "result": {
               "status": "passed",
-              "duration": 1781000000
+              "duration": 1216000000
             }
           },
           {
@@ -114,7 +113,7 @@
             "name": "the user is on the Admin Panel section",
             "result": {
               "status": "passed",
-              "duration": 3279000000
+              "duration": 3165000000
             }
           },
           {
@@ -154,7 +153,7 @@
             "name": "the user should see the user table columns with the following order",
             "result": {
               "status": "passed",
-              "duration": 3464000000
+              "duration": 3219000000
             }
           }
         ]
@@ -174,7 +173,7 @@
             "name": "the user is logged in as an 'NormalUser' user",
             "result": {
               "status": "passed",
-              "duration": 1301000000
+              "duration": 1075000000
             }
           },
           {
@@ -184,17 +183,17 @@
             "name": "the user tries to enter in the approval section",
             "result": {
               "status": "passed",
-              "duration": 2020000000
+              "duration": 2012000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 34,
-            "name": "tries to enter trough the url 'http://medellin-med.uc.r.appspot.com/activate-account' its redirected to home",
+            "name": "tries to enter trough the url 'http://medellin-med.uc.r.appspot.com/users-management' its redirected to home",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: expected 'http://medellin-med.uc.r.appspot.com/activate-account' to equal 'http://medellin-med.uc.r.appspot.com/profile'\n    + expected - actual\n\n    -'http://medellin-med.uc.r.appspot.com/activate-account'\n    +'http://medellin-med.uc.r.appspot.com/profile'\n\n    at AdminPanelPage.verifySection (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:810:18)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:113:20)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11745:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\AdminAccountApproval.feature:11066:35)"
+              "status": "passed",
+              "duration": 2196000000
             }
           }
         ]

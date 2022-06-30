@@ -23,7 +23,7 @@
             "name": "the user has logged in",
             "result": {
               "status": "passed",
-              "duration": 94148000000
+              "duration": 66685000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user has entered the \"transfer transaction\" page",
             "result": {
               "status": "passed",
-              "duration": 1861000000
+              "duration": 1410000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user should be able to complete the form succesfully",
             "result": {
               "status": "passed",
-              "duration": 1197000000
+              "duration": 808000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "the user should see the transaction confirmation and summary",
             "result": {
               "status": "passed",
-              "duration": 437000000
+              "duration": 116000000
             }
           }
         ]

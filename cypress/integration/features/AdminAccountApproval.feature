@@ -35,4 +35,4 @@ Feature: Admin Accounts Approval
 
         Examples:
                   | userType   | url                                                   |
-                  | NormalUser | http://medellin-med.uc.r.appspot.com/activate-account |
+                  | NormalUser | http://medellin-med.uc.r.appspot.com/users-management |

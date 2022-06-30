@@ -23,7 +23,7 @@
             "name": "the user is on the Login page",
             "result": {
               "status": "passed",
-              "duration": 99067000000
+              "duration": 69137000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user tries to enter the registration form via the \"create an account\" link",
             "result": {
               "status": "passed",
-              "duration": 245000000
+              "duration": 114000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the user should be redirected to the Register page",
             "result": {
               "status": "passed",
-              "duration": 52000000
+              "duration": 10000000
             }
           }
         ]
@@ -63,7 +63,7 @@
             "name": "the user that has entered the registration form via the \"create an account\" link",
             "result": {
               "status": "passed",
-              "duration": 446000000
+              "duration": 276000000
             }
           },
           {
@@ -73,7 +73,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 225000000
+              "duration": 85000000
             }
           },
           {
@@ -83,7 +83,7 @@
             "name": "the user writes the requested information in each field",
             "result": {
               "status": "passed",
-              "duration": 2473000000
+              "duration": 2287000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the user clicks on the \"Submit\" button",
             "result": {
               "status": "passed",
-              "duration": 116000000
+              "duration": 122000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "the user should see a pop-up with the next information \"User registered\"",
             "result": {
               "status": "passed",
-              "duration": 4012000000
+              "duration": 4008000000
             }
           }
         ]
@@ -123,7 +123,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 647000000
+              "duration": 201000000
             }
           },
           {
@@ -133,7 +133,7 @@
             "name": "the user has typed wrong information in a field",
             "result": {
               "status": "passed",
-              "duration": 2318000000
+              "duration": 2236000000
             }
           },
           {
@@ -143,7 +143,7 @@
             "name": "an error message should be displayed",
             "result": {
               "status": "passed",
-              "duration": 58000000
+              "duration": 45000000
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "the user is correcting the information",
             "result": {
               "status": "passed",
-              "duration": 3041000000
+              "duration": 3027000000
             }
           },
           {
@@ -163,7 +163,7 @@
             "name": "the error message should disappear",
             "result": {
               "status": "passed",
-              "duration": 38000000
+              "duration": 43000000
             }
           }
         ]
@@ -183,7 +183,7 @@
             "name": "the admin user has logged in",
             "result": {
               "status": "passed",
-              "duration": 1261000000
+              "duration": 1437000000
             }
           },
           {
@@ -193,7 +193,7 @@
             "name": "the admin user enters to the \"Users management\" page",
             "result": {
               "status": "passed",
-              "duration": 4285000000
+              "duration": 4220000000
             }
           },
           {
@@ -203,7 +203,7 @@
             "name": "the new users are visible",
             "result": {
               "status": "passed",
-              "duration": 588000000
+              "duration": 492000000
             }
           },
           {
@@ -212,8 +212,8 @@
             "line": 30,
             "name": "the new users are not approved yet",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 4000ms: expected '<input#ToggleApproveUser6.sr-only>' not to be 'checked'\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\userRegistration.feature:710:35)\n    at Context.resolveAndRunStepDefinition (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\userRegistration.feature:11745:29)\n    at Context.eval (http://medellin-med.uc.r.appspot.com/__cypress/tests?p=cypress\\integration\\features\\userRegistration.feature:11066:35)"
+              "status": "passed",
+              "duration": 19000000
             }
           }
         ]
@@ -233,7 +233,7 @@
             "name": "the user is creating and confirming his password",
             "result": {
               "status": "passed",
-              "duration": 811000000
+              "duration": 380000000
             }
           },
           {
@@ -243,7 +243,7 @@
             "name": "the confirm password information does not match with password information",
             "result": {
               "status": "passed",
-              "duration": 676000000
+              "duration": 648000000
             }
           },
           {
@@ -253,7 +253,7 @@
             "name": "the field will be highlighted in red",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 15000000
             }
           },
           {
@@ -263,7 +263,7 @@
             "name": "a  message should be visible indicating \"Passwords do not match\"",
             "result": {
               "status": "passed",
-              "duration": 20000000
+              "duration": 9000000
             }
           }
         ]
@@ -283,7 +283,7 @@
             "name": "the user has not completed the mandatory fields",
             "result": {
               "status": "passed",
-              "duration": 890000000
+              "duration": 567000000
             }
           },
           {
@@ -293,7 +293,7 @@
             "name": "the user tries to submit the incomplete information",
             "result": {
               "status": "passed",
-              "duration": 110000000
+              "duration": 96000000
             }
           },
           {
@@ -303,7 +303,7 @@
             "name": "an error message should be visible",
             "result": {
               "status": "passed",
-              "duration": 24000000
+              "duration": 15000000
             }
           }
         ]
@@ -323,7 +323,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 241000000
+              "duration": 170000000
             }
           },
           {
@@ -333,7 +333,7 @@
             "name": "the user is typing information into the registration form",
             "result": {
               "status": "passed",
-              "duration": 2052000000
+              "duration": 1934000000
             }
           },
           {
@@ -343,7 +343,7 @@
             "name": "the user tries to register with an email that is already in use",
             "result": {
               "status": "passed",
-              "duration": 1076000000
+              "duration": 1002000000
             }
           },
           {
@@ -353,7 +353,7 @@
             "name": "the user should see the error message \"There is already a user registered with this email\"",
             "result": {
               "status": "passed",
-              "duration": 807000000
+              "duration": 727000000
             }
           }
         ]
@@ -373,7 +373,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 247000000
+              "duration": 186000000
             }
           },
           {
@@ -383,7 +383,7 @@
             "name": "the user is typing information into the registration form",
             "result": {
               "status": "passed",
-              "duration": 2130000000
+              "duration": 2223000000
             }
           },
           {
@@ -393,7 +393,7 @@
             "name": "the user tries to register with an identifier that is already in use",
             "result": {
               "status": "passed",
-              "duration": 943000000
+              "duration": 840000000
             }
           },
           {
@@ -403,7 +403,7 @@
             "name": "the user should see the error message \"There is already a user registered with this identifier\"",
             "result": {
               "status": "passed",
-              "duration": 763000000
+              "duration": 636000000
             }
           }
         ]
@@ -423,7 +423,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 259000000
+              "duration": 179000000
             }
           },
           {
@@ -433,7 +433,7 @@
             "name": "the user types a wrong \"jaime\" into the \"#identifier\"",
             "result": {
               "status": "passed",
-              "duration": 266000000
+              "duration": 259000000
             }
           },
           {
@@ -443,7 +443,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 146000000
+              "duration": 94000000
             }
           },
           {
@@ -453,7 +453,7 @@
             "name": "the error message \"This field must be just numbers with a length between 6 and 20\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 28000000
+              "duration": 13000000
             }
           },
           {
@@ -463,7 +463,7 @@
             "name": "the \"#identifier\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 10000000
             }
           }
         ]
@@ -483,7 +483,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 278000000
+              "duration": 160000000
             }
           },
           {
@@ -493,7 +493,7 @@
             "name": "the user types a wrong \"52\" into the \"#firstName\"",
             "result": {
               "status": "passed",
-              "duration": 274000000
+              "duration": 246000000
             }
           },
           {
@@ -503,7 +503,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 141000000
+              "duration": 100000000
             }
           },
           {
@@ -513,7 +513,7 @@
             "name": "the error message \"This field must be just letters with a length between 2 and 20\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 27000000
+              "duration": 14000000
             }
           },
           {
@@ -523,7 +523,7 @@
             "name": "the \"#firstName\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 12000000
             }
           }
         ]
@@ -543,7 +543,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 221000000
+              "duration": 178000000
             }
           },
           {
@@ -553,7 +553,7 @@
             "name": "the user types a wrong \"97\" into the \"#lastName\"",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 379000000
             }
           },
           {
@@ -563,7 +563,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 127000000
+              "duration": 118000000
             }
           },
           {
@@ -573,7 +573,7 @@
             "name": "the error message \"This field must be just letters with a length between 2 and 20\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 11000000
+              "duration": 13000000
             }
           },
           {
@@ -583,7 +583,7 @@
             "name": "the \"#lastName\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 8000000
             }
           }
         ]
@@ -603,7 +603,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 278000000
+              "duration": 289000000
             }
           },
           {
@@ -613,7 +613,7 @@
             "name": "the user types a wrong \"celular\" into the \"#phoneNumber\"",
             "result": {
               "status": "passed",
-              "duration": 313000000
+              "duration": 306000000
             }
           },
           {
@@ -623,7 +623,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 116000000
+              "duration": 105000000
             }
           },
           {
@@ -633,7 +633,7 @@
             "name": "the error message \"This field must be just numbers with a length between 10 and 20\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 15000000
             }
           },
           {
@@ -643,7 +643,7 @@
             "name": "the \"#phoneNumber\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 15000000
+              "duration": 10000000
             }
           }
         ]
@@ -663,7 +663,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 175000000
             }
           },
           {
@@ -673,7 +673,7 @@
             "name": "the user types a wrong \"asi.com\" into the \"#email\"",
             "result": {
               "status": "passed",
-              "duration": 288000000
+              "duration": 316000000
             }
           },
           {
@@ -683,7 +683,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 124000000
+              "duration": 100000000
             }
           },
           {
@@ -693,7 +693,7 @@
             "name": "the error message \"This field must be a valid email\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 15000000
+              "duration": 13000000
             }
           },
           {
@@ -703,7 +703,7 @@
             "name": "the \"#email\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 8000000
+              "duration": 7000000
             }
           }
         ]
@@ -723,7 +723,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 215000000
             }
           },
           {
@@ -733,7 +733,7 @@
             "name": "the user types a wrong \"25d\" into the \"#password\"",
             "result": {
               "status": "passed",
-              "duration": 250000000
+              "duration": 258000000
             }
           },
           {
@@ -743,7 +743,7 @@
             "name": "the user tries to move on the next field",
             "result": {
               "status": "passed",
-              "duration": 114000000
+              "duration": 102000000
             }
           },
           {
@@ -753,7 +753,7 @@
             "name": "the error message \"1 Capital, 1 lowercase, 1 number, 1 special character, 8-20 characters\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 10000000
             }
           },
           {
@@ -763,7 +763,7 @@
             "name": "the \"#password\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 13000000
             }
           }
         ]
@@ -783,7 +783,7 @@
             "name": "the user is on the Register page",
             "result": {
               "status": "passed",
-              "duration": 333000000
+              "duration": 190000000
             }
           },
           {
@@ -793,7 +793,7 @@
             "name": "the user types a wrong \"25e\" into the \"#rePassword\"",
             "result": {
               "status": "passed",
-              "duration": 253000000
+              "duration": 301000000
             }
           },
           {
@@ -813,7 +813,7 @@
             "name": "the error message \"Passwords do not match\"  should be displayed",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 12000000
             }
           },
           {
@@ -823,7 +823,7 @@
             "name": "the \"#rePassword\" field should be highlighted",
             "result": {
               "status": "passed",
-              "duration": 9000000
+              "duration": 16000000
             }
           }
         ]

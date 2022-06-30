@@ -22,7 +22,7 @@ And("the user is on the Admin Panel section", () => {
 });
 
 When("the user toggles to {string} an account under review", (status) => {
-  cy.verifyStatus(status);
+  cy.request(status);
 });
 
 Then("the user should see the user table columns with the following order", (table) => {
