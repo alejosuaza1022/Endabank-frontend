@@ -57,6 +57,16 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                 </div>
                             </div>
                             <div className="text-base text-gray-900 dark:text-white mt-2">
+                                Transaction ID
+                                <NumberFormat
+                                    id="bankAccountIssuer"
+                                    displayType={"text"}
+                                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
+                                    format="####-####-####-####"
+                                    value={data.id}
+                                />
+                            </div>
+                            <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Amount
                                 <NumberFormat
                                     id="bankAccountIssuer"
@@ -74,7 +84,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                             </div>
                             <div
                                 className="flex-1 p-4 items-center justify-center border-t border-solid border-blueGray-100 rounded-b">
-                                <Link id="profileSidebarElement" to={"/account-summary"}
+                                <Link id="profileSidebarElement" to={"/merchant-site"}
                                       className="flex items-center justify-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                     <div>
                                         <svg className="w-20 h-20 justify-center" fill="none" stroke="forestgreen"
@@ -126,10 +136,20 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                         <div className="text-lg text-gray-900 dark:text-white text-center mt-5 font-light">
                                             Reason: {data.stateDescription}
                                         </div>
+                                        <div className="text-base text-gray-900 dark:text-white mt-2">
+                                            Transaction ID
+                                            <NumberFormat
+                                                id="bankAccountIssuer"
+                                                displayType={"text"}
+                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
+                                                format="####-####-####-####"
+                                                value={data.id}
+                                            />
+                                        </div>
                                     </div>
                                     <div
                                         className="flex-1 p-4 items-center justify-center border-t border-solid border-blueGray-100 rounded-b">
-                                        <Link id="profileSidebarElement" to={"/account-summary"}
+                                        <Link id="profileSidebarElement" to={"/merchant-site"}
                                               className="flex items-center justify-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <div>
                                                 <svg className="w-20 h-20 justify-center" fill="none" stroke="red" viewBox="0 0 24 24"

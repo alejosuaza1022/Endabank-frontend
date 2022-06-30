@@ -6,5 +6,6 @@ interface PayTransactionPopUpInterface {
     createAt: string;
     stateDescription:string;
     description: string;
+    id: number;
 }
 export default PayTransactionPopUpInterface;
