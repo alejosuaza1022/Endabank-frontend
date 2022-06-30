@@ -1,7 +1,7 @@
 import apiUrls from "../../constants/apiUrls";
 import React, {useEffect, useState} from "react";
 import {getAxios, postAxios} from "../../utils/axios";
-import {GenericInput, PopUpMessage, Spinner,} from "../../components/index";
+import {PopUpMessage, Spinner,} from "../../components/index";
 import strings from "../../constants/strings";
 import Strings from "../../constants/strings";
 import axios, {AxiosError} from "axios";
@@ -9,13 +9,14 @@ import {Link, Navigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import AccountDetailsProps from "@components/AccountSummaryData/AccountSummaryDetails.interface";
 import NumberFormat from "react-number-format";
-import {Controller, SubmitHandler, useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
 import GetIpDataProps from "@components/getIp/getIpData.interface";
 import TransactionObjectProps from "@pages/Transaction/transaction.interface";
-import TransactionPopUpInterface from "@pages/Transaction/TransactionPopUp/transactionPopUp.interface";
-import TransactionPopUp from "./TransactionPopUp/TransactionPopUp";
+import PayTransactionPopUp from "../PayTransactionPopUp/PayTransactionPopUp";
+import PayTransactionPopUpInterface from "@pages/PayTransactionPopUp/payTransactionPopUp.interface";
+import PopUpPaymentData from "@components/PopUpPayment/popUpPaymentData";
 
-const Transaction= () => {
+const MerchantTransaction= () => {
     const {
         register,
         control,
@@ -30,10 +31,13 @@ const Transaction= () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
-    const [data, setData] = useState<TransactionPopUpInterface>();
+    const [response, setResponse] = useState<PayTransactionPopUpInterface>();
     const [messagePopUp, setMessagePopUp] = useState<string>(Strings.USER_REGISTERED);
 
     const token = Cookies.get("token");
+    const dataReaded:PopUpPaymentData = JSON.parse(Cookies.get("dataMerchant") ?? "{}")
+    const {merchantKey, apiId, identifier, amount, description} = dataReaded
+
     const openModal = () => {
         setShowModal(true);
     };
@@ -42,11 +46,12 @@ const Transaction= () => {
     };
     const dataDefault={
         amount: 0,
-        bankAccountReceiver: {accountNumber: ""},
-        bankAccountIssuer: {accountNumber: ""},
+        stateType: "",
+        bankAccountIssuer: "",
+        merchant: "",
         createAt: "",
-        stateType:{name:""},
-        stateDescription: "",
+        stateDescription:"",
+        description: "",
     }
     function catchError(err: any) {
         const error = err as AxiosError;
@@ -86,38 +91,45 @@ const Transaction= () => {
         getDetails();
         getIP();
     }, []);
-    const onSubmit: SubmitHandler<TransactionObjectProps> = async (data) => {
+    const onSubmit: SubmitHandler<any> = async () => {
         setShowPopUpMessage(false);
         try {
             setIsLoading(true);
-            const response:TransactionPopUpInterface = await postAxios(
-                apiUrls.POST_SEND_MONEY,
-                {...data , bankAccountNumberIssuer:details?.accountNumber, address:ip},
+            const response:PayTransactionPopUpInterface = await postAxios(
+                apiUrls.MERCHANT_TRANSACTION,
+                {merchantKey: merchantKey,
+                    apiId: apiId,
+                    identifier: identifier,
+                    amount: amount,
+                    description: description,
+                    address: ip,},
                 token
             );
-            setData(response);
+            setResponse(response);
             reset();
             setShowModal(true);
         } catch (err) {
             catchError(err);
         }
         setIsLoading(false);
-
-
     };
     const renderPageOrLoading = () => {
         return isLoading ? (
             <Spinner />
         ) : (
-            <div >
+            <div className="flex h-screen justify-center">
+            <div className="flex-raw w-auto justify-center">
                 <header className="p-4 bg-white font-bold justify-center md:flex md:items-center md:p-6 dark:bg-gray-800">
-                    <span className="text-3xl">Transfer transaction</span>
+                    <span className="text-3xl">Transaction</span>
                 </header>
                 <form onSubmit={handleSubmit(onSubmit)} id="transaction">
-                            <div className="flex justify-between mb-4">
-                                    <div className="flex-1 min-w-0 p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
-                                        <div className="text-lg text-gray-900 dark:text-white">
+                        <div className="flex justify-between mb-4">
+                            <div className="flex-1 min-w-0 p-4  container-form  item-center  bg-white rounded-lg border shadow-md sm:p-8">
+                                <div className="flex justify-between">
+                                        <div className="text-lg text-gray-900 dark:text-white w-52">
+                                            <div className="font-bold">
                                             Source Account
+                                            </div>
                                             <NumberFormat
                                                     thousandSeparator={true}
                                                     id="bankAccountNumberIssuer"
@@ -126,46 +138,53 @@ const Transaction= () => {
                                                     format="####-####-####-####"
                                                     value={details?.accountNumber}
                                                 />
-                                        <div>
-                                            Destiny Account
-                                            <Controller control={control} name="bankAccountNumberReceiver" render={({field: {onChange,value}}) => (
-                                                <NumberFormat
-                                                    thousandSeparator={true}
-                                                    id="bankAccountNumberReceiver"
-                                                    className="input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
-                                                    placeholder="0000-0000-0000-0000"
-                                                    format="####-####-####-####"
-                                                    onValueChange={(v)=>onChange(v.value)
-                                                    }
-                                                    value={value}
-                                                />)}
+                                        </div>
+                                        <div className="text-lg text-gray-900 dark:text-white w-32">
+                                            <div className="font-bold">
+                                            Balance
+                                            </div>
+                                            <NumberFormat
+                                                thousandSeparator={true}
+                                                id={"amount"}
+                                                displayType={"text"}
+                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
+                                                prefix={'$'}
+                                                value={details?.balance}
                                             />
                                         </div>
+                                    </div>
+                                        <div className="text-lg text-gray-900 dark:text-white w-auto mt-2">
+                                            <div className="font-bold">
                                             Amount
-                                            <Controller control={control} name="amount" render={({field: {onChange,value}}) => (
-                                                <NumberFormat
-                                                    thousandSeparator={true}
-                                                    id={"amount"}
-                                                    className="input block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-right"
-                                                    placeholder="$0"
-                                                    allowLeadingZeros={false}
-                                                    allowNegative={false}
-                                                    prefix={'$'}
-                                                    onValueChange={(v)=>onChange(v.value)
-                                                    }
-                                                    value={value}
-                                                />)}
-                                                />
+                                            </div>
+                                            <NumberFormat
+                                                thousandSeparator={true}
+                                                id={"amount"}
+                                                displayType={"text"}
+                                                className="block py-2.5 px-0 w-auto text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
+                                                placeholder="$0"
+                                                allowLeadingZeros={false}
+                                                allowNegative={false}
+                                                prefix={'$'}
+                                                value={amount}
+                                            />
                                         </div>
-                                        <div>
+                                        <div className="text-lg text-gray-900 dark:text-white mt-2">
+                                            <div className="font-bold">
                                             Description
-                                            <GenericInput type="textarea"
-                                                          id="description"
-                                                          className="block p-2.5 w-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                          placeholder="Leave a description (Max. 250 characters)"
-                                                          maxLength={255}
-                                                          register={register}/>
-                                                </div>
+                                            </div>
+                                            <div className="block py-2.5 px-0 w-96 text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                                {description}
+                                            </div>
+                                        </div>
+                                        <div className="text-lg text-gray-900 dark:text-white w-auto mt-2">
+                                            <div className="font-bold">
+                                            Address
+                                            </div>
+                                            <div className="block py-2.5 px-0 w-auto text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                                {ip}
+                                            </div>
+                                        </div>
                                     </div>
                             </div>
                             <div className="flex justify-between">
@@ -189,11 +208,12 @@ const Transaction= () => {
                             </div>
                 </form>
             </div>
+            </div>
         );
     };
     return (
         <>
-            {showModal && (<TransactionPopUp setShowModal={setShowModalFunction} data={data??dataDefault}/>)}
+            {showModal && (<PayTransactionPopUp setShowModal={setShowModalFunction} data={response??dataDefault}/>)}
             {token?.length != 0 ? renderPageOrLoading() : <Navigate replace to="/" />}
             {showPopUpMessage && (
                 <div className="fixed bottom-0 right-0 lg:w-1/4 md:w-1/3  ">
@@ -208,4 +228,4 @@ const Transaction= () => {
     );
 };
 
-export default Transaction;
+export default MerchantTransaction;

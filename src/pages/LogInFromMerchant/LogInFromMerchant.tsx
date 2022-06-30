@@ -1,6 +1,6 @@
 import {Input, PopUp, PopUpMessage, Spinner} from "../../components/index";
 import {SubmitHandler, useForm} from "react-hook-form";
-import LoginObject from "./loginObject.interface";
+import LoginObject from "./loginFromMerchantObject.interface";
 import {Link, useNavigate} from "react-router-dom";
 import {useContext, useState} from "react";
 import axios, {AxiosError} from "axios";
@@ -11,7 +11,7 @@ import Strings from "../../constants/strings";
 import apiUrls from "../../constants/apiUrls";
 
 
-const LogInForm = () => {
+const LogInFromMerchant = () => {
     const {
         register,
         handleSubmit,
@@ -20,7 +20,7 @@ const LogInForm = () => {
     } = useForm<LoginObject>({mode: "onTouched"});
 
     const [showModal, setShowModal] = useState(false);
-    const {setLoadedData,setAuth} = useContext(AuthContext);
+    const {setLoadedData} = useContext(AuthContext);
     const navigate = useNavigate();
     const [isColorError, setIsColorError] = useState<boolean>(false);
     const [showPopUpMessage, setShowPopUpMessage] = useState(false);
@@ -51,7 +51,7 @@ const LogInForm = () => {
                 if (setLoadedData) {
                     setLoadedData(true)
                 }
-                navigate('/profile');
+                navigate('/merchant-transaction');
             } else{
                 setMessagePopUp(Strings.UNVERIFIED_USER)
                 setIsColorError(true);
@@ -151,8 +151,9 @@ const LogInForm = () => {
                                   isColorError={isColorError} link={linkPopUp} linkMessage={linkPopUpMessage}/>
                 </div>
             )}
+
         </div>
     );
 };
 
-export default LogInForm;
+export default LogInFromMerchant;
