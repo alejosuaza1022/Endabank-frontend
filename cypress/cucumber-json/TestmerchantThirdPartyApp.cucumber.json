@@ -9,10 +9,10 @@
     "uri": "merchantThirdPartyApp.feature",
     "elements": [
       {
-        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-customer-should-be-allowed-to-add-products-to-buy",
+        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-user-should-be-able-to-select-products-to-buy-into-the-merchant-website",
         "keyword": "Scenario",
         "line": 10,
-        "name": "The customer should be allowed to add products to buy",
+        "name": "The user should be able to select products to buy into the merchant website",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -23,17 +23,17 @@
             "name": "the products are shown on the merchant website",
             "result": {
               "status": "passed",
-              "duration": 1744000000
+              "duration": 1366000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 11,
-            "name": "the customer want to select one or many products",
+            "name": "the user want to select one or many products",
             "result": {
               "status": "passed",
-              "duration": 1016000000
+              "duration": 1064000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the products will be added to the shopping car",
             "result": {
               "status": "passed",
-              "duration": 267000000
+              "duration": 285000000
             }
           },
           {
@@ -53,16 +53,16 @@
             "name": "change the value of the total amount",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 18000000
             }
           }
         ]
       },
       {
-        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-admin-should-be-allowed-to-remove-products-to-buy",
+        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-user-should-be-able-to-add-products-into-the-merchant-website-and-remove-products-into-the-shopping-summary",
         "keyword": "Scenario",
         "line": 15,
-        "name": "The admin should be allowed to remove products to buy",
+        "name": "The user should be able to add products into the merchant website and remove products into the shopping summary",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -73,17 +73,17 @@
             "name": "the products are shown on the merchant website",
             "result": {
               "status": "passed",
-              "duration": 1432000000
+              "duration": 1194000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "the customer want to select some products",
+            "name": "the user want to select some products",
             "result": {
               "status": "passed",
-              "duration": 852000000
+              "duration": 625000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the products will be displayed at the shopping car",
             "result": {
               "status": "passed",
-              "duration": 287000000
+              "duration": 215000000
             }
           },
           {
@@ -103,17 +103,17 @@
             "name": "change the value of the amount",
             "result": {
               "status": "passed",
-              "duration": 16000000
+              "duration": 17000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 19,
-            "name": "the customer want to unselect one or many products",
+            "name": "the user want to unselect one or many products",
             "result": {
               "status": "passed",
-              "duration": 471000000
+              "duration": 383000000
             }
           },
           {
@@ -123,7 +123,7 @@
             "name": "the products will be removed from the shopping car",
             "result": {
               "status": "passed",
-              "duration": 27000000
+              "duration": 18000000
             }
           },
           {
@@ -133,7 +133,87 @@
             "name": "change the value of the total",
             "result": {
               "status": "passed",
-              "duration": 23000000
+              "duration": 20000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "mock-merchant-website-in-order-to-a-customer-can-buy-something-on-a-merchant-website;the-user-should-be-allowed-to-increase-or-decrease-the-quantity-of-products-in-the-shopping-summary",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "The user should be allowed to increase or decrease the quantity of products in the shopping summary",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the products are shown on the merchant website",
+            "result": {
+              "status": "passed",
+              "duration": 1184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "the user want to select some products at the merchant website",
+            "result": {
+              "status": "passed",
+              "duration": 780000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "all the products will be displayed at the shopping car",
+            "result": {
+              "status": "passed",
+              "duration": 236000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "the value should change",
+            "result": {
+              "status": "passed",
+              "duration": 18000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "the user want to add by 1 and remove of a specific product at the shopping car",
+            "result": {
+              "status": "passed",
+              "duration": 440000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "the products will be added and removed",
+            "result": {
+              "status": "passed",
+              "duration": 44000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "the total payable value should increase due to the increase in the quantity of products",
+            "result": {
+              "status": "passed",
+              "duration": 17000000
             }
           }
         ]
