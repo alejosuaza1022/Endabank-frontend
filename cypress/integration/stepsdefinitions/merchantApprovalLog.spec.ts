@@ -152,7 +152,7 @@ And('the admin is allowed to see the merchant approval log section',()=>{
 
 When('the admin uses the reviewing user filter and the merchant filter',() =>{
     //merchantApprovalLogPage.writeReviewingUser(datauser.reviewingUserSearch1);
-    cy.get('#reviewingUserSearchInput').type("Alexis");
+    cy.get('#reviewingUserSearchInput').type("Facundo");
     cy.get('#merchantSearchInput').type("test");
 })
 
@@ -166,7 +166,7 @@ And('the admin clicks on submit filter button',() =>{
 })
 
 Then('the grid will show the information according to the merchant and reviewing user filters',()=>{
-    cy.contains('Alexis').should('exist');
+    cy.contains('Facundo').should('exist');
     cy.contains('test').should('exist');
 })
 //////////////////////////////////////////////////////

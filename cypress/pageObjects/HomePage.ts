@@ -10,6 +10,7 @@ export default class homePage extends BasePage{
     private LOG_OUT_BUTTON: string = '#logOutSidebarElement'
     private USER_MANAGEMENT_SIDEBAR: string = '#usersManagementSidebarElement'
     private MERCHANT_APPROVAL_LOG_BUTTON: string = '#merchantApprovalLogSidebarElement';
+    private TRANSACTION_ELEMENT: string = '#transactionsSidebarElement'
 
     getProfileButton() {
         return cy.get(this.MY_PROFILE_BUTTON);
@@ -31,4 +32,9 @@ export default class homePage extends BasePage{
     getMerchantApprovalLogButton() {
         return cy.get(this.MERCHANT_APPROVAL_LOG_BUTTON);
     }
+
+    getTransactionElement(){
+        return (cy.get(this.TRANSACTION_ELEMENT))
+    }
+
 }

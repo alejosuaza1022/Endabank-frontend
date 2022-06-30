@@ -3,5 +3,6 @@
     "baseUrlMerchant": "http://medellin-med.uc.r.appspot.com/merchant-site",
     "urlLogin": "/log-in",
     "wait": 3000,
-    "urlProfile": "/profile"
+    "urlProfile": "/profile",
+    "urlTransaction":"/transaction"
   }

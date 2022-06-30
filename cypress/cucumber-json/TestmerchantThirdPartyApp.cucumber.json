@@ -23,7 +23,7 @@
             "name": "the products are shown on the merchant website",
             "result": {
               "status": "passed",
-              "duration": 1366000000
+              "duration": 77857000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "the user want to select one or many products",
             "result": {
               "status": "passed",
-              "duration": 1064000000
+              "duration": 2523000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "the products will be added to the shopping car",
             "result": {
               "status": "passed",
-              "duration": 285000000
+              "duration": 1093000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "change the value of the total amount",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 54000000
             }
           }
         ]
@@ -73,7 +73,7 @@
             "name": "the products are shown on the merchant website",
             "result": {
               "status": "passed",
-              "duration": 1194000000
+              "duration": 1449000000
             }
           },
           {
@@ -83,7 +83,7 @@
             "name": "the user want to select some products",
             "result": {
               "status": "passed",
-              "duration": 625000000
+              "duration": 1453000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "the products will be displayed at the shopping car",
             "result": {
               "status": "passed",
-              "duration": 215000000
+              "duration": 610000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "change the value of the amount",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 55000000
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "the user want to unselect one or many products",
             "result": {
               "status": "passed",
-              "duration": 383000000
+              "duration": 880000000
             }
           },
           {
@@ -123,7 +123,7 @@
             "name": "the products will be removed from the shopping car",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 27000000
             }
           },
           {
@@ -133,7 +133,7 @@
             "name": "change the value of the total",
             "result": {
               "status": "passed",
-              "duration": 20000000
+              "duration": 64000000
             }
           }
         ]
@@ -153,7 +153,7 @@
             "name": "the products are shown on the merchant website",
             "result": {
               "status": "passed",
-              "duration": 1184000000
+              "duration": 1388000000
             }
           },
           {
@@ -163,7 +163,7 @@
             "name": "the user want to select some products at the merchant website",
             "result": {
               "status": "passed",
-              "duration": 780000000
+              "duration": 1742000000
             }
           },
           {
@@ -173,7 +173,7 @@
             "name": "all the products will be displayed at the shopping car",
             "result": {
               "status": "passed",
-              "duration": 236000000
+              "duration": 648000000
             }
           },
           {
@@ -183,7 +183,7 @@
             "name": "the value should change",
             "result": {
               "status": "passed",
-              "duration": 18000000
+              "duration": 58000000
             }
           },
           {
@@ -193,7 +193,7 @@
             "name": "the user want to add by 1 and remove of a specific product at the shopping car",
             "result": {
               "status": "passed",
-              "duration": 440000000
+              "duration": 1009000000
             }
           },
           {
@@ -203,7 +203,7 @@
             "name": "the products will be added and removed",
             "result": {
               "status": "passed",
-              "duration": 44000000
+              "duration": 198000000
             }
           },
           {
@@ -213,7 +213,7 @@
             "name": "the total payable value should increase due to the increase in the quantity of products",
             "result": {
               "status": "passed",
-              "duration": 17000000
+              "duration": 67000000
             }
           }
         ]
