@@ -52,6 +52,7 @@ const MerchantTransaction= () => {
         createAt: "",
         stateDescription:"",
         description: "",
+        id: 0,
     }
     function catchError(err: any) {
         const error = err as AxiosError;
