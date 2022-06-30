@@ -58,13 +58,9 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                             </div>
                             <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Transaction ID
-                                <NumberFormat
-                                    id="bankAccountIssuer"
-                                    displayType={"text"}
-                                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
-                                    format="####-####-####-####"
-                                    value={data.id}
-                                />
+                                <div className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center">
+                                    {data.id}
+                                </div>
                             </div>
                             <div className="text-base text-gray-900 dark:text-white mt-2">
                                 Amount
@@ -136,19 +132,15 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                         <div className="text-lg text-gray-900 dark:text-white text-center mt-5 font-light">
                                             Reason: {data.stateDescription}
                                         </div>
-                                        <div className="text-base text-gray-900 dark:text-white mt-2">
+                                        <div className="text-lg text-gray-900 dark:text-white mt-2">
                                             Transaction ID
-                                            <NumberFormat
-                                                id="bankAccountIssuer"
-                                                displayType={"text"}
-                                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 text-center"
-                                                format="####-####-####-####"
-                                                value={data.id}
-                                            />
+                                            <div className="text-lg text-gray-900 dark:text-white text-center mt-2 font-light">
+                                                {data.id}
+                                            </div>
                                         </div>
                                     </div>
                                     <div
-                                        className="flex-1 p-4 items-center justify-center border-t border-solid border-blueGray-100 rounded-b">
+                                        className="flex-1 p-4 items-center justify-center">
                                         <Link id="profileSidebarElement" to={"/merchant-site"}
                                               className="flex items-center justify-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <div>
@@ -164,7 +156,7 @@ const PayTransactionPopUp = (props: { setShowModal: Function, data:PayTransactio
                                               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <p>
                                                 <button
-                                                    className="text-white color-endabank w-96 focus:ring-4 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center "
+                                                    className="justify-center text-white color-endabank w-96 focus:ring-4 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center "
                                                     type="button"
                                                     id="closePopUp"
                                                     onClick={() => removeCookie()}
